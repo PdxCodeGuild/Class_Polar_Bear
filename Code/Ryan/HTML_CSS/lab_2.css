@@ -1,0 +1,75 @@
+
+* {
+    /* add these to every page you work on */
+    margin: 0;
+    padding: 0;
+    /* Any padding added will be contained to the border specified */
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    margin-top: 7px;
+    height: 150px;
+}
+.heading_title {
+    margin-top: 50px;
+    font-variant: titling-caps;
+    font-style: oblique;
+    padding-left: 130px;
+    /* font-stretch: ultra-expanded; */
+}
+.heading_logo {
+    border-radius: 100px;
+    padding-left: 150px;
+}
+body {
+    background-color: grey;
+    width: 800px;
+    margin: 0 auto;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin-right: 100px;
+    background-color: rgb(128, 146, 146);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.nav-links a{
+    text-decoration: none;
+}
+.nav-links a:hover {
+    color: cornflowerblue;
+}
+nav > a {
+    text-decoration: none;
+    font-style: bold;
+}    
+nav > a:hover {
+    color:crimson;
+}
+section h1{
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+}
+.content {
+    display: flex;
+}
+p {
+    font-size: 1.2rem;
+    width: 54ch;
+}
+footer {
+    text-align: right;
+    position: fixed;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    color: black;
+    width: 100%;
+    bottom: 0;
+}

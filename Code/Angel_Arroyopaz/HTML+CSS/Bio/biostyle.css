@@ -2,12 +2,8 @@ body {
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: azure;
-}
-
-.div1 {
-    background-image: url("slothbackground.jpg");
+    background-image: url("background.jpg");
     background-size: cover;
-    opacity: .98;
 }
 
 p {
