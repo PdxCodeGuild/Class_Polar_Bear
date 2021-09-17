@@ -7,20 +7,25 @@
     box-sizing: border-box;
 }
 header {
+    background-color: slategrey;
+    border: 2px solid black;
     display: flex;
     margin-top: 7px;
-    height: 150px;
+    height: 167px;
+    /* margin-bottom: 7px; */
+    justify-content: space-between;
 }
 .heading_title {
-    margin-top: 50px;
+    padding-top: 60px;
     font-variant: titling-caps;
     font-style: oblique;
     padding-left: 130px;
     /* font-stretch: ultra-expanded; */
 }
-.heading_logo {
+.heading_logo img{
+    margin: 7px;
     border-radius: 100px;
-    padding-left: 150px;
+    border: 1px solid black;
 }
 body {
     background-color: grey;
@@ -32,22 +37,37 @@ nav {
     justify-content: space-between;
     width: 800px;
     margin-right: 100px;
-    background-color: rgb(128, 146, 146);
+    background-color: slategray;
     padding-left: 8px;
     padding-right: 8px;
 }
-.nav-links a{
+.home a{
     text-decoration: none;
+    font-style: bold;
 }
-.nav-links a:hover {
-    color: cornflowerblue;
+.home a:hover {
+    color: crimson;
 }
-nav > a {
+.github a{
+    text-decoration: none;
+    font-style: bold;
+}
+.github a:hover {
+    color: crimson;
+}
+.zoom a {
     text-decoration: none;
     font-style: bold;
 }    
-nav > a:hover {
+.zoom a:hover {
     color:crimson;
+}
+.slack a{
+    text-decoration: none;
+    font-style: bold;
+}
+.slack a:hover {
+    color: crimson;
 }
 section h1{
     text-align: center;
