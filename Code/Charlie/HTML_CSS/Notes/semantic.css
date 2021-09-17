@@ -1,0 +1,61 @@
+
+/* keeps pixel count as other styling is applied */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  */
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    background-color: darkgray;
+    padding: 8px;
+}
+
+/*  */
+.nav-links a{
+    color: black;
+    text-decoration: none;
+
+}
+
+.nav-links a:hover{
+    color: orange;
+}
+
+/*  */
+body{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: dimgray;
+}
+
+/*  */
+header{
+    margin-top: 10px;
+    height: 200px;
+}
+.nav-home{
+    color: black;
+    text-decoration:none;
+    font-weight: bold;
+}
+
+/*  */
+h1{
+    text-align: center;
+}
+
+/* ch=characters */
+p{
+    font-size: 1.25rem;
+    width: 54ch;
+}
+
+/*  */
+.content{
+    display: flex;
+}
