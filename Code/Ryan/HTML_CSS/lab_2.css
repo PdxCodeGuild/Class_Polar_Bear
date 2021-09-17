@@ -7,8 +7,20 @@
     box-sizing: border-box;
 }
 header {
-    margin-top: 14px;
+    display: flex;
+    margin-top: 7px;
     height: 150px;
+}
+.heading_title {
+    margin-top: 50px;
+    font-variant: titling-caps;
+    font-style: oblique;
+    padding-left: 130px;
+    /* font-stretch: ultra-expanded; */
+}
+.heading_logo {
+    border-radius: 100px;
+    padding-left: 150px;
 }
 body {
     background-color: grey;
