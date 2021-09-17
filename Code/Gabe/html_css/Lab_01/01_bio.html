@@ -3,28 +3,99 @@
 
 <head>
   <title>Lab 01 Bio</title>
+  <style>
+    body {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQIq6NCtLeqj6vb0tJvE-WJlaLDfIdV_tW9A&usqp=CAU');
+      width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .fontColor {
+      color: #404040;
+    }
+
+    .centered {
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1,
+    h3,
+    a {
+      font-family: fantasy;
+    }
+
+    p {
+      padding-bottom: 15px;
+    }
+
+    p,
+    ul>li {
+      font-family: monospace;
+    }
+
+    a {
+      text-align: center;
+      color: rgb(10, 26, 39);
+    }
+
+    a:hover {
+      color: burlywood;
+      cursor: crosshair;
+    }
+
+    img {
+      filter: sepia();
+      align-items: center;
+      margin-bottom: 40px;
+      border-radius: 2px;
+    }
+
+    ul {
+      margin: 0;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    ul>li {
+      list-style-type: square;
+    }
+
+    .quote {
+      margin-top: 20;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Hammerhead Sharks</h1>
-  <p>Hammerhead sharks are a group of sharks that form the family <strong>Sphyrnidae</strong> so named for the unusual
-    and distinctive structure of their heads, which are flattened and laterally extended into a "hammer" shape called a
-    cephalofoil.</p>
-  <a href="https://en.wikipedia.org/wiki/Hammerhead_shark">Learn More about them here</a>
-  <br>
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Scalloped_Hammerhead_Shark_Sphyrna_Lewini_%28226845659%29.jpeg/440px-Scalloped_Hammerhead_Shark_Sphyrna_Lewini_%28226845659%29.jpeg"
-    height='105'>
+  <div>
+    <h1 class="centered fontColor">Hammerhead Sharks</h1>
+    <p class="fontColor">Hammerhead sharks are a group of sharks that form the family <strong>Sphyrnidae</strong> so
+      named for the unusual
+      and distinctive structure of their heads, which are flattened and laterally extended into a "hammer" shape called
+      a
+      cephalofoil.</p>
+    <p class="fontColor">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis voluptate nihil facere autem,
+      cum tempore saepe
+      atque natus quaerat explicabo. Consequatur quam enim ullam fugiat nam deleniti voluptatem doloribus eos.</p>
+    <a href="https://en.wikipedia.org/wiki/Hammerhead_shark" class="centered">Learn More about them here</a>
+    <br>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Scalloped_Hammerhead_Shark_Sphyrna_Lewini_%28226845659%29.jpeg/440px-Scalloped_Hammerhead_Shark_Sphyrna_Lewini_%28226845659%29.jpeg"
+      height='103' class="centered">
 
-  <h3>Where can they be found?</h3>
-  <ul>
-    <li>Temperate and trpoical waters world wide</li>
-    <li>Far offshore and near shorelines</li>
-  </ul>
+    <h3 class="fontColor">Where can they be found?</h3>
+    <ul class="fontColor">
+      <li>Temperate and tropical waters world wide</li>
+      <li>Far offshore and near shorelines</li>
+    </ul>
 
-  <h3>Favorite Quote:</h3>
-  <p>"Nailed it!"</p>
-
+    <h3 class="quote fontColor">Favorite Quote:</h3>
+    <p class="fontColor"><em>"Nailed it!"</em></p>
+  </div>
 </body>
 
 </html>

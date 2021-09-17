@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,500;1,100&display=swap" rel="stylesheet">
     <title>Barcelona</title>
 </body>
-    <h1 style="text-align: center ;"">FC Barcelona</h1>
-    <div style="text-align: center;">
-      <p style="width: 80%; padding-left: 5px;">
+<img id="background_img" src="./1105548.jpg" height="200" width="0%"></img>
+    <h1>FC Barcelona</h1>
+    <div>
+      <p ">
         FC Barcelona, in full Fútbol Club Barcelona, also called Barça, Spanish
         professional football (soccer) club located in Barcelona. FC Barcelona
         is renowned for its historically skillful and attractive brand of
@@ -16,9 +20,10 @@
         team is part of a wider sports and social club with thousands of
         members.
       </p>
-      <div >
+    </div>
+      
           <p>Team Roster:</p>
-      <ul style="list-style: none;">
+      <ul>
           <li>
               <div>
               <a href="https://www.fcbarcelona.com/en/football/first-team/players/11072/marc-andre-ter-stegen" target="_blank">
@@ -37,15 +42,28 @@
             </li>
             <li>
                 <div>
-                <a href="https://www.fcbarcelona.com/en/football/first-team/players/53621/ignacio-pena-sotorres" target="_blank">
-                    <img src="https://www.fcbarcelona.com/photo-resources/2021/09/01/09de531a-8acd-41d3-a09e-70c1790d521f/mini_1200x750-inaki_pena.png?width=470&height=470" height="200" alt="">
+                  <a href="https://www.fcbarcelona.com/en/football/first-team/players/53621/ignacio-pena-sotorres" target="_blank">
+                      <img src="https://www.fcbarcelona.com/photo-resources/2021/09/01/09de531a-8acd-41d3-a09e-70c1790d521f/mini_1200x750-inaki_pena.png?width=470&height=470" height="200" alt="">
 
-                </a>
-              <p>26. <strong>Inaki Pena</strong></p>
-            </div>
+                  </a>
+                <p>26. <strong>Inaki Pena</strong></p>
+              </div>
               </li>
-              
-              </li>
+      </ul>
+      <p id="wikipedia">Learn more about the team <a href="">here</a></p>
+      <div id="team_geo">
+        <p>Barcelona has a very diverse roster, with players from all over the world</p>
+        <ul >
+          <li class="players">Spain</li>
+          <li class="players">France</li>
+          <li class="players">Brazil</li>
+          <li class="players">Netherlands</li>
+          <li class="players">Italy</li>
+          <li class="players">Phillippines</li>
+          <li class="players">Uruguay</li>
+          <li class="players">Nigeria</li>
+          <li class="players">Scotland</li>
+          <li class="players">Israel</li>
       </ul>
     </div>
     </div>
@@ -53,14 +71,53 @@
   <body>
 </html>
 <style>
-    li{
-        list-style: none;
-        display: inline-flex;
-        margin: 10px;
-        overflow: hidden;
-    }
+  /* #team_geo{
+    text-align: left;
+  } */
+  .players,#team_geo{
+    display: block;
+    text-align: left;
+    margin-left: 5px;
+  }
     body{
-        /* background-image: url('./1105548.jpg'); */
-        /* opacity: 0.5; */
+     
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+
+    }
+
+    ul{
+      list-style: none;
+    }
+
+    li{
+        display: inline-flex;
+        margin: 20px 9%;
+    }
+    #background_img{
+      object-fit:cover;
+      width: 100%;
+      height: 200px;
+    }
+
+    li>div>p{
+      color:#36363044;
+      font-weight: 800;
+      text-align: center;
+    }
+    a>img{
+    border-radius: 10%;
+
+    }
+    #wikipedia{
+      text-align: left;
+      margin-left: 1%;
+    }
+    p>a{
+      color: red;
+      text-decoration: none;
+      font-style: italic;
+      font-weight: 800;
     }
 </style>

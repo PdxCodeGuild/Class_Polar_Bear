@@ -1,11 +1,33 @@
-.words{
+body{
     
-    background-color: black;
-    color: white;
-}
-.heading{
+    background-color: gray;
+    color: yellowgreen;
     text-align: center;
-}
-.image{
     align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
 }
+
+p{
+    margin-left: 125px;
+    margin-right: 125px;
+}
+img{
+    margin-bottom: 50px;
+    border-radius: 80px;
+}
+
+a{
+    color: yellowgreen;
+}
+
+li{
+    list-style-type: square;
+    margin-left: 10px;
+    
+}
+
+h1{
+    margin-left: 10px;
+}
+    
+    

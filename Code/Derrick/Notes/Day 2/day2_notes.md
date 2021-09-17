@@ -28,17 +28,18 @@
 
 ## Links
 
-Anchor tag
-Href links to link or page
+### Anchor tag
+- Href links to link or page
 
-Takes you to google
 ```
 <a href="google.com">Google</a>
 ```
+- Takes you to google
 
 ## Lists
 
-Ordered - Usually has numbers
+### Ordered - Usually has numbers
+
 ```
 <ol>
     <li>Item 1</li>
@@ -46,14 +47,14 @@ Ordered - Usually has numbers
     <li>Item 3</li>
 </ol>
 ```
-Unordered - Bullet points
-
+### Unordered - Bullet points
+```
 <ul>
     <li>Item 1</li>
     <li>Item 2</li>
     <li>Item 3</li>
 </ul>
-
+```
 ## Break
 
 ```
