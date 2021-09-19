@@ -3,6 +3,9 @@
     <head>
         <title>Hello!</title>
         <style>
+            body {
+                background-color: darkgrey;
+            }
             h1, h2, h6 {
                 color: purple;
                 text-align: center;
@@ -10,10 +13,51 @@
 
             table {
                 border: 1px solid black;
+                border-collapse: collapse;
             }
             
-            td {
+            td, th {
                 border: 1px solid black;
+                padding: 8px;
+            }
+
+            p {
+                color: orangered;
+                margin-left: 20px;
+            }
+
+            strong {
+                color: green;
+            }
+
+            a {
+                font-size: 32px;
+                color: blue;
+            }
+
+            a:hover {
+                border: 1px solid black;
+            }
+            
+            .bear {
+                color: red;
+            }
+
+            .small{
+                font-size: 12px;
+            }
+
+            ol > li:hover {
+                color: yellow;
+                font-size: 32px;
+            }
+
+            ul > li {
+                list-style-type: square;
+            }
+
+            img {
+                border-radius: 100px;
             }
         </style>
     </head>
@@ -48,7 +92,7 @@
         <p>Here is <strong>some</strong> text.</p>
         <!-- link -->
         <a href="https://google.com">Google :)</a><br>
-        <a href="https://github.com/PdxCodeGuild/Class_Polar_Bear">Polar Bear Repo</a>
+        <a class="bear small" href="https://github.com/PdxCodeGuild/Class_Polar_Bear">Polar Bear Repo</a>
         
         <!-- Ordered List -->
         <ol>
