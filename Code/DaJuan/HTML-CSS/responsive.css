@@ -1,0 +1,7 @@
+.square {
+    height: 400px;
+    width: 400px;
+    background-color: springgreen;
+}
+
+@media (max-width: 600px)
