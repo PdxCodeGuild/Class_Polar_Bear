@@ -1,0 +1,63 @@
+
+@media (max-width: 500px) {
+    body {
+        font-size: 6pt;
+    }
+}
+
+@media (min-width: 500px) {
+    body {
+        font-size: 11pt;
+    }
+}
+
+header {
+    text-align: center;
+    font-weight: bolder;
+}
+
+nav1 {
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+nav2 {
+    flex-direction: left;
+    justify-content: space-around;
+    margin: 60px;
+    font: 6pt;
+}
+
+section {
+    display: flex;
+    justify-content: left;
+}
+
+div1, div2, div3 {
+    text-align: left;
+    max-width: 60%;
+    padding: 10 px;
+}
+
+div1 {
+    font-family: 'Times New Roman', Times, serif;
+    color:darkred;
+}
+
+div2 {
+    font-family:Arial, Helvetica, sans-serif;
+    color:rgb(202, 39, 39);
+}
+
+div3 {
+    font-family: fantasy;
+    color:rgb(139, 0, 19);
+}
+footer {
+    text-align: center;
+}
