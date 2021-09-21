@@ -5,7 +5,7 @@
 }
 
 body {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   background-color: dimgrey;
   position: relative;
@@ -15,6 +15,8 @@ header{
   margin-top: 16px;
   height: 300px;
 }
+
+/* Navigation */
 
 nav {
   display: flex;
@@ -43,6 +45,8 @@ nav a {
   font-weight: bold;
 }
 
+/* Content */
+
 section h1{
   text-align: center;
   color: orange;
@@ -62,6 +66,9 @@ p {
 .footer {
   height: 40px;
 }
+
+/* Footer */
+
 footer {
   height: 40px;
   position: absolute;
@@ -74,7 +81,9 @@ footer {
   color: white;
 }
 
-@media (max-width: 1000px){
+/* Media Queries */
+
+@media (max-width: 1100px) {
   :root {
     font-size: 32px;
   }
@@ -87,25 +96,23 @@ footer {
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 400px) {
   :root {
-    font-size: 50px;
+    font-size: 48px;
   }
-  .nav-home {
-    display: none;
+  nav a {
+    font-size: 1.5rem;
+  }  
+  p {
+    max-width: 32ch;
   }
   nav {
     justify-content: center;
   }
-  .nav-links{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  .nav-links a {
+    margin: 0 10px;
   }
-  nav a {
-    font-size: 1.2rem;
-  }
-  p {
-    max-width: 32ch;
+  .nav-home {
+    display: none;
   }
 }

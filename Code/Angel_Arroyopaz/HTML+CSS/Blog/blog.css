@@ -9,6 +9,10 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+header img {
+    width: 100%;
+}
+
 nav {
     display: flex;
     justify-content: end;
@@ -75,4 +79,25 @@ footer {
 footer a {
     text-decoration: none;
     color: white;
+}
+
+@media (max-width: 612px) {
+    :root {
+        font-size: 0.75rem;
+    }
+    p {
+        width: 42ch;
+    }
+}
+
+@media (min-width: 613px) {
+    :root {
+        font-size: 1.4rem;
+    }
+    p {
+        width: 50ch;
+    }
+    .description:hover {
+        font-size: 1.2rem;
+    }
 }
