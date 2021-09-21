@@ -1,11 +1,11 @@
 
-@media (max-width: 500px) {
+@media (max-width: 500px){
     body {
         font-size: 8pt;
     }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 500px){
     body {
         font-size: 12pt;
     }
@@ -13,14 +13,14 @@
 
 header {
     text-align: center;
-    font-weight: bolder;
-    font-size: 12pt;
+    font-weight: bold;
+    font-size: 300%;
 }
 
 nav1 {
     flex-wrap: wrap;
     text-align: center;
-    font-size: 12pt;
+    font-size: 150%;
 }
 
 table {
@@ -32,12 +32,13 @@ nav2 {
     text-align: left;
     justify-content: space-around;
     margin: 60px;
-    font-size: 8pt;
+    font-size: 70%;
 }
 
 section {
     display: flex;
     justify-content: left;
+    margin: 5px;
 }
 
 div1, div2, div3 {
