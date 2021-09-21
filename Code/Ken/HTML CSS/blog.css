@@ -86,3 +86,41 @@ footer {
 footer a{
     color:whitesmoke
 }
+@media (max-width: 1100px){
+    :root {
+      font-size: 32px;
+    }
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+    p {
+      margin-top: 24px;
+    }
+  }
+
+  @media (max-width: 415px) {
+    :root {
+      font-size: 50px;
+    }
+    nav {
+      justify-content: center;
+    }
+    .nav-home {
+        display: none;
+      }
+    .nav-links  a{
+      margin: 0 16px;
+    }
+    nav a {
+      font-size: 1.1rem;
+    }
+    .sidenav {
+        padding: 16px;
+        font-size: 1.1rem;
+    }
+    p {
+      max-width: 32ch;
+    }
+  }
+  
