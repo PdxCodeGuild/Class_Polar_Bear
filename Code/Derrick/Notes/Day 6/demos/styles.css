@@ -1,0 +1,17 @@
+.square {
+    height: 400px;
+    width: 400px;
+    background: seagreen;
+}
+
+@media (max-width: 600px) {
+    .square {
+        background: blue;
+    }
+}
+
+@media (min-width: 900px) {
+    .square {
+        border-radius: 50%;;
+    }
+}
