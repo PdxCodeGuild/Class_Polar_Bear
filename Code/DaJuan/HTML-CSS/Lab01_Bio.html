@@ -4,6 +4,30 @@
         <style>
             body {
                 text-align: center;
+                background-color: rgb(17, 15, 8);
+            }
+
+            .text {
+                color: red;
+            }
+
+            p {
+                padding: 10px;
+                margin: 10px;
+                font-family: cursive;
+                color: green;
+            }
+
+            .link:hover {
+                color: salmon;
+            }
+            img {
+                margin-top: 30px;
+                border-radius: 100px;
+            }
+
+            ul>li {
+                list-style-type: square;
             }
         </style>
         </body>
@@ -12,18 +36,18 @@
     </head>
 <body>
     <!-- Intro -->
-    <p>This is the bio of the notorious Jimmy Hoffa.</p>
+    <p class="text">This is the bio of the notorious Jimmy Hoffa.</p>
     <!-- Wiki link -->
-    <a href="https://en.wikipedia.org/wiki/Jimmy_Hoffa">wikipedia</a>
+    <a class="text link" href="https://en.wikipedia.org/wiki/Jimmy_Hoffa">wikipedia</a><br>
     <!-- Hoffa Photo -->
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/James_R._Hoffa_NYWTS.jpg/220px-James_R._Hoffa_NYWTS.jpg"/>
     <!--Places lived list  -->
-    <ul>
+    <ul class="text">
         <li>Brazil, Indiana</li>
         <li>Bloomfield Township, Michigan</li>
         
         <!-- Famous Quote -->
-        <p>"I do to others what they do to me, only worse."</p>
+        <p>"I do to others what they do to me, <em>only worse."</em></p>
     </ul>
 
 </body>
