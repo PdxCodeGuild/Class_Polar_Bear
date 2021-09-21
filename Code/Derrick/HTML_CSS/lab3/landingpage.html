@@ -6,115 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"  integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container-fluid">
-            <button class="side-nav-toggler"><i class="bi-list"></i></button>
-            <a class="navbar-brand me-2" href="#"><img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.png" style="margin-top: -7px;" height="16" alt=""></a>
-            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" style="padding-top:10px;padding-bottom: 10px;">
-                <div class="container-fluid">
-                <button class="side-nav-toggler"><i class="bi-list"></i></button>
-                <a class="navbar-brand me-2" href="#"><img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.png" style="margin-top: -7px;" height="16" alt=""></a>
-                <form class="d-flex">
-                    <input class="form-control rounded me-2" type="search" placeholder='Search (ctrl + "/" to focus' aria-label="Search">
-                    <a class="nav-link" href="#"><i class="bi-search" style="color: black;"></i></a>
-                </form>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="bi-bell-fill"></i></a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Docs
-                            </a>
-                            <ul class="dropdown-menu menu-dropdown" aria-labelledby="navbarDropdown">
-                            <h6 class="dropdown-header">Bootstrap 5</h6>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/javascript.png" alt="" height="20px" class="me-2">
-                                    Standard (plain JS)
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/angular.png" alt="" height="20px" class="me-2">
-                                    Angular
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/react.png" alt="" height="20px" class="me-2">
-                                    React
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/vue.png" alt="" height="20px" class="me-2">
-                                    Vue
-                                </a>
-                            </li>
-                            <li><hr class="dropdown-divider"></li>
-                            <h6 class="dropdown-header">Bootstrap 4</h6>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/jquery.png" alt="" height="20px" class="me-2">
-                                    Standard (jQuery)
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/angular.png" alt="" height="20px" class="me-2">
-                                    Angular
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/react.png" alt="" height="20px" class="me-2">
-                                    React
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" href="#">
-                                    <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/_assets/img/icons/vue.png" alt="" height="20px" class="me-2">
-                                    Vue
-                                </a>
-                            </li>
-                            </ul>
-                        </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Support</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Playground</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Builder</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Free Hosting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi-github"></i></a>
-                    </li>
-                    <button type="button" class="btn btn-primary shadow nav-button" aria-haspopup="true" aria-expanded="false">
-                        LOGIN
-                    </button>
-                    </ul>
-                </div>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    
 </body>
 </html>
