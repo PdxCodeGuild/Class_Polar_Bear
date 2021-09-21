@@ -1,0 +1,103 @@
+:root {
+  background-color: #24292f;
+  margin: 0 20px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: white;
+}
+/******************************** Nav BAR *********************** */
+.nav_container {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  background-color: #24292f;
+  height: 50px;
+  width: 100%;
+}
+
+.nav_items {
+  display: block;
+  display: flex;
+  width: 100%;
+}
+
+.nav_item {
+  color: wheat;
+  list-style: none;
+  margin: 10px;
+}
+
+.nav_item:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.nav_items li:nth-last-child(-n + 4) {
+  justify-content: flex-end;
+  position: relative;
+  left: 70%;
+}
+
+/**************************************** main section *********************/
+/* REFACTOR */
+.banner {
+  border: 1 px solid red;
+  width: 100%;
+}
+.banner img {
+  /* background-image: url("https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5f709d82fa4f131fa2114a74%2F0x0.jpg"); */
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.join {
+  margin-top: 20px;
+  width: 100%;
+  height: 200px;
+  border: 1px solid black;
+}
+.members_posts {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.user_post {
+  margin: 30px 10px;
+  height: auto;
+  width: 34ch;
+}
+
+.user_post p > img {
+  border-radius: 100%;
+  display: inline;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: #24292f;
+  color: wheat;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid white;
+  /* justify-content: flex-end; */
+}
+.icons i {
+  align-self: flex-end;
+  margin: 8px;
+  justify-content: space-between;
+}

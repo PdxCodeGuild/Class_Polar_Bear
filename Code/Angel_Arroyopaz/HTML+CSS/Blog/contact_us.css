@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: grey;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+nav {
+    background-color: rgb(118, 139, 129);
+    padding: 4px;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+    color: darkorange;
+    margin: 5px;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    font-size: 4.5rem;
+}
+
+div a {
+    margin: 25px;
+    text-decoration: none;
+}
+
+div a:hover {
+    opacity: .7;
+}
+
+.fa-facebook {
+    background-color:rgb(30, 30, 235);
+    color: white;
+}
+
+.fa-twitter {
+    background-color:rgb(36, 150, 202);
+    color: white;
+}
+
+.fa-instagram {
+    background-color:white;
+    color: rgb(252, 69, 69);
+}
+
+.fa-youtube{
+    background-color:red;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 15px;
+    right: 0;
+    text-decoration: none;
+    color: white;
+}
+
+@media (max-width: 320px) {
+    :root {
+        font-size: 1rem;
+    }
+    div {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 321px) {
+    :root {
+        font-size: 1rem;
+    }
+    div {
+        display: block;
+        align-items: center;
+    }
+}
+
+@media (min-width: 767px) {
+    :root {
+        font-size: 1rem;
+    }
+    main {
+        text-align: center;
+    }
+    div a{
+        display: block;
+        align-items: center;
+    }
+}
