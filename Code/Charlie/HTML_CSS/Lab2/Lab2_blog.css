@@ -41,15 +41,18 @@
 }
 
 .titles, .link, .home, .header, h3{
-     color: whitesmoke;
-     text-decoration: none;
-     margin-left: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    margin-left: 10px;
     font-family: 'Creepster', cursive;
 
 }
 
 .header, .img-links{
-     margin-right: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 400px;
     float: right;
     margin-bottom: 25px;
 }
@@ -63,4 +66,29 @@ main{
     font-family: 'Creepster', cursive; 
     margin-bottom: 16px;
     
+}
+@media(max-width: 950px){
+    .header{
+       font-size: 1.17em;
+    }
+}
+
+@media(max-width: 790px){
+    .img-links{
+        margin-right: 0;
+        margin-top: 40px;
+    }
+    .header{
+        display: none;
+    }
+}
+@media(max-width:460px){
+    .link{
+        margin-right: 25px;
+    }
+}
+@media(max-width:385px){
+    .nav-left{
+        width: 100px;
+    }
 }
