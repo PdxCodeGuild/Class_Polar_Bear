@@ -1,0 +1,18 @@
+
+
+.square{
+    height: 400px;
+    width: 400px;
+    background: springgreen;
+}
+@media (max-width: 600px){
+    .square{
+        background-color: blueviolet;
+    }
+}
+@media (min-width: 601px) {
+    .square{
+        border-radius: 50%;
+    }
+    
+}
