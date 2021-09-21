@@ -24,6 +24,10 @@ nav {
   padding: 8px;
 }
 
+nav a {
+  font-size: 1rem;
+}
+
 .nav-links a{
   color: white;
   text-decoration: none;
@@ -68,4 +72,40 @@ footer {
   justify-content: center;
   background-color: black;
   color: white;
+}
+
+@media (max-width: 1000px){
+  :root {
+    font-size: 32px;
+  }
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+  p {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 400px){
+  :root {
+    font-size: 50px;
+  }
+  .nav-home {
+    display: none;
+  }
+  nav {
+    justify-content: center;
+  }
+  .nav-links{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  nav a {
+    font-size: 1.2rem;
+  }
+  p {
+    max-width: 32ch;
+  }
 }
