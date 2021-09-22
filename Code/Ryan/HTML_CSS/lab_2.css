@@ -193,16 +193,17 @@ footer {
     /* .content {
         margin-right: 40px;
     } */
+    /* CANNOT GET DISPLAY BLOCK and FLEX to WORK */
     .content {
-        display: flex;
-    }
-    .content p{
-        display: inline-block;
+        display: block;
     }
     .content ol{
         margin-left: 40px;
     }
     ol > li {
         margin-left: 40px;
+    }
+    .content p{
+        display: flex;
     }
 }

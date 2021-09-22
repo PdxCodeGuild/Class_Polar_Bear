@@ -1,0 +1,54 @@
+.fill {
+    background-color: darkslategray;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://www.fortinet.com/blog/industry-trends/digital-business-requires-digital-security/_jcr_content/root/responsivegrid/text_image.img.png/1525908243292/digital-business-digital-security-thumb.png);
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr;
+    grid-template-rows: 2fr 1fr;
+
+}
+h1 {
+    display: flex;
+    color: firebrick;
+    text-decoration: none;
+    grid-column: 1/8;
+    padding: 20px;
+}
+.products {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+.services {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+.partners {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    grid-column-start: 6;
+    grid-row-start: 2;
+}
+.resources {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    grid-column-start: 8;
+    grid-row-start: 2;
+}
+.company {
+    font-size: 1.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+    grid-column-start: 10;
+    grid-row-start: 2;
+}
