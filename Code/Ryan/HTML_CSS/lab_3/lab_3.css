@@ -52,3 +52,12 @@ h1 {
     grid-column-start: 10;
     grid-row-start: 2;
 }
+
+@media (max-width: 600px) {
+    .fill {
+        height: 300px;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
