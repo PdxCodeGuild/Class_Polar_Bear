@@ -1,6 +1,7 @@
 :root {
   background-color: #24292f;
   margin: 0 20px;
+  font-size: 16px;
 }
 * {
   margin: 0;
@@ -13,36 +14,39 @@ body {
   background-color: white;
 }
 /******************************** Nav BAR *********************** */
-.nav_container {
+.fa-bars {
+  display: none;
+}
+
+nav {
   position: fixed;
   display: flex;
-  flex-direction: row;
+  justify-content: flex-end;
   background-color: #24292f;
   height: 50px;
   width: 100%;
 }
 
 .nav_items {
-  display: block;
   display: flex;
   width: 100%;
+  margin-right: 3%;
 }
 
+li.home {
+  margin-right: auto;
+  justify-content: flex-start;
+}
 .nav_item {
   color: wheat;
   list-style: none;
   margin: 10px;
+  font-size: 1.5rem;
 }
 
 .nav_item:hover {
   color: white;
   cursor: pointer;
-}
-
-.nav_items li:nth-last-child(-n + 4) {
-  justify-content: flex-end;
-  position: relative;
-  left: 70%;
 }
 
 /**************************************** main section *********************/
@@ -58,22 +62,20 @@ body {
   object-fit: cover;
 }
 
-.join {
-  margin-top: 20px;
-  width: 100%;
-  height: 200px;
-  border: 1px solid black;
-}
 .members_posts {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
 }
 
 .user_post {
+  display: flex;
+  /* flex-basis: auto; */
   margin: 30px 10px;
   height: auto;
   width: 34ch;
+  font-size: 1.5rem;
 }
 
 .user_post p > img {
@@ -100,4 +102,63 @@ footer {
   align-self: flex-end;
   margin: 8px;
   justify-content: space-between;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1320px) {
+  :root {
+    font-size: 20px;
+  }
+
+  .nav_items {
+    margin-right: 6%;
+  }
+
+  .user_post {
+    flex-basis: 1 1 10em;
+    /* width: 100ch !important; */
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+  }
+
+  .user_post:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 1115px) {
+  :root {
+    font-size: 25px;
+  }
+  .nav_items {
+    margin-right: 6%;
+  }
+
+  .user_post {
+    /* flex-basis: 1 1 10em; */
+    width: 100ch !important;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+  }
+
+  .user_post:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 745px) {
+  :root {
+    font-size: 20px;
+  }
+
+  .nav_item {
+    display: none;
+  }
+
+  .fa-bars {
+    display: block;
+    font-size: 2rem;
+    color: wheat;
+  }
 }
