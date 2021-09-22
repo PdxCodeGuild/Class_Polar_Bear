@@ -26,21 +26,28 @@ a:hover {
   cursor: pointer;
   color: khaki;
 }
-
+.banner-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner-container {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  background-color: rgb(31, 31, 41);
+}
 .banner {
   display: flex;
   justify-content: center;
-  background-color: rgb(31, 31, 41);
   height: 180px;
   width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .banner_title {
   display: flex;
   align-items: center;
   font-family: cursive;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 nav {
@@ -57,6 +64,7 @@ nav {
 
 .main_heading > h1 {
   text-align: center;
+  align-items: baseline;
   margin: 50px 0 50px 0;
   font-size: 4rem;
 }
@@ -85,6 +93,7 @@ nav {
   padding-bottom: auto;
 }
 
+/* about */
 .about {
   border: 1px rgb(51, 51, 70) solid;
   width: 1200px;
@@ -111,9 +120,9 @@ nav {
   margin: 15px 0;
 }
 
-.about_content > p {
+.about_p {
   text-align: center;
-  width: 54ch;
+  width: 50ch;
   size: 2rem;
 }
 
@@ -150,4 +159,94 @@ nav {
   left: 0;
   right: 0;
   padding: 20px 0;
+}
+
+@media (max-width: 1200px) {
+  :root {
+    font-size: 24px;
+    width: 1200px;
+  }
+  .body {
+  }
+  .banner-head {
+    display: inline-block;
+  }
+  .banner {
+    /* width: f; */
+    height: fit-content;
+  }
+  /* .nav {
+    width: 100%;
+    justify-content: space-around;
+  } */
+  .blogs-container {
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+  }
+  .blog_heading {
+    width: fit-content;
+  }
+  .blog-photo {
+    width: 350px;
+  }
+  .blog_title {
+    width: 350px;
+  }
+  .blog_p {
+    width: 46ch;
+  }
+  .inputs {
+    font-size: 70px;
+  }
+  .input_one {
+    width: 700px;
+    height: 70px;
+  }
+  .input_two {
+    width: 700px;
+    height: 500px;
+  }
+  .submit-button {
+    width: 120px;
+    height: 60px;
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    font-size: 32px;
+  }
+  .body {
+  }
+  .banner-head {
+    display: block;
+  }
+  .blog_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+  .photo-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+  }
+  .blog-photo {
+    width: 850px;
+  }
+  .blog_title {
+    width: 500px;
+    text-align: center;
+  }
+  .blog_p {
+    width: 45ch;
+  }
+  .about_p {
+    width: 40ch;
+    text-align: justify;
+  }
 }

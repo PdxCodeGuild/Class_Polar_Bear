@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -232,3 +233,4 @@ footer {
     font-size: .9rem;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
+

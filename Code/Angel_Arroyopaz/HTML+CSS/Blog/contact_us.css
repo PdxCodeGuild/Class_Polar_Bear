@@ -12,6 +12,7 @@ body {
 nav {
     background-color: rgb(118, 139, 129);
     padding: 4px;
+    width: 100%;
 }
 
 nav a {
@@ -67,4 +68,36 @@ footer {
     right: 0;
     text-decoration: none;
     color: white;
+}
+
+@media (max-width: 320px) {
+    :root {
+        font-size: 1rem;
+    }
+    div {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 321px) {
+    :root {
+        font-size: 1rem;
+    }
+    div {
+        display: block;
+        align-items: center;
+    }
+}
+
+@media (min-width: 767px) {
+    :root {
+        font-size: 1rem;
+    }
+    main {
+        text-align: center;
+    }
+    div a{
+        display: block;
+        align-items: center;
+    }
 }
