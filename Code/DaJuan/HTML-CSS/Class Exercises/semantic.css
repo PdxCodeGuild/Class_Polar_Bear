@@ -39,6 +39,12 @@
             font-weight: bold;
         }
 
+        section h1{
+            text-align: center;
+            color: orange;
+            font-size:1.75rem;        
+        }
+
         p {
             font-size: 1.2rem;
             width: 54ch;
@@ -46,4 +52,16 @@
 
         .content {
             display: flex;
+        }
+
+        footer {
+            height: 40px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+            background-color: black;
+            color: white;
         }
