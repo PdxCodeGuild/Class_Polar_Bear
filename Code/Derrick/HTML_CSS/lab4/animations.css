@@ -7,6 +7,10 @@ body, html {
 	margin: 0;
 }
 
+.main {
+    background-color: blue;
+}
+
 .btn {
 	font-size:20px;
 	background-color:#fff;
@@ -46,7 +50,7 @@ section > div {
 }
 
 .main {
-	background-color: #E94F37;
+	background-color: rgb(186,59,70);
 	padding-top: 20px;
 }
 
@@ -300,5 +304,33 @@ section > div {
 }
 
 /* button 12 */
+
+.btn-12Wrapper {
+    background: #59C9A5;
+}
+
+.btn-12Wrapper .btn {
+    color: #59C9A5;
+    animation: borders 2s infinite alternate-reverse;
+    
+}
+.btn-12Wrapper .btn:hover {
+    animation-play-state: paused;
+}
+
+@keyframes borders {
+    0% {
+        border-radius: 0 20px 20px 20px;
+    }
+    25% {
+        border-radius: 20px 0 20px 20px;
+    }
+    50% {
+        border-radius: 20px 20px 0 20px;
+    }
+    100% {
+        border-radius: 20px 20px 20px 0;
+    }
+}
 
 /* Ummm??????????????? */
