@@ -220,3 +220,72 @@ section {
         transform: rotateX(0);
     }
 }
+
+.btn-9Wrapper {
+    background-color: rgb(112, 25, 112);
+}
+
+.btn-9Wrapper .btn {
+    background-color: white;
+    color: rgb(112, 25, 112);
+}
+
+.btn-9Wrapper .btn:hover {
+    animation: btn9-hover .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn9-hover {
+    to {
+        opacity: 0.5;
+    }
+}
+
+.btn-10Wrapper {
+    background-color: rgb(187, 87, 87);
+}
+
+.btn-10Wrapper .btn {
+    background-color: white;
+    color: rgb(187, 87, 87);
+}
+
+.btn-10Wrapper .btn:hover {
+    animation: btn10-hover .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn10-hover {
+    to {
+        opacity: 0.5;
+    }
+}
+
+.btn-11Wrapper {
+    background-color: goldenrod;
+}
+
+.btn-11Wrapper .btn {
+    background-color: white;
+    color: goldenrod;
+}
+
+.btn-11Wrapper .btn:hover {
+    animation: btn11-hover 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes btn11-hover {
+    25% {
+        background-color: purple;
+    }
+    50% {
+        background-color: rgb(117, 42, 117)
+    }
+    75% {
+        background-color: rgb(117, 59, 117)
+    }
+    100% {
+        background-color: rgb(104, 84, 104)
+    }
+}
