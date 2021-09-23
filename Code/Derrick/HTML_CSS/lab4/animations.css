@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+    cursor: pointer;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	/* border:solid 0.5px; */
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+section > div {
+    width: 25%;
+    flex-grow: 1;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+/* Button 1 */
+
+.btn-1Wrapper {
+    background: #8FB339;
+}
+
+.btn-1Wrapper .btn {
+    color: #8FB339;
+    transition: 1s;    
+}
+
+.border-wrapper {
+    border: 2px solid rgba(255,255,255,0);
+	border-radius: 24px;
+    transition: 1s;
+    padding: 3px 0;
+}
+
+.btn-1Wrapper .btn:hover {
+    transform: scale(.95);
+}
+
+.border-wrapper:hover {
+    border: 2px solid rgba(255,255,255,1);
+	border-radius: 24px;
+}
+
+.border-wrapper:hover .btn {
+    transform: scale(.9)
+}
+
+/* button 2 */
+
+.btn-2Wrapper {
+    background: #45A0B9;
+}
+
+.btn-2Wrapper .btn {
+    color: #45A0B9;
+    transition: 1s;
+}
+.btn-2Wrapper .btn:hover {
+    border-radius: 0;
+}
+
+/* button 3 */
+
+.btn-3Wrapper {
+    background: #EE6352;
+    backface-visibility: hidden;
+}
+
+.btn-3Wrapper .btn {
+    color: #EE6352;
+}
+
+.btn-3Wrapper .btn:hover {
+    animation: jumpOutIn 1s forwards;
+}
+
+@keyframes jumpOutIn {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.5)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+/* Button 4 */
+
+.btn-4Wrapper {
+    background: #ED9B40;
+}
+
+.btn-4Wrapper .btn {
+    color: #ED9B40;
+    box-shadow: 0 5px 0 grey;
+    transform: translateY(0);
+    transition: 1s;
+}
+
+.btn-4Wrapper .btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 grey;
+}
+
+/* button 5 */
+
+.btn-5Wrapper {
+    background: #7DCFB6;
+}
+
+.btn-5Wrapper .btn {
+    color: #7DCFB6;
+}
+
+.btn-5Wrapper .btn:hover {
+    animation: rightLeftCenter .5s forwards;
+}
+
+@keyframes rightLeftCenter {
+    0% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(3px)
+    }
+    80% {
+        transform: translateX(-3px)
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Button 6 */
+
+.btn-6Wrapper {
+    background: #3F88C5;
+}
+
+.btn-6Wrapper .btn {
+    color: #3F88C5;
+    border-bottom: 5px solid lightgrey;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    transition: .5s;
+}
+
+.btn-6Wrapper .btn:active {
+    border-bottom: 5px solid white;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.5); 
+}
+
+
+
+/* button 7 */
+
+.btn-7Wrapper {
+    background: #673AB7;
+}
+
+.btn-7Wrapper .btn {
+    color: #673AB7;
+    border-radius: 0;
+    transform: translate(0);
+    transition: .5s;
+}
+
+.shadow-wrapper {
+    background: rgba(0,0,0,0.5);
+}
+
+.btn-7Wrapper .btn:hover {
+    transform: translate(-6px,4px);
+}
+
+/* button 8 */
+
+
+.btn-8Wrapper {
+    background: #8BC34A;
+}
+
+.btn-8Wrapper .btn {
+    color: #8BC34A;
+    border-radius: 0;
+    /* transform: skew(2deg, -2deg); */
+}
+
+.btn-8Wrapper .btn:hover {
+    animation: moveDownLeft .5s forwards;
+    transition: all .5s;
+}
+
+/* button 9 */
+
+.btn-9Wrapper {
+    background: #9C27B0;
+}
+
+.btn-9Wrapper .btn {
+    color: #9C27B0;
+    opacity: 1;
+    transition: opacity .5s;
+}
+.btn-9Wrapper .btn:hover {
+    opacity: .5;
+}
+
+/* button 10 */
+
+.btn-10Wrapper {
+    background: #EE4266;
+}
+
+.btn-10Wrapper .btn {
+    color: #EE4266;
+}
+.btn-10Wrapper .btn:hover {
+    animation: squish 1s forwards;    
+}
+
+@keyframes squish {
+    0% {
+        padding: 20px 20px;
+    }
+    50% {
+        padding: 30px 10px;
+    }
+    75% {
+        padding: 10px 30px;
+    }
+    100% {
+        padding: 20px 20px;
+    }
+}
+
+/* button 11 */
+
+
+.btn-11Wrapper {
+    background: #FDB833;
+}
+
+.btn-11Wrapper .btn {
+    color: #FDB833;
+    opacity: 1;
+}
+.btn-11Wrapper .btn:hover {
+    animation: colorOpacity 1.5s alternate infinite;
+    background: #9C27B0;
+    transition: 1.5s;   
+}
+
+@keyframes colorOpacity {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .5;
+    }
+}
+
+/* button 12 */
+
+/* Ummm??????????????? */
