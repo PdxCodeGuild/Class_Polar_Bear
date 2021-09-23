@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.social p a {
+    text-decoration: none;
+}
+
+.lists ul li a {
+    text-decoration: none;
+    color: #6C757D;
+}
