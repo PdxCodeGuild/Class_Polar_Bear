@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600");
+
+body,
+html {
+  height: 100%;
+  font-family: "Dosis", sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: #fff;
+  padding: 20px;
+  color: #333;
+  border-radius: 20px;
+}
+
+.wrapper:not(.main) {
+  width: 24%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.wrapper {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+  flex-direction: column;
+  background: #00a5cf;
+  border: solid 0.4px;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.main {
+  background-color: #e94f37;
+  padding-top: 20px;
+}
+
+.btn-1Wrapper {
+  background-color: #8fb339;
+  color: red;
+}
+
+.btn-1Wrapper > div:hover {
+  animation: btn1 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes btn1 {
+  to {
+    padding: 15px;
+  }
+}
+
+.btn-2Wrapper > div:hover {
+  animation: btn2 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes btn2 {
+  to {
+    border-radius: 0;
+  }
+}
+
+.btn-3Wrapper {
+  background-color: #ee6352;
+  color: #ee6352;
+}
+.btn-3Wrapper > div:hover {
+  animation: btn3 1s ease-in-out;
+  animation-fill-mode: both;
+}
+@keyframes btn3 {
+  0% {
+  }
+  75% {
+    /* width: 12rem;
+    height: 3rem;
+    font-size: 2.2rem;
+    margin: 20px; */
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.btn-4Wrapper {
+  background-color: #ed9b40;
+  color: #ed9b40;
+}
+
+.btn-4Wrapper > div {
+  box-shadow: 4px 4px 4px 0;
+}
+.btn-4Wrapper > div:active {
+  animation: btn4 0.1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes btn4 {
+  to {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+}
+
+.btn-5Wrapper {
+  background-color: #7dcfb6;
+  color: #7dcfb6;
+}
+.btn-5Wrapper > div:hover {
+  animation: btn5 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes btn5 {
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+}
+
+/* TODO BTN 6  */
+
+.btn-7Wrapper {
+  background-color: purple;
+}
+
+.btn-7Wrapper > div {
+  border-radius: 0;
+  color: purple;
+}
+.btn-7Wrapper > div:hover {
+  animation: btn7 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes btn7 {
+  to {
+    transform: translate(-5px, 10px);
+    box-shadow: 8px -4px 4px 0 black;
+  }
+}
+
+.btn-8Wrapper {
+  background-color: #8bc34a;
+  color: #8bc34a;
+  /* TODO  */
+  perspective: 100px;
+}
+
+.btn-8Wrapper > div {
+  color: green;
+  /* transform: skewY(-50deg); */
+  transform: rotateX(50deg);
+}
+.btn-8Wrapper > div:hover {
+  animation: btn8 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes btn8 {
+  to {
+    transform: rotateX(0);
+  }
+}
+
+.btn-9Wrapper {
+  background-color: purple;
+  color: purple;
+}
+
+.btn-9Wrapper > div {
+  color: purple;
+}
+.btn-9Wrapper > div:hover {
+  animation: btn9 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes btn9 {
+  to {
+    background-color: rgba(128, 91, 128, 0.651);
+  }
+}
