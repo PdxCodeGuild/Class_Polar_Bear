@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +6,17 @@
     text-align: center;
 }
 body {
-    background-color: grey;
+    background-color: #778899;
+    color: #191970;
+    font-family: 'Merriweather', serif;
 }
 header {
     margin-top: 12px;
     height: 300px;
+}
+a {
+    color: #556B2F;
+    text-decoration: none;
 }
 .nav_container {
     display: flex;
@@ -18,7 +25,7 @@ header {
 .nav_inner{
     display: flex;
     justify-content: space-between;
-    background-color: darkgrey;
+    background-color: #FAF0E6;
     padding: 8px;
     width: 1200px;
 }
@@ -26,12 +33,105 @@ header {
     display: flex;
     justify-content: left;
 }
-.nav_list {
+.side_nav {
     display: flex;
     justify-content: left;
     flex-direction: column;
-    background-color: lightgrey;
+    background-color: #FAF0E6;
     padding: 8px;
     max-width: 100px;
-    min-height: 100px;
+    min-height: 100%;
+}
+h2 {
+    min-width: 100px;
+    padding-right: 10px;
+}
+P {
+    display: flex;
+    justify-content: center;
+    max-height: 350;
+    padding: 25px;
+}
+main {
+    display: flex;
+}
+.post_1 {
+    display: flex;
+    padding: 50px;
+}
+.post_2 {
+    display: flex;
+    padding: 50px;
+}
+.post_3 {
+    display: flex;
+    padding: 50px;
+}
+
+/* @Media Section */
+@media (max-width: 1200px) {
+    .post_1 {
+        display: grid;
+        justify-items: center;
+        padding: 25px;
+    }
+    .post_2 {
+        display: grid;
+        justify-items: center;
+        padding: 25px;
+    }
+    .post_3 {
+        display: grid;
+        justify-items: center;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 800px) {
+    .post_1 {
+        display: grid;
+        justify-items: center;
+        padding: 25px;
+    }
+    .post_2 {
+        display: grid;
+        justify-items: center;
+        padding: 25px;
+    }
+    .post_3 {
+        display: grid;
+        justify-items: center;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .post_1 {
+        display: grid;
+        justify-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        min-width: 50ch;
+    }
+    .post_2 {
+        display: grid;
+        justify-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        min-width: 50ch;
+    }
+    .post_3 {
+        display: grid;
+        justify-items: center;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        min-width: 50ch;
+    }
+    .side_nav {
+        display:none;
+        background-color: lightgrey;
+        padding: 8px;
+        max-width: 0px;
+        min-height: 100%;
+    }
 }
