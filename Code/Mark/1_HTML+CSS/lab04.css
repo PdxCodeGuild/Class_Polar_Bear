@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+	font-size: 4rem;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	border:solid 0.5px;
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	margin:30px 0;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+/* break */
+
+.btn-1Wrapper {
+    background-color: green;
+}
+
+.btn-1Wrapper .btn {
+    background-color: white;
+    color: green;
+}
+
+.btn-1Wrapper .btn:hover {
+    animation: btn1-hover 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn1-hover {
+    to {
+        box-shadow: inset 0 0 0 5px green;
+        border: solid 3px white;
+    }
+}
+
+.btn-2Wrapper {
+    background-color: lightblue;
+}
+
+.btn-2Wrapper .btn {
+    background-color: white;
+    color: lightblue;
+}
+
+.btn-2Wrapper .btn:hover {
+    animation: btn2-hover 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn2-hover {
+    to {
+        border-radius: 0%;
+    }
+}
+
+.btn-3Wrapper {
+    background-color: green;
+}
+
+.btn-3Wrapper .btn {
+    background-color: white;
+    color: green;
+}
+
+.btn-3Wrapper .btn:hover {
+    animation: btn3-hover 1s;
+}
+
+@keyframes btn3-hover {
+    50% {
+        font-size: 30px;
+    }
+    100% {
+        font-size: 20px;
+    }
+}
+
+.btn-4Wrapper {
+    background-color: orange;
+}
+
+.btn-4Wrapper .btn {
+    background-color: white;
+    box-shadow: 0 4px 0 0 grey;
+    color: orange;
+}
+
+.btn-4Wrapper .btn:active {
+    animation: btn4-active .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn4-active {
+    to {
+        box-shadow: 0 3px 0 0 grey;
+        transform: translateY(2px);
+    }
+}
+
+.btn-5Wrapper {
+    background-color: lightblue;
+}
+
+.btn-5Wrapper .btn {
+    background-color: white;
+    color: lightblue;
+}
+
+.btn-5Wrapper .btn:hover {
+    animation: btn5-hover .4s;
+}
+
+@keyframes btn5-hover {
+    50% {
+        transform: translateX(6px);
+    }
+    100% {
+        transform: translateX(-6px);
+    }
+}
+
+.btn-6Wrapper {
+    background-color: blue;
+}
+
+.btn-6Wrapper .btn {
+    background-color: white;
+    color: blue;
+    box-shadow: 0 8px 10px 0px darkgrey;
+}
+
+.btn-6Wrapper .btn:active {
+    animation: btn6-active 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn6-active {
+    to {
+        box-shadow: 0 3px 5px 0 darkgrey;
+        transform: translateY(-1px);
+    }
+}
+
+.btn-7Wrapper {
+    background-color: blue;
+}
+
+.btn-7Wrapper .btn {
+    background-color: white;
+    border-radius: 0%;
+    color: blue;
+}
+
+.btn-7Wrapper .btn:hover {
+    animation: btn7-hover .7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn7-hover {
+    to {
+        box-shadow: 4px -4px 0 0 black;
+        transform: translate(-4px, 4px);
+    }
+}
+
+.btn-8Wrapper {
+    background-color: green;
+}
+
+.btn-8Wrapper .btn {
+    background-color: white;
+    color: pink;
+    transform: rotateX(35deg);
+    box-shadow: 0 8px 10px 0 black;
+}
+
+.btn-8Wrapper .btn:hover {
+    animation: btn8-hover .7s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn8-hover {
+    to {
+        box-shadow: 0 3px 10px 0 black;
+        transform: rotateX(0);
+    }
+}
+
+.btn-9Wrapper {
+    background-color: purple;
+}
+
+.btn-9Wrapper .btn {
+    background-color: white;
+    color: purple;
+}
+
+.btn-9Wrapper .btn:hover {
+    animation: btn9-hover .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn9-hover {
+    to {
+        opacity: 0.5;
+    }
+}
+
+.btn-10Wrapper {
+    background-color: red;
+}
+
+.btn-10Wrapper .btn {
+    background-color: white;
+    color: red;
+}
+
+.btn-10Wrapper .btn:hover {
+    animation: btn10-hover .3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn10-hover {
+    to {
+        opacity: 0.5;
+    }
+}
+
+.btn-11Wrapper {
+    background-color: goldenrod;
+}
+
+.btn-11Wrapper .btn {
+    background-color: white;
+    color: goldenrod;
+}
+
+.btn-11Wrapper .btn:hover {
+    animation: btn11-hover 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes btn11-hover {
+    25% {
+        background-color: purple;
+    }
+    50% {
+        background-color: purple;
+    }
+    75% {
+        background-color: purple;
+    }
+    100% {
+        background-color: purple;
+    }
+}
+
+.btn-12Wrapper {
+    background: lightblue;
+}
+
+.btn-12Wrapper .btn {
+    animation: borders 2s infinite alternate-reverse;
+    color: lightblue;
+}
+
+.btn-12Wrapper .btn:hover {
+    animation-play-state: paused;
+}
+
+@keyframes btn12-hover {
+    0% {
+        border-radius: 0 20px 20px 20px;
+    }
+    25% {
+        border-radius: 20px 0 20px 20px;
+    }
+    50% {
+        border-radius: 20px 20px 0 20px;
+    }
+    100% {
+        border-radius: 20px 20px 20px 0;
+    }
+}
+
