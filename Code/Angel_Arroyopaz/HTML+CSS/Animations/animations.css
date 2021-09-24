@@ -251,13 +251,19 @@ section {
 }
 
 .btn-10Wrapper .btn:hover {
-    animation: btn10-hover .3s;
-    animation-fill-mode: forwards;
+    animation: btn10-hover 2s alternate;
 }
 
 @keyframes btn10-hover {
-    to {
-        opacity: 0.5;
+    55% {
+    padding: 30px 10px;
+    }
+    75% {
+    padding: 10px 30px;
+    transition: translateY(3px);
+    }
+    100% {
+    padding: 20px;
     }
 }
 
@@ -287,5 +293,46 @@ section {
     }
     100% {
         background-color: rgb(104, 84, 104)
+    }
+}
+
+.btn-12Wrapper {
+    background-color: rgb(5, 145, 138);
+}
+
+.btn-12Wrapper .btn {
+    background-color: white;
+    color: rgb(5, 145, 138);
+    animation: btn12-active 1s infinite alternate;
+}
+
+.btn-12Wrapper .btn:hover {
+    animation-play-state: paused;
+}
+
+@keyframes btn12-active {
+    0% {
+    border-top-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    }
+    55% {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    }
+    75% {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    }
+    100% {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 0px;
     }
 }
