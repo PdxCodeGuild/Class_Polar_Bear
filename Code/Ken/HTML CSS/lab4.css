@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn1 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn2 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn3 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn4 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn5 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn6 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn7 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn8 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn9 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn10 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn11 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+.btn12 {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	border:solid 0.5px;
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	margin:30px 0;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+.btn-1Wrapper {
+    background-color: chartreuse;
+}
+.btn1:hover {
+    box-shadow: 0 0 0 3px black;
+
+}
+.btn-2Wrapper {
+    background-color: cornflowerblue;
+}
+.btn2:hover {
+    border-radius: 0;
+}
+.btn-3Wrapper {
+    background-color: coral;
+}
+btn3:hover {
+    animation: zoom-button3;
+    animation-duration: 1s;
+}
+@keyframes zoom-button3 {
+    from {
+        box-shadow: none;
+        transform:scale(1);
+    }
+    to {
+        box-shadow: 3px 3px 3px 3px;
+        transform:scale(2);
+    }
+}
+.btn-4Wrapper {
+    background-color: orange;
+}
+.btn4:active {
+    box-shadow: 0 2px 0 black;
+}
+.btn-5Wrapper {
+    background-color: turquoise;
+}
+.btn5:hover {
+    animation:both;
+}
+.btn-6Wrapper {
+    background-color: lightskyblue;
+}
+.btn6:active {
+    box-shadow:1px 1px 1px 0 white;
+}
+.btn-7Wrapper {
+    background-color: magenta;
+}
+.btn7:hover {
+    box-shadow: 1px 1px 1px 1px black;
+    transform: translateX(-3px);
+    transform: translateY(3px);
+}
+.btn-8Wrapper {
+    background-color: mediumseagreen;
+}
+.btn8:hover {
+
+}   
+.btn-9Wrapper {
+    background-color: purple;
+}
+.btn9:hover {
+    opacity: .5;
+}
+.btn-10Wrapper {
+    background-color: deeppink;
+}
+.btn10:hover {
+    animation:squash;
+}
+@keyframes squash {
+    33% {
+        padding:30px 15px;
+    }
+    66% {
+        padding: 15px 30px;
+    }
+    100% {
+        padding: 20px;
+    }
+}
+.btn-11Wrapper {
+    background-color: gold;
+}
+.btn11:hover {
+    background-color: purple;
+}   
+.btn-12Wrapper {
+    background-color: seagreen;
+}

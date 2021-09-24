@@ -16,44 +16,46 @@ body, html {
 }
 
 .wrapper:not(.main) {
-	width: 25%;
+	width: 24%;
 }
 
 h1 {
 	margin:0;
-    font-size: 4rem;
+	font-size: 4rem;
 }
 
 .wrapper {
-	height:30vh;
+	height:50vh;
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	min-height:250px;
 	flex-direction:column;
 	background:#00A5CF;
-	/* border:solid 0.5px; */
+	border:solid 0.5px;
 }
 
 section {
 	display:flex;
-	flex-wrap: wrap;
+	flex-wrap:wrap;
 	justify-content:center;
-	/* margin:30px 0; */
+	margin:30px 0;
 }
 
 .main {
-	background-color: #a74132;
-	/* padding-top: 20px; */
+	background-color: #E94F37;
+	padding-top: 20px;
 }
 
+/* break */
+
 .btn-1Wrapper {
-    background-color: rgb(123, 175, 45);
+    background-color: green;
 }
 
 .btn-1Wrapper .btn {
     background-color: white;
-    color: rgb(123, 175, 45);
+    color: green;
 }
 
 .btn-1Wrapper .btn:hover {
@@ -63,18 +65,18 @@ section {
 
 @keyframes btn1-hover {
     to {
-        box-shadow: inset 0 0 0 5px rgb(123, 175, 45);
+        box-shadow: inset 0 0 0 5px green;
         border: solid 3px white;
     }
 }
 
 .btn-2Wrapper {
-    background-color: #00A5CF;
+    background-color: lightblue;
 }
 
 .btn-2Wrapper .btn {
     background-color: white;
-    color: #00A5CF;
+    color: lightblue;
 }
 
 .btn-2Wrapper .btn:hover {
@@ -89,12 +91,12 @@ section {
 }
 
 .btn-3Wrapper {
-    background-color: rgb(175, 80, 36);
+    background-color: green;
 }
 
 .btn-3Wrapper .btn {
     background-color: white;
-    color: rgb(175, 80, 36);
+    color: green;
 }
 
 .btn-3Wrapper .btn:hover {
@@ -111,13 +113,13 @@ section {
 }
 
 .btn-4Wrapper {
-    background-color: rgb(218, 156, 25);
+    background-color: orange;
 }
 
 .btn-4Wrapper .btn {
     background-color: white;
-    color: rgb(218, 156, 25);
     box-shadow: 0 4px 0 0 grey;
+    color: orange;
 }
 
 .btn-4Wrapper .btn:active {
@@ -133,12 +135,12 @@ section {
 }
 
 .btn-5Wrapper {
-    background-color: rgb(119, 184, 196);
+    background-color: lightblue;
 }
 
 .btn-5Wrapper .btn {
     background-color: white;
-    color: rgb(119, 184, 196);
+    color: lightblue;
 }
 
 .btn-5Wrapper .btn:hover {
@@ -155,13 +157,13 @@ section {
 }
 
 .btn-6Wrapper {
-    background-color: rgb(39, 101, 236);
+    background-color: blue;
 }
 
 .btn-6Wrapper .btn {
     background-color: white;
-    color: rgb(39, 101, 236);
-    box-shadow: 0 8px 10px 0px rgb(63, 62, 62);
+    color: blue;
+    box-shadow: 0 8px 10px 0px darkgrey;
 }
 
 .btn-6Wrapper .btn:active {
@@ -171,19 +173,19 @@ section {
 
 @keyframes btn6-active {
     to {
-        box-shadow: 0 3px 5px 0 rgb(66, 66, 66);
+        box-shadow: 0 3px 5px 0 darkgrey;
         transform: translateY(-1px);
     }
 }
 
 .btn-7Wrapper {
-    background-color: rgb(88, 10, 233);
+    background-color: blue;
 }
 
 .btn-7Wrapper .btn {
     background-color: white;
-    color: rgb(88, 10, 233);
     border-radius: 0%;
+    color: blue;
 }
 
 .btn-7Wrapper .btn:hover {
@@ -199,12 +201,12 @@ section {
 }
 
 .btn-8Wrapper {
-    background-color: rgb(71, 136, 41);
+    background-color: green;
 }
 
 .btn-8Wrapper .btn {
     background-color: white;
-    color: rgb(71, 136, 41);
+    color: pink;
     transform: rotateX(35deg);
     box-shadow: 0 8px 10px 0 black;
 }
@@ -222,12 +224,12 @@ section {
 }
 
 .btn-9Wrapper {
-    background-color: rgb(112, 25, 112);
+    background-color: purple;
 }
 
 .btn-9Wrapper .btn {
     background-color: white;
-    color: rgb(112, 25, 112);
+    color: purple;
 }
 
 .btn-9Wrapper .btn:hover {
@@ -242,12 +244,12 @@ section {
 }
 
 .btn-10Wrapper {
-    background-color: rgb(187, 87, 87);
+    background-color: red;
 }
 
 .btn-10Wrapper .btn {
     background-color: white;
-    color: rgb(187, 87, 87);
+    color: red;
 }
 
 .btn-10Wrapper .btn:hover {
@@ -280,12 +282,41 @@ section {
         background-color: purple;
     }
     50% {
-        background-color: rgb(117, 42, 117)
+        background-color: purple;
     }
     75% {
-        background-color: rgb(117, 59, 117)
+        background-color: purple;
     }
     100% {
-        background-color: rgb(104, 84, 104)
+        background-color: purple;
     }
 }
+
+.btn-12Wrapper {
+    background: lightblue;
+}
+
+.btn-12Wrapper .btn {
+    animation: borders 2s infinite alternate-reverse;
+    color: lightblue;
+}
+
+.btn-12Wrapper .btn:hover {
+    animation-play-state: paused;
+}
+
+@keyframes btn12-hover {
+    0% {
+        border-radius: 0 20px 20px 20px;
+    }
+    25% {
+        border-radius: 20px 0 20px 20px;
+    }
+    50% {
+        border-radius: 20px 20px 0 20px;
+    }
+    100% {
+        border-radius: 20px 20px 20px 0;
+    }
+}
+
