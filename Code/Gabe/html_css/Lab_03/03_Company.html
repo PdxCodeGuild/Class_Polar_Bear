@@ -44,24 +44,26 @@
     </div>
   </nav>
   <!-- lower nav -->
-  <nav class="row bg-dark d-flex flex-row container-fluid">
-    <div class="container">
-      <img src="https://satchel.rei.com/media/img/header/rei-co-op-logo-white.svg" class="img-thumbnail bg-dark border-0" alt="REI logo">
-    </div>
-    <div class="d-flex flex-column conatainer-fluid">
-      <div class="d-flex container justify-content-center">
-        <div class="input-group mb-1">
-          <input type="search" placeholder="Search" results="0">
-        </div>
-        <span class="text-light">SIGN IN</span>
-        <span class="text-light">Stores</span>
-        <span class="text-light">Cart</span>
+  <nav class="bg-dark container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-sm-1">
+        <img src="https://satchel.rei.com/media/img/header/rei-co-op-logo-white.svg" class="img-thumbnail bg-dark border-0" alt="REI logo">
       </div>
-      <hr style="color: white"/>
+    <div class="col-sm-5 align-items-center ">
+      <div class="d-flex container justify-content-center align-items-center align-self-center">
+        <div class="input-group mb-3">
+          <input type="search" placeholder="Search for great gear & clothing" class="col-sm-5 bg-secondary text-light">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+        </div>
+        <span class="text-light col-sm-1">SIGN IN</span>
+        <span class="text-light col-sm-1">Stores</span>
+        <span class="text-light col-sm-1">Cart</span>
+      </div>
+      <hr style="color: #fff" class="text-light"/>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+            <ul class="navbar-nav me-auto mb-1  mx-auto align-items-center">
               <li class="nav-item">
                 <a class="nav-link text-light" aria-current="page" href="#"> Camp & Hike</a>
               </li>
@@ -109,18 +111,38 @@
         </div>
       </nav>
     </div>
+  </div>
   </nav>
   <!-- message content -->
-  <figcaption class="">
+  <figcaption class="d-flex justify-content-center">
     <span> Join the co-op today for a lifetime of perks and  <strong>earn a $20 bonus card!</strong> <a href="something.com" class="text-dark">Learn how</a></span>
   </figcaption>
   <!-- header -->
   <header class="img-container">
-    <img src="https://picsum.photos/900/1000" alt="rei image" width="100%" height="900">
+    <img src="https://picsum.photos/600/1000" alt="rei image" width="100%" height="900">
   </header>
   <!-- main content -->
-  <main class="main-content">
-    <img src="https://picsum.photos/200"/>
+  <main class="main-content mt-5 d-flex flex-column justify-content-center align-items-center">
+    <img src="https://www.rei.com/assets/membership/homepage/berries/live.svg" alt="Join REI image" width="100px" height="100px"/>
+    <span class="fs-2">Join the co-op today and earn a $20 bonus card!</span>
+    <div>
+      <button class="btn btn-md btn-success mr-3">Add a $20 membership to card</button>
+      <button class="btn btn-md btn-light btn-outline-secondary ml-3">Learn more about joining</button>
+    </div>
+    <a href="http://">Terms & Conditions</a>
+  </main>
+  <main class="container">
+    <div class="col-6 d-flex fs-2">Shop top categories</div>
+    <div class="container d-flex flex-wrap row justify-content-center">
+      <div class="">
+        <img src="https://picsum.photos/250/250" alt="categories" class="m-5">
+        <img src="https://picsum.photos/250/250" alt="categories" class="m-5">
+        <img src="https://picsum.photos/250/250" alt="categories" class="m-5">
+        <img src="https://picsum.photos/250/250" alt="categories" class="m-5">
+        <img src="https://picsum.photos/250/250" alt="categories" class="m-5">
+        <img src="https://picsum.photos/250/250" alt="categories" class="m-5">
+      </div>
+  </div>
   </main>
   <!-- footer -->
   <footer></footer>
