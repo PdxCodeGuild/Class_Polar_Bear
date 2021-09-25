@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+/* animations */
+
+@keyframes zoom-image{
+    50% {
+    font-size: 30px;
+    }
+    100% {
+    font-size: 20px;
+    }
+  }
+
+@keyframes active-button {
+    to {
+      box-shadow: none;
+      transform: translate(4px, 4px);
+    }
+  }
+  
+  @keyframes focus-button {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+    display: block;
+    font-size: 50px;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	border:solid 0.5px;
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	margin:30px 0;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+
+.btn-1Wrapper {
+	background-color: rgb(63, 129, 63);
+}
+.btn-1Wrapper > .btn{
+    color: rgb(63, 129, 63);
+}
+.btn-1Wrapper > .btn:hover {
+	box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+
+.btn-2Wrapper {
+    background-color: rgba(50, 122, 255, 0.986);
+}
+.btn-2Wrapper > .btn {
+color: rgba(50, 122, 255, 0.986)
+}
+.btn-2Wrapper > .btn:hover {
+        border-radius: 0;
+}
+.btn-3Wrapper {
+    background-color: rgb(250, 60, 117);
+}
+
+.btn-3Wrapper > .btn {
+    color: rgb(250, 60, 117);
+}
+.btn-3Wrapper > .btn:hover {
+    -webkit-animation: zoom-image 1s; /* Safari 4.0 - 8.0 */
+    animation: zoom-image 1s;
+}
+.btn-4Wrapper {
+    background-color: orange;
+}
+
+.btn-4Wrapper > .btn {
+    color: orange;
+    box-shadow: 0px 5px 0px grey;
+}
+
+.btn-4Wrapper > .btn:focus {
+    animation: focus-button 2s ease-in;
+  }
+  
+  .btn-4Wrapper > .btn:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+  }
+
+.btn-5Wrapper {
+    background-color: green;
+}
+
+.btn-5Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-6Wrapper {
+    background-color: green;
+}
+
+.btn-6Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-7Wrapper {
+    background-color: green;
+}
+
+.btn-7Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-8Wrapper {
+    background-color: green;
+}
+
+.btn-8Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-9Wrapper {
+    background-color: green;
+}
+
+.btn-9Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-10Wrapper {
+    background-color: green;
+}
+
+.btn-10Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-11Wrapper {
+    background-color: green;
+}
+
+.btn-11Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+.btn-12Wrapper {
+    background-color: green;
+}
+
+.btn-12Wrapper > .btn:hover {
+        box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
