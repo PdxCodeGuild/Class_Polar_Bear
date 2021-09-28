@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: azure;
     background-image: url("background.jpg");
@@ -16,4 +17,9 @@ img {
     width: 500px;
     height: 500px;
     border-radius: 50%;
+}
+
+ol {
+    display: inline-block;
+    align-items: center;
 }
