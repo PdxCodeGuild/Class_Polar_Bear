@@ -40,7 +40,7 @@ def numberGrade(grade):
             symbol = '-'  
         elif lastDigit >= '4' and lastDigit <= '6':
             symbol = ''
-        elif lastDigit <= '7' and lastDigit <= '9':
+        elif lastDigit >= '7' and lastDigit <= '9':
             symbol = '+'
     
     return letter + symbol
