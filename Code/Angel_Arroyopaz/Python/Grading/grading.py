@@ -88,9 +88,7 @@ elif user_input >= 60:
     elif user_input_extra >= 0:
         print("You got an \033[1m'D -'\033[0m, congratulations!")
     
-elif user_input >= 0:
-    if user_input_extra >= 5:
-        print("You got an \033[1m'F +'\033[0m, congratulations!")
-    elif user_input_extra >= 0:
-        print("You got an \033[1m'F -'\033[0m, congratulations!")
+else:
+    print("You got an \033[1m'F'\033[0m, congratulations!")
+
 
