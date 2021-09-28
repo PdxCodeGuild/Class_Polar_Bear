@@ -1,0 +1,27 @@
+/* main { 
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows*/
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 10% 2fr 4fr;
+}
+nav {
+    background-color: darkred;
+    grid-column: 1/5;
+    grid-row: 1/2;
+}
+aside {
+    background-color: forestgreen;
+    grid-column: 3/4;
+    grid-row: 2/5;
+}
+section {
+    background-color: darkslategrey;
+    grid-column: 3/4;
+}
+footer {
+    background-color: darkred;
+}

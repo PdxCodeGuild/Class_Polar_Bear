@@ -4,4 +4,14 @@
     background-color: springgreen;
 }
 
-@media (max-width: 600px)
+@media (max-width: 600px){
+    .square{
+        background-color: blueviolet;
+    }
+}
+
+@media (min-width: 601px){
+    .square{
+        border-radius: 50%;
+    }
+}
