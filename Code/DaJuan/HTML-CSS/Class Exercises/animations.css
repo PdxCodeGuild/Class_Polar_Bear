@@ -1,0 +1,106 @@
+.square {
+    height: 400px;
+    width: 400px;
+    background-color: blue;
+}
+
+.square:hover {
+    background-color: darkorchid;
+    animation-duration: 2s;
+}
+
+@keyframes change-color{
+    25% {
+        background-color: blue
+    }
+    50%{
+        background-color: darkred;
+    }
+    100%{
+        background-color: darkorchid;
+        height: 200px;
+        width: 600px;
+    }
+}
+
+img:hover {
+    animation-name: zoom-image;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoom-image {
+    from {
+        box-shadow: none;
+    }
+    to {
+        box-shadow: 4px 4px 4px 0 black;
+        transform: scale(1.5);
+    }
+}
+
+.transition {
+    font-size: 50px;
+    text-decoration: none;
+    color: orange;
+    transition: all 4s ease-in; 
+}
+
+.transition:hover {
+    color: darkorange;
+    box-shadow: 4px 4px 4px 0 black;
+}
+
+.animate {
+    font-size: 50px;
+    text-decoration: none;
+    color: lightblue;
+}
+
+.animate:hover {
+    animation: link-animation 2s ease-in-out;
+}
+
+@keyframes link-animation {
+    to {
+        color: blue;
+        text-decoration: underline;
+    }
+}
+
+.spinner {
+    font-size: 50px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 4px 4px 4px 0;
+}
+
+.spinner:focus {
+    animation: focus-button 2s ease-in; 
+
+}
+
+.spinner:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes active-button {
+    to {
+        box-shadow: none;
+        transform: translate(4px, 4px);
+        
+    }
+}
+
+@keyframes focus-button {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
