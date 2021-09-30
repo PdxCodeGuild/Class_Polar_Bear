@@ -37,30 +37,28 @@ while loop==True:
         output=f'{counter}. {option}'
         print(output)
         counter+=1
-        place='start'
 
 #Users choice
-    user=input('\nEnter your selection: ')
-    user=user.title() #Capitalizes the response to match the options.
+    user=input('\nEnter your selection: ').title()
 
 #Computer's choice
     computer=random.choice(options)
 
     result=results_check(user, computer)
     if result=='Invalid':
-        print(f'\n{user} is an invalid selection. Try again.\n')
+        print(f'\n"{user}" is an invalid selection. Try again.\n')
         continue
     else:
-        print(f'User: {user}\nComputer: {computer}\n{result}\n')
+        print(f'User: "{user}"\nComputer: "{computer}"\n{result}\n')
 
     while True:
-        try_again=input("Would you like to play again? y/n: ")
-        if try_again=='n':
+        try_again=input("Would you like to play again? Yes/No: ").title()
+        if try_again=='N' or try_again=='No':
             loop=False
             break
-        elif try_again=='y':
+        elif try_again=='Y' or try_again=='Yes':
             loop=True
             break
         else:
-            print(f'{try_again} is an invalid response. Would you like to play again? y/n: ')
+            print(f'\n"{try_again}" is an invalid response.')
             continue
