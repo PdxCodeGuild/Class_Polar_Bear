@@ -38,6 +38,9 @@ while True:
       print("You win!")
     elif comp == "rock":
       print("You lose!") 
-
-
+  user2 = input("would you like to play again: ")
+  if user2 == "yes":
+    continue
+  if user2 == "no":
+    quit() 
 
