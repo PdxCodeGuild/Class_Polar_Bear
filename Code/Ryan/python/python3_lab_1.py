@@ -1,18 +1,13 @@
 score = input('Please enter a number representing the score (0-100): ')
 # Need to do an input validation if a letter is typed in this will be taught in 102 and requires
 # a 'try' / 'except' structure to see if using the float() function on the str would produce an error.
-score = float(score)
+try:
+    score = float(score)
+except ValueError:
+    print('invalid grade..goodbye')
+    exit()
 specific_score = score % 10
 
-'''
-Long hand of the same as modulus
-if score >= 90 and score < 94.5:
-    grade = 'A-'
-elif score >= 94.5 and score < 95.5:
-    grade = 'A'
-elif score >= 95.5 and score <= 100:
-    grade = 'A+'
-'''
 if score == 100:
     grade = 'A'
     specific_score = 9
@@ -41,3 +36,14 @@ else:
     print('')
 #print(type(score))
 print(f'Your score of ({score}) is a(n) {grade}{specific_grade}')
+
+
+'''
+Long hand of the same as modulus
+if score >= 90 and score < 94.5:
+    grade = 'A-'
+elif score >= 94.5 and score < 95.5:
+    grade = 'A'
+elif score >= 95.5 and score <= 100:
+    grade = 'A+'
+'''
