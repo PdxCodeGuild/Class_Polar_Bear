@@ -32,3 +32,5 @@ while again == 'y':
     computerChoice = random.choice(choices)
     rpsGame(userChoice,computerChoice)
     again = input('Would you like to play Rock, Paper, Scissors again(y/n)?')
+    if again == 'n':
+        print('See you next time')
