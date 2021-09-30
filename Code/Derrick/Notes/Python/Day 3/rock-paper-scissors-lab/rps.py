@@ -1,7 +1,4 @@
-import random
-import string
-
-def rpsGame(user,computer):
+def game(user,computer):
     printMsg = (f'I chose {computer}, ')
     lose = ' you lose.'
     win = ' you win.'
@@ -23,14 +20,3 @@ def rpsGame(user,computer):
             print(printMsg + lose)
         elif computer == 'paper':
            print(printMsg + win)
-
-again = 'y'
-choices = ['rock','paper','scissors']
-
-while again == 'y':
-    userChoice = input('Choose Rock, Paper or Scissors: ').lower()
-    computerChoice = random.choice(choices)
-    rpsGame(userChoice,computerChoice)
-    again = input('Would you like to play Rock, Paper, Scissors again(y/n)?')
-    if again == 'n':
-        print('See you next time')
