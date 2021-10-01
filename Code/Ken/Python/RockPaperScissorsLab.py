@@ -17,6 +17,7 @@ for selection in selections:
 # User Input
 
 user_selection = input("Enter your selection: ")
+user_selection = user_selection.lower()
 
 #Random computer choice
 
