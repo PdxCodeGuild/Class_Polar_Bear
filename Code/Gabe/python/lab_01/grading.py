@@ -1,7 +1,7 @@
 grade = input('Enter number grade: ')
 
 try:
-  grade = int(grade)
+  grade = float(grade)
 except ValueError:
   print('Please enter a number from 0 to 100.')
 

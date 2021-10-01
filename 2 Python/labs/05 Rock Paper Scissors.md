@@ -20,8 +20,3 @@ Let's list all the cases:
 ## Version 2 (optional)
 
 After playing, ask them if they'd like to play again. If they say yes, restart the game, otherwise exit.
-
-
-## Version 3 (optional)
-
-Rock, paper, scissors, lizard, Spock! https://www.instructables.com/id/How-to-Play-Rock-Paper-Scissors-Lizard-Spock/
