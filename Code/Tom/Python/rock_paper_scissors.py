@@ -31,7 +31,7 @@ Welcome='\nWelcome to Rock, Paper, Scissors!\n\nYour options are:\n'
 print(Welcome)
 
 while loop==True:
-#Create counter and display options.
+#Create counter and display options
     counter=1
     for option in options:
         output=f'{counter}. {option}'
@@ -52,7 +52,7 @@ while loop==True:
         print(f'User: "{user}"\nComputer: "{computer}"\n{result}\n')
 
     while True:
-        try_again=input("Would you like to play again? Yes/No: ").title()
+        try_again=input("Would you like to play again? (Yes/No): ").title()
         if try_again=='N' or try_again=='No':
             loop=False
             break
