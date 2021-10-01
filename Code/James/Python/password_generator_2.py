@@ -54,5 +54,3 @@ random.shuffle(password_list)
 password = "".join(password_list)
 
 print(f'Your password is {password}')
-print(password_list)
-print(password_string)
