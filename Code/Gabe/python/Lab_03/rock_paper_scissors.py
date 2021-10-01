@@ -4,7 +4,7 @@ choices = ['rock', 'paper', 'scissors']
 
 
 while True:
-  user_choice = input(f'\nEnter choice between {choices[0]}, {choices[1]}, or {choices[2]}: ')
+  user_choice = input(f'\nEnter choice between {choices[0]}, {choices[1]}, or {choices[2]}: ').lower()
   computer_choice = random.choice(choices)
 
   if user_choice != 'rock' and user_choice != 'paper' and user_choice != 'scissors':
@@ -29,6 +29,7 @@ while True:
   play_again = input('\nWould you like to play again? y/n: ')
 
   if play_again == 'n' or play_again == 'no':
+    print('\nThanks for playing!')
     break
   else:
     continue
