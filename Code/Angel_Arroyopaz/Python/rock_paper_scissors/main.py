@@ -28,29 +28,27 @@ If they say yes, restart the game, otherwise exit.
 # import random module
 import random
 
+# explaining the game to the user
+print('''Hello and welcome. This is a Rock-Paper-Scissors game, and you'll be playing against me (the computer) \nRules are as follow: \n
+YOU  vs COMPUTER
+
+rock vs rock = Tie
+rock vs paper = Computer
+rock vs scissors = Human
+paper vs paper = Tie
+paper vs rock = Human
+paper vs scissors = Computer
+scissors vs scissors = Tie
+scissors vs rock = Computer
+scissors vs paper = Human''')
+
+# create list
+list = ["rock", "paper", "scissors"]
+
 # while loop
 while True:
-    # explaining the game to the user
-    print('''Hello and welcome. This is a Rock-Paper-Scissors game, and you'll be playing against me (the computer) \nRules are as follow: \n
-    YOU  vs COMPUTER
-
-    rock vs rock = Tie
-    rock vs paper = Computer
-    rock vs scissors = Human
-    paper vs paper = Tie
-    paper vs rock = Human
-    paper vs scissors = Computer
-    scissors vs scissors = Tie
-    scissors vs rock = Computer
-    scissors vs paper = Human''')
-
-    # create list
-    list = ["rock", "paper", "scissors"]
-
     print("\n")
-
     # display list
-
     for option in list:
         print(f"Option {list.index(option)} - {option}")
 
@@ -60,15 +58,12 @@ while True:
     user_input = input("Please select one option from the list above(i.e. rock): ")
 
     # convert user input to lowercase
-    user_input = str.lower(user_input)
+    user_input = user_input.lower()
    
     print("\n")
 
     # computer gets a random choice
     computer = random.choice(list)
-
-    # print the computers output
-    print(f"Computer's choice is: {computer}")
 
     print("\n")
     
@@ -93,6 +88,10 @@ while True:
             print("You lost!")
         elif computer == "paper":
             print("You won!")
+
+    else:
+        print("Invalid entry. Try again.")
+        continue
     
     print("\n")
     
@@ -100,7 +99,7 @@ while True:
     # If yes we restart the game
     # If not we break the loop and end the game
     play_again = input("Would you like to play again?(yes/no): ")
-    play_again = str.lower(play_again)
+    play_again = play_again.lower()
 
     print("\n")
     
