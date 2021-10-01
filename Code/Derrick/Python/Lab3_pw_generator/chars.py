@@ -1,22 +1,38 @@
-import random
+import random 
 import string
 
+lower = string.ascii_lowercase
+upper = string.ascii_uppercase
 numbers = string.digits
 symbols = string.punctuation
-upper = string.ascii_uppercase
-lower = string.ascii_lowercase
+letters = string.ascii_letters
+options = ['uppercase letters','lowercase letters','symbols','numbers']
 
-upper_count = input('How many uppercase letters do you want?')
-lower_count = input('How many lowercase letters do you want?')
-symbol_count = input('How many symbols do you want?')
-num_count = input('How many numbers do you want?')
+
+## functions ##
+
+def passwordGenerator(length,list):
+    pw = ''
+    
+    try:
+        length = int(length)
+                    
+    except ValueError:
+        print('Invalid number')
+        exit()
+        
+    while len(pw) < length:
+        random_char = random.choice(list)
+        pw += random_char
+
+    print(f'Your password is {pw}')
 
 def allChars(a,b,c,d):   
     final_password = numOfUpper(a) + numOfLower(b) + numOfSymbols(c) + numOfNumbers(d)
     final_password = list(final_password)
     random.shuffle(final_password)
     final_password = ''.join(final_password)
-    print(final_password)
+    print(f'Your password of {a} {options[0]}, {b} {options[1]}, {c} {options[2]} and {d} {options[3]} is {final_password}')
     
 def numOfUpper(n):
     i = 0
@@ -47,5 +63,3 @@ def numOfNumbers(n):
         num_of_numbers += str(random.choice(numbers))
         i += 1
     return num_of_numbers
-
-allChars(upper_count,lower_count,symbol_count,num_count)
