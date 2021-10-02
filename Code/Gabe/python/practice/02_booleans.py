@@ -72,6 +72,7 @@ def test_near_100():
 
 def maximum_of_three(a, b, c):
     return max(a, b, c)
+    
 
 def test_maximum_of_three():
     assert maximum_of_three(5,6,2) == 6
