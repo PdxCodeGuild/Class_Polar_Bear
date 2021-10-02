@@ -30,11 +30,7 @@ while True:
   upper_amount = input('How many upper case letters? ')
   numbers_amount = input('How many numbers? ')
   special_characters_amount = input('How many special characters? ')
-  password = ''
-  l = ''
-  u = ''
-  n = ''
-  sc = ''
+
   try:
     lower_amount = int(lower_amount)
     upper_amount = int(upper_amount)
@@ -43,6 +39,12 @@ while True:
     break
   except ValueError:
     print('\nOnly enter numbers! Try Again')
+
+password = ''
+l = ''
+u = ''
+n = ''
+sc = ''
 
 i = 0
 while i < lower_amount:
