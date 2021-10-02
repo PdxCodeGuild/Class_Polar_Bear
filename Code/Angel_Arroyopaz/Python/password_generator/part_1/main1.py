@@ -28,7 +28,6 @@ while True:
 password = ""
 
 # we define our variables of strings so we can pull strings/digits/symbols from here down in our code
-letters = string.ascii_letters
 letters_lower = string.ascii_lowercase
 letters_upper = string.ascii_uppercase
 digits = string.digits
@@ -37,7 +36,7 @@ symbols = string.punctuation
 # start while loop to generate 10 characters long password
 while len(password) < n:
     # we generate a random character
-    random_character = random.choice(letters + letters_upper) 
+    random_character = random.choice(letters_lower + letters_upper + digits + symbols) 
     # we add every random character to the loop/iteration
     password += random_character
 
