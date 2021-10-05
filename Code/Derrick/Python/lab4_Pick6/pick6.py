@@ -3,7 +3,7 @@ import random
 def pick_numbers():
     final_list = []
     for i in range(6):
-        final_list.append(random.randint(1,6))
+        final_list.append(random.randint(1,99))
     return final_list  
 
 def winning_numbers():
