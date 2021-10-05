@@ -42,9 +42,9 @@ def ticket(num_of_tickets):
             balance += 0
 
     if balance > 0:
-        print(f'You earned ${balance}!')
+        print(f'You earned ${"{:,}".format(balance)}!')
     else:
-        print(f'You lost ${abs(balance)} :(')
+        print(f'You lost ${"{:,}".format(abs(balance))} :(')
     
 
 
