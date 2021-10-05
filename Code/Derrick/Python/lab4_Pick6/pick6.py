@@ -14,13 +14,14 @@ def winning_numbers():
 
 def ticket(num_of_tickets):
     balance = 0
-    expenses = 0
-    earnings = 0
+
     for i in range(num_of_tickets):
+        # vars #
         user_numbers = pick_numbers()
         balance -= 2
-        expenses += 2
         matches = 0
+        # vars #
+
         for i in range(6):
             if user_numbers[i] == x[i]:
                 matches += 1
@@ -39,9 +40,11 @@ def ticket(num_of_tickets):
             balance += 25000000
         else:
             balance += 0
-            earnings += 0
 
-    print(balance)
+    if balance > 0:
+        print(f'You earned ${balance}!')
+    else:
+        print(f'You lost ${abs(balance)} :(')
     
 
 
