@@ -38,7 +38,7 @@ for x in enumerate(letterGrade):
     #find the value of the inputs one position by using modulus operator
     # and given the condition add the string of + or - to the grade variable 
 if number_grade % 10 > 7:
-    print(grade + '+')
+    print( grade + '+')
 elif number_grade % 10 < 7:
     print(grade + '-')
 

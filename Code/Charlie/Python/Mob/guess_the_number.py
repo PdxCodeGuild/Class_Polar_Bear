@@ -1,3 +1,9 @@
+# Tom Hunter
+# Reece Adams
+# Bowie Hall 
+# James Thornton
+
+
 import random
 
 counter = 0
