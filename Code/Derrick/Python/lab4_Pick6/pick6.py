@@ -51,5 +51,5 @@ def ticket(num_of_tickets):
     
 x = winning_numbers()
 print(x)
-ticket(5)
+ticket(100000)
 
