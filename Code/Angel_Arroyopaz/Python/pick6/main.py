@@ -41,14 +41,22 @@ def profit(matches, payout=0):
     return payout
 
 balance = 0
-
+expenses = 0
+earnings = 0
 winner_ticket = random_ticket()
 
 # loop 100,000 times
 for i in range(100000):
     user_ticket = random_ticket()
-    balance -= 2
+    expenses += 2
     compare_results = compare(winner_ticket, user_ticket)
-    balance += profit(compare_results)
+    earnings += profit(compare_results)
 
-print("$", balance)     
+roi = (earnings - expenses)/expenses
+balance = earnings - expenses
+
+print(f"Balance: ${balance}")
+print(f"ROI:{roi}%")
+print(f"Earnings: ${earnings}")
+print(f"Expenses: ${expenses}")
+
