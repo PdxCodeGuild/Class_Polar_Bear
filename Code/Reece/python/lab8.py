@@ -12,7 +12,7 @@ def ran_tick():
         pick6_list.append(random.randint(1,99))
     return pick6_list
 
-winning_list = [1] #ran_tick()
+winning_list = [1,2,3,4,5,6] #ran_tick()
 
 # player_list = [1,2,3,4,5,0]# ran_num()
 
@@ -84,23 +84,39 @@ def earnings():
     return earnings
 
 
-def game_loop():
-    repititions = 0
-    for i in range(100000):
-        repititions += 1
-    return repititions
+# def game_loop():
+#     repititions = 0
+#     for i in range(100000):
+#         repititions += 1
+#     return repititions
+
+def list_check(list1): # add in calculations within this function
+    matches = 0
+    winning_list = [1,2,3,4,5,6]
+    for i in range(6):
+        if list1[i] == winning_list:
+            matches += 1
+        else:
+            matches = 0
+    return matches # add in calculations within this function here to return earning with a variable
 
 def game_loop():
-    matches = 0
+    # matches = 0
+    
     balance = 0
     repititions = 0
     for i in range(100000):
+        # matches = 0
         repititions += 1
-        player_ticket = [1]# ran_tick()
+        player_ticket = [1,2,3,4,5,6]# ran_tick()
+        list_check(player_ticket) # MATCH WON'T HAPPEN...BECAUSE IT'S NOT UPDATING IN THE GAME LOOP...DOUBLE GAME LOOP???????!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         purchases(repititions)
-        list_check(player_ticket) # MATCH WON'T HAPPEN...BECAUSE IT'S NOT UPDATING IN THE GAME LOOP...DOUBLE GAME LOOP?
     return repititions, balance, matches
 
+player_ticket = [1,2,3,4,5,6]
+
+
+print(list_check(player_ticket))
 
     # def game_loop():
     #     repititions = 0
@@ -124,7 +140,7 @@ def game_loop():
 #         earnings()
 #     return repititions, balance, earnings
 
-print(game_loop())
+# print(game_loop())
 
 # def game_loop():
 #     repititions = 0
@@ -155,12 +171,12 @@ print(game_loop())
 
 # # print(earnings())
 
-# def list_check(list1, list2=winning_list): # add in calculations within this function
-#     matches = 0
-#     for i in range(6):
-#         if list1[i] == list2[i]:
-#             matches += 1
-#     return matches # add in calculations within this function here to return earning with a variable
+def list_check(list1, list2=winning_list): # add in calculations within this function
+    matches = 0
+    for i in range(6):
+        if list1[i] == list2[i]:
+            matches += 1
+    return matches # add in calculations within this function here to return earning with a variable
 
 # check = list_check(player_list)
 
