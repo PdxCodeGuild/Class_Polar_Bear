@@ -1,5 +1,7 @@
 import random 
 
+# vars #
+
 cards = {
     'A': 1,
     '2': 2,
@@ -22,6 +24,10 @@ playerCards = {
     'thirdCard': input('What is your third card?')
 }
 
+sum = 0
+
+# functions #
+
 def printTotal(msg):
     print(msg)
 
@@ -30,14 +36,17 @@ def hitStayBust(n):
         printTotal(n)
         print('BLACKJACK!')
         exit()
+
     elif n > 21:
         printTotal(n)
         print('BUST!')
         exit()
+
     elif n > 17 and n < 21:
         printTotal(n)
         print('Stay.')
         exit()
+
     else:
         while n < 21:
             if n < 17:
@@ -51,21 +60,25 @@ def hitStayBust(n):
                 if n > 21:
                     print('BUST')
                     break
+
                 if n == 21:
                     print('BLACKJACK!')
                     break
+
                 else:
                     continue
+
             elif n == 21:
                 printTotal(n)
                 print('BLACKJACK!')
                 break
+
             else:
                 printTotal(n)
                 print('Stay.')
                 break
 
-sum = 0
+#  Logic #
 
 for card in playerCards:
 
@@ -78,7 +91,10 @@ for card in playerCards:
     else:
         playerCards[card] = int(playerCards[card])
 
-    sum += playerCards[card] 
+    sum += playerCards[card]   
+
+# Run blackjack helper #
 
 hitStayBust(sum)
+
 
