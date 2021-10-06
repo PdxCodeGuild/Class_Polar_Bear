@@ -86,18 +86,23 @@ def multiply_by_ten_or_whatever_you_want(num1, num2 = 10):
 
 # print(multiply_by_ten_or_whatever_you_want(4, 78))
 
-# x = 45
 
-# def crazy(num):
-#   while num != 1:
-#     num = (3*num) + 1
-#     print(num)
+# def greeting(message = 'Hello World', num = 1):
+#   print(message * num)
+#   return None # default
 
-# print(crazy(4))
+# print(greeting('This is Halloween '))
 
-def greeting(message = 'Hello World', num = 1):
-  print(message * num)
-  return None # default
 
-print(greeting('This is Halloween '))
+# def unsolvable(n):
+#   count = 0
+#   while n != 1:
+#     print(n)
+#     count+=1
+#     if n % 2 == 0:
+#       n //= 2
+#     else:
+#       n = (3 * n) + 1
+#   return n, count
 
+# print(unsolvable(100000000000000000))
