@@ -43,9 +43,10 @@ def hitStayBust(n):
             if n < 17:
                 printTotal(n)
                 print('Hit.')
-                randCard = random.choice(list(cards.values()))
+                randChoice = random.choice(list(cards.keys()))
+                randCard = cards[randChoice]
                 n += randCard
-                print(f'Your new total is {n}')
+                print(f'Your newest card has a value of {randChoice}. Your total is now {n}')
 
                 if n > 21:
                     print('BUST')
