@@ -56,12 +56,14 @@ def find_key(d, value):
 # Write a function that takes a dictionary and returns a new dictionary with the keys and values reversed.
 
 def reverse_dict(d):
-    new = ()
-    items = list(d.items())
-    
-    for item in items:
-        new += item[::-1]
-    return new
+    new = {}
+    keys = list(d.keys())
+    values = list(d.values())
+
+    for i in values:
+        new[i] = keys[values.index(i)]
+
+    return new 
 
 # print(reverse_dict({'a': 1, 'b': 2})) # {1: 'a', 2: 'b'}
 
