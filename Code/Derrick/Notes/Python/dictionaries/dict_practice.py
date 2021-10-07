@@ -101,7 +101,7 @@ def remove_less_than_10(d):
 def average_values(d):
     keys = list(d.keys())
     values = list(d.values())
-    newList = d.copy()
+    newList = {}
 
     for items in values:
         sum = 0
@@ -123,25 +123,57 @@ def average_values(d):
 # Write a function that takes two dictionaries and returns a new dictionary with the values from each added together if they have the same key
 
 def merge_dictionaries(d1, d2):
-    ...
+    keys = list(d1.keys()) + list(d2.keys()) 
+    values = list(d1.values()) + list(d2.values())
+    new = {}
+
+    for i in keys:
+        if keys.count(i) == 1:
+            new[i] = values[keys.index(i)]
+            # new['c'] = values[keys.index('c')] 
+            # new['c'] = values[2]
+            # new['c'] = 300
+
+        elif keys.count(i) > 1:
+            new[i] = d1[i] + d2[i]
+            # new['a'] = d1['a'] + d2['a']
+            # new['a'] = 100 + 300
+
+    return new
 
 # d1 = {'a': 100, 'b': 200, 'c': 300}
 # d2 = {'a': 300, 'b': 200, 'd': 400}
+# print(merge_dictionaries(d1, d2))
 # print(merge_dictionaries(d1, d2)) # {'a': 400, 'b': 400, 'c': 300, 'd': 400}
 
 # Count Votes ==================================================================
 # Write a function that takes a list of strings and counts of the number of occurances.
 
 def count_votes(votes):
-    ...
+    new = {}
+    for name in votes:
+        new[name] = votes.count(name)
+    return new
+
 # votes = ['john', 'johnny', 'john', 'jackie', 'jamie', 'jackie', 'jamie', 'jamie', 'john', 'johnny', 'jamie', 'johnny', 'john']
 # print(count_votes(votes)) # {'john': 4, 'johnny': 3, 'jackie': 2, 'jamie': 4}
 
 # Problem 6 ====================================================================
 # Write a function `cart_total` to calculate the total of a shopping cart given a list of dictionaries representing a cart and a dictionary representing prices.
 
-def cart_total(prices, cart):
-    ...
+def cart_total(prices,cart):
+    total = 0
+ 
+    for product in cart:
+        
+        if product.get('item') in prices.keys(): # if 'apples' is in prices.keys()
+            
+            x = product.get('item') # x = 'apples' 
+
+            total += product.get('quantity') * prices.get(x) # total += apples quantity * prices.get('apples') / value of apples in prices dictionary since it exists in cart 
+ 
+    return total
+
 # prices = {'apples': 1.0, 'bananas': 0.5, 'kiwis': 2.0}
 # cart = [{'item': 'apples', 'quantity': 3}, {'item': 'kiwis', 'quantity': 4}]
 # print(cart_total(prices, cart)) # 11.0
