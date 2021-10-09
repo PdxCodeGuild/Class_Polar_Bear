@@ -109,7 +109,7 @@ def earnings(matches):
 
 # matches = 1
 earnings(matches)
-print(tick_earnings)
+# print(tick_earnings)
 
 # print(earnings(matches))
 
