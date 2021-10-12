@@ -2,7 +2,7 @@ import string
 
 symbols = string.punctuation
 word_dict = {}
-
+new_word_list = []
 
 
 with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
@@ -20,7 +20,7 @@ with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
 
     while '' in word_list:
         word_list.remove('')
-new_word_list = []
+
 
 for i in range(len(word_list)):
     try:
