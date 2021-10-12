@@ -25,7 +25,7 @@ for word in text:
 #     print(words[i])
 
 
-# Count each pair and get top 10
+# Version 2 - Count how often each unique pair of words is used, then print the top 10 most common pairs with their counts.
 text_len = len(text)
 pair_dict = {}
 for i in range(text_len):
@@ -41,6 +41,8 @@ for i in range(text_len):
 # for i in range(min(10, len(pairs))):  # print the top 10 pairs, or all of them, whichever is smaller
 #     print(pairs[i])
 
+
+# Version 3 - Let the user enter a word, then show the words which most frequently follow it.
 user_word = input("Enter a word: ")
 followed_dict = {}
 for i in range(text_len):
@@ -55,3 +57,4 @@ followed = list(followed_dict.items())
 followed.sort(key=lambda tup: tup[1], reverse=True)
 for i in range(min(10, len(followed))):  # print the top 10 followed, or all of them, whichever is smaller
     print(followed[i])
+
