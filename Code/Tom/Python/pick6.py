@@ -40,6 +40,7 @@ def win_cal (matches_num):
         winnings+=25000000
     return winnings
 
+winnings=0
 total_winnings=0
 
 '''Function that compares however many tickets to the winning ticket'''
@@ -55,7 +56,7 @@ def ticket_trys (win_tick, num_try):
     return winnings
 
 
-total_tries=100000
+total_tries=1000000
 
 win=ticket_trys(ticket_win, total_tries)
 
@@ -65,6 +66,8 @@ roi=(total_winnings - lose)/lose
 
 print(roi)
 
-total_winnings+=win
+winnings+=win
 
-print(f'Your total winnings after {total_tries} tries is {total_winnings}.\nYour total loses are {lose}.\nYour ROI is {roi}.')
+total_winnings=winnings+lose
+
+print(f'Your total winnings after {total_tries} tries is {total_winnings}.\nYour winnings are {winnings}.\nYour loses are {lose}.\nYour ROI is {roi}.')

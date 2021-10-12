@@ -1,7 +1,7 @@
 # Take a user input number score and convert to a letter grade
 
 #array of letter grades
-letterGrade = ("A","B","C","D","F")
+letterGrade = ["A","B","C","D","F"]
 
 # input with error handling 
 try:
@@ -23,13 +23,13 @@ for x in enumerate(letterGrade):
     if x >= 90:
         grade = letterGrade[0]            
         break
-    if x >= 80:
+    elif x >= 80:
         grade = letterGrade[1]
         break
-    if x >= 70:
+    elif x >= 70:
         grade = letterGrade[2]
         break
-    if x >= 60:
+    elif x >= 60:
         grade = letterGrade[3]
         break
     else:
@@ -37,9 +37,9 @@ for x in enumerate(letterGrade):
         break    
     #find the value of the inputs one position by using modulus operator
     # and given the condition add the string of + or - to the grade variable 
-if number_grade % 10 > 7:
+if number_grade % 10 >= 7:
     print( grade + '+')
-elif number_grade % 10 < 7:
+elif number_grade % 10 <= 7:
     print(grade + '-')
 
             
