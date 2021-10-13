@@ -2,6 +2,8 @@
 import string
 import re
 
+book = 'saboteur_of_space.txt'
+
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -29,13 +31,13 @@ def ARI_formula(characters,words,sentences):
 
     return f'''
     {'-'*50}
-    The ARI for saboteur_of_space.txt is {level}
+    The ARI for {book} is {level}
     This corresponds to a {grade_level} level of difficulty
     that is suitable for an average person {ages} years old.
     {'-'*50}
     '''
 
-with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
+with open(book, 'r', encoding='utf-8') as file:
     plain_text = file.read()
     words = plain_text.split()
     words_length = len(words)
@@ -48,7 +50,7 @@ with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
     characters_length = count
 
 
-with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
+with open(book, 'r', encoding='utf-8') as file:
     file = file.read().strip().replace('\n',' ').strip()
 
     sentence_length = len(re.split('(?<=[.!?]) +',file)) # strips by sentence-ending punctuation
