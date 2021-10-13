@@ -39,9 +39,12 @@ def ARI_formula(characters,words,sentences):
 
 with open(book, 'r', encoding='utf-8') as file:
     plain_text = file.read()
-    words = plain_text.split()
-    words_length = len(words)
 
+    # vars
+    without_new_lines = plain_text.replace('\n',' ') # remove new lines
+    sentence_length = len(re.split('(?<=[.!?]) +',without_new_lines)) # strips by sentence-ending punctuation
+    words = plain_text.split() # list of words
+    words_length = len(words)
     count = 0
 
     for i in range(len(words)):
@@ -49,11 +52,5 @@ with open(book, 'r', encoding='utf-8') as file:
 
     characters_length = count
 
-
-with open(book, 'r', encoding='utf-8') as file:
-    file = file.read().replace('\n',' ')
-
-    sentence_length = len(re.split('(?<=[.!?]) +',file)) # strips by sentence-ending punctuation
     
-
 print(ARI_formula(characters_length,words_length,sentence_length))
