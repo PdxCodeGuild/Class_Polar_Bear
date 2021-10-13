@@ -23,13 +23,12 @@ with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
 
 user_word = input('Please enter a word to see which words most commonly follow it: ')
 
-
 for i in range(len(word_list)):
 
     if word_list[i] == user_word:
         if word_list[i + 1] not in word_dict.keys():
             word_dict[word_list[i + 1]] = 1
-                
+
         else:
             word_dict[word_list[i + 1]] += 1
     
