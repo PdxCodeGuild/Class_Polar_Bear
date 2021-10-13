@@ -51,7 +51,7 @@ with open(book, 'r', encoding='utf-8') as file:
 
 
 with open(book, 'r', encoding='utf-8') as file:
-    file = file.read().strip().replace('\n',' ').strip()
+    file = file.read().replace('\n',' ')
 
     sentence_length = len(re.split('(?<=[.!?]) +',file)) # strips by sentence-ending punctuation
     
