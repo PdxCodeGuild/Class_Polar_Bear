@@ -58,3 +58,6 @@ print(random.randint(0,5000000)) # gives random number between 2 numbers
 print(random.choice(pi))
 
 print(some_module.secretKey)
+
+# try:
+#     raise ValueError Forces exception declared below
