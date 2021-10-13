@@ -16,9 +16,18 @@ card_value = {
     "K":10
     }
 
-card1 = input("What is your first card? >").upper()
-card2 = input("What is your second card? >").upper()
-card3 = input("What is your third card? >").upper()
+    
+card1 = None
+while card1 not in card_value:
+    card1 = input("What is your first card? >").upper()
+
+card2 = None
+while card2 not in card_value:    
+    card2 = input("What is your second card? >").upper()
+
+card3 = None
+while card3 not in card_value:
+    card3 = input("What is your third card? >").upper()
 
 
 
@@ -34,3 +43,7 @@ def blackjack():
         return print(f"{total} Busted!")
         
 blackjack()
+
+#def ace_check(hand):
+     # hand is a list of cards in players hand
+     #if 'A' in hand:

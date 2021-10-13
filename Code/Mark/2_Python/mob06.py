@@ -1,7 +1,5 @@
 import random
 
-# create list of player dictionaries
-
 while True:
     players = []
     while True:
@@ -9,10 +7,12 @@ while True:
         if player_name == 'done':
             break
         players.append({'name': player_name, 'chips': 3})
+    
+    # [{'name': 'alpha','chips': 3}, {'name': 'beta','chips': 3}, {'name': 'delta','chips': 3}, {'name': 'gamma','chips': 3}]
 
     pot = 0
     while True:
-        for i in range(len(players)):
+        for i in range(len(players)): # 0, 1, 2, 3
             number_of_dice = min(3, players[i]['chips'])
             for _ in range(number_of_dice):
                 x = random.randint(1,6)
