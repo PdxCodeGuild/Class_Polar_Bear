@@ -27,7 +27,7 @@ def count():
         word_dict[word] += 1
     return word_dict
 
-word_dict = count(text_list)
+word_dict = count()
 
 words = list(word_dict.items()) # .items() returns a list of tuples
 words.sort(key=lambda tup: tup[1], reverse=True)  # sort largest to smallest, based on count
