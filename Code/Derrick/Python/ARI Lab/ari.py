@@ -1,7 +1,7 @@
 # characters, words, sentences
 import string
 import re
-import math
+
 ari_scale = {
      1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
      2: {'ages':   '6-7', 'grade_level':    '1st Grade'},
@@ -37,8 +37,6 @@ def ARI_formula(characters,words,sentences):
 
 with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
     plain_text = file.read()
-
-
     words = plain_text.split()
     words_length = len(words)
 
@@ -53,11 +51,7 @@ with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
 with open('saboteur_of_space.txt', 'r', encoding='utf-8') as file:
     file = file.read().strip().replace('\n',' ').strip()
 
-    sentence_length = len(re.split('(?<=[.!?]) +',file))
+    sentence_length = len(re.split('(?<=[.!?]) +',file)) # strips by sentence-ending punctuation
     
 
-
-
 print(ARI_formula(characters_length,words_length,sentence_length))
-
-# print(words_length,characters_length,sentence_length)
