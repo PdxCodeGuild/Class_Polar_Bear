@@ -14,12 +14,11 @@ for word in text:
     if "." in word:
         sentences += 1
 
-formula = round(((char_count / word_count * 4.71) +
-                 0.5 * (word_count/sentences) - 21.43))
-ari_score = str(formula)
-# print(type(ari_score))
-
-# TODO-------------------------------------------------------------------------
+score = round(((char_count / word_count * 4.71) +
+               0.5 * (word_count/sentences) - 21.43))
+if score > 14:
+    score = 14
+ari_score = str(score)
 
 ari_scale = {
     1: {'ages':   '5-6', 'grade_level': 'Kindergarten'},
@@ -38,12 +37,24 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-for scale in ari_scale:
-    val = ari_scale[scale]['ages'].split('-')[0]
-
-    if val == ari_score:
-        grade_level = ari_scale[scale]['grade_level']
-        age = ari_scale[scale]['ages']
-        print(f'''The ARI for  The Arabian Nights.txt is {ari_score}
-This corresponds to a {grade_level} of difficulty
+grade_level = ari_scale[score]['grade_level']
+age = ari_scale[score]['ages']
+print(f'''The ARI for  The Arabian Nights.txt is {ari_score}
+This corresponds to a {grade_level} level of difficulty
 that is suitable for an average person {age} years old.''')
+
+# for scale in ari_scale:
+#     val = ari_scale[scale]['ages'].split('-')[0]
+
+#     if val == ari_score or test > 18:
+#         if test > 18:
+#             print(f'''The ARI for  The Arabian Nights.txt is {ari_score}
+#     This corresponds to a college level of difficulty
+#     that is suitable for an average person 18-22 years old.''')
+#             break
+#         else:
+#             grade_level = ari_scale[scale]['grade_level']
+#             age = ari_scale[scale]['ages']
+#             print(f'''The ARI for  The Arabian Nights.txt is {ari_score}
+#     This corresponds to a {grade_level} level of difficulty
+#     that is suitable for an average person {age} years old.''')
