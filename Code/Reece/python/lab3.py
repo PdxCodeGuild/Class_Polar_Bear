@@ -28,7 +28,7 @@ else:
 
 ones_digit = grade % 10
 
-print(ones_digit)
+# print(ones_digit)
 
 if grade >= 60:
     if ones_digit >= 7 or grade == 100:
