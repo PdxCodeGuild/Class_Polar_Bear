@@ -1,11 +1,4 @@
 
-# print(text)
-
-# word_dict = {}
-
-# for word in text:
-#     word_dict[word] = len(word)
-# print(word_dict)
 
 with open("../lab15/book.txt", encoding="utf-8") as file:
     text = file.read().strip().split(' ')
@@ -24,7 +17,7 @@ for word in text:
 formula = round(((char_count / word_count * 4.71) +
                  0.5 * (word_count/sentences) - 21.43))
 ari_score = str(formula)
-print(type(ari_score))
+# print(type(ari_score))
 
 # TODO-------------------------------------------------------------------------
 
@@ -45,4 +38,12 @@ ari_scale = {
     14: {'ages': '18-22', 'grade_level':      'College'}
 }
 
-for x in ar
+for scale in ari_scale:
+    val = ari_scale[scale]['ages'].split('-')[0]
+
+    if val == ari_score:
+        grade_level = ari_scale[scale]['grade_level']
+        age = ari_scale[scale]['ages']
+        print(f'''The ARI for  The Arabian Nights.txt is {ari_score}
+This corresponds to a {grade_level} of difficulty
+that is suitable for an average person {age} years old.''')
