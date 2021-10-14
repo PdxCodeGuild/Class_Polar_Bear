@@ -22,6 +22,7 @@ for value in rain_dict.values():
     sum += value
     mean = round(sum / len(rain_dict.values()),2)
 
+
 earliest_date = list(rain_dict.keys())[-1]
 location = ''
 for i in rain_chart:
@@ -29,4 +30,4 @@ for i in rain_chart:
     if i == '.':
         break
 
-print(f'Starting from {earliest_date} the daily average rainfall for {location} is {round(mean * .01,2)} inches')
+print(f'Starting from {earliest_date} the daily average rainfall for {location} is {round(mean * .01, 2)} inches')
