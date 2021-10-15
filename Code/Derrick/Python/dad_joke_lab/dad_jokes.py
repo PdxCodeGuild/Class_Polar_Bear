@@ -1,4 +1,5 @@
 import requests 
+import time 
 
 url = 'https://icanhazdadjoke.com/search'
 
@@ -7,7 +8,7 @@ dataType = {
 }
 
 queries = {
-        'limit': 1
+        # 'limit': 1
 }
 
 while True:
@@ -21,7 +22,18 @@ while True:
     data = requests.get(url,headers=dataType,params=queries).json()
 
     try:
-        print(data['results'][0]['joke'])
+        for i in data['results']:
+            print('Fetching joke....')
+            time.sleep(2)
+            print(i['joke'])
+            time.sleep(2)
+            again = input(f'Would you like to hear another one related to {userInput}?')
+
+            if again.lower() == 'no':
+                break
+            else:
+                continue  
+
     except IndexError:
         print('No joke found')
 
