@@ -21,8 +21,12 @@ while True:
     queries['term'] = userInput
     data = requests.get(url,headers=dataType,params=queries).json()
 
-    try:
-        for i in data['results']:
+    if data['results'] == []:
+            print('No joke found...')
+    
+    for i in data['results']:
+         
+        try:
             print('Fetching joke....')
             time.sleep(2)
             print(i['joke'])
@@ -30,10 +34,10 @@ while True:
             again = input(f'Would you like to hear another one related to {userInput}?')
 
             if again.lower() == 'no':
-                break
-            else:
-                continue  
+                break  
 
-    except IndexError:
-        print('No joke found')
+        except IndexError:
+            print('No joke found')
+
+        
 
