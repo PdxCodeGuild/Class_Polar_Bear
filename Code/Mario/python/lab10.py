@@ -8,8 +8,6 @@ def clear(): return os.system('cls')
 
 headers = {
     'Accept': 'application/json',
-    'term': 'dog',
-    'limit': '1'
 }
 
 search = input("Enter a search term: ")
