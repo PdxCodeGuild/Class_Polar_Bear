@@ -13,7 +13,7 @@ def convert(list):
 
 def v_2_dict(list):
     dictionary = {}
-    for i in range(len(list) -2):
+    for i in range(len(list) -1):
         pair = list[i] + " " + list[i+1]
         if pair in dictionary:
             dictionary[pair] += 1
@@ -24,9 +24,9 @@ def v_2_dict(list):
 
 def most_freq_word(user_word, list):
     following_word = ""
-    for word in range(len(list)):
-        if list[word] == user_word:
-            following_word = list[word + 1]
+    for i in range(len(list)):
+        if list[i] == user_word:
+            following_word = list[i + 1]
 
     return following_word
 
