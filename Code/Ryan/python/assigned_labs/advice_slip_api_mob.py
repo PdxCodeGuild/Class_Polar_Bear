@@ -1,3 +1,4 @@
+# Arthur Andama, Angel Arroyo Paz, Ken Mazur, James Thornton, Mark Wilson, Derrick Johnson, Ryan Gaston
 # Advice Slip API
 # Let's use the Advice Slip API and <../docs/15%20Requests.md|requests module> to write a small program to give out advice.
 # Part 1
