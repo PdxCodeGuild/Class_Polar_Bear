@@ -1,10 +1,8 @@
 import requests
-import random
 
 
 ##### Version 1 - Get a random quote #####
 url = 'https://favqs.com/api/qotd'
-
 response = requests.get(url)
 response = response.json()
 
@@ -12,14 +10,10 @@ rand_quote = response['quote']['body']
 author = response['quote']['author']
 # print(rand_quote, ' -', author)
 
+
+
 ##### Version 2 - List Quotes by keyword #####
-url = 'https://favqs.com/api/quotes?page=1&filter=nature'
 headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'}
-
-# response = requests.get(url, headers=headers)
-
-# print(response.status_code)
-
 user_keyword = input('Enter a keyword: ')
 page = 0
 
