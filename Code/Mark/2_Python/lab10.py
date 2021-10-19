@@ -1,14 +1,9 @@
 import requests
 
 url = 'https://icanhazdadjoke.com/'
-
-headers = {
-    'Accept': 'application/json'
-}
+headers = {'Accept': 'application/json'}
 
 response = requests.get(url, headers=headers)
-
-print(response.text)
 
 data = response.json()
 

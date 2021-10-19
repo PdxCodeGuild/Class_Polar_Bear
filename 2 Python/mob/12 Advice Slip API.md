@@ -2,7 +2,7 @@
 # Advice Slip API
 
 
-Let's use the [Advice Slip API](https://api.adviceslip.com/) and [requests module](../docs/15%20Requests.md) and [json module](../../0%20General/07%20JSON,%20CSV,%20&%20XML.md#json) to write a small program to give out advice.
+Let's use the [Advice Slip API](https://api.adviceslip.com/) and [requests module](../docs/15%20Requests.md) to write a small program to give out advice.
 
 ## Part 1
 

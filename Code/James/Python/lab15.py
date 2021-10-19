@@ -19,8 +19,8 @@ unpunctuated2 = unpunctuated.strip("''")
 book = unpunctuated2.lower()
 '''
 
-punctuation= '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
-book=""
+punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+book = ""
 for x in text:
     if x not in punctuation:
         book=book+x
@@ -30,6 +30,8 @@ book_lower = book.lower()
 # split words into list
 
 word_list = book_lower.split(' ')
+
+# print(word_list)
 
 # put words into dictionary
 
