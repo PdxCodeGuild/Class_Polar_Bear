@@ -7,7 +7,7 @@ headers = {'Authorization': 'Token token="855df50978dc9afd6bf86579913c9f8b"'}
 def get_url(u,page=1,options={}):
 
     # vars
-    options['page'] = page_num
+    options['page'] = page
     options['filter'] = search 
     response = requests.get(u,params=options,headers=headers) 
     data = response.json()
