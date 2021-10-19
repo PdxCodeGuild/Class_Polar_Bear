@@ -36,7 +36,19 @@ print(data['joke'])
 # Part 2
 # Add the ability to "search" for jokes using another endpoint. 
 
-
+url2 = 'https://icanhazdadjoke.com/search'
+response2 = requests.get(url2, headers=headers)
+data2 = response2.json()
+# print(data2)
 
 # Create a REPL that allows one to enter a search term and go through jokes one at a time. 
+
+# joke_search = input('Enter a subject you would like to see in a Dad joke: ')
+# print(data2['results'][1]['joke'])
+'''
+for joke in data2['joke']:
+    if joke_search in data2[joke]: # FIX
+        print(data2['joke'][joke]) # FIX
+'''
+
 # You can also add support for multiple pages.
