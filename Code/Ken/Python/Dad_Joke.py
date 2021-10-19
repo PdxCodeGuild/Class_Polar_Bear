@@ -8,6 +8,8 @@ headers = {
 
 response = requests.get(url, headers=headers)
 
+print(response.text)
+
 data = response.json()
 
 print(data['joke'])
