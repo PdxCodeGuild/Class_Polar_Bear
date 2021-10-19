@@ -29,13 +29,13 @@ for word in range(len(joke_only)):
     for char in joke_only[word]:
         if char in punctuation and sentence != 1:
             end_sentence = word + 1
-            print(' '.join([joke_only[i] for i in range(end_sentence)]))
+            print(''.join([joke_only[i] for i in range(end_sentence)]))
             sentence = 1
             start_sentence = word + 1
             time.sleep(3)
             continue
 
-print(' '.join([joke_only[i] for i in range(start_sentence, len(joke_only))]))
+print(''.join([joke_only[i] for i in range(start_sentence, len(joke_only))]))
 
 
 
