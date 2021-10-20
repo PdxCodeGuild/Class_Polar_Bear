@@ -38,7 +38,11 @@ class ContactList:
     def print(self):
         # loop over self.contacts
         for contact in self.contacts:
-            print(contact)
+            print(f'''
+            Name: {contact['name']}
+            Phone: {contact['phone_number']}
+            Email: {contact['email']}
+            ''')
         # print the information for each contact on a separate line
 
     def add(self, name, phone_number, email):
