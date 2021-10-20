@@ -17,8 +17,7 @@ class ContactList:
             # 4) get the list of contacts out of the dictionary
             # 5) assign the list of dictionaries to self.contacts
             self.contacts = json_text['contacts']
-
-            # print(self.contacts)
+            self.contacts = sorted(self.contacts, key=lambda d: d['name']) 
             
     def count(self):
         # return the length of self.contacts
@@ -38,7 +37,6 @@ class ContactList:
 
     def print(self):
         # loop over self.contacts
-        self.contacts = sorted(self.contacts, key=lambda d: d['name'])
         for contact in self.contacts:
             print(contact)
         # print the information for each contact on a separate line
@@ -50,7 +48,7 @@ class ContactList:
             'phone_number': phone_number,
             'email': email
         }
-            
+           
         # add the new dictionary to self.contacts
         self.contacts.append(new_contact)
     
