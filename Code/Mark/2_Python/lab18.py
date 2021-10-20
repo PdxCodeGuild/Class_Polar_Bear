@@ -12,20 +12,18 @@ def quotes(p, k):
     return results
 
 while True:
-    page, x = 1, 0
+    page = 1
     keyword = input("enter a keyword to search for quotes or 'exit': ")
     if keyword == 'exit':
         break
 
     while True:
         results = quotes(page, keyword)
-        count = min(25, len(results)-x)
-        print(f'{count} quotes associated with {keyword} - page {page}')
-        for _ in range(count):
-            print(results[x])
-            x += 1
+        print(f'{len(results)} quotes associated with {keyword} - page {page}')
+        for result in results:
+            print(result)
 
-        if count < 25:
+        if len(results) < 25:
             print('no more pages')
             break
 
