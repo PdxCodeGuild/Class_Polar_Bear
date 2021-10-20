@@ -13,13 +13,13 @@ with open('book.txt', 'r', encoding = 'utf-8') as file:
 
 # Count sentences
 
+text = text.replace('..', '.')
+
 sentences = 0
 for character in text:
-    if character == ".":
+    if character in '.!?':
         sentences += 1
-for character in text:
-    if character == "..":
-        sentences -= 1
+
 # print(sentences)
 
 # Count words

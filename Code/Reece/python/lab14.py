@@ -58,8 +58,8 @@ character_count = character_check(text)
 
 # ARI Calculations ----------------------------------------------------------------------#
 
-ARI_level = int(4.71*(character_count/word_count) + (word_count/sentence_count) -
-                21.43) + (4.71*(character_count % word_count) + (word_count % sentence_count) - 21.43 > 0)
+ARI_level = int(4.71*(character_count/word_count) + 0.5*(word_count/sentence_count) -
+                21.43) + (4.71*(character_count % word_count) + 0.5*(word_count % sentence_count) - 21.43 > 0)
 
 if ARI_level > 14:
     ARI_level = 14
