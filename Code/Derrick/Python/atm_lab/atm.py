@@ -10,7 +10,7 @@ class ATM:
     
     def deposit(self, amount):
         self.atm_balance += amount
-        self.transactions.append(f'+ User deposited ${amount}')
+        self.transactions.append(f'+ User deposited ${amount}') 
     
     def check_withdrawal(self, amount):
         total = self.atm_balance - amount
@@ -26,21 +26,18 @@ class ATM:
         return amount
     
     def deposit_interest(self):
+        # Since deposit() is called in the while statement below after deposit_interest(), no need to add the print statement here and no need to add amount to balance here
+        # elif command == 'interest':
+            # amount = atm.deposit_interest() 
+            # atm.deposit(amount) 
         amount = self.atm_balance * self.rate
-        self.atm_balance += amount
-        self.transactions.append(f'+ User deposited ${amount}')
         return amount
     
     def print_transactions(self):
+        print('-' * 50)
         for transaction in self.transactions:
-            if self.transactions.index(transaction) == len(self.transactions) - 1:
-                print('-' * 50)
-                print(transaction)
-                print('-' * 50)
-                break 
-
-            print('-' * 50)
             print(transaction)
+        print('-' * 50)
 
 
 atm = ATM() # create an instance of our class
@@ -63,7 +60,7 @@ while True:
             print('Insufficient funds')
     elif command == 'interest':
         amount = atm.deposit_interest() # call the calc_interest() method
-        # atm.deposit(amount) 
+        atm.deposit(amount) 
         print(f'Deposited ${amount} in interest')
     elif command == 'print':
         atm.print_transactions() # call the print_transactions() method
