@@ -35,7 +35,7 @@ class RotCipher:
     def decrypt(self, text):
         self.create_rot_alphabet()
         self.text = text
-        for letter in text:
+        for letter in self.text:
             self.d.append(self.alpha[self.rot_alphabet.index(letter)])
 
         self.decrypted = ''.join(self.d)
