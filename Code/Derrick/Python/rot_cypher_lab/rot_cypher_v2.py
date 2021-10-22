@@ -1,0 +1,22 @@
+import string 
+
+alpha = list(string.ascii_lowercase)
+letters = []
+rot_num = int(input('Enter number for ROTN: '))
+word = input('Enter a word to be encoded: ')
+output = []
+
+for i in range(len(alpha)):
+    if alpha.index(alpha[i]) < rot_num and i + rot_num <= 25:
+        new_letter = alpha[i + rot_num]
+    elif i + rot_num > 25:
+        remainder = len(alpha) - alpha.index(alpha[i]) # q = 16, 25 - 16 = 9, 15-9 = correct letters index
+        new_index = rot_num - remainder
+        new_letter = alpha[new_index]
+        
+    letters.append(new_letter)
+
+for letter in word:
+    output.append(letters[alpha.index(letter)])
+
+print(''.join(output))
