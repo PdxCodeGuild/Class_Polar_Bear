@@ -83,7 +83,7 @@ while True:
         print(f'Loaded ${contact_list.count()} contacts.')
     elif command == 'save':
         contact_list.save()
-        print(f'Saved ${contact_list.count()} contacts.')
+        print(f'Saved {contact_list.count()} contacts.')
     elif command == 'print':
         contact_list.print()
     elif command == 'add':
