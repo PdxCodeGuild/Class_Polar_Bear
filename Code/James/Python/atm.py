@@ -10,10 +10,10 @@ class ATM:
     
     def __init__(self, act_balance=0, interest=0.1, years=0):
         # initialize our class with a balance of 0 and an interest rate of 0.1
-        self.act_balance = balance
-        self.interest = interest
-        self.years = years
-    
+        self.act_balance = 0
+        self.interest = 0.1
+        self.years = 0
+        
     def balance(self):
         # return the account balance
         return atm.act_balance
