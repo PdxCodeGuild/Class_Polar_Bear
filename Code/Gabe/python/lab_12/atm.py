@@ -1,3 +1,4 @@
+import math
 class ATM:
 
     def __init__(self):
@@ -9,7 +10,7 @@ class ATM:
 
     def balance(self):
         # return the account balance
-        return self.current_balance
+        return round(self.current_balance, 2)
         ...
 
     def deposit(self, amount):
@@ -37,7 +38,7 @@ class ATM:
         # calculate the amount of interest accumulated and add it to our balance
         # return the amount of interest added
         interest_amount = self.current_balance * self.interest_rate
-        self.current_balance += interest_amount
+        self.transactions.append(f"Interest amount of ${interest_amount} added to balance")
         return interest_amount
         ...
 
@@ -70,6 +71,7 @@ while True:
         trans_list = atm.print_transactions()
         for trans in trans_list:
             print(trans)
+        print(f"Current balance: {atm.balance()}")
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
