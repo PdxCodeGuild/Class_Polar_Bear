@@ -8,7 +8,7 @@ class ATM:
     
     def balance(self):
         # return the account balance
-        retur self.balance
+        return self.balance
 
     def check_withdrawal(self, amount):
         # returns true if the withdrawn amount won't put the account in the negative, false otherwise
