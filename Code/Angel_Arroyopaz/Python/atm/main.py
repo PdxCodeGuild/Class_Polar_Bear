@@ -3,33 +3,34 @@ class ATM:
     def __init__(self):
         # initialize our class with a balance of 0 and an interest rate of 0.1
         self.account_balance = 0
-        self.interest_rate = 0.01
+        self.interest_rate = 0.1
         self.transaction_list = []
     
     def balance(self):
         # return the account balance
-        return self.account_balance
+        return round(self.account_balance, 2)
     
     def deposit(self, amount):
         # add the given amount to the balance
         self.account_balance += amount
-        return self.account_balance + amount
     
     def check_withdrawal(self, amount):
         # returns true if the withdrawn amount won't put the account in the negative, false otherwise
         if self.account_balance - amount < 0:
             return False
-        else:
-            return True
+        return True
     
     def withdraw(self, amount):
         # removes the given amount from the balance and returns it
         self.account_balance -= amount
+        return self.account_balance
     
     def deposit_interest(self):
         # calculate the amount of interest accumulated and add it to our balance
         # return the amount of interest added
-        return self.account_balance * self.interest_rate
+        interest = self.account_balance * self.interest_rate
+        self.print_transactions(interest, 'deposit interest')
+        return interest
 
     def print_transactions(self, amount, transaction_type):
         transaction = f'User {transaction_type} ${amount}'
@@ -65,14 +66,15 @@ while True:
     elif command == 'statement':
         for i in range(len(atm.transaction_list)):
             print(atm.transaction_list[i])    
+        print(f'Your current balance is ${atm.balance()}')
     elif command == 'help':
         print('Available commands:')
-        print('balance  - get the current balance')
-        print('deposit  - deposit money')
-        print('withdraw - withdraw money')
-        print('interest - accumulate interest')
+        print('balance   - get the current balance')
+        print('deposit   - deposit money')
+        print('withdraw  - withdraw money')
+        print('interest  - accumulate interest')
         print('statement - print all transactions made in the account')
-        print('exit     - exit the program')
+        print('exit      - exit the program')
     elif command == 'exit':
         break
     else:
