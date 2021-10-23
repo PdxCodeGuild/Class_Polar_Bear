@@ -2,30 +2,30 @@ class ATM:
     
     def __init__(self):
         # initialize our class with a balance of 0 and an interest rate of 0.1
-        self.balance = 0
+        self.account = 0
         self.interest = 0.001
         self.trans = []
     
     def balance(self):
         # return the account balance
-        return self.balance
+        return self.account
 
     def check_withdrawal(self, amount):
         # returns true if the withdrawn amount won't put the account in the negative, false otherwise
-        if self.balance < amount:
+        if self.account < amount:
             return False
         return True
     
     def deposit(self, amount):
         # add the given amount to the balance
-        self.balance += amount
+        self.account += amount
         self.trans.append(f'deposit of ${amount}')
 
     def deposit_interest(self):
         # calculate the amount of interest accumulated and add it to our balance
         # return the amount of interest added
-        gain = self.balance*self.interest
-        self.balance += gain
+        gain = self.account*self.interest
+        self.account += gain
         return gain
 
     def print_transactions(self):
@@ -34,7 +34,7 @@ class ATM:
 
     def withdraw(self, amount):
         # removes the given amount from the balance and returns it
-        self.balance -= amount
+        self.account -= amount
         self.trans.append(f'withdrawal of ${amount}')
         return self.balance()
 
