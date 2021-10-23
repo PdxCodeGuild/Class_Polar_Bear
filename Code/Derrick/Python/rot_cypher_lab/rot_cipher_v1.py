@@ -2,7 +2,7 @@ import string
 
 alpha = list(string.ascii_lowercase)
 letters = []
-word = input('Enter a word to be encoded: ')
+word = input('Enter a word to be encoded: ').lower()
 output = []
 
 for i in range(len(alpha)):
