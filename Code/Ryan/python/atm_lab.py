@@ -1,49 +1,63 @@
+# Let's represent an ATM with a class containing two attributes: a balance and an interest rate. A newly created account will default to a balance of 0 and an interest rate of 0.1%. The REPL below calls the methods of the class to simulate an ATM.
+
 import math
 class ATM:
-
-    def __init__(self):
+    
+    def __init__(self, acct_balance=0, interest =.001):
         # initialize our class with a balance of 0 and an interest rate of 0.1
-        self.current_balance = 0
-        self.interest_rate = 0.1
-        self.transactions = []
-        ...
+        # 
+        self.acct_balance = acct_balance
+        self.interest = interest
+        self.transaction = []
+        # self.__account_balance = account_balance
+        # self.__deposit = deposit
 
+        ...
+    
     def balance(self):
         # return the account balance
-        return round(self.current_balance, 2)
+        # self.__account_balance = self.balance + (self.balance * self.interest)
+        # return {self.__account_balance}
+        return round(self.acct_balance, 2)
         ...
-
+    
     def deposit(self, amount):
         # add the given amount to the balance
-        self.current_balance += amount
-        self.transactions.append(f'User deposited ${amount}')
+        self.acct_balance += amount
+        
+        return self.acct_balance
         ...
-
+    
     def check_withdrawal(self, amount):
-        # returns true if the withdrawn amount won't put the account in the negative, false otherwise
-        if self.current_balance - amount >= 0:
-          return True
+        if amount <= self.acct_balance:
+            return True
         else:
-          return False
+            return False
+        
+        # returns true if the withdrawn amount won't put the account in the negative, false otherwise
         ...
-
+    
     def withdraw(self, amount):
         # removes the given amount from the balance and returns it
-        self.current_balance -= amount
-        self.transactions.append(f'User withdrew ${amount}')
-        return amount
+        self.acct_balance -= amount
+        return self.acct_balance
         ...
-
+    
     def deposit_interest(self):
         # calculate the amount of interest accumulated and add it to our balance
         # return the amount of interest added
-        interest_amount = self.current_balance * self.interest_rate
-        self.transactions.append(f"Interest amount of ${interest_amount} added to balance")
-        return interest_amount
-        ...
+        deposit_interest = self.acct_balance * self.interest
+        # add_interest = self.acct_balance
+        # print(type(add_interest))
+        # print(type(deposit_interest))
+        # self.balance = add_interest + deposit_interest
 
-    def print_transactions(self):
-        return self.transactions
+        return deposit_interest
+        ...
+    def print_transactions(self, amount, transaction_type):
+        transaction = f'User {transaction_type} ${amount}'
+        self.transaction_list.append(transaction)
+        
 
 atm = ATM() # create an instance of our class
 print('Welcome to the ATM')
@@ -67,18 +81,12 @@ while True:
         amount = atm.deposit_interest() # call the calc_interest() method
         atm.deposit(amount)
         print(f'Deposited ${amount} in interest')
-    elif command == 'transactions':
-        trans_list = atm.print_transactions()
-        for trans in trans_list:
-            print(trans)
-        print(f"Current balance: {atm.balance()}")
     elif command == 'help':
         print('Available commands:')
         print('balance  - get the current balance')
         print('deposit  - deposit money')
         print('withdraw - withdraw money')
         print('interest - accumulate interest')
-        print('transactions - get a list of transactions')
         print('exit     - exit the program')
     elif command == 'exit':
         break

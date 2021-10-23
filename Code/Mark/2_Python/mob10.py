@@ -5,7 +5,7 @@ alphabet = string.ascii_lowercase
 class RotCipher:
 
     def __init__(self, rot_amount=13):
-        self.rot_amount = rot_amount
+        self.rot_amount = rot_amount%26
 
     def encrypt(self, text):
         s = ''
