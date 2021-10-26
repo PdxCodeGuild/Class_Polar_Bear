@@ -13,10 +13,10 @@ class RotCipher:
 
     def create_rot_alphabet(self):
         for i in range(len(self.alpha)):
-            if self.alpha.index(self.alpha[i]) < self.rot_amount and i + self.rot_amount <= len(self.alpha):
+            if self.alpha.index(self.alpha[i]) < self.rot_amount and i + self.rot_amount <= len(self.alpha) - 1:
                 new_letter = self.alpha[i + self.rot_amount]
 
-            elif i + self.rot_amount > len(self.alpha):
+            elif i + self.rot_amount > len(self.alpha) - 1:
                 remainder = len(self.alpha) - self.alpha.index(self.alpha[i]) # q = 16, 25 - 16 = 9, 15-9 = correct letters index
                 new_index = self.rot_amount - remainder
                 new_letter = self.alpha[new_index]
@@ -25,8 +25,7 @@ class RotCipher:
 
     def encrypt(self, text):
         self.create_rot_alphabet()
-        self.text = text
-        for letter in self.text:
+        for letter in text:
             self.e.append(self.rot_alphabet[self.alpha.index(letter)])
 
         self.encrypted = ''.join(self.e)
@@ -34,8 +33,8 @@ class RotCipher:
     
     def decrypt(self, text):
         self.create_rot_alphabet()
-        self.text = text
-        for letter in self.text:
+        # self.text = text
+        for letter in text:
             self.d.append(self.alpha[self.rot_alphabet.index(letter)])
 
         self.decrypted = ''.join(self.d)
@@ -47,7 +46,8 @@ class RotCipher:
 
 rot_cipher = RotCipher(13)
 
-text = 'hello'
+text = 'pneumonoultramicroscopicsilicovolcanoconiosis' # Actually a word in English
+print(len(text))
 encrypted_text = rot_cipher.encrypt(text)
 print(encrypted_text) # uryyb
 decrypted_text = rot_cipher.decrypt(encrypted_text)

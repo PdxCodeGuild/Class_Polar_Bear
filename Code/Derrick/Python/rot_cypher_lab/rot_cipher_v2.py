@@ -7,9 +7,9 @@ word = input('Enter a word to be encoded: ')
 output = []
 
 for i in range(len(alpha)):
-    if alpha.index(alpha[i]) < rot_num and i + rot_num <= len(alpha):
+    if alpha.index(alpha[i]) < rot_num and i + rot_num <= len(alpha) - 1:
         new_letter = alpha[i + rot_num]
-    elif i + rot_num > len(alpha):
+    elif i + rot_num > len(alpha) - 1:
         remainder = len(alpha) - alpha.index(alpha[i]) # q = 16, 25 - 16 = 9, 15-9 = correct letters index
         new_index = rot_num - remainder
         new_letter = alpha[new_index]
