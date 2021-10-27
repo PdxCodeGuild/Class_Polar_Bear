@@ -23,7 +23,7 @@ In this lab we will explore django's routing system. We will be creating a mock 
 
 9. Verify you can visit each page by testing the routes in your browser.
 
-Version 2
+## Version 2
 Connect your css style pages to your templates using the static folder.
 > ex. app_name/static/app_name/styles.css
 
