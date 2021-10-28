@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'guess_number',
     'hello',
     'birthday',
+    'todo_list',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
