@@ -1,3 +1,5 @@
+# Reece Adams - lab06.py - lab 6 - Random Password Generator #
+
 import random
 import string
 

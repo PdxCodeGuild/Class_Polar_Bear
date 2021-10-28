@@ -1,4 +1,5 @@
-# Reece Adams - lab3.py - Grading #
+# Reece Adams - lab03.py - lab 3 - Grading #
+
 import math
 
 grade = input("Enter your grade: ")

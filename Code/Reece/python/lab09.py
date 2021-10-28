@@ -1,4 +1,4 @@
-# Reece Adams - Lab9.py - Blackjack Advice
+# Reece Adams - lab09.py - lab 9 - Blackjack Advice #
 
 # Version 1
 

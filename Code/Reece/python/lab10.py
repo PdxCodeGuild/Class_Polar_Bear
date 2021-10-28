@@ -1,3 +1,5 @@
+# Reece Adams - lab10.py - lab 10 - Dad Joke API #
+
 import requests
 import time
 
@@ -28,5 +30,5 @@ for i in data['results']:
     message = i['joke']
     for char in message:
         print(char, end='', flush=True)
-        time.sleep(.01)
+        time.sleep(.03)
     print(f"\n")

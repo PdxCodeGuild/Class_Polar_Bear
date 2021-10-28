@@ -1,5 +1,6 @@
-import random
+# Reece Adams - lab05.py - lab 5 - Rock Paper Scissors #
 
+import random
 
 rps_choice = [
     'rock',

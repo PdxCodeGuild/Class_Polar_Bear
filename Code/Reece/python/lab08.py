@@ -1,4 +1,4 @@
-# Reece Adams - lab08 - Pick 6 #
+# Reece Adams - lab08.py - lab 8 - Pick 6 #
 import random
 
 # Generate a list of 6 random numbers representing the winning tickets
