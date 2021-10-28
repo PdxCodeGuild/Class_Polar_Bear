@@ -3,14 +3,14 @@ from django.shortcuts import render
 
 # Create your views here.
 def render_animations(request):
-    return render(request, 'routing/animations.html', {})
+    return render(request, 'lab01_routing/animations.html', {})
 
 def render_bio(request):
-    return render(request, 'routing/bio.html', {})
+    return render(request, 'lab01_routing/bio.html', {})
 
 def render_blog(request):
-    return render(request, 'routing/blog.html', {})
+    return render(request, 'lab01_routing/blog.html', {})
 
-def render_landing_page(request):
-    return render(request, 'routing/company.html', {})
+def render_company(request):
+    return render(request, 'lab01_routing/company.html', {})
 
