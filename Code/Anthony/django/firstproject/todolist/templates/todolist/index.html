@@ -12,6 +12,8 @@
     <ul>
         {% for todo in todos %}
             <li>{{ todo }}</li>
+        {% empty %}
+            <li>No todos yet...</li>
         {% endfor %}
     </ul>
 </body>
