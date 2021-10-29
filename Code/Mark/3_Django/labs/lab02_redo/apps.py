@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class NewyearsConfig(AppConfig):
+class Lab02RedoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'newyears'
+    name = 'lab02_redo'
