@@ -43,7 +43,11 @@ def add_todo(request):
 
             # todos.append(task)
             request.session['todos'].append(task)
+
+            # Notify django, session has updated
+            request.session.modified = True
             print('Added todo', request.session['todos'])
+            
             return HttpResponseRedirect(reverse('todolist:index'))
         else:
             return render(request, 'todolist/add_todo.html', {
@@ -52,3 +56,24 @@ def add_todo(request):
         # Manual form submission
         # todo = request.POST['todo']
         # todos.append(todo)
+
+def remove_todo(request, index):
+    request.session['todos'].pop(index)
+    request.session.modified = True
+
+    return HttpResponseRedirect(reverse('todolist:index'))
+
+def clear_todos(request):
+    request.session['todos'] = []
+    request.session.modified = True
+
+    return HttpResponseRedirect(reverse('todolist:index'))
+
+
+# request.session = {
+#   'todos': [
+#       'walk the dog',
+#       'feed the cat',
+#       'water the grass'
+#   ]
+# }
