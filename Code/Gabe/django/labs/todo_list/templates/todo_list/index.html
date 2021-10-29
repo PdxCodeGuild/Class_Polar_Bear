@@ -11,10 +11,16 @@
   <a href="{% url 'todo_list:add_todo' %}">Add new todo</a>
   <ul>
     {% for todo in todos %}
-      <li>{{ todo }}</li>
+    <!-- localhost:8000/todo/remove/0 -->
+      <a href="{% url 'todo_list:remove' forloop.counter0 %}">
+       <li>{{ todo }}</li>
+      </a>
     {% empty %}
       <li>No todos yet...</li>
-    {% endfor %}
-  </ul>
+      {% endfor %}
+    </ul>
+    {% if todos %}
+    <a href="{% url 'todo_list:clear' %}">Clear all todos...</a>
+    {% endif %}
 </body>
-</html>
+</html> 

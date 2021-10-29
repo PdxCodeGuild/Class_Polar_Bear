@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'routing',
     'todo_list',
+    'rot_cipher',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
