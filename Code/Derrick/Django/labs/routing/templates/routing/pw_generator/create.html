@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Password</title>
+</head>
+<body>
+    <h1>Create Password</h1>
+    <!--  -->
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Generate Password</button>
+    </form>    
+</body>
+</html>

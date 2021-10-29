@@ -9,8 +9,11 @@
 <body>
     <h1>Todo List</h1>
     <a href="{% url 'add' %}">Add new todo</a>
+    {% if todos %}
+        <a href="{% url 'clear' %}">Clear list</a>
+    {% endif %}
     {% for todo in todos %}
-        <li>{{ todo }}</li>
+        <li><a href="{% url 'remove' forloop.counter0 %}">{{ todo }}</a></li>
     {% empty %}
         <li>No todos</li>
     {% endfor %}
