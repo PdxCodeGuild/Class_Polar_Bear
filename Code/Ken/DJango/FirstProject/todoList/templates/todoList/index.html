@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <a href="{% url 'add_todo' %}">Add New Todo</a>
+    <ul>
+        {% for todo in todos %}
+        <!-- localhost:800/todos/remove/0 -->
+        <a href="{% url 'todoList:remove_todo' forloop.counter0 %}">
+            <li>{{ todos }}</li></a>
+            
+        {% empty %}
+            <li>No ToDo's Yet</li>
+        {% endfor %}
+    </ul>
+    {% if todos %}
+        <a href="{% url 'todoList:clear_todos' %}"></a>Clear all Todo's</a>
+    {% endif %}
+</body>
+</html>

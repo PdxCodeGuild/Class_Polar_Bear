@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to-do</title>
+</head>
+<body>
+    <!-- specify what app to look for index -->
+    <a href="{% url 'todolist:index' %}">Go home</a>
+    <form action="{% url 'todolist:add_todo' %}"  method='POST'>
+        {% csrf_token %}
+        <!-- <input type="text" placeholder="Enter todo" name="todo"> -->
+        {{ form }}
+        <button type="submit">Save Todo</button>
+    </form>
+</body>
+</html>
