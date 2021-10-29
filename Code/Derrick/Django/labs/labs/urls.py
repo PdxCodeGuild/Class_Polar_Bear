@@ -19,5 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('routing/',include('routing.urls')),
-    path('Django_Redo/',include('Django_Redo.urls'))
+    path('django_redo/',include('django_redo.urls'))
 ]
