@@ -51,4 +51,4 @@ def clear_todos(request):
 def remove_todo(request, index):
     request.session['todos'].pop(index)
     request.session.modified = True
-    
+    return HttpResponseRedirect(reverse('todolist:index'))
