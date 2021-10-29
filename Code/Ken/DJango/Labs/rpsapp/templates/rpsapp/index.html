@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <h1>ROCK PAPER SCISSORS</h1>
+    <div class="container">
+        <form action= "" method="POST">
+            {% csrf_token %}
+            <div>
+                <select id="choice" name="choice">
+                    
+                    <option value="Rock">Rock</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Scissors">Scissors</option>
+                </select>
+                <label for="choice">Make Your Choice!</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+<div >
+
+{% if winner %}
+<h1> You chose {{users_choice}}, and the computer chose {{comp_choice}}</h1>
+<h1>{{winner}}</h1>
+{% endif %}
+</div>
+</body>
+</html>
