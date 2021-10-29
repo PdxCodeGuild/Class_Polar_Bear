@@ -10,7 +10,8 @@
     <a href="{% url 'todolist:index' %}">Home</a>
     <form action="{% url 'todolist:add_todo' %}" method="POST">
         {% csrf_token %}
-        <input type="text" placeholder="Enter todo" name="todo">
+        {{ form }}
+        <!-- <input type="text" placeholder="Enter todo" name="todo"> -->
         <button type="submit">Save Todo</button>
     </form>
 </body>

@@ -12,7 +12,10 @@
     <ul>
         {% for todo in todos %}
             <li>{{ todo }}</li>
+        {% empty %}
+            <h1>No todos yes...</h1>
         {% endfor %}
     </ul>
+    <a href="{%url 'todolist:clear_todos'%}"">Clear todos</a>
 </body>
 </html>

@@ -8,5 +8,6 @@ urlpatterns = [
     # localhost:8000/todos
     path('', views.todo, name='index'),
     # localhost:8000/todos/new
-    path('new', views.add_todo, name='add_todo')
+    path('new', views.add_todo, name='add_todo'),
+    path('clear', views.clear_todos, name='clear_todos')
 ]
