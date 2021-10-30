@@ -31,7 +31,7 @@ def create(request):
             total_num = upper + lower + symbols + nums
             list = result.split()
             pw = list[-1]
-            list.remove(list[-1])
+            list.remove(pw)
             list = ' '.join(list)
             
             return render(request,'routing/pw_generator/generated_pw.html',{
