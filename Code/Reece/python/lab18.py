@@ -45,66 +45,27 @@ def search_function(pg, keyword):
 
 repeat = 'yes'
 
-# input_keyword = input('Enter your search term: ')
-# dad on page 1 gives many returns
-# "amazing person" page 1 returns some, but far less
-# "amazing person I know" page 1 returns one
-
-
-# page = input('Enter a page number: ')
-# data = search_function(page, input_keyword)
-# quote_data = data['quotes']
-
-# for quote_info in quote_data:
-#     quote_author = quote_info['author']
-#     quote_text = quote_info['body']
-#     message = f"\n{quote_text}\n\t- {quote_author}"
-#     for char in message:
-#         print(char, end='', flush=True)
-#         time.sleep(.01)
-#     print(f"\n----------------------------------------------------\n")
-
-
-# not 100% right at completing a new page...V
-
-# while repeat == 'yes':
-#     input_keyword = input('Enter your search term: ')
-#     page = int(input('Enter a page number: '))
-#     data = search_function(page, input_keyword)
-#     if len(data) > 0:
-#         quote_data = data['quotes']
-#         for quote_info in quote_data:
-#             quote_author = quote_info['author']
-#             quote_text = quote_info['body']
-#             message = f"\n{quote_text}\n\t- {quote_author}"
-#             for char in message:
-#                 print(char, end='', flush=True)
-#                 time.sleep(.01)
-#             print(f"\n----------------------------------------------------")
-#         repeat = input('Enter "yes" to continue or git "enter" to exit: ')
-#     else:
-#         repeat = input('Enter "yes" to continue or git "enter" to exit: ')
-
+counter = 0
 while repeat == 'yes':
-    input_keyword = input('Enter your search term: ')
-    page = 1
+    if counter == 0:
+        input_keyword = input('Enter your search term: ')
+        counter += 1
+        page = int(input('Enter a page number: '))
+    elif counter > 0:
+        same_keyword = input(f'\nDo you want to search "{input_keyword}" on next page? If so type "yes": ')
+        if same_keyword == 'yes':
+            page += 1
     data = search_function(page, input_keyword)
-    if len(data) > 0:
+    quote_body = data['quotes'][0]['body']
+    if quote_body != 'No quotes found':
         quote_data = data['quotes']
         for quote_info in quote_data:
             quote_author = quote_info['author']
             quote_text = quote_info['body']
-            message = f"\n{quote_text}\n\t- {quote_author}"
+            message = f"\n{quote_text}\n\t- {quote_author}\n"
             for char in message:
                 print(char, end='', flush=True)
                 time.sleep(.01)
-            print(f"\n----------------------------------------------------")
-        next_page = ('Enter "next" to search for your keyword on the next page: ')
-        if next_page == 'next':
-            page += 1
-            repeat = 'yes'
-        else:
-            repeat = input('Enter "yes" to continue or hit "enter" to exit: ')
+        print(f"\n- Page {page} ---------------------------------------------------- Page {page} -\n")
     else:
-        input_keyword = input('Enter your search term: ')
-        repeat = input('Enter "yes" to continue or hit "enter" to exit: ')
+        repeat = input(f'\nNo data found for page {page}...\n\nType "yes" keep going or hit "enter" to exit: ')
