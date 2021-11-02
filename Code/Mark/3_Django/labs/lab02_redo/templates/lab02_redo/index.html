@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rot Cipher</title>
+  <style>
+    .list {
+      display: flex;
+      flex-direction: row;
+    }
+    .encryption_list {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rot Cipher</h1>
+  <br>
+  <br>
+  <a href="{% url 'lab02_redo:encryption' %}">Encryption</a>
+  <h3>List of encrypted words:</h3>
+  <div class="list">
+    <ul>
+      {% for word in word_to_cipher %}
+        <a href="{% url 'rot_cipher:remove' forloop.counter0 %}">
+        <li>{{ word }}:</li>
+        {% empty %}
+          <li>No ciphered words yet...</li>
+      {% endfor %}
+    </ul>
+    <ul class="ciphered_list">
+      {% for w in ciphered %}
+        <a href="{% url 'rot_cipher:remove' forloop.counter0 %}">
+        <li>{{ w }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>

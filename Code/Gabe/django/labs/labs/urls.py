@@ -20,5 +20,6 @@ from django.urls.conf import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('routing/', include('routing.urls')),
-    path('todo/', include('todo_list.urls'))
+    path('todo/', include('todo_list.urls')),
+    path('rotcipher/', include('rot_cipher.urls'))
 ]

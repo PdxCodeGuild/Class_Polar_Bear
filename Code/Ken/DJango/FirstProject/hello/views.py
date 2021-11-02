@@ -15,3 +15,4 @@ def batman(request):
 
 def say_Hello(request, name):
     return render (request, 'hello/say_Hello.html', {'name': name})
+

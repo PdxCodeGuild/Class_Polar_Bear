@@ -34,17 +34,28 @@ def add_todo(request):
         form = NewTodoForm(request.POST)
 
         if form.is_valid():
-            request.session.modified = True
             task = form.cleaned_data['task']
 
             # todos.append(task)
             request.session['todos'].append(task)
+            request.session.modified = True
+            return HttpResponseRedirect(reverse('todo_list:index'))
         else:
             return render(request, 'todo_list/add_todo.html', {
                 'form': form
             })
 
+def remove_todo(request, index):
+    request.session['todos'].pop(index)
+    request.session.modified = True
+    return HttpResponseRedirect(reverse('todo_list:index'))
+
+def clear_all(request):
+    request.session['todos'].clear()
+    request.session.modified = True
+    return HttpResponseRedirect(reverse('todo_list:index'))
+
         # Manual form submission
         # todo = (request.POST['todo'])
         # todos.append(todo)
-        return HttpResponseRedirect(reverse('todo_list:index'))
+        # return HttpResponseRedirect(reverse('todo_list:index'))

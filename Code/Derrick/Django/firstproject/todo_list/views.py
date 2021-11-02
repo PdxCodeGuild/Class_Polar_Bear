@@ -34,3 +34,13 @@ def add(request):
         # manual way
             # todos.append(request.POST['todo'])
             # return HttpResponseRedirect(reverse('todos'))
+
+def remove(request,index):
+    request.session['todos'].pop(index)
+    request.session.modified = True 
+    return HttpResponseRedirect(reverse('todos'))
+
+def clear(request):
+    request.session['todos'] = []
+    request.session.modified = True 
+    return HttpResponseRedirect(reverse('todos'))
