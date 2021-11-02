@@ -1,142 +1,142 @@
+{% extends 'routing/main.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="{% static 'routing/blog.css' %}">   
-</head>
-<body>
-    <div class="container">
-        <nav class="top-nav">
-            <div class="logo">
-                <a href="#" ><img src="https://picsum.photos/id/2/50/50" alt=""></a>
-            </div>
-            <div class="nav-links">
-                <a href="">Home</a>
-                <a href="">Blog</a>
-                <a href="">Contact</a>
-            </div>
-        </nav>
-        <header>
-            <div class="dim"></div>
-        </header>
-        <main>
-            <section id="content">
-                <h1>Recent Blog Posts</h1>
-                <section class="articles">
-                    <div class="article">
-                        <a href=""><div class="overlay">Lorem, ipsum.</div><img src="https://picsum.photos/id/76/350/200" alt="" class="article-img"></a>
-                        <div class="article-content">
-                            <div class="filter-words">
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                            </div>
-                            <div class="article-title">
-                                <a href="">Lorem, ipsum.</a>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
-                            </div>
+{% block title %}
+<title>Blog</title>
+{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'routing/blog.css' %}">
+{% endblock link %}
+
+{% block content %}
+<div class="container">
+    <nav class="top-nav">
+        <div class="logo">
+            <a href="#" ><img src="https://picsum.photos/id/2/50/50" alt=""></a>
+        </div>
+        <div class="nav-links">
+            <a href="">Home</a>
+            <a href="">Blog</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+    <header>
+        <div class="dim"></div>
+    </header>
+    <main>
+        <section id="content">
+            <h1>Recent Blog Posts</h1>
+            <section class="articles">
+                <div class="article">
+                    <a href=""><div class="overlay">Lorem, ipsum.</div><img src="https://picsum.photos/id/76/350/200" alt="" class="article-img"></a>
+                    <div class="article-content">
+                        <div class="filter-words">
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                        </div>
+                        <div class="article-title">
+                            <a href="">Lorem, ipsum.</a>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
                         </div>
                     </div>
-                    <div class="article">
-                        <a href=""><div class="overlay">Lorem, ipsum dolor.</div><img src="https://picsum.photos/id/17/350/200" alt="" class="article-img"></a>
-                        <div class="article-content">
-                            <div class="filter-words">
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                            </div>
-                            <div class="article-title">
-                                <a href="">Lorem, ipsum.</a>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
-                            </div>
+                </div>
+                <div class="article">
+                    <a href=""><div class="overlay">Lorem, ipsum dolor.</div><img src="https://picsum.photos/id/17/350/200" alt="" class="article-img"></a>
+                    <div class="article-content">
+                        <div class="filter-words">
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                        </div>
+                        <div class="article-title">
+                            <a href="">Lorem, ipsum.</a>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
                         </div>
                     </div>
-                    <div class="article">
-                        <a href=""><div class="overlay">Lorem.</div><img src="https://picsum.photos/id/12/350/200" alt="" class="article-img"></a>
-                        <div class="article-content">
-                            <div class="filter-words">
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                            </div>
-                            <div class="article-title">
-                                <a href="">Lorem, ipsum.</a>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
-                            </div>
+                </div>
+                <div class="article">
+                    <a href=""><div class="overlay">Lorem.</div><img src="https://picsum.photos/id/12/350/200" alt="" class="article-img"></a>
+                    <div class="article-content">
+                        <div class="filter-words">
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                        </div>
+                        <div class="article-title">
+                            <a href="">Lorem, ipsum.</a>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
                         </div>
                     </div>
-                    <div class="article">
-                        <a href=""><div class="overlay">Lorem ipsum dolor sit.</div><img src="https://picsum.photos/id/24/350/200" alt="" class="article-img"></a>
-                        <div class="article-content">
-                            <div class="filter-words">
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                            </div>
-                            <div class="article-title">
-                                <a href="">Lorem, ipsum.</a>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
-                            </div>
+                </div>
+                <div class="article">
+                    <a href=""><div class="overlay">Lorem ipsum dolor sit.</div><img src="https://picsum.photos/id/24/350/200" alt="" class="article-img"></a>
+                    <div class="article-content">
+                        <div class="filter-words">
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                        </div>
+                        <div class="article-title">
+                            <a href="">Lorem, ipsum.</a>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
                         </div>
                     </div>
-                    <div class="article">
-                        <a href=""><div class="overlay">Lorem, ipsum.</div><img src="https://picsum.photos/id/32/350/200" alt="" class="article-img"></a>
-                        <div class="article-content">
-                            <div class="filter-words">
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                            </div>
-                            <div class="article-title">
-                                <a href="">Lorem, ipsum.</a>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
-                            </div>
+                </div>
+                <div class="article">
+                    <a href=""><div class="overlay">Lorem, ipsum.</div><img src="https://picsum.photos/id/32/350/200" alt="" class="article-img"></a>
+                    <div class="article-content">
+                        <div class="filter-words">
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                        </div>
+                        <div class="article-title">
+                            <a href="">Lorem, ipsum.</a>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
                         </div>
                     </div>
-                    <div class="article">
-                        <a href=""><div class="overlay">Lorem, ipsum.</div><img src="https://picsum.photos/id/45/350/200" alt="" class="article-img"></a>
-                        <div class="article-content">
-                            <div class="filter-words">
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                                <p>Lorem</p>
-                            </div>
-                            <div class="article-title">
-                                <a href="">Lorem, ipsum.</a>
-                            </div>
-                            <div class="description">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
-                            </div>
+                </div>
+                <div class="article">
+                    <a href=""><div class="overlay">Lorem, ipsum.</div><img src="https://picsum.photos/id/45/350/200" alt="" class="article-img"></a>
+                    <div class="article-content">
+                        <div class="filter-words">
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                            <p>Lorem</p>
+                        </div>
+                        <div class="article-title">
+                            <a href="">Lorem, ipsum.</a>
+                        </div>
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur impedit at aliquid inventore iure quas beatae sequi id nulla eaque, maxime est, cum laudantium a? Sequi laudantium soluta quae unde perferendis deserunt eveniet dolor. Ratione eligendi quae suscipit natus, enim placeat voluptatum dolorum nostrum dolor expedita velit et labore quod.</p>
                         </div>
                     </div>
-                </section>
+                </div>
             </section>
-            <nav class="side-nav">
-                <ul>
-                    <a href=""><li>Business</li></a>
-                    <a href=""><li>Recreation</li></a>
-                    <a href=""><li>Lifestyle</li></a>
-                    <a href=""><li>Sports</li></a>
-                    <a href=""><li>More</li></a>
-                </ul>
-            </nav>
-        </main>
-        <footer><p>Copyright Derrick Johnson &copy 2021</p></footer>
-    </div>
-</body>
-</html>
+        </section>
+        <nav class="side-nav">
+            <ul>
+                <a href=""><li>Business</li></a>
+                <a href=""><li>Recreation</li></a>
+                <a href=""><li>Lifestyle</li></a>
+                <a href=""><li>Sports</li></a>
+                <a href=""><li>More</li></a>
+            </ul>
+        </nav>
+    </main>
+    <footer><p>Copyright Derrick Johnson &copy 2021</p></footer>
+</div>
+{% endblock content %}
