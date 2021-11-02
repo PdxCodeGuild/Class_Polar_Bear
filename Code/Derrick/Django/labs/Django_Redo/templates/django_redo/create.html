@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1>Create Password</h1>
-    <!--  -->
     <form action="{% url 'create' %}" method="POST">
         {% csrf_token %}
         {{ form }}

@@ -10,12 +10,12 @@ class AddForm(forms.Form):
 
 # Create your views here.
 def render_generator(request):
-    return render(request, 'django_redo/pw_generator/generator.html', {})
+    return render(request, 'django_redo/generator.html', {})
 
 def create(request):
 
     if request.method == 'GET':
-        return render(request,'django_redo/pw_generator/create.html',{'form': AddForm()})
+        return render(request,'django_redo/create.html',{'form': AddForm()})
 
     elif request.method == 'POST':
         form = AddForm(request.POST)
@@ -34,7 +34,7 @@ def create(request):
             list.remove(pw)
             list = ' '.join(list)
             
-            return render(request,'django_redo/pw_generator/generated_pw.html',{
+            return render(request,'django_redo/generated_pw.html',{
                 'form': form,
                 'upper': upper,
                 'lower': lower,
@@ -46,4 +46,4 @@ def create(request):
                 'pw': pw     
             })
         else:
-            return render(request,'django_redo/pw_generator/create.html',{'form': form}) 
+            return render(request,'django_redo/create.html',{'form': form}) 
