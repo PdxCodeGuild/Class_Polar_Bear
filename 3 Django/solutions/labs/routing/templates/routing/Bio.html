@@ -1,0 +1,16 @@
+{% extends 'routing/base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>This is my Bio</h1>
+<p>Lorem ipsum dolor <span class="alert">sit amet consectetur</span> adipisicing elit. Unde dolorem accusamus voluptatum obcaecati libero odit, quos at magni consequatur assumenda, iusto alias? Temporibus, vel. Excepturi velit vero praesentium unde tempora.</p>
+{% endblock content %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'routing/bio.css' %}">
+{% endblock styles %}
+
+{% block title %}
+<title>Blog</title>
+{% endblock title %}
