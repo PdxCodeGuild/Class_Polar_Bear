@@ -21,21 +21,6 @@ import time
 # print(f"\n")
 
 # Version 2 #
-page = 1
-
-url = 'https://favqs.com/api/quotes?page=<page>&filter=<keyword>'
-# response = requests.get(url)
-
-# json_data = json.loads(response.text)
-
-# input_keyword = f'\nEnter a keyword to search for quotes: '
-# for char in input_keyword:
-#     print(char, end='', flush=True)
-#     time.sleep(.06)
-# keyword_choice = input('')
-# keyword_choice = input('Enter keyword for quote search: ')
-print(f'\n')
-
 url = 'https://favqs.com/api/quotes?page=<page>&filter=<keyword>'
 
 def search_function(pg, keyword):
