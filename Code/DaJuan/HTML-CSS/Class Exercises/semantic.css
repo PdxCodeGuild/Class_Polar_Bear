@@ -1,0 +1,119 @@
+
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            width: 1200px;
+            margin: 0 auto;
+            background-color: dimgray;
+            position: relative;
+        }
+
+        header {
+            margin-top: 16px;
+            height: 300px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 1200px;
+            background-color: darkgray;
+            padding: 8px;
+        }
+
+        nav a {
+            font-size: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: orange;
+        }
+
+        .nav-home{
+            color: orange;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        
+
+        
+
+        section h1{
+            text-align: center;
+            color: orange;
+            font-size: 1.75rem;        
+        }
+
+        .content {
+            display: flex;
+            min-height: 45vh;
+        }
+
+        p {
+            font-size: 1.25rem;
+            width: 54ch;
+        }
+
+        .footer{
+           height: 40px;
+        }
+
+        footer {
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            background-color: black;
+            color: white;
+        }
+
+        @media (max-width: 1000px) {
+            :root {
+                font-size: 32px;
+            }
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+            p {
+                margin-top: 24px;
+            }
+            }
+
+        @media (max-width: 400px){
+            :root {
+                font-size: 50px;
+            }
+            .nav-home {
+                display: none;
+            }
+            nav {
+                justify-content: center;
+            }
+            .nav-links {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            
+            nav a {
+                font-size: 1.2rem;
+            }
+            p {
+                max-width: 32ch;
+            }
+            }
+        

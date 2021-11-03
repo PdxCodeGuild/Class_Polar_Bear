@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #000;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.birthday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 75px;
+}

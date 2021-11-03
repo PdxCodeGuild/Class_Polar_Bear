@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	border:solid 0.5px;
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	margin:30px 0;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+.btn-4Wrapper {
+    background-color: goldenrod;
+}
+
+.btn-4Wrapper .btn {
+    color: goldenrod;
+    animation-name: btn4;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    box-shadow: 0px 5px 0px rgb(140, 150,153,0.719);
+    
+   
+}
+
+@keyframes btn4 {
+   from {
+       transition-property: none;
+   }
+   to {
+       transition-property: all;
+       
+   }
+}
+
+.btn-9Wrapper 
+{
+  background-color: rgb(156, 39, 176);
+  
+}
+.btn-9Wrapper .btn
+{
+ color: rgb(156, 39, 176);  
+}
+.btn-9Wrapper:hover .btn {
+    background-color: rgb(255, 155, 245);
+     /* animation-name: focus-btn9;  */
+    animation-duration: 1s;
+    animation-timing-function: 2 ease;
+    animation-delay: 0s;
+   
+   
+  
+   
+   
+}
+
+/* @keyframes focus-btn9 { 
+  to {
+      
+       color: rgb(156, 39, 176); 
+       transition-property: all; 
+  }
+}  */
+
+.btn-11Wrapper {
+background-color: gold;
+ 
+}
+
+.btn-11Wrapper .btn {
+    color: gold;
+}
+
+.btn-11Wrapper:hover .btn {
+   
+    animation-name:or-ange;
+    animation-duration: 2s;
+    animation-timing-function:ease-in;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    
+}
+
+
+@keyframes or-ange {
+
+0% {
+    background-color: rgb(156, 39, 176);
+}
+55% {
+    background-color: rgb(156, 39, 176);
+}
+
+75% {
+    background-color: rgb(248, 232, 255) ;
+
+}
+100% {
+    background-color: rgb(156, 39, 176);
+    
+
+}
+    
+}
+
+
+.btn-12Wrapper {
+    background-color:rgb(89,201,165);
+   
+}
+
+.btn-12Wrapper .btn {
+     color: rgb(89,201,165); 
+    animation-name:aqua-marine;
+    animation-duration: 1s;
+     animation-timing-function: ease; 
+    animation-delay: 0s;
+     animation-iteration-count: infinite; 
+    animation-fill-mode: none;
+    animation-play-state: running;
+    }
+
+@keyframes aqua-marine {
+0%{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 20pz;
+}
+55% {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 20pz;
+}
+
+75%{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 20px;
+}
+
+100% {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-right-radius: 0px;
+}
+
+
+    
+}
+

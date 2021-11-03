@@ -1,0 +1,42 @@
+{
+    "contacts": [{
+        "name": "Aaron",
+        "phone_number": "919-781-7129",
+        "email": "aaron@hotmail.com"
+    },{
+        "name": "Anthony",
+        "phone_number": "662-319-6954",
+        "email": "anthony@gmail.com"
+    },{
+        "name": "Arthur",
+        "phone_number": "478-777-8878",
+        "email": "arthur@aol.com"
+    },{
+        "name": "Bowie",
+        "phone_number": "478-777-8878",
+        "email": "bowie@aol.com"           
+    },{
+        "name": "Charlie",
+        "phone_number": "478-777-8878",
+        "email": "charlie@aol.com"
+    },{
+        "name": "DaJuan",
+        "phone_number": "478-777-8878",
+        "email": "dajuan@aol.com"
+    },{
+
+        "name": "Derrick",
+        "phone_number": "478-777-8878",
+        "email": "derrick@aol.com"
+
+    },{
+        "name": "Gabe",
+        "phone_number": "478-777-8878",
+        "email": "gabe@aol.com"
+               
+    },{
+        "name": "Williams",
+        "phone_number": "478-777-8878",
+        "email": "williams@aol.com"
+    }]
+}

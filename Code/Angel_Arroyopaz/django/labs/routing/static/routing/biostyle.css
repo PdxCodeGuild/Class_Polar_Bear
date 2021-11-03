@@ -1,0 +1,25 @@
+body {
+    text-align: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: azure;
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+
+p {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+}
+
+ol {
+    display: inline-block;
+    align-items: center;
+}

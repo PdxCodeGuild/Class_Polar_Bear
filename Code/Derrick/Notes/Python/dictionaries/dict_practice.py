@@ -1,0 +1,182 @@
+# Create Contact ===============================================================
+# Write a function that returns a dictionary representing a contact given their name and age.
+
+def create_contact(name, age):
+    person = {}
+    person['name'] = name 
+    person['age'] = age 
+    return person
+
+# print(create_contact('Bob', 67))  # {'name': 'Bob', 'age': 67}
+# print(create_contact('Linda', 34)) # {'name': 'Linda', 'age': 34}
+
+# Has Key ======================================================================
+# Write a function that returns `True` if the given dictionary has the given key, `False` otherwise.
+
+def has_key(d, key):
+    if d.get(key):
+        return True 
+    else:
+        return False
+# print(has_key({'a': 1, 'b': 2}, 'a')) # True
+# print(has_key({'a': 1, 'b': 2}, 'c')) # False
+
+# Is Empty =====================================================================
+# Write a function that returns `True` if the given dictionary is empty, `False` otherwise.
+
+def is_empty(d):
+    if d == {}:
+        return True 
+    else:
+        return False
+# print(is_empty({})) # True
+# print(is_empty({'a': 1, 'b': 2})) # False
+
+# Find Key =====================================================================
+# Write a function that finds and returns the **key** for the given **value**, if the value is not in the dictionary, it should return `None`.
+
+def find_key(d, value):
+    keys = list(d.keys())
+    values = list(d.values())
+     
+    try:
+        value = values.index(value)
+    except ValueError:
+        return None
+    
+    key = keys[value]    
+
+    return key
+ 
+
+# print(find_key({'a': 1, 'b': 2}, 1)) # a
+# print(find_key({'a': 1, 'b': 2}, 3)) # None
+
+# Reverse Dict =================================================================
+# Write a function that takes a dictionary and returns a new dictionary with the keys and values reversed.
+
+def reverse_dict(d):
+    new = {}
+    keys = list(d.keys())
+    values = list(d.values())
+
+    for i in values:
+        new[i] = keys[values.index(i)]
+
+    return new 
+
+# print(reverse_dict({'a': 1, 'b': 2})) # {1: 'a', 2: 'b'}
+
+# Merge ========================================================================
+# Write a function that mergest two lists of equal length into a dictionary, with the first list containing the keys, and the second containing the values.
+
+def merge(list1, list2):
+    new = {}
+    
+    if len(list1) == len(list2):
+        for i in range(len(list1)):
+            new[list1[i]] = list2[i]
+    return new
+
+# print(merge(['a', 'b'], [1, 2])) # {'a': 1, 'b': 2}
+
+
+# Remove Less Than 10 =========================================================
+# Write a function that takes a dictionary and returns a new dictionary without values less than 10.
+
+def remove_less_than_10(d):
+    values = list(d.values()) # [5,15,12]
+    keys = list(d.keys()) # [a,b,c]
+    newList = {}
+
+    for value in values:
+        if value > 10:
+            key = keys[values.index(value)]
+            newList[key] = value
+    return newList
+
+# print(remove_less_than_10({'a': 5, 'b': 15, 'c': 12})) # {'b': 15, 'c': 12}
+
+# Average ======================================================================
+# Write a function to calculate the average of the lists in a dictionary.
+
+def average_values(d):
+    keys = list(d.keys())
+    values = list(d.values())
+    newList = {}
+
+    for items in values:
+        sum = 0
+        average = 0
+        for value in items:
+            sum += value
+        
+        average = (sum / len(items))
+        newList[keys[values.index(items)]] = int(average)
+
+    return newList
+        
+        
+
+
+# print(average_values({'a': [1, 5, 6], 'b': [2, 8], 'c': [3]})) # {'a': 4, 'b': 5, 'c': 3}
+
+# Merge Dictionaries ===========================================================
+# Write a function that takes two dictionaries and returns a new dictionary with the values from each added together if they have the same key
+
+def merge_dictionaries(d1, d2):
+    keys = list(d1.keys()) + list(d2.keys()) 
+    values = list(d1.values()) + list(d2.values())
+    new = {}
+
+    for i in keys:
+        if keys.count(i) == 1:
+            new[i] = values[keys.index(i)]
+            # new['c'] = values[keys.index('c')] 
+            # new['c'] = values[2]
+            # new['c'] = 300
+
+        elif keys.count(i) > 1:
+            new[i] = d1[i] + d2[i]
+            # new['a'] = d1['a'] + d2['a']
+            # new['a'] = 100 + 300
+
+    return new
+
+# d1 = {'a': 100, 'b': 200, 'c': 300}
+# d2 = {'a': 300, 'b': 200, 'd': 400}
+# print(merge_dictionaries(d1, d2))
+# print(merge_dictionaries(d1, d2)) # {'a': 400, 'b': 400, 'c': 300, 'd': 400}
+
+# Count Votes ==================================================================
+# Write a function that takes a list of strings and counts of the number of occurances.
+
+def count_votes(votes):
+    new = {}
+    for name in votes:
+        new[name] = votes.count(name)
+    return new
+
+# votes = ['john', 'johnny', 'john', 'jackie', 'jamie', 'jackie', 'jamie', 'jamie', 'john', 'johnny', 'jamie', 'johnny', 'john']
+# print(count_votes(votes)) # {'john': 4, 'johnny': 3, 'jackie': 2, 'jamie': 4}
+
+# Problem 6 ====================================================================
+# Write a function `cart_total` to calculate the total of a shopping cart given a list of dictionaries representing a cart and a dictionary representing prices.
+
+def cart_total(prices,cart):
+    total = 0
+ 
+    for product in cart:
+        
+        if product.get('item') in prices.keys(): # if 'apples' is in prices.keys()
+            
+            x = product.get('item') # x = 'apples' 
+
+            total += product.get('quantity') * prices.get(x) # total += apples quantity * prices.get('apples') / value of apples in prices dictionary since it exists in cart 
+ 
+    return total
+
+# prices = {'apples': 1.0, 'bananas': 0.5, 'kiwis': 2.0}
+# cart = [{'item': 'apples', 'quantity': 3}, {'item': 'kiwis', 'quantity': 4}]
+# print(cart_total(prices, cart)) # 11.0
+

@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+/* animations */
+
+@keyframes zoom-image{
+    50% {
+    font-size: 30px;
+    }
+    100% {
+    font-size: 20px;
+    }
+  }
+
+@keyframes active-button {
+    to {
+      box-shadow: none;
+      transform: translate(4px, 4px);
+    }
+  }
+  
+  @keyframes focus-button {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes shake {
+	25% {
+		transform:translateX(3px);
+	}
+	50% {
+		transform:translateX(-5px);
+	}
+	100% {
+		transform:translateX(0px);
+	}
+}
+@keyframes stretch{
+    55% {
+        padding: 30px 10px;
+    }
+    75% {
+        padding:10px 30px;
+        transition:translateY(3px);
+    }
+    100% {
+        padding:20px;
+    }
+}
+
+@keyframes bg-color {
+    0% {
+        background: rgb(235, 176, 235);
+    }
+    50% {
+        background: rgb(252, 129, 252);
+    }
+    75% {
+        background: rgb(250, 41, 250);
+    }
+    100% {
+        background: purple;
+    }
+}
+
+@keyframes bordersmove {
+	0% {
+		border-top-left-radius:0;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+	55% {
+		border-top-left-radius:20px;
+		border-top-right-radius:0px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+	75% {
+		border-top-left-radius:20px;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:0px;
+		border-bottom-left-radius:20px;
+	}
+	100% {
+		border-top-left-radius:20px;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:0px;
+	}
+}
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+    transition: 1s;
+}
+
+.wrapper:not(.main) {
+	width: 50%;
+}
+
+.main > h1 {
+		margin:0;
+        display: block;
+	}
+.main {
+    background-color: #BA3B46;
+	padding-top: 20px;
+}
+
+h1 {
+
+    font-size: 50px;
+    display: block;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:100px;
+	flex-direction:column;
+	/* background: #00A5CF; */
+	/* border:solid 0.5px; */
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	/* margin:30px 0; */
+}
+
+@media screen and (min-width: 700px){
+    .wrapper:not(.main){
+        width: 25%;
+    }
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+.btn-1Wrapper {
+	background-color: rgb(63, 129, 63);
+}
+.btn-1Wrapper > .btn{
+    color: rgb(63, 129, 63);
+}
+.btn-1Wrapper > .btn:hover {
+	box-shadow: inset 0 0 0 5px #8FB339;
+    border: solid 3px #fff;
+}
+
+.btn-2Wrapper {
+    background-color: rgba(50, 122, 255, 0.986);
+}
+.btn-2Wrapper > .btn {
+color: rgba(50, 122, 255, 0.986)
+}
+.btn-2Wrapper > .btn:hover {
+        border-radius: 0;
+}
+.btn-3Wrapper {
+    background-color: rgb(250, 60, 117);
+}
+
+.btn-3Wrapper > .btn {
+    color: rgb(250, 60, 117);
+}
+.btn-3Wrapper > .btn:hover {
+    -webkit-animation: zoom-image 1s; /* Safari 4.0 - 8.0 */
+    animation: zoom-image 1s;
+}
+.btn-4Wrapper {
+    background-color: orange;
+}
+
+.btn-4Wrapper > .btn {
+    color: orange;
+    box-shadow: 0px 5px 0px grey;
+}
+
+.btn-4Wrapper > .btn:focus {
+    animation: focus-button 2s ease-in;
+  }
+  
+  .btn-4Wrapper > .btn:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+  }
+
+.btn-5Wrapper {
+    background-color: rgba(1, 165, 149, 0.589);
+}
+.btn-5Wrapper > .btn {
+    color: rgba(1, 165, 149, 0.589);
+}
+.btn-5Wrapper > .btn:hover {
+    animation:shake 0.5s ease-in-out
+}
+.btn-6Wrapper {
+    background-color: steelblue;
+}
+.btn-6Wrapper > .btn {
+    color: steelblue;
+    transition:0.3s;
+	background:linear-gradient(top, grey, white);
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), 
+        inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-6Wrapper > .btn:focus {
+    animation: focus-button 2s ease-in;
+}
+  .btn-6Wrapper > .btn:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+}
+.btn-7Wrapper {
+    background-color:purple;
+}
+
+.btn-7Wrapper > .btn {
+    transition: 0.5s;
+    border-radius:0;
+}
+
+.btn-7Wrapper > .btn:hover {
+        box-shadow: 
+            1px -1px #333,
+            2px -2px #333,
+            3px -3px #333,
+            4px -4px #333,
+            5px -5px #333;
+    -webkit-transform: translateX(-5px) translateY(5px);
+    transform: translateX(-5px) translateY(5px);
+}
+.btn-8Wrapper {
+    background-color: rgb(171, 253, 133);
+    perspective: 150px;
+}
+
+.btn-8Wrapper > .btn {
+    transform: rotateX(25deg);
+    transition:0.5s;
+    box-shadow: 
+        0px 8px 10px 0px rgba(0, 0, 0, .3),
+        inset 0px 4px 1px 1px white,
+        inset 0px -3px 1px 1px rgba(204, 198, 197, .5)
+}
+
+.btn-8Wrapper > .btn:hover {
+    transform: rotateX(0);
+    box-shadow: 
+        0px 3px 10px 0px rgba(0, 0, 0, .3),
+        inset 0px 4px 1px 1px white,
+        inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-9Wrapper {
+    background-color:rgba(181, 89, 243, 0.856);
+}
+
+.btn-9Wrapper > .btn {
+    transition: 0.2s;
+}
+
+.btn-9Wrapper > .btn:hover {
+    opacity: 0.5;
+}
+.btn-10Wrapper {
+    background-color: rgb(216, 69, 69);
+}
+
+.btn-10Wrapper > .btn:hover {
+    animation: stretch 1.5s alternate;
+}
+.btn-11Wrapper {
+    background-color: rgb(243, 189, 89);
+}
+
+.btn-11Wrapper > .btn:hover {
+    animation:bg-color 1s alternate infinite;
+}
+.btn-12Wrapper {
+    background-color: rgb(124, 233, 227);
+}
+
+.btn-12Wrapper > .btn {
+    animation:bordersmove 1s infinite alternate;
+}
+.btn-12Wrapper > .btn:hover {
+    animation-play-state: paused;
+} 

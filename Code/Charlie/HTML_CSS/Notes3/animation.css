@@ -1,0 +1,20 @@
+.square{
+    width: 400px;
+    height: 400px;
+    background-color: blue;
+}
+
+.square:hover{
+    animation-name: change-color;
+    animation-duration: .5s;
+
+}
+
+@keyframes change-color{
+    from{
+        background-color: blue;
+    }
+    to{
+        background-color: burlywood;
+    }
+}

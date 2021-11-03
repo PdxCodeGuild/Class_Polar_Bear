@@ -1,0 +1,3 @@
+print("A\nB\nC")
+
+

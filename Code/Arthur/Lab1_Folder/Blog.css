@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    Padding: 0;
+    /*box-sizing: border-box*/;
+}
+
+.title {
+    display: flex; 
+     justify-content: center; 
+    padding: 32px;
+   
+
+}
+
+h1 {
+    color: darkgreen;
+}
+ header {
+     display: flex;
+     justify-content: center;
+     
+ }
+
+ img {
+     height: 300px;
+ }
+
+ .story 
+ {
+     
+     font-size: 1.1rem;
+     width: 54ch;
+     margin:10px;
+     margin-top:0px;
+     
+ }
+
+ nav {
+     display: flex;
+     justify-content: space-between;
+     
+ }
+ body {
+
+    background-color: silver;
+ }
+
+ a{
+     color: darkgreen;
+     text-decoration: none;
+ }
+
+a:hover {
+ color: red;
+}
+
+/* main {
+    display: flex;
+    justify-content: center;
+} */
+section {
+    display: flex;
+    justify-content: center; 
+    padding: 10px;  
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    font-size: 1.05rem;
+    width: 54ch;  
+    
+}
+
+/* .credits {
+    display: flex;
+    font-size:1.05rem;
+    width: 54ch;
+    justify-content: center;
+}  */
+
+footer {
+
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color:darkgreen;
+
+}
+
+@media(max-width :400px) {
+
+    .root {
+        font-size: 1.4rem;
+    }
+    .story{
+        font-size: 24px;
+        width: 20ch;
+    }
+
+    .links {
+        display: none;
+    }
+
+    nav a {
+       
+        margin: 24px;
+        font-size: 28px;
+    }
+    .title h1{
+         display: flex;
+         justify-content: center;  
+    } 
+
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img {
+        width: 450px;
+        border-radius: 50px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+   section {
+       font-size: 24px;
+   }
+   
+   .credits {
+       display: flex;
+        justify-content: space-between;
+        width: 40ch;
+
+   }
+
+   body {
+       background-color: goldenrod;
+   }
+
+   footer {
+      color: red;
+      font-size: 30px;
+      padding-left: 10px;
+      height: 20px;
+      background-color: goldenrod;
+     
+   }
+   
+ 
+}
+

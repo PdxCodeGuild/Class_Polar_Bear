@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,600");
+
+body,
+html {
+  height: 100%;
+  font-family: "Dosis", sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+.btn {
+  font-size: 20px;
+  background-color: #fff;
+  padding: 20px;
+  color: #333;
+  border-radius: 20px;
+  transition: 1s;
+}
+
+.wrapper:not(.main) {
+  width: 24%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.wrapper {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  flex-direction: column;
+  background: #00a5cf;
+  border: solid 0.5px;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.main {
+  background-color: #e94f37;
+  padding-top: 20px;
+}
+
+/* btn 1 */
+.btn-1Wrapper {
+  background-color: #8fb339;
+}
+.btn-1Wrapper > .btn {
+  color: #8fb339;
+}
+.btn-1Wrapper > .btn:hover {
+  box-shadow: inset 0 0 0 5px #8fb339;
+  border: solid 3px #fff;
+}
+
+/* btn 2 */
+.btn-2Wrapper > .btn {
+  color: #00a5cf;
+}
+.btn-2Wrapper > .btn:hover {
+  border-radius: 0;
+}
+
+/* btn 3 */
+.btn-3Wrapper {
+  background-color: lightcoral;
+}
+.btn-3Wrapper > .btn {
+  color: lightcoral;
+}
+.btn-3Wrapper > .btn:hover {
+  animation-name: scale-bounce;
+  animation-duration: 1s;
+}
+@keyframes scale-bounce {
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* btn 4 */
+.btn-4Wrapper {
+  background-color: peru;
+}
+.btn-4Wrapper > .btn {
+  color: peru;
+  border-bottom: 5px rgba(0, 0, 0, 0.5) solid;
+}
+.btn-4Wrapper > .btn:active {
+  animation-name: press-down;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes press-down {
+  to {
+    transform: translateY(3px);
+    border-bottom: 2px rgba(0, 0, 0, 0.5) solid;
+  }
+}
+
+/* btn 5 */
+.btn-5Wrapper {
+  background-color: lightgreen;
+}
+.btn-5Wrapper > .btn {
+  color: lightgreen;
+}
+.btn-5Wrapper > .btn:hover {
+  animation-name: wobble-horiz;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.4s;
+}
+@keyframes wobble-horiz {
+  25% {
+    transform: translateX(7px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-7px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* btn 6 */
+.btn-6Wrapper {
+  background-color: dodgerblue;
+}
+.btn-6Wrapper > .btn {
+  color: dodgerblue;
+  transition: 0.3s;
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3), inset 0px 4px 1px 1px white,
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+  background: linear-gradient(top, #a6a4a6, #fff);
+}
+.btn-6Wrapper > .btn:active {
+  color: darken(dodgerblue);
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4),
+    inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+/* btn 7 */
+.btn-7Wrapper {
+  background-color: rebeccapurple;
+}
+.btn-7Wrapper > .btn {
+  border-radius: 0;
+  color: rebeccapurple;
+}
+.btn-7Wrapper > .btn:hover {
+  transition: 0.3s;
+  box-shadow: 5px -5px 0 0 rgba(0, 0, 0, 0.8);
+  transform: translate(-5px, 5px);
+}
+
+/* btn 8 */
+.btn-8Wrapper {
+  background-color: yellowgreen;
+  perspective: 150px;
+}
+.btn-8Wrapper > .btn {
+  transform: rotateX(25deg);
+  transition: 0.3s;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.3),
+    inset 0 -5px 0 0 rgba(0, 0, 0, 0.1);
+}
+.btn-8Wrapper > .btn:hover {
+  transform: rotateX(0deg);
+  box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.3),
+    inset 0 -5px 0 0 rgba(0, 0, 0, 0.1);
+}
+
+/* btn 9 */
+.btn-9Wrapper {
+  background-color: purple;
+}
+.btn-9Wrapper > .btn {
+  color: purple;
+  transition: 0.2s;
+}
+.btn-9Wrapper > .btn:hover {
+  opacity: 0.5;
+}
+
+/* btn 10 */
+.btn-10Wrapper {
+  background-color: salmon;
+}
+.btn-10Wrapper > .btn {
+  color: salmon;
+}
+.btn-10Wrapper > .btn:hover {
+  animation: grow-bounce;
+  animation-duration: 1s;
+  animation-timing-function: alternate;
+}
+@keyframes grow-bounce {
+  55% {
+    padding: 40px 10px;
+  }
+  75% {
+    padding: 10px 30px;
+  }
+  100% {
+    padding: 20px;
+  }
+}
+
+/* btn 11 */
+.btn-11Wrapper {
+  background-color: gold;
+}
+.btn-11Wrapper > .btn {
+  color: gold;
+}
+.btn-11Wrapper > .btn:hover {
+  animation-name: opacity-alternations;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  background-color: purple;
+}
+@keyframes opacity-alternations {
+  0% {
+    background-color: #e980fc;
+  }
+  50% {
+    background-color: #b96ac9;
+  }
+  75% {
+    background-color: #aa4dbc;
+  }
+  100% {
+    background-color: #c200fb;
+  }
+}
+
+/* btn 12 */
+.btn-12Wrapper {
+  background-color: rgb(91, 207, 169);
+}
+.btn-12Wrapper > .btn {
+  color: rgb(91, 207, 169);
+}
+.btn-12Wrapper > .btn {
+  animation-name: borders-move;
+  animation-duration: 0.8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.btn-12Wrapper > .btn:hover {
+  animation-name: borders-move;
+  animation-play-state: paused;
+}
+@keyframes borders-move {
+  0% {
+    border-radius: 0 20px 20px 20px;
+  }
+  25% {
+    border-radius: 20px 0 20px 20px;
+  }
+  50% {
+    border-radius: 20px 20px 0 20px;
+  }
+  100% {
+    border-radius: 20px 20px 20px 0;
+  }
+}
