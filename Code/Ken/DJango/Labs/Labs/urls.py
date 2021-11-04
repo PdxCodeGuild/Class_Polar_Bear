@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('routing/', include('routing.urls')),
-    path('rpsapp/', include('rpsapp.urls'))
+    path('rpsapp/', include('rpsapp.urls')),
+    path('polls/', include('polls.urls')),
 ]
