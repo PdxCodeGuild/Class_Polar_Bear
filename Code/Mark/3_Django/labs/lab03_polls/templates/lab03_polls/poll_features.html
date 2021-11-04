@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Features</title>
+</head>
+<body>
+    <form action="{% url 'lab03_polls:vote' q.id %}" method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h1>{{ q.question }}</h1></legend>
+            {% for choice in q.choice_set.all %}
+                <input type="checkbox" name="choice" id="choice {{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice {{ forloop.counter }}">{{ choice.choice }}</label><br>
+            {% endfor %}
+        </fieldset>
+        <input type="submit" value="Vote">
+    </form>
+</body>
+</html>
+
