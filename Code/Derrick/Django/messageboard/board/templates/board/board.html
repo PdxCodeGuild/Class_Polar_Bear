@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'board/styles.css' %">
+    <title>Message Board</title>
+</head>
+<body>
+    <h1>Message Board</h1>
+    <form action="{% url 'send_message' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Send</button>
+    </form>
+    {% for message in messages %}
+        <div>
+            <h3>{{ message.text }}</h3>
+            <p><i>by {{ message.user }} -- {{ message.date }}</i></p></div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>{{ q.q_text }}</h1>
+
+    <ul>
+    {% for choice in q.choice_set.all %}
+        <li>{{ choice.c_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'polls:details' q.id %}">Vote again?</a>    
+</body>
+</html>

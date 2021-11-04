@@ -1,0 +1,16 @@
+{% extends 'routing/base.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>Secondary</title>
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'routing/secondary.css' %}">
+{% endblock styles %}
+
+{% block content %}
+    <h1>This is a secondary file</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque similique voluptatibus iure ea nemo earum impedit explicabo voluptates animi! Non esse nulla officiis alias. Unde modi voluptatibus nisi fugit sequi.</p>
+{% endblock content %}    

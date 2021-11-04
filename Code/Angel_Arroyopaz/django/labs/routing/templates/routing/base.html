@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Default Value if no value is specefied in an extended html file</title>
+    {% endblock title %}
+
+    {% block styles %}
+    {% endblock styles %}
+</head>
+<body>
+    <nav>This is my navbar</nav>
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>
+
+<!-- Using blocks allows to 'extend' formatting from this html to other
+html pages -->
