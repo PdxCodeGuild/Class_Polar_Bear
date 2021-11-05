@@ -1,0 +1,25 @@
+
+
+a {
+    text-decoration: none;
+    font-size: 48px;
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 8px;
+    transition: hover .6s;
+    box-shadow: 4px 4px 8px 0 black;
+}
+
+a:hover {
+    font-size: 52px;
+}
+
+a:active {
+    box-shadow: 2px 2px 4px 0 black;
+}
+
+.buttons {
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
