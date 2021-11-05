@@ -20,6 +20,7 @@ body {
 li {
     list-style-type: none;
 }
+
 li a {
     color: green;
     font-size: 5rem;
