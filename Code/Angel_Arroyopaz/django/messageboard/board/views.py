@@ -1,7 +1,6 @@
 from django import forms
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
-from django import forms
 from django.urls import reverse
 from django.utils import timezone
 
