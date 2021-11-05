@@ -23,4 +23,5 @@ urlpatterns = [
     path('todo/', include('todo_list.urls')),
     path('rotcipher/', include('rot_cipher.urls')),
     path('polls/', include('polls.urls')),
+    path('grocerylist/', include('grocery_list.urls'))
 ]

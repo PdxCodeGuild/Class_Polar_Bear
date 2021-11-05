@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'todo_list',
     'rot_cipher',
     'polls.apps.PollsConfig',
+    'grocery_list',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
