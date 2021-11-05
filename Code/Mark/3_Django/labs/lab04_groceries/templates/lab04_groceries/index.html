@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'lab04_groceries/basket.css' %}">
+    <title>Grocery List</title>
+</head>
+
+<body>
+    <h1>Groceries<h1>
+        <div >
+        <form action="{% url 'lab04_groceries:plus' %}" method='POST'>
+            {% csrf_token %}
+            <input type='text' name='todo_list' required>
+            <button type='submit'>Plus One</button>
+        </form>
+        </div>
+
+        <div id='left'>
+            <h2 >To Do</h2>
+            {% for grocery in grocery_todo  %} 
+                <div class='list'>
+                    <form action="{% url 'lab04_groceries:done' grocery.id %}" method='POST'>
+                        {% csrf_token %}
+                        <button type="submit" id="{{ grocery.id }}">Purchase</button>
+                    </form>
+                    <form action="{% url 'lab04_groceries:remove' grocery.id %}" method='POST'>
+                        {% csrf_token %}
+                        <button type="submit" id="{ grocery.id }">Remove</button>      
+                    </form> 
+                </div>
+            {% endfor %}
+        </div>
+        <div id='right'>
+            <h2 >Done</h2>
+                {% for grocery in grocery_done %}
+                    <div class='list'>
+                        <form action="{% url 'lab04_groceries:remove' grocery.id %}" method='POST'>
+                            {% csrf_token %}
+                            <button type="submit" id="{ grocery.id }">Remove</button>      
+                        </form>
+                    </div>
+                {% endfor %} 
+        </div>
+</body>
+</html>
+ 
