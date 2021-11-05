@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+</head>
+<body>
+    <form action="{% url 'second' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        <ul>
+            {% for grocery in groceries  %}
+                <p>{{ grocery }}  
+                    <a href="{% url 'third' grocery.id %}?choice=incomplete">Incomplet</a>
+                    <a href="{% url 'third' grocery.id %}?choice=completed">Completed</a>
+                    <a href="{% url 'third' grocery.id %}?choice=delete">Delete</a></p>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h3>Incompleted List</h3>
+        <ul>
+            {% for incomplete_item in incomplete_items %}
+                <p>{{incomplete_item}}
+                <a href="{% url 'third' incomplete_item.id %}?choice=completed_two">Completed</a>
+                <a href="{% url 'third' incomplete_item.id %}?choice=delete_two">Delete</a></p>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <h3>Completed List</h3>
+        <ul>
+            {% for completed_item in completed_items %}
+                <p>{{completed_item}}
+                <a href="{% url 'third' completed_item.id %}?choice=delete_three">Delete</a></p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

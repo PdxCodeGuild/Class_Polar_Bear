@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'routing',
-    'grading',
+    'rps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

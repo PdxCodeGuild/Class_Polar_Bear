@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'lab01_routing',
     'lab02_redo',
-    'lab03_polls'
+    'lab03_polls',
+    'lab04_groceries'
 ]
 
 MIDDLEWARE = [

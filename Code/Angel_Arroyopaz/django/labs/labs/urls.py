@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('routing/', include('routing.urls')),
     path('rps/', include('rock_paper_scissors.urls')),
+    path('grocerylist/', include('grocery_list.urls')),
 ]
