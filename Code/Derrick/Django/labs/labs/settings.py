@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'routing',
     'django_redo',
     'polls',
+    'grocery_list',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('routing/',include('routing.urls')),
     path('django_redo/',include('django_redo.urls')),
-    path('polls/',include('polls.urls'))
+    path('polls/',include('polls.urls')),
+    path('grocery_list/',include('grocery_list.urls'))
 ]
