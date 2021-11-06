@@ -13,10 +13,10 @@ class RotCipher:
 
     def create_rot_alphabet(self):
         for i in range(len(self.alpha)):
-            if self.alpha.index(self.alpha[i]) < self.rot_amount and i + self.rot_amount <= len(self.alpha) - 1:
+            if i + self.rot_amount <= 25:
                 new_letter = self.alpha[i + self.rot_amount]
 
-            elif i + self.rot_amount > len(self.alpha) - 1:
+            elif i + self.rot_amount > 25:
                 remainder = len(self.alpha) - self.alpha.index(self.alpha[i]) # q = 16, 25 - 16 = 9, 15-9 = correct letters index
                 new_index = self.rot_amount - remainder
                 new_letter = self.alpha[new_index]
@@ -44,9 +44,9 @@ class RotCipher:
         return f'{self.decrypted} has been converted to {self.encrypted}'
 
 
-rot_cipher = RotCipher(13)
+rot_cipher = RotCipher(25)
 
-text = 'pneumonoultramicroscopicsilicovolcanoconiosis' # Actually a word in English
+text = 'hello' # Actually a word in English
 print(len(text))
 encrypted_text = rot_cipher.encrypt(text)
 print(encrypted_text) # uryyb
