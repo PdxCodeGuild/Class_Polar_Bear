@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
 from django import forms
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -10,6 +11,11 @@ class NewSignupForm(forms.Form):
     first_name = forms.CharField(label='First Name', max_length=20)
     last_name = forms.CharField(label='Last Name', max_length=20)
     email = forms.EmailField(label='Email')
+
+class NewLoginForm(forms.Form):
+    username = forms.CharField(label='Username', max_length=20)
+    password = forms.CharField(widget=forms.PasswordInput, label='Password', max_length=10)
+
 
 # Create your views here.
 def signup(request):
@@ -42,4 +48,32 @@ def signup(request):
             # username = form.cleaned_data['username']
             # user.username = username
 
-            return HttpResponseRedirect(reverse('signup'))
+            return HttpResponseRedirect(reverse('login'))
+
+
+def user_login(request):
+    if request.method == 'GET':
+        return render(request, 'users/login.html', {
+            'form': NewLoginForm()
+        })
+
+    elif request.method == "POST":
+        form = NewLoginForm(request.POST)
+        if form.is_valid():
+            password = form.cleaned_data['password']
+            user = authenticate(request,username=form.cleaned_data['username'],password=password) # returns a user or None
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('profile'))
+            else:
+                form.add_error('username', 'Invalid credentials')
+                return render(request, 'users/login.html', {
+                    'form': form
+                })
+
+def profile(request):
+    return render(request, 'users/profile.html')
+
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('login'))
