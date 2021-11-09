@@ -11,5 +11,12 @@ nav {
     text-decoration: none;
     padding: 10px;
     border: 1px solid #333;
+    background: #FFF;
     color: #333;
+    transition: .2s;
+}
+
+.nav_links a:hover {
+    background: #333;
+    color: #EEE;
 }
