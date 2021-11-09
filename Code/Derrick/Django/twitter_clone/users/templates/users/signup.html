@@ -4,16 +4,14 @@
 
 
 {% block title_link %}
-    <title>Signup | Twitter</title>
-    <link rel="stylesheet" href="{% static 'users/styles.css' %}">
+<title>Signup | Twitter</title>
+<link rel="stylesheet" href="{% static 'users/styles.css' %}">
 {% endblock title_link %}
 
 {% block content %}
-
 <form action="{% url 'signup' %}" method="POST">
     {% csrf_token %}
     {{ form }}
     <button type="submit">Signup</button>
 </form>
-
 {% endblock content %}

@@ -3,16 +3,14 @@
 {% load static %}
 
 {% block title_link %}
-    <title> Login | Twitter </title>
-    <link rel="stylesheet" href="{% static 'users/styles.css' %}">
+<title> Login | Twitter </title>
+<link rel="stylesheet" href="{% static 'users/styles.css' %}">
 {% endblock title_link %}
 
 {% block content %}
-
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Login">
 </form>
-
 {% endblock content %}
