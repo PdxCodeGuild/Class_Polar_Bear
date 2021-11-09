@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_links {
+    display: flex;
+}
+
+.nav_links a {
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #333;
+    color: #333;
+}
