@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 from .forms import NewLoginForm, NewSignupForm
+from tweets.models import Tweet
 
 
 # Create your views here.
@@ -60,8 +62,12 @@ def user_login(request):
                     'form': form
                 })
 
+@login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    tweets = Tweet.objects.all().filter(user=request.user)
+    return render(request, 'users/profile.html', {
+        'tweets': tweets
+    })
 
 def user_logout(request):
     logout(request)

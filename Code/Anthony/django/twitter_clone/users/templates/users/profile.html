@@ -6,5 +6,21 @@
 
 {% block content %}
 <h1>Welcome {{request.user}}</h1>
-<a href="{% url 'logout' %}">Logout</a>
+{% for tweet in tweets %}
+<div>
+    <p>{{tweet.text}}</p>
+    {% if request.user == tweet.user %}
+    <a href="{% url 'delete_tweet' tweet.id %}">❌</a>
+    {% endif %}
+    <h6>{{tweet.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' tweet.id %}">👍{{tweet.likes}}</a> 
+        <a href="{% url 'dislike' tweet.id %}">👎{{tweet.dislikes}}</a>
+        <a href="{% url 'detail' tweet.id %}">↪</a>
+    </p>
+    {% endif %}
+    <p>{{tweet.published_date}}</p>
+</div>
+{% endfor %}
 {% endblock content %}

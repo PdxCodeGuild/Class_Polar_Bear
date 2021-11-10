@@ -40,3 +40,26 @@ def delete_tweet(request, tweet_id):
         tweet = Tweet.objects.get(id=tweet_id, user=request.user)
         tweet.delete()
     return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def like(request, tweet_id):
+    if Tweet.objects.filter(id=tweet_id).exists():
+        tweet = Tweet.objects.get(id=tweet_id)
+        tweet.likes += 1
+        tweet.save()
+    return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def dislike(request, tweet_id):
+    if Tweet.objects.filter(id=tweet_id).exists():
+        tweet = Tweet.objects.get(id=tweet_id)
+        tweet.dislikes += 1
+        tweet.save()
+    return HttpResponseRedirect(reverse('index'))
+
+
+def detail(request, tweet_id):
+    tweet = Tweet.objects.get(id=tweet_id)
+    return render(request, 'tweets/detail.html', {
+        'tweet': tweet
+    })
