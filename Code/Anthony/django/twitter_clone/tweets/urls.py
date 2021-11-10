@@ -4,8 +4,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    # path('new/', views.new_tweet, name='new_tweet'),
-    # path('delete/', views.delete_tweet, name='delete_tweet'),
+    path('new/', views.new_tweet, name='new_tweet'),
+    path('delete/<int:tweet_id>/', views.delete_tweet, name='delete_tweet'),
     # path('reply/', views.reply, name='reply'),
     # path('like/', views.like, name='like'),
     # path('dislike/', views.dislike, name='dislike'),
