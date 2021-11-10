@@ -1,0 +1,23 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+Twitter
+{% endblock title %}
+
+{% block content %}
+
+
+
+<h1>Welcome to Twitter</h1>
+{% for tweet in tweets %}
+<div>
+    <p>{{tweet.text}}</p>
+    <h6>{{tweet.user}}</h6>
+    <p>👍{{tweet.likes}} 👎{{tweet.dislikes}}</p>
+    <p>{{tweet.published_date}}</p>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}
