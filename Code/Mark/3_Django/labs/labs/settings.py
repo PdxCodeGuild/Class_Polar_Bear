@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'lab01_routing',
     'lab02_redo',
     'lab03_polls',
-    'lab04_groceries'
+    'lab04_groceries',
+    'lab05_blog'
 ]
 
 MIDDLEWARE = [
