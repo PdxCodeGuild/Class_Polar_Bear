@@ -28,10 +28,6 @@ def register(request):
             )
             
         return render(request,'blog/profile.html')
-@login_required
-def profile(request):
-    posts = BlogPost.objects.all().filter(user=request.user)
-    return render(request,'blog/profile.html',{'posts': posts})
 
 def user_login(request):
     if request.method == 'GET':
@@ -39,6 +35,7 @@ def user_login(request):
 
     if request.method == 'POST':
         form = LoginForm(request.POST)
+
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
@@ -47,8 +44,14 @@ def user_login(request):
                 login(request,user)
 
                 return HttpResponseRedirect(reverse('blog:profile'))
+                
             else:
                 return render(request,'users/login.html')
+
+@login_required
+def profile(request):
+    posts = BlogPost.objects.all().filter(user=request.user)
+    return render(request,'blog/profile.html',{'posts': posts})
     
 @login_required
 def create(request):
@@ -66,6 +69,8 @@ def create(request):
             post.save()
 
     return HttpResponseRedirect(reverse('blog:profile'))
+
+
             
     
         
