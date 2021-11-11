@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | Blog</title>
+</head>
+<body>
+  <h1>Welcome {{ request.user }}</h1>
+  <br>
+  <a href="{% url 'blog:create' %}">Create new post</a>
+  <ul>
+    {% for blog in blogs %}
+      <li>{{ blog.title }}</li>
+    {% endfor %}
+
+  </ul>
+  <a href="{% url 'blog:logout' %}">Log out</a>
+</body>
+</html>
