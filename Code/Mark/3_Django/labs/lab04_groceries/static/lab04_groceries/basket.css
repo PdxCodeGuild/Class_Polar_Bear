@@ -1,0 +1,20 @@
+body {
+    background-color: rgb(104, 177, 245)
+}
+
+button {
+    border-radius: 6pt;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 18pt;
+}
+
+input {
+    border-radius: 6pt;
+}
+

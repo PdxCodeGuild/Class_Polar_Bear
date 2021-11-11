@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'groceries.apps.GroceriesConfig',
     'polls.apps.PollsConfig',
     'rpsapp',
     'routing',

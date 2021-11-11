@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'grocery_list/styles.css' %}">
+    <title>Grocery List</title>
+</head>
+<body>
+    <h1>Grocery List App</h1>
+    <p>Click an item to remove it from your lists</p> 
+    <form action="{% url 'update_list' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Add Item</button>
+    </form>   
+    <div class="wrapper">
+        <ul>
+            <h2>Completed</h2>
+            {% for grocery in groceries %}
+                {% if grocery.completed == True %}
+                    <li><h3>{{ grocery.text }}</h3></li>
+                    <a href="{% url 'remove_item' grocery.id %}">Remove</a>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        
+        <ul>
+            <h2>Not Completed</h2>
+            {% for grocery in groceries %}
+                {% if grocery.completed == False %}
+                    <li><h3>{{ grocery.text }}</h3></li>
+                    <a href="{% url 'remove_item' grocery.id %}">Remove</a>
+                    <a href="{% url 'mark_completed' grocery.id %}">Mark complete</a>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

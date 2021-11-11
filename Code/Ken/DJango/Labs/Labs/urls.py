@@ -23,4 +23,5 @@ urlpatterns = [
     path('routing/', include('routing.urls')),
     path('rpsapp/', include('rpsapp.urls')),
     path('polls/', include('polls.urls')),
+    path('groceries/', include('groceries.urls')),
 ]
