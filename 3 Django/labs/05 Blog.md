@@ -55,7 +55,4 @@ Add pages for users to browse each other's posts.
 - Post Detail `/posts/<int:blogpost_id>/`
   - view a blog post
 
-## Part 5: Images (optional)
-
-Add an `ImageField` to your model so each blog post can have a header image. Show a preview of this image on every post list, and the full image on a post detail.
 
