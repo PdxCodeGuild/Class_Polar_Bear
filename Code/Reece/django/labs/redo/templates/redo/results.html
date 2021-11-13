@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="{% static 'redo/results.css' %}">
 </head>
 <body>
-    <h1>Replay?</h1>
+    <h1>{{ game_msg }}</h1>
+    <h2>Thank you for playing! Would you like to replay?</h2>
     <section>
         <div class="btn-yes_Wrapper wrapper">
-            <a class="btn">Yes</a>
+            <a href="{% url 'redo_rps:rps_choice' %}" class="btn">Yes</a>
           </div>
-        <div class="btn-no_Wrapper wrapper">
-            <a class="btn">No</a>
-          </div>
-    </section>>
+    </section>
 </body>
 </html>

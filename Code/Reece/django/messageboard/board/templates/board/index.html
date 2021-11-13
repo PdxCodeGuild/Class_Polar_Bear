@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+</head>
+<body>
+    <h1>Welcome to the Polar Board</h1>
+
+    <form action="{% url 'board:new_message' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type='submit'>Leave Message</button>
+    </form>
+
+    {% for message in messages %}
+        <div>
+            <h4>{{ message.user }}</h4>
+            <p>{{ message.text_content }}</p>
+            <h6>{{ message.date }}</h6>
+        </div>
+    {% endfor %}
+</body>
+</html>
