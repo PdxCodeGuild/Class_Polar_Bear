@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <h1>Login Page</h1>
-    <form action="{% url 'blog:login' %}" method="post">
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title_link %}
+<title>Login</title>
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}"><link>
+{% endblock title_link %}
+
+{% block content %}
+<h1>Login Page</h1>
+<form action="{% url 'blog:login' %}" method="post">
+    <div class="form login">
         {% csrf_token %}
         {{ form }}
         <button type="submit">Login</button>
-    </form>
-</body>
-</html>
+    </div>
+</form>
+{% endblock content %}
