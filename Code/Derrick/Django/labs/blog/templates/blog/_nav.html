@@ -1,0 +1,14 @@
+<nav>
+    <div class="logo">❤</div>
+    <div class="nav_links">
+        {% if not request.user.is_anonymous %}
+            <a href="{% url 'blog:profile' %}">Profile</a>
+            <a href="{% url 'blog:logout' %}">Logout</a>
+            <a href="{% url 'blog:create' %}">New Blog Post</a>
+            <a href="{% url 'blog:posts' %}">View All Posts</a>
+        {% else %}
+            <a href="{% url 'blog:register' %}">Register</a>
+            <a href="{% url 'blog:login' %}">Login</a>
+        {% endif %}
+    </div>    
+</nav>

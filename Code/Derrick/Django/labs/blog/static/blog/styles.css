@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 50px 0 10px 0;
+}
+
+p {
+    margin: 50px 0;
+}
+
+input {
+    margin: 10px 0;
+}
+
+.container {
+    margin: 0 10px;
+}
+
+.author {
+    margin: 10px 0;
+}
+
+a {
+    margin: 0 10px 0 0;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: red;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.nav_links a {
+    border-right: 1px solid #333;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.nav_links a:last-child {
+    border-right: none;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
