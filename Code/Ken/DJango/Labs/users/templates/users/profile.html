@@ -1,0 +1,20 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+{{ request.user }}
+{% endblock title %}
+
+{% block content %}
+<h1>Welcome {{request.user}}</h1>
+{% for post in blog %}
+<div>
+    <p>{{post.text}}</p>
+    {% if request.user == blog.user %}
+    <a href="{% url 'delete_post' post.id %}">❌</a>
+    {% endif %}
+    <h6>{{blog.user}}</h6>
+    
+    <p>{{post.published_date}}</p>
+</div>
+{% endfor %}
+{% endblock content %}
