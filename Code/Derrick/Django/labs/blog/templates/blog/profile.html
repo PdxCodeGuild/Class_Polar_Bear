@@ -16,8 +16,6 @@
             <h1>{{ post.title }}</h1>
             <a href="{% url 'blog:details' post.id %}">View Post</a>
             <a href="{% url 'blog:edit' post.id %}">Edit Post</a>
-            <!-- <p><i>by {{ post.user }} - {{ post.date_created.month }}/{{ post.date_created.day }}/{{ post.date_created.year }} at {{ post.date_created.time }}</i></p> -->
-            <!-- <p>{{ post.body }}</p> -->
         </div>
     {% endfor %}
 </div>
