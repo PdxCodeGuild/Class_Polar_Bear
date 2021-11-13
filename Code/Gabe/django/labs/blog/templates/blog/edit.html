@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit | Blog</title>
+</head>
+<body>
+  <h1>Edit Post</h1>
+  <form action="{% url 'blog:edit' former_blogpost.id %}" method="POST">
+    {% csrf_token %}
+    <label for="btitle">Title</label>
+    <input  type="text" id="btitle" name='title' value="{{ former_blogpost.title }}">
+    <label for="bbody">Body</label>
+    <input type="text" id="bbody" name='body' value="{{ former_blogpost.body }}">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

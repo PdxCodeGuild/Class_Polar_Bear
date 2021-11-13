@@ -8,14 +8,20 @@
 </head>
 <body>
   <h1>Welcome {{ request.user }}</h1>
-  <br>
-  <a href="{% url 'blog:create' %}">Create new post</a>
+  <div style="display: flex;flex-direction: row;">
+    <a href="{% url 'blog:create' %}" style="margin-right: 20px;">Create new post</a>
+    <a href="{% url 'blog:posts' id=request.user.id %}">View other user's post</a>
+</div>
   <ul>
     {% for blog in blogs %}
+    <div style="display: flex;flex-direction: row;">
       <li>{{ blog.title }}</li>
+      <a href="{% url 'blog:edit' blogpost_id=blog.id %}" style="margin-left: 15px;">edit</a>
+    </div>
     {% endfor %}
-
   </ul>
   <a href="{% url 'blog:logout' %}">Log out</a>
 </body>
 </html>
+
+<!-- <input type="text" value="{{ blog.title }}"> -->

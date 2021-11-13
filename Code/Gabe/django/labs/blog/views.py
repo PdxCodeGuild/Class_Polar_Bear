@@ -25,6 +25,11 @@ class NewPost(forms.Form):
     body = forms.CharField(label='Body', max_length=1000)
 
 
+class NewEditForm(forms.Form):
+    title = forms.CharField(label='Title', max_length=40)
+    body = forms.CharField(label='Body', max_length=1000)
+
+
 # Create your views here.
 
 
@@ -94,9 +99,44 @@ def create_post(request):
     elif request.method == 'POST':
         form = NewPost(request.POST)
         if form.is_valid():
-            create = BlogPost.objects.create_user(
-                title=form.cleaned_data['title'],
-                body=form.cleaned_data['body'],
-                username=request.user
-            )
+            post = BlogPost()
+            post.user = request.user
+            post.title = form.cleaned_data['title']
+            post.body = form.cleaned_data['body']
+            post.save()
         return HttpResponseRedirect(reverse('blog:profile'))
+
+
+def edit(request, blogpost_id):
+    if request.method == 'GET':
+        form = NewEditForm()
+        former_blogpost = get_object_or_404(BlogPost, id=blogpost_id)
+        return render(request, 'blog/edit.html', {
+            'form': form,
+            'former_blogpost': former_blogpost
+        })
+    if request.method == 'POST':
+        form = NewEditForm(request.POST)
+        if form.is_valid():
+            edit_post = get_object_or_404(BlogPost, id=blogpost_id)
+            edit_post.title = form.cleaned_data['title']
+            edit_post.body = form.cleaned_data['body']
+            edit_post.save()
+        return HttpResponseRedirect(reverse('blog:profile'))
+
+
+def posts(request, id):
+    if request.method == 'GET':
+        users = User.objects.all().exclude(id=id)
+        posts = BlogPost.objects.all().exclude(user=id)
+        return render(request, 'blog/posts.html', {
+            'users': users,
+            'posts': posts
+        })
+
+
+def detail(request, post_id):
+    post = get_object_or_404(BlogPost, id=post_id)
+    return render(request, 'blog/detail.html', {
+        'post': post
+    })
