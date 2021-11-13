@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{ request.user }}
+{% endblock title %}
+
+{% block content %}
+<h1>Welcome {{ request.user }}</h1>
+
+<h2>My blogs!</h2>
+
+{% for blog in blogs %}
+    <div>
+        {{ blog }} -- <a href="{% url 'blog_edit' blog.id %}">Edit</a> 
+    </div>
+{% endfor %}
+<br>
+<br>
+<div class="newblog">
+    <a href="{% url 'create' %}">Create A New blog!</a>
+</div>
+
+
+{% endblock content %}
+

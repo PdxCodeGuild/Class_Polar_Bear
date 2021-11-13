@@ -1,0 +1,35 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+.links {
+    display: flex;
+}
+
+.links a {
+    color: gray;
+    border: 1px solid gray;
+    padding: 4px 8px;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+.home a {
+    text-decoration: none;
+    color: orange;
+}
+
+textarea {
+    resize: none;
+}

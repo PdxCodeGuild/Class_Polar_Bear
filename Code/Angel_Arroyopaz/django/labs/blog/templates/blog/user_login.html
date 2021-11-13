@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<h1>Login</h1>
+<form action="{% url 'user_login' %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <h3>Username:{{ form.username }}</h3>
+    </div>
+    <div>
+        <h3>Password:{{ form.password }}</h3>
+    </div>
+    <input type="submit" value="Login">
+</form>
+{% endblock content %}

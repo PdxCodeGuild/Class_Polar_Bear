@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Edit my blog
+{% endblock title%}
+
+{% block content %}
+<form action="{% url 'blog_edit' blog.id %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <h3>Title</h3>
+        {% comment %}
+        <input type="text" value="{{blog.title}}" name="title">
+        {% endcomment %}
+        <textarea name="title" id="title" cols="30" rows="10">{{blog.title}}</textarea>
+    </div>
+    <div>
+        <h3>Body</h3>
+        {% comment %}
+        <input type="text" value="{{blog.body}}" name="body">
+        {% endcomment %}
+        <textarea name="body" id="body" cols="30" rows="10">{{blog.body}}</textarea>
+    </div>
+    <div>
+        <h3>Public or Private blog?</h3>
+        {{ form.user_choice}}
+    </div>
+    <input type="submit" value="Submit Changes">
+</form>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<h1>Check out the latest blogs!</h1>
+
+{% for blog in blogs %}
+    <div class="home"> 
+        {% if blog.public == True %}
+        <a href="{% url 'details' blog.id %}">{{ blog }} - {{blog.user}}</a>
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock content %}
+
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ratione placeat debitis totam accusamus sint quasi sapiente blanditiis, doloribus laborum quae repudiandae, obcaecati inventore corrupti veritatis corporis ipsa. Nemo, quisquam!</p>

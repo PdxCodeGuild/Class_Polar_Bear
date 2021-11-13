@@ -1,0 +1,12 @@
+<nav>
+    <div class="links">
+        <a href="{% url 'home' %}">Home</a>
+        {% if request.user.is_anonymous %}
+            <a href="{% url 'register' %}">Signup</a>
+            <a href="{% url 'user_login' %}">Login</a>
+        {% else %}
+            <a href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% endif %}
+    </div>
+</nav>
