@@ -2,20 +2,18 @@ import requests
 import json
 class ContactList:
     
-    def __init__(self):
+    def __init__(self):
         self.contacts = []
 
     def load(self):
         # 1) open 'contacts.json' with option 'r' for read
-        with open('contacts.json', 'r') as contacts_json:
+        with open('contacts.json') as file:
         # 2) get the text from the file
-            contact_list = contacts_json.read()
+            data = json.loads(file.read()):
         # 3) convert the text into a python dictionary (json.loads)
-            data = json.loads(contact_list)
+        
         # 4) get the list of contacts out of the dictionary
-            for contact in data['contacts']:
-                if contact not in self.contacts:
-                    self.contacts.append(contact)
+        self.contacts = data['contacts']
         # 5) assign the list of dictionaries to self.contacts
         ...
     
@@ -37,14 +35,17 @@ class ContactList:
 
     def print(self):
         for contact in self.contacts:
-            print(contact)
+            print(contact['name'])
+            print(contact['email'])
+            print(contatct['phone_number'])
+            print('--------------\n')
 
         # loop over self.contacts
         # print the information for each contact on a separate line
         ...
 
     def add(self, name, phone_number, email):
-        new_contact = {'name': name, 'phone_number' : phone_number, 'email': email}
+        new_contact_dictionary = {'name': name, 'phone_number' : phone_number, 'email': email}
         self.contacts.append(new_contact)
         # create a new dictionary using the 3 parameters
         # add the new dictionary to self.contacts
@@ -52,7 +53,7 @@ class ContactList:
     def remove(self, name):
         for contact in self.contacts:
             if contact['name'] == name:
-                self.contacts.pop(contact)
+                self.contacts.remove(contact)
     
         # find the contact in self-contacts with the given name
         # remove the element at that index
