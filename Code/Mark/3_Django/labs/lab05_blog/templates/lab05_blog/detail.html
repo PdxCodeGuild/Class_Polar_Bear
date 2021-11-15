@@ -1,0 +1,32 @@
+{% extends 'lab05_users/base.html' %}
+
+{% block title %}
+{{ post.text }}
+{% endblock title %}
+
+
+{% block content %}
+<div>
+    <p>{{post.text}}</p>
+    {% if request.user == post.user %}
+    <a href="{% url 'delete_post' post.id %}">❌</a>
+    {% endif %}
+    <h6>{{post.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' post.id %}">👍{{post.likes}}</a> 
+        <a href="{% url 'dislike' post.id %}">👎{{post.dislikes}}</a>
+    </p>
+    {% endif %}
+    <p>{{post.published_date}}</p>
+</div>
+
+<form action="" method="post">
+
+</form>
+
+{% for comment in post.comment.all %}
+    {{ comment }}
+{% endfor %}
+{% endblock content %}
+
