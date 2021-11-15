@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+</head>
+<body>
+    <h1>Here is your shopping list:</h1>
+    <form action="{% url 'add_item' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="input_field"/>
+        <button type="submit">submit</button>
+    </form>
+    <ul>
+        {% for grocery_item in grocery_items %}
+        <li>{{ grocery_item.item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

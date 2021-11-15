@@ -35,14 +35,14 @@ h1 {
 body, html {
 	height: 100%;
 	font-family: 'Dosis', sans-serif;
-	color: maroon;
+	color: rebeccapurple;
 	margin: 0;
     background-color: grey;
 }
 
 .btn {
 	font-size:20px;
-    color:maroon;
+    color:rebeccapurple;
 	background-color:rgb(41, 54, 54);
 	padding:20px;
 	border-radius: 20px;
@@ -85,7 +85,6 @@ section {
 /* Button rock ----------------------------------------------*/
 .btn-rock_Wrapper {
     background-color: dimgray;
-    color: red;
 }
 .btn-rock_Wrapper .btn:hover {
     border-radius: 0;
@@ -93,7 +92,6 @@ section {
 /* Button paper ----------------------------------------------*/
 .btn-paper_Wrapper {
     background-color: rgb(66, 65, 65);
-    color: green;
 }
 .btn-paper_Wrapper .btn:hover {
     border-radius: 0;
@@ -101,7 +99,6 @@ section {
 /* Button scissors ----------------------------------------------*/
 .btn-scissor_Wrapper {
     background-color: rgb(27, 27, 27);
-    color: blue;
 }
 .btn-scissor_Wrapper .btn:hover {
     border-radius: 0;
