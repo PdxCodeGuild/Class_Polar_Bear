@@ -1,4 +1,7 @@
 from django import forms
+from django.forms import ModelForm
+from .models import BlogPost
+
 # from .models import BlogPost
 # from django.forms.widgets import PasswordInput, Textarea
 
