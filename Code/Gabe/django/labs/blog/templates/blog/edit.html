@@ -1,20 +1,25 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
   <title>Edit | Blog</title>
 </head>
 <body>
-  <h1>Edit Post</h1>
-  <form action="{% url 'blog:edit' former_blogpost.id %}" method="POST">
-    {% csrf_token %}
-    <label for="btitle">Title</label>
-    <input  type="text" id="btitle" name='title' value="{{ former_blogpost.title }}">
-    <label for="bbody">Body</label>
-    <input type="text" id="bbody" name='body' value="{{ former_blogpost.body }}">
-    <button type="submit">Submit</button>
-  </form>
+  <div class="edit_body">
+    <h1>Edit Post</h1>
+    <form action="{% url 'blog:edit' former_blogpost.id %}" method="POST" class="edit_form">
+      {% csrf_token %}
+      <label for="btitle">Title</label>
+      <input  type="text" id="btitle" name='title' value="{{ former_blogpost.title }}" style="width: 200px; margin-bottom: 20px;">
+      <label for="bbody">Body</label>
+      <textarea type="text" id="bbody" name='body' rows="15"
+      cols="70">{{ former_blogpost.body }}</textarea>
+      <button type="submit" class="edit_button">Submit</button>
+    </form>
+  </div>
 </body>
 </html>

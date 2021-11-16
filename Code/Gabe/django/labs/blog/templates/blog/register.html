@@ -1,17 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
   <title>Register Blog</title>
 </head>
 <body>
-  <h1>Register blog</h1>
-  <form action="{% url 'blog:register' %}" method="post" style='display: flex;flex-direction: column;'>
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Register</button>
-  </form>
+  <div class="register_body">
+    <h1>Register blog</h1>
+    <form action="{% url 'blog:register' %}" method="post" class="register_form">
+      {% csrf_token %}
+      {{ form }}
+      <button type="submit" class="register_button">Register</button>
+    </form>
+  </div>
 </body>
 </html>

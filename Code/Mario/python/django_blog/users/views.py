@@ -2,6 +2,9 @@ from django.forms.widgets import PasswordInput
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+
 
 from .forms import NewUserForm, UserLoginForm
 
@@ -25,7 +28,7 @@ def register(request):
             )
             user.save()
             print(user)
-            return HttpResponse('cool')
+            return render(request, 'profile.html')
     else:
         form = NewUserForm()
         return render(request, 'register.html', {
@@ -33,8 +36,24 @@ def register(request):
         })
 
 
-def login(request):
-    login_form = UserLoginForm()
-    return render(request, 'login.html', {
-        'form': login_form
-    })
+def user_login(request):
+    if request.method == 'GET':
+        login_form = UserLoginForm()
+        return render(request, 'login.html', {
+            'form': login_form
+        })
+    elif request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
+            login(request, user)
+            return render(request, 'profile.html')
+        else:
+            return HttpResponse("Not cool")
+
+
+@login_required(login_url='users/user_login')
+def welcome(request):
+    return render(request, 'welcome.html')

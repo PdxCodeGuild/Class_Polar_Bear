@@ -1,0 +1,266 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-size: 5rem;
+}
+
+/* profile.html */
+.profile_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav_links {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  justify-content: space-between;
+}
+.nav_links a {
+  text-decoration: none;
+  color: cadetblue;
+}
+.nav_links a:hover {
+  color: brown;
+}
+.profile_posts_header {
+  margin-top: 50px;
+}
+.profile_posts a {
+  text-decoration: none;
+  color: cadetblue;
+}
+.profile_posts a:hover {
+  color: brown;
+}
+.profile_posts_title {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.profile_posts_body {
+  max-width: 54ch;
+}
+.log_out {
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.log_out:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.log_out:hover {
+  background-color: brown;
+}
+.profile_posts {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  list-style: none;
+}
+
+/* posts.html */
+.posts_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main_body ul {
+  list-style: none;
+  margin-bottom: 30px;
+}
+.user_posts {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.post_link {
+  text-decoration: none;
+  color: cadetblue;
+}
+.post_link:hover {
+  color: brown;
+}
+.post_link li {
+  list-style: upper-roman;
+  margin-left: 10px;
+  max-width: 30ch;
+}
+.post_ul {
+  width: 350px;
+  padding: 10px 10px;
+  list-style: none;
+}
+.return {
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.return:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.return:hover {
+  background-color: brown;
+}
+
+/* detail.html */
+.detail_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.detail_body p {
+  max-width: 75ch;
+  margin-top: 30px;
+}
+.detail_back {
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-top: 50px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.detail_back:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.detail_back:hover {
+  background-color: brown;
+}
+
+/* edit.html */
+.edit_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.edit_button {
+  margin-top: 30px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.edit_button:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.edit_button:hover {
+  background-color: brown;
+}
+
+/* create.html */
+.create_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.create_button {
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.create_button:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.create_button:hover {
+  background-color: brown;
+}
+
+/* login */
+.login_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login_form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.login_button {
+  margin-top: 30px;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.login_button:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.login_button:hover {
+  background-color: brown;
+}
+
+/* register */
+.register_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.register_form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.register_button {
+  margin-top: 30px;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: cadetblue;
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  animation-duration: 1s;
+  animation-timing-function: ease-in;
+}
+.register_button:active {
+  box-shadow: -1.5px 2.5px 10px rgba(0, 0, 0, 0.5);
+}
+.register_button:hover {
+  background-color: brown;
+}
