@@ -13,7 +13,7 @@ class NewLoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput, label='Password', max_length=25)
 
 class NewPostForm(forms.Form):
-    title = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your Title\'s body goes here', 'cols':30, 'rows':3}), label='', max_length=20)
-    body = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your blog\'s body goes here'}), label='', max_length=200)
+    title = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your blog\'s title goes here', 'cols':30, 'rows':3}), label='', max_length=100)
+    body = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Your blog\'s body goes here'}), label='', max_length=1000)
     user_choice = forms.NullBooleanField(widget=forms.RadioSelect(choices=[(True, 'Public'), (False, 'Private')]))
    

@@ -69,9 +69,8 @@ def user_login(request):
 @login_required(login_url='user_login')
 def profile(request):
     blogs = BlogPost.objects.all().filter(user=request.user).order_by('-date_created')[:10]
-    # title = blogs.title
     return render(request, 'blog/profile.html', {
-        'blogs':blogs
+        'blogs':blogs,
     })
 
 @login_required(login_url='user_login')
