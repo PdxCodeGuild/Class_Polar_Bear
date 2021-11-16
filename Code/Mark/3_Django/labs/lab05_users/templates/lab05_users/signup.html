@@ -1,0 +1,15 @@
+{% extends 'lab05_users/base.html' %}
+
+{% block title %}
+Signup | Blog
+{% endblock title %}
+
+{% block content %}
+<form action="{% url 'signup' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <!-- <input type="submit" value="Signup"> -->
+    <button type="submit">Signup</button>
+</form>
+{% endblock content %}
+

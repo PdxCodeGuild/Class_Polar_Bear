@@ -9,8 +9,6 @@
 
 {% block content %}
 <h1>{{ request.user }} is editing {{ post.title }}:</h1>
-<h1>{{ post.title }}</h1>
-<p>{{ post.body }}</p>
 <form action="{% url 'blog:edit' post.id %}" method="post">
     <div class="form edit">
         {% csrf_token %}

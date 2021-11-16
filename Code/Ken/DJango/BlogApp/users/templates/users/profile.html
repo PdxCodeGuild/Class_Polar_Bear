@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{ request.user }}
+{% endblock title %}
+
+{% block content %}
+<h1>Welcome {{request.user}}</h1>
+{% for posts in posts %}
+<div>
+    <p>{{post.text}}</p>
+    {% if request.user == post.user %}
+    <a href="{% url 'delete_post' post.id %}">❌</a>
+    {% endif %}
+    <h6>{{post.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' post.id %}">👍{{post.likes}}</a> 
+        <a href="{% url 'dislike' post.id %}">👎{{post.dislikes}}</a>
+        <a href="{% url 'detail' post.id %}">↪</a>
+    </p>
+    {% endif %}
+    <p>{{post.published_date}}</p>
+</div>
+{% endfor %}
+{% endblock content %}

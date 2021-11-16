@@ -14,6 +14,7 @@
         {% csrf_token %}
         {{ form }}
         <button type="submit">Login</button>
+        <p>Not a member yet? <a href="{% url 'blog:register' %}">Register here</a></p>
     </div>
 </form>
 {% endblock content %}

@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{ request.user }}
+{% endblock title %}
+
+{% block bg %} 
+<style>
+    body {
+        background-image: url('https://picsum.photos/id/1006/1000/1000');       
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
+{% block content %}
+<h1>Welcome {{ request.user }}</h1>
+
+<h2>My blogs!</h2>
+
+
+{% for blog in blogs %}
+    <div class="profileblogs">
+        {% if blog.public == True %}
+            {{ blog }} (Public) -- <a href="{% url 'blog_edit' blog.id %}">Edit</a> 
+        {% else %}
+        {{ blog }} (Private) -- <a href="{% url 'blog_edit' blog.id %}">Edit</a> 
+        {% endif %}
+    </div>
+{% endfor %}
+<br>
+<br>
+<div class="profilenewblog">
+    <a href="{% url 'create' %}">Create A New blog!</a>
+</div>
+
+
+{% endblock content %}
+

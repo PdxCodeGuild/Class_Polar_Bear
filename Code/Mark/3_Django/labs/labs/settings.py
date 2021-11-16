@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'lab02_redo',
     'lab03_polls',
     'lab04_groceries',
-    'lab05_blog'
+    'lab05_blog',
+    'lab05_users'
 ]
 
 MIDDLEWARE = [

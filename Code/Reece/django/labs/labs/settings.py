@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'routing',
-    'redo'
+    'redo',
+    'grocery_list',
 ]
 
 MIDDLEWARE = [

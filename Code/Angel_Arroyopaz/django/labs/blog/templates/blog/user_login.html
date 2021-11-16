@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block bg %} 
+<style>
+    body {
+        background-image: url('https://picsum.photos/id/1020/1000/1000');       
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
+{% block content %}
+<h1>Login</h1>
+<form action="{% url 'user_login' %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <h3>Username:{{ form.username }}</h3>
+    </div>
+    <div>
+        <h3>Password:{{ form.password }}</h3>
+    </div>
+    <input type="submit" value="Login">
+</form>
+{% endblock content %}

@@ -35,22 +35,23 @@ h1 {
 body, html {
 	height: 100%;
 	font-family: 'Dosis', sans-serif;
-	color: maroon;
+	color: rebeccapurple;
 	margin: 0;
     background-color: grey;
+    text-align:center;
 }
 
 .btn {
 	font-size:20px;
-    color:maroon;
+    color:rebeccapurple;
 	background-color:rgb(41, 54, 54);
 	padding:20px;
 	border-radius: 20px;
-    transition:1s
+    transition:1s;
 }
 
 .wrapper:not(.main) {
-	width: 50%;
+	width: 16%;
 }
 
 h1 {
@@ -70,7 +71,6 @@ h1 {
 
 section {
 	display:flex;
-	flex-direction:row-reverse;
 	justify-content:center;
 	margin-top: 0;
     margin-bottom: 0;
@@ -85,17 +85,8 @@ section {
 
 /* Button yes ----------------------------------------------*/
 .btn-yes_Wrapper {
-    background-color: dimgray;
-    color: red;
+    background-color: grey;
 }
 .btn-yes_Wrapper .btn:hover {
-    border-radius: 0;
-}
-/* Button no ----------------------------------------------*/
-.btn-no_Wrapper {
-    background-color: rgb(27, 27, 27);
-    color: red;
-}
-.btn-no_Wrapper .btn:hover {
     border-radius: 0;
 }

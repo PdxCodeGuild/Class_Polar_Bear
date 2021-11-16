@@ -88,7 +88,7 @@ def edit(request,post_id):
             post.save()
             return HttpResponseRedirect(reverse('blog:profile'))
     else:
-        form = EditBlogPost()
+        form = EditBlogPost({'title':post.title,'body':post.body}) # allows user to edit original post inside of the form
         return render(request,'blog/edit.html',{'form': form,'post': post, 'posts': posts})
 
 @login_required

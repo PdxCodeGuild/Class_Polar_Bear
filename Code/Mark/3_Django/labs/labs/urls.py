@@ -22,6 +22,7 @@ urlpatterns = [
     path('lab02_redo/', include('lab02_redo.urls')),
     path('lab03_polls/', include('lab03_polls.urls')),
     path('lab04_groceries/', include('lab04_groceries.urls')),
-    path('lab05_blog/', include('lab05_redo.urls'))
+    path('lab05_blog/', include('lab05_blog.urls')),
+    path('lab05_users/', include('lab05_users.urls'))
 ]
 
