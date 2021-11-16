@@ -10,7 +10,17 @@
     <link rel="stylesheet" href="{% static 'blog/styles.css' %}">
 
 </head>
+
 <body>
+    {% block bg %} 
+    <style>
+        body {
+            background-color: white;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    {% endblock bg %}
     {% include 'blog/_navbar.html' %}
     {% block content %}
     {% endblock content %}

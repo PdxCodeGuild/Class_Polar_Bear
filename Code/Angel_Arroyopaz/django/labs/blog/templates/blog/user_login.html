@@ -4,6 +4,16 @@
 Login
 {% endblock title %}
 
+{% block bg %} 
+<style>
+    body {
+        background-image: url('https://picsum.photos/id/1020/1000/1000');       
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
 {% block content %}
 <h1>Login</h1>
 <form action="{% url 'user_login' %}" method="POST">

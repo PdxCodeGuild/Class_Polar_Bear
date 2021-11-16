@@ -4,8 +4,21 @@
 Home
 {% endblock title %}
 
+{% block bg %} 
+<style>
+    body {
+        background-image: url('https://picsum.photos/seed/picsum/1000/1000');       
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
+
 {% block content %}
 <h1>Check out the latest blogs!</h1>
+
+<h3>Blog - Author</h3>
 
 {% for blog in blogs %}
     <div class="home"> 
@@ -15,6 +28,3 @@ Home
     </div>
 {% endfor %}
 {% endblock content %}
-
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum ratione placeat debitis totam accusamus sint quasi sapiente blanditiis, doloribus laborum quae repudiandae, obcaecati inventore corrupti veritatis corporis ipsa. Nemo, quisquam!</p>

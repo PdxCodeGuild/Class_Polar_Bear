@@ -4,6 +4,16 @@
 {{blog.id}}
 {% endblock title %}
 
+{% block bg %} 
+<style>
+    body {
+        background-color: #ffeeee;        
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
 {% block content %}
 <div>
     <h3>Title:</h3>{{blog.title}}

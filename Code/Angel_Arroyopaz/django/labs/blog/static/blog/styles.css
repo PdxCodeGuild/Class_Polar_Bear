@@ -7,7 +7,7 @@ nav {
 }
 
 .links a {
-    color: gray;
+    color: black;
     border: 1px solid gray;
     padding: 4px 8px;
     text-decoration: none;
@@ -27,9 +27,11 @@ a {
 
 .home a {
     text-decoration: none;
-    color: orange;
+    color: black;
 }
 
 textarea {
     resize: none;
 }
+
+

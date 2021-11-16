@@ -4,6 +4,16 @@
 New blog!
 {% endblock title %}
 
+{% block bg %} 
+<style>
+    body {
+        background-color: #ffeeee;        
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
 {% block content %}
 <form action="{% url 'create' %}" method="POST">
     {% csrf_token %}

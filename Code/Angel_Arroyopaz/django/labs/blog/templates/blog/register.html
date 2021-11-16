@@ -4,6 +4,16 @@
 Register
 {% endblock title %}
 
+{% block bg %} 
+<style>
+    body {
+        background-image: url('https://picsum.photos/id/102/1000/1000');             
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
 {% block content %}
 <h1>Sign Up</h1>
     <form action="{% url 'register' %}" method="POST">
