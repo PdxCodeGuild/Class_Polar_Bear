@@ -8,7 +8,7 @@
 {% endblock title_link %}
 
 {% block content %}
-<h1>{{ request.user }} is editing {{ post.title }}:</h1>
+<h3><span>{{ request.user }}</span> is editing <span>{{ post.title }}</span>:</h3>
 <form action="{% url 'blog:edit' post.id %}" method="post">
     <div class="form edit">
         {% csrf_token %}

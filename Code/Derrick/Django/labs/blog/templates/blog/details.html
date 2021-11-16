@@ -8,14 +8,14 @@
 {% endblock title_link %}
 
 {% block content %}
-<h1>{{ request.user }} is viewing a post by {{ post.user }}:</h1>
+<h3><span>{{ request.user }}</span> is viewing a post by <span>{{ post.user }}</span>:</h3>
 <div class="post">
     <h1>{{ post.title }}</h1>
     <p>{{ post.body }}</p>
-    <p class="author">Posted by <i>{{ post.user }}</i></p>
+    <p class="author">Posted by <i><span>{{ post.user }}</span></i></p>
     {% if post.user == request.user %} 
-        <a href="{% url 'blog:edit' post.id %}">Edit Post</a>
+        <a href="{% url 'blog:edit' post.id %}" class="button">Edit Post</a>
     {% endif %}
-    <a href="{% url 'blog:posts' %}">Go Back</a>
+    <a href="{% url 'blog:posts' %}" class="button">Go Back</a>
 </div>
 {% endblock content %}

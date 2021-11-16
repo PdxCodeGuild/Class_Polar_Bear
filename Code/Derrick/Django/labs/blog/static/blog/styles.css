@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Poppins', 'sans-serif';
+    background: #FFFFFF;
+    color: #0B132B;
+}
+
 h1 {
     margin: 50px 0 10px 0;
 }
@@ -18,13 +24,32 @@ input {
 }
 
 a {
-    margin: 0 10px 0 0;
+    color: #5BC0BE;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0B132B;
 }
 
 /* --------- Content --------- */
 
 .container {
     margin: 0 10px;
+}
+
+.post h1 {
+    border-bottom: 4px solid #5BC0BE; 
+    display: inline-block;
+}
+
+.profile-post h1 {
+    display: block;
+    border-bottom: none;
+}
+
+.all h1 {
+    color: #0B132B;
 }
 
 .author {
@@ -34,31 +59,78 @@ a {
 .form {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
+}
+
+.form label {
+    display: none;
+}
+
+input {
+    height: 32px;
+}
+
+button {
+    background: #FFF;
+    border: 1px solid #5BC0BE;
+    padding: 10px 0;
+    color: #5BC0BE;
+    transition: .2s;
+}
+
+button:hover {
+    background: #0B132B;
+    border: 1px solid #0B132B;
+    padding: 10px 0;
+    color: #FFF;
+    cursor: pointer;
+}
+
+span {
+    color: #5BC0BE;
+}
+
+.button {
+    border: 1px solid #5BC0BE;
+    padding: 5px 15px;
+    transition: .2s;
+}
+
+.button:hover {
+    border: 1px solid #0B132B;
+    background: #0B132B;
+    color: #FFF;
+    padding: 5px 15px;
 }
 
 /* --------- Nav --------- */
 
 .logo {
     font-size: 2.5rem;
-    color: red;
+    color: #3A506B;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #CCDBDC;
     padding: 15px;
     margin-bottom: 50px;
     align-items: center;
 }
 
 .nav_links a {
-    border-right: 1px solid #333;
+    border-right: 1px solid #CCDBDC;
     display: inline-block;
     text-decoration: none;
     padding: 0 10px;
+    color: #3A506B;   
 }
+
+.nav_links a:hover {
+    color: #5BC0BE;
+}
+
 
 .nav_links a:last-child {
     border-right: none;
