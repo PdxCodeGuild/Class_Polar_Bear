@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'library',
+    'grocery_list',
     'routing',
     'rps',
     'django.contrib.admin',
