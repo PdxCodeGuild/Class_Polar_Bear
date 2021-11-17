@@ -50,7 +50,7 @@ def user_login(request):
 
 @login_required
 def profile(request):
-    posts = BlogPost.objects.all().filter(user=request.user)
+    posts = BlogPost.objects.all().filter(user=request.user).order_by('date_created')
     return render(request,'blog/profile.html',{'posts': posts})
     
 @login_required
@@ -89,7 +89,7 @@ def edit(request,post_id):
             return HttpResponseRedirect(reverse('blog:profile'))
     else:
         form = EditBlogPost({'title':post.title,'body':post.body}) # allows user to edit original post inside of the form
-        return render(request,'blog/edit.html',{'form': form,'post': post, 'posts': posts})
+        return render(request,'blog/edit.html', {'form': form,'post': post, 'posts': posts})
 
 @login_required
 def posts(request):
