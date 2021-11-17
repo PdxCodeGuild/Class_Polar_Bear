@@ -12,10 +12,10 @@
 <a href="{% url 'blog:create' %}">Create New Post</a>   
 <div class="posts">
     {% for post in posts %}
-        <div class="post">
+        <div class="post profile-post">
             <h1>{{ post.title }}</h1>
-            <a href="{% url 'blog:details' post.id %}">View Post</a>
-            <a href="{% url 'blog:edit' post.id %}">Edit Post</a>
+            <a href="{% url 'blog:details' post.id %}" class="button">View Post</a>
+            <a href="{% url 'blog:edit' post.id %}" class="button">Edit Post</a>
         </div>
     {% endfor %}
 </div>

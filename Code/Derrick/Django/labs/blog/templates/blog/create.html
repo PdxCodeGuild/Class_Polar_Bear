@@ -8,7 +8,7 @@
 {% endblock title_link %}
 
 {% block content %}
-<h1>{{ request.user }} is creating a new post:</h1>
+<h3><span>{{ request.user }}</span> is creating a new post:</h3>
 <form action="{% url 'blog:create' %}" method="post">
     <div class="form create">
         {% csrf_token %}

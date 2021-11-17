@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'grocery_list:input' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="item"/>
+        <input type="checkbox" name="status"/>
+        <button type="submit">submit</button>
+    </form>
+    <ul>
+        {% for grocery in groceries %}
+        <li>{{ groceries.grocery }}</li>
+        {% endfor %}
+      </ul>
+      <div>{{ message }} TEST</div>
+</body>
+</html>
