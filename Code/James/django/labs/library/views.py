@@ -15,7 +15,7 @@ def checkout(request, book_id):
     track.user = 'test5'
     track.checkout = True
     track.save()
-    books = Track.objects.all().order_by("-timestamp")
+    books = Book.objects.all().order_by("title")
     return render(request, "library/checkout.html", {
         "books": books,
     })

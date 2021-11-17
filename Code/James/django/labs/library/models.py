@@ -22,6 +22,9 @@ class Book(models.Model):
         tracks = Track.objects.filter(book=self.id)
         print(tracks)
         if len(tracks) > 0:
+            tracks = list(tracks)
+            # reverse tracks
+            # return tracks[0].checkout
             return tracks[-1].checkout
         else:
             return False
