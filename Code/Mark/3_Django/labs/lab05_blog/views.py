@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
 def index(request):
-    posts = Post.objects.all().order_by('-published_date')[:20]
+    posts = Post.objects.all().order_by('-date_created')[:20]
     return render(request, 'lab05_blog/index.html', {'posts': posts, 'form': NewPostForm()})
 
 @login_required
@@ -17,7 +17,7 @@ def new_post(request):
         if form.is_valid():
             post = Post()
             post.user = request.user
-            post.text = form.cleaned_data['text']
+            post.body = form.cleaned_data['body']
             post.save()
     return HttpResponseRedirect(reverse('index'))
 

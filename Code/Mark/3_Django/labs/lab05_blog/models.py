@@ -5,10 +5,13 @@ class Comment(Post):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
 
 class Post(models.Model):
-    text = models.CharField(max_length=120)
+    title = models.CharField(max_length=40)
+    body = models.TextField(max_length=4000)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    published_date = models.DateTimeField(auto_now_add=True)
+    public = models.BooleanField(default=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_edited = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.user}: {self.text[:21]} {self.published_date.year}, {self.published_date.month}, {self.published_date.day}. {self.published_date.hour}:{self.published_date.minute}"
+        return f"{self.user}: {self.body[:21]}, {self.date_created}"
 

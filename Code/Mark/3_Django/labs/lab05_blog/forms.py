@@ -1,5 +1,5 @@
 from django import forms
 
 class NewPostForm(forms.Form):
-    text = forms.CharField(label='Post', max_length=120)
+    body = forms.CharField(label='Post', max_length=4000)
 
