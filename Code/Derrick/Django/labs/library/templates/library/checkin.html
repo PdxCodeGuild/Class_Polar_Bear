@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkin</title>
+</head>
+<body>
+    <h1>Check In Book</h1>
+    {% for book in books %}
+        <h4>{{ book.title }}</h4>
+        <p><i>{{ book.author }}</i></p>
+        <a href="{% url 'checkin_book' book.id %}">Check In</a>
+    {% endfor %}
+</body>
+</html>

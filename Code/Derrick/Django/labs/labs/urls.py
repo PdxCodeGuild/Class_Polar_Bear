@@ -22,5 +22,6 @@ urlpatterns = [
     path('django_redo/',include('django_redo.urls')),
     path('polls/',include('polls.urls')),
     path('grocery_list/',include('grocery_list.urls')),
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('library/', include('library.urls'))
 ]
