@@ -7,8 +7,6 @@ class Comment(Post):
 class Post(models.Model):
     text = models.CharField(max_length=120)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
-    likes = models.IntegerField(default=0)
-    dislikes = models.IntegerField(default=1)
     published_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

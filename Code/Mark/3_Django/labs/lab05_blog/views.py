@@ -28,22 +28,6 @@ def delete_post(request, post_id):
         post.delete()
     return HttpResponseRedirect(reverse('index'))
 
-@login_required
-def like(request, post_id):
-    if Post.objects.filter(id=post_id).exists():
-        post = Post.objects.get(id=post_id)
-        post.likes += 1
-        post.save()
-    return HttpResponseRedirect(reverse('index'))
-
-@login_required
-def dislike(request, post_id):
-    if Post.objects.filter(id=post_id).exists():
-        post = Post.objects.get(id=post_id)
-        post.dislikes += 1
-        post.save()
-    return HttpResponseRedirect(reverse('index'))
-
 def detail(request, post_id):
     post = Post.objects.get(id=Post_id)
     return render(request, 'lab05_blog/detail.html', {'post': post})
