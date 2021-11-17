@@ -13,6 +13,8 @@ class Book(models.Model):
     title = models.CharField(max_length=50)
     author = models.ForeignKey(Author,on_delete=CASCADE)
     checked_out = models.BooleanField(default=False)
-    
+    name = models.CharField(max_length=50)
+    timestamp = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return f'{self.title} by {self.author}'

@@ -13,10 +13,11 @@
         <h4>{{ book.title }}</h4>
         <p><i>{{ book.author }}</i></p>
         {% if book.checked_out == True %}
-            <p style="color:red">Currently Checked Out</p>
+            <p style="color:red">Checked Out by {{ book.name }} on {{ book.timestamp }}</p>
             <a href="{% url 'checkin_page' %}">Check In Book</a>
         {% elif book.checked_out == False %}
             <p style="color:green">Available</p>
+            <p style="color:green">Checked in by {{ book.name }} on {{ book.timestamp }}</p>
             <a href="{% url 'checkout_page' %}">Check Out Book</a>
         {% endif %}
     {% endfor %}

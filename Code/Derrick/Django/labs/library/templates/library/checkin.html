@@ -11,7 +11,11 @@
     {% for book in books %}
         <h4>{{ book.title }}</h4>
         <p><i>{{ book.author }}</i></p>
-        <a href="{% url 'checkin_book' book.id %}">Check In</a>
+        <form action="{% url 'checkin_book' book.id %}" method='post'>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Checkin</button>
+        </form>
     {% endfor %}
 </body>
 </html>
