@@ -1,4 +1,4 @@
-"""labs URL Configuration
+"""mobs URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -17,9 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('library/', include('library.urls')),
     path('admin/', admin.site.urls),
-    path('routing/', include('routing.urls')),
-    path('grocery_list/', include('grocery_list.urls')),
-    path('rps/', include('rps.urls')),
+    path('library/', include('library.urls')),
 ]

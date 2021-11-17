@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
 def index(request):
-    posts = Post.objects.all().order_by('-published_date')[:20]
+    posts = Post.objects.all().order_by('-date_created')[:20]
     return render(request, 'lab05_blog/index.html', {'posts': posts, 'form': NewPostForm()})
 
 @login_required
@@ -17,7 +17,7 @@ def new_post(request):
         if form.is_valid():
             post = Post()
             post.user = request.user
-            post.text = form.cleaned_data['text']
+            post.body = form.cleaned_data['body']
             post.save()
     return HttpResponseRedirect(reverse('index'))
 
@@ -26,22 +26,6 @@ def delete_post(request, post_id):
     if Post.objects.filter(id=post_id, user=request.user).exists():
         post = Post.objects.get(id=post_id, user=request.user)
         post.delete()
-    return HttpResponseRedirect(reverse('index'))
-
-@login_required
-def like(request, post_id):
-    if Post.objects.filter(id=post_id).exists():
-        post = Post.objects.get(id=post_id)
-        post.likes += 1
-        post.save()
-    return HttpResponseRedirect(reverse('index'))
-
-@login_required
-def dislike(request, post_id):
-    if Post.objects.filter(id=post_id).exists():
-        post = Post.objects.get(id=post_id)
-        post.dislikes += 1
-        post.save()
     return HttpResponseRedirect(reverse('index'))
 
 def detail(request, post_id):
