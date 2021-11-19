@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+  <title>Posts | Blog</title>
+</head>
+<body>
+  <div class="posts_body">
+    <h1>User posts</h1>
+    <ul style="list-style: none;">
+      {% for user in users %}
+        <li class="user_posts">{{ user }}:</li>
+        <ul class="post_ul">
+          {% for post in posts %}
+            {% if user == post.user %}
+              <a href="{% url 'blog:detail' post_id=post.id %}" class="post_link">
+                <li>{{ post.title }}</li>
+              </a>
+            {% else %}
+              <li>No posts yet..</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'blog:profile' %}" class="return">Return to main</a>
+  </div>
+</body>
+</html>

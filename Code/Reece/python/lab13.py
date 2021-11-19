@@ -1,4 +1,5 @@
-import re
+# Reece Adams - lab13.py - lab 13 - Count Words #
+
 import string
 
 # Read lab13.txt
@@ -16,8 +17,6 @@ for char in string.punctuation + '——'+ '——' + '”' + '“' + '’':
 
 with open('lab13_split_book.txt')as split_book:
     split_book = book_text.split(' ')
-
-
 
 # search for word
 
@@ -44,10 +43,6 @@ print(book_dict)
 #             print(word + i)
 #             found_word = True
 #             loop = False
-
-
-
-
 
 # found_entry = False
 # for entry in phonebook:

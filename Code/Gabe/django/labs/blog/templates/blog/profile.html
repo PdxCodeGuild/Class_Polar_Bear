@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+  <title>Profile | Blog</title>
+</head>
+<body>
+  <div class="profile_body">
+    <h1>Welcome {{ request.user }}</h1>
+    <nav class="nav_links">
+      <a href="{% url 'blog:create' %}">Create new post</a>
+      <a href="{% url 'blog:posts' id=request.user.id %}">View other user's post</a>
+  </nav>
+    <h2 class="profile_posts_header">{{ request.user }}'s Posts</h2>
+    <ul>
+      {% for blog in blogs %}
+      <div class="profile_posts">
+        <li class="profile_posts_title">{{ blog.title }}</li>
+        <a href="{% url 'blog:edit' blogpost_id=blog.id %}" style="margin-left: 15px;">edit</a>
+      </div>
+      <p class="profile_posts_body">{{ blog.body }}</p>
+      {% endfor %}
+    </ul>
+    <a href="{% url 'blog:logout' %}" class="log_out">Log out</a>
+  </div>
+</body>
+</html>
+
+<!-- <input type="text" value="{{ blog.title }}"> -->

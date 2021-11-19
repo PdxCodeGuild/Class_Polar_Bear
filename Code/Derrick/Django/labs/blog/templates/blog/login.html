@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title_link %}
+<title>Login</title>
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}"><link>
+{% endblock title_link %}
+
+{% block content %}
+<h1>Login Page</h1>
+<div class="form-container">
+    <form action="{% url 'blog:login' %}" method="post">
+        <div class="form login">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Login</button>
+            <p>Not a member yet? <a href="{% url 'blog:register' %}">Register here</a></p>
+        </div>
+    </form>
+</div>
+{% endblock content %}

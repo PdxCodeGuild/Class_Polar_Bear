@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery List</title>
+</head>
+<body>
+  <h1>Grocery List</h1>
+  <form action="{% url 'grocery_list:add_item' %}" method="POST">
+    <span>Add item </span>
+    {% csrf_token %}
+    {{ addItem.item_text }}
+     <button type="submit">Add</button>
+  </form>
+  {% if incomplete_list %}
+  <h3>Incomplete Items</h3>
+    <ul>
+      {% for item in incomplete_list %}
+      <div style='display: flex;flex-direction: row;'>
+        <li>{{ item.item_text }}</li>
+        <form action="{% url 'grocery_list:mark_complete' %}" method="POST">
+          {% csrf_token %}
+          {{ markCompleteForm.mark_complete }}
+          <button type="submit"></button>
+        </form>
+      </div>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No incomplete items...</p>
+  {% endif %}
+  {% if completed_list %}
+  <h3>Completed Items</h3>
+    <ul>
+      {% for item in completed_list %}
+        <div style='display: flex;flex-direction: row;'>
+          <li>{{ item.item_text }}</li>
+          <form action="{% url 'grocery_list:mark_incomplete' %}" method="UPDATE">
+            {% csrf_token %}
+            {{ markIncompleteForm.mark_incomplete }}
+          </form>
+        </div>
+        {% endfor %}
+      </ul>
+  {% else %}
+      <p>No items have been completed...</p>
+  {% endif %}
+</body>
+</html>

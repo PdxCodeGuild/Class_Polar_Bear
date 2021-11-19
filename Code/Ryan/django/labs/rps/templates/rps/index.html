@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'rps/styles.css' %}">
+    
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <div class="main wrapper">
+        <h1 class="dance">Welcome to</h1>
+        <h1 class="dance">Rock, Paper, or Scissors</h1>
+    </div>
+    
+    <section>
+        <form class="btn-rock" action="{% url 'rps:choice_rock' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn" type="submit"><h1>&#x1F5FF;</h1></button> 
+            </div>
+        </form>    
+        <form class="btn-paper" action="{% url 'rps:choice_paper' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn" type="submit"><h1>&#x1F4C3;</h1></button> 
+            </div>
+        </form>  
+        <form class="btn-scissors" action="{% url 'rps:choice_scissors' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button class="btn" type="submit"><h1>&#x2702;</h1></button> 
+            </div>
+        </form>  
+
+    <!-- <div class = "btn-paper">
+        <div class="btn">
+            <h1>&#x1F4C3;
+        </h1>
+        <form action="{% url 'rps:choice_paper' %}" method="POST">
+            {% csrf_token %}
+
+            <button type="submit">Pick paper</button>
+        </form>    
+        
+    </div>
+    </div>
+
+    <div class = "btn-scissors">
+        <div class="btn">
+            <h1>&#x2702;
+        </h1>
+        <form action="{% url 'rps:choice_scissors' %}" method="POST">
+            {% csrf_token %}
+
+            <button type="submit"></button>
+        </form>    
+
+    </div>
+    </div> -->
+
+    </section>
+
+
+
+
+</body>
+</html>

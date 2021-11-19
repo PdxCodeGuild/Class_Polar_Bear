@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title_link %}
+<title>Edit Post</title>
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}"><link>
+{% endblock title_link %}
+
+{% block content %}
+<h3><span>{{ request.user }}</span> is editing <span>{{ post.title }}</span>:</h3>
+<form action="{% url 'blog:edit' post.id %}" method="post">
+    <div class="form edit">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </div>
+</form>
+{% endblock content %}   

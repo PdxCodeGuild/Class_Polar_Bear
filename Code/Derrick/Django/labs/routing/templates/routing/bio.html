@@ -1,0 +1,41 @@
+{% extends 'routing/main.html' %}
+
+{% load static %}
+
+{% block title %}
+<title>01Bio_lab</title>
+{% endblock title %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'routing/bio.css' %}">
+{% endblock link %}
+
+{% block content %}
+<main>
+    <section id="general_info">
+        <div class="intro">
+            <h1>Nirvana</h1>
+            <p>Nirvana was a popular American grunge rock band that became popular in the 90's.  The lead singer was Kurt Cobain.</p>
+        </div>
+        <div class="resources">
+            <a href="https://en.wikipedia.org/wiki/Nirvana_(band)">More info on Nirvana</a>
+            <br>
+            <div class="img-container">
+                <img src="https://i.ibb.co/48C3VzN/nirvana-008.jpg" alt="picture of Nirvana" />
+            </div>
+        </div>
+    </section>
+    <section id="locations">
+        <h2>Places Nirvana has lived</h2>
+        <ul>
+            <li>Seattle, Washington</li>
+            <li>Aberdeen, Washington</li>
+        </ul>
+    </section>
+    <section id="quotes">
+        <h2>Famous Quotes</h2>
+        <p><i>I'd rather be hated for who I am, than loved for who I am not.</i> - Nirvana</p>
+    </section>
+</main>
+{% endblock content %}
+

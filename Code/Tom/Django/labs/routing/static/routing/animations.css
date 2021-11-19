@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+/* Not my code! */
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+    transition: 1s;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	border:solid 0.5px;
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	margin:30px 0;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+
+/* Animations */
+@keyframes stretch {
+    0% {
+        font-size: 20px;
+    }
+    50% {
+        font-size: 30px;
+    }
+    100% {
+        font-size: 20px;
+    }
+}
+
+@keyframes wobble {
+    0%{
+        transform: none;
+    }
+    33%{
+        transform:translateX(3px)
+    }
+    66%{
+        transform:translateX(-6px)
+    }
+    99%{
+        transform:translateX(3px)
+    }
+}
+
+@keyframes squash {
+    0%{
+        padding: 20px;
+    }
+    25%{
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    50%{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    85%{
+        padding: 25px;
+    }
+    100%{
+        padding: 20px;
+    }
+
+}
+
+@keyframes colorchange {
+    0%{
+        background-color: mediumpurple;
+    }
+    33%{
+        background-color: purple;
+    }
+    66%{
+        background-color: magenta;
+    }
+    100%{
+        background-color: mediumpurple;
+    }
+}
+
+@keyframes cornerchange {
+    0%{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    25%{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    50%{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 20px;
+    }
+    75%{
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 0px;
+    }
+    100%{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+
+/* Buttons */
+
+.btn-1Wrapper{
+    background-color: green;
+}
+.btn-1Wrapper .btn{
+    color: green;
+}
+.btn-1Wrapper .btn:hover{
+    border: solid 3px white;
+    box-shadow: inset 0 0 0 4px green;
+}
+
+.btn-2Wrapper .btn{
+    color: #00A5CF;
+}
+.btn-2Wrapper .btn:hover{
+    border-radius: 0px;
+}
+
+.btn-3Wrapper{
+    background-color: orangered;
+}
+.btn-3Wrapper .btn{
+    color: orangered;
+}
+.btn-3Wrapper .btn:hover{
+    animation-name: stretch;
+    animation-duration: 1s;
+}
+
+.btn-4Wrapper{
+    background-color: orange;
+}
+.btn-4Wrapper .btn{
+    color: orange;
+    box-shadow: 0 5px 0px 0px rgb(100, 100, 100);
+}
+.btn-4Wrapper .btn:active{
+    transform: translateY(3px);
+    box-shadow: 0 3px 0px 0px rgb(100, 100, 100);
+}
+
+.btn-5Wrapper{
+    background-color: lightseagreen;
+}
+.btn-5Wrapper .btn{
+    color: lightseagreen;
+}
+.btn-5Wrapper .btn:hover{
+    animation-name: wobble;
+    animation-duration: .4s;
+}
+
+.btn-6Wrapper{
+    background-color: lightblue;
+}
+.btn-6Wrapper .btn{
+    color: lightblue;
+    box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.25);
+    transition: .3s;
+}
+.btn-6Wrapper .btn:active{
+    box-shadow: 0 4px 3px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-7Wrapper{
+    background-color: purple;
+}
+.btn-7Wrapper .btn{
+    color: purple;
+    border-radius: 0%;
+    transition: .5s;
+}
+.btn-7Wrapper .btn:hover{
+    transform: translate(-5px, 5px);
+    box-shadow: 5px -5px 0px 2px rgba(0, 0, 0);
+}
+
+.btn-8Wrapper{
+    background-color: greenyellow;
+    perspective: 150px;
+}
+.btn-8Wrapper .btn{
+    color: greenyellow;
+    transform: rotateX(25deg);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+    transition: .5s;
+}
+.btn-8Wrapper .btn:hover{
+    transform: rotateX(0);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-9Wrapper{
+    background-color: plum
+}
+.btn-9Wrapper .btn{
+    color: plum;
+}
+.btn-9Wrapper .btn:hover{
+    opacity: 0.5;
+    transition: .5;
+}
+
+.btn-10Wrapper{
+    background-color: mediumvioletred
+}
+.btn-10Wrapper .btn{
+    color: mediumvioletred;
+}
+.btn-10Wrapper .btn:hover{
+    animation-name: squash;
+    animation-duration: 1s;
+}
+
+.btn-11Wrapper{
+    background-color: goldenrod
+}
+.btn-11Wrapper .btn{
+    color: goldenrod;
+}
+.btn-11Wrapper .btn:hover{
+    animation:colorchange 2s alternate infinite;
+}
+
+.btn-12Wrapper{
+    background-color: teal
+}
+.btn-12Wrapper .btn{
+    color: teal;
+    animation:cornerchange 1s infinite
+}
+.btn-12Wrapper .btn:hover{
+    animation-play-state:paused;
+}

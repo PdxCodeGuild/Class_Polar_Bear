@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS Results</title>
+    <link rel="stylesheet" href="{% static 'redo/results.css' %}">
+</head>
+<body>
+    <h1>{{ game_msg }}</h1>
+    <h2>Thank you for playing! Would you like to replay?</h2>
+    <section>
+        <div class="btn-yes_Wrapper wrapper">
+            <a href="{% url 'redo_rps:rps_choice' %}" class="btn">Yes</a>
+          </div>
+    </section>
+</body>
+</html>

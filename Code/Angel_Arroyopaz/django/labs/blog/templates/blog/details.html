@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{blog.id}}
+{% endblock title %}
+
+{% block bg %} 
+<style>
+    body {
+        background-image: linear-gradient(45deg, rgb(252, 169, 90),rgb(162, 85, 124),rgb(71, 0, 157));       
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+</style>
+{% endblock bg %}
+
+{% block content %}
+<div>
+    <h3>Title:</h3>{{blog.title}}
+</div>
+<div>
+    <h3>Blog:</h3>{{blog.body}}
+</div>
+{% endblock content %}

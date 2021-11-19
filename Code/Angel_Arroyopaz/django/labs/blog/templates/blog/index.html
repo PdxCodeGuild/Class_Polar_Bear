@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block bg %} 
+<style>
+    body {
+        background-image: url('https://picsum.photos/seed/picsum/1000/1000');       
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock bg %}
+
+
+{% block content %}
+<h1>Check out the latest blogs!</h1>
+
+<h3>Blog - Author</h3>
+
+{% for blog in blogs %}
+    <div class="home"> 
+        {% if blog.public == True %}
+        <a href="{% url 'details' blog.id %}">{{ blog }} - {{blog.user}}</a>
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock content %}

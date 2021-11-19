@@ -1,0 +1,19 @@
+:root {
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+p {
+    text-align: center;
+    margin: 15px;  
+}
+
+h2 {
+    text-align: center;
+    margin: 20px;
+}

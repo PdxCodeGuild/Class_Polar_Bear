@@ -1,0 +1,83 @@
+
+## To start a new project:
+    django-admin startproject 'project_name'
+
+## To create a new app within project:
+    python3 manage.py startapp 'app_name'
+
+## Add app to project installed apps:
+    inside project_name/settings.py
+      add project name to INSTALLED_APPS dictionary
+
+      example:
+        INSTALLED_APPS = [
+            'hello',
+            'newyears',
+            'guess_num',
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+        ]
+
+## Add url APP paths in project urls.py:
+    go to project_name/urls.py
+      add path with desired path name and include app_name.urls
+
+        example:
+          urlpatterns = [
+              path('admin/', admin.site.urls),
+              path('routing', include('routing.urls'))
+          ]
+
+
+## Go into views and define desired functions
+    import Httpresponse
+
+      example:
+      from django.http import HttpResponse
+
+    example:
+      def guess_the_number(request, number):
+        random_num = random.randint(0, 3)
+        return render(request, 'guess_num/index.html', {
+          'number': number,
+          'random_num': random_num
+        })
+
+      def bio(request):
+        return render(request, 'routing/Bio.html')
+
+## Create a urls.py file in app and create path
+    import django.urls and views
+
+        example:
+          from django.urls import path
+          from . import views
+
+    example:
+      urlpatterns = [
+        path('<int:number>', views.guess_the_number, name='guess')
+      ]
+
+## Adding html files
+    Add templates and app_name directories in app
+      create html files
+
+    Linking CSS:
+      create a static and app_name directories in app and create css files
+
+      On top of HTML, add in {% load static %}
+        in html css link href type {% static 'app_name/styles.css' %}
+
+          example:
+            <link rel="stylesheet" href="{% static 'app_name/styles.css' %}">
+
+## Making or changing models
+
+    -Change your models (in models.py).
+    -Run python manage.py makemigrations to create migrations for those changes
+    -Run python manage.py migrate to apply those changes to the database.
+

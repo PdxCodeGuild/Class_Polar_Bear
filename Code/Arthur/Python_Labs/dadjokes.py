@@ -32,16 +32,36 @@ for film in data:      # Iterate over list, call each dictionary 'film'
 dad jokes api
 
 
-'''
+# '''
+# import requests
+
+# headers ={
+#   'Accept':'application/json'
+# }
+
+# url ='https://icanhazdadjoke.com/'
+
+
+
+# response = requests.get(url, headers = headers)
+
+# # print(response.json())
+# # assigning a variable and storing the json file
+# data = response.json()
+
+# print(data['joke'])
+
+#part2
+'''Part 2 (optional)
+Add the ability to "search" for jokes using another endpoint. 
+Create a REPL that allows one to enter a search term and go through jokes one at a time. 
+You can also add support for multiple pages.'''
 import requests
+term = input("Let me tell you a dad joke, give me a topic:")
 
-headers ={
-  'Accept':'application/json'
-}
+response = requests.get("https://icanhazdadjoke.com/search",headers={"Accept": "application/json"}, params={"term": term}).json()
 
-url ='https://icanhazdadjoke.com/'
+results = response['results']
 
-response = requests.get(url, headers = headers)
-
-print(response.json())
-
+for jokes in results:
+  print(jokes['joke'])

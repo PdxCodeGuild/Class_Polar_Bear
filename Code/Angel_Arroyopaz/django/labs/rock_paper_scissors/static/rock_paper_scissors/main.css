@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+}
+
+.multiline {
+    white-space: pre-wrap;
+
+}
+
+.winner {
+    color: green;
+    font-weight: bold;
+}
+
+.loser {
+    color: brown;
+    font-weight: bold;
+}
+
+.tie {
+    color: orange;
+}
+
+.invalid {
+    color: red;
+}
+
+p {
+    font-size: 90px;
+}

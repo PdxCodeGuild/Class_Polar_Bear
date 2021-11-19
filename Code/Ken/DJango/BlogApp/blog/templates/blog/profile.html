@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{ request.user }}
+{% endblock title %}
+
+{% block content %}
+<h1>Welcome {{ request.username }}!</h1>
+{% for post in posts %}
+        <article class="post">
+            <time class="date">
+                published: {{ post.published_date }}
+            </time>
+            <h2>
+                <a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
+            </h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+
+{% endblock content %}

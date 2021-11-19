@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the number!</title>
+  <link rel="stylesheet" href="{% static 'guess_num/styles.css'%}">
+</head>
+<body>
+  {% if number == random_num %}
+    <h1 class="correct">You guessed {{number}} correctly!</h1>
+  {% else %}
+    <h1 class="incorrect">Incorrect! You guessed the number {{number}} incorrectly!</h1>
+  {% endif %}
+</body>
+</html>

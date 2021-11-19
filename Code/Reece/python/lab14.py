@@ -1,3 +1,5 @@
+# Reece Adams - lab14.py - lab 14 - Automated Readability Index #
+
 import string
 
 # Defining ------------------------------------------------------------------------------#

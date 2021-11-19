@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title_link %}
+<title>All Posts</title>
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}"><link>
+{% endblock title_link %}
+
+{% block content %}
+<h3><span>{{ request.user }}</span> is viewing a post by <span>{{ post.user }}</span>:</h3>
+<div class="post">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.body }}</p>
+    <p class="author">Posted by <i><span>{{ post.user }}</span></i></p>
+    {% if post.user == request.user %} 
+        <a href="{% url 'blog:edit' post.id %}" class="button">Edit Post</a>
+    {% endif %}
+    <a href="{% url 'blog:posts' %}" class="button">Go Back</a>
+</div>
+{% endblock content %}

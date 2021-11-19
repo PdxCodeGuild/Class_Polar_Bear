@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title_link %}
+<title>Create Post</title>
+<link rel="stylesheet" href="{% static 'blog/styles.css' %}"><link>
+{% endblock title_link %}
+
+{% block content %}
+<h3><span>{{ request.user }}</span> is creating a new post:</h3>
+<form action="{% url 'blog:create' %}" method="post">
+    <div class="form create">
+        {% csrf_token %}
+        {{ form }} 
+        <button type="submit">Submit Post</button>
+    </div>
+</form>
+{% endblock content %}   

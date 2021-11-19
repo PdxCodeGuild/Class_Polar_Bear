@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+/* Keyframes BORDERSMOVE ---------------------- */
+@keyframes bordersmove {
+    0% {
+      border-top-left-radius: 0;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    55% {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    75% {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 20px;
+    }
+    100% {
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 0px;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: rebeccapurple;
+	margin: 0;
+    background-color: grey;
+}
+
+.btn {
+	font-size:20px;
+    color:rebeccapurple;
+	background-color:rgb(41, 54, 54);
+	padding:20px;
+	border-radius: 20px;
+    transition:1s
+}
+
+.wrapper:not(.main) {
+	width: 33.3333333%;
+}
+
+h1 {
+    font-size: 50px;
+	margin:0;
+}
+
+.wrapper {
+	height:15vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:20px;
+	background:blue;
+}
+
+section {
+	display:flex;
+    flex-direction: row;
+	justify-content:center;
+	margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.main {
+	background-color: blue;
+	padding-top: 20px;
+}
+
+/* Button rock ----------------------------------------------*/
+.btn-rock_Wrapper {
+    background-color: dimgray;
+}
+.btn-rock_Wrapper .btn:hover {
+    border-radius: 0;
+}
+/* Button paper ----------------------------------------------*/
+.btn-paper_Wrapper {
+    background-color: rgb(66, 65, 65);
+}
+.btn-paper_Wrapper .btn:hover {
+    border-radius: 0;
+}
+/* Button scissors ----------------------------------------------*/
+.btn-scissor_Wrapper {
+    background-color: rgb(27, 27, 27);
+}
+.btn-scissor_Wrapper .btn:hover {
+    border-radius: 0;
+}

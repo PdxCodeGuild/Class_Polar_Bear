@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{% static 'rock_paper_scissors/main.css' %}">
+</head>
+<body>
+    <h1>Welcome to Rock Paper Scissors game!</h1>
+    <div class="multiline">This is a Rock-Paper-Scissors game, and you'll be playing against me (the computer)
+        
+        <b>Rules are as follow:</b> 
+
+        YOU  vs COMPUTER
+        rock vs rock = Tie
+        rock vs paper = Computer
+        rock vs scissors = You
+        paper vs paper = Tie
+        paper vs rock = You
+        paper vs scissors = Computer
+        scissors vs scissors = Tie
+        scissors vs rock = Computer
+        scissors vs paper = You</div>
+
+    <h3>Please enter one option from the list below(i.e. rock):</h3>
+    <div class="multiline">
+        Rock
+        Paper
+        Scissors
+    </div>
+    <form action="{% url 'rock_paper_scissors:rock_paper_scissors' %}"  method='POST'>
+        {% csrf_token %}
+        <!-- <input type="text" placeholder="Enter todo" name="todo"> -->
+        {{ form }}
+        <button type="submit">Play!</button>
+    <br>
+
+    {% if result == 'You won!' %}
+        <p class="winner">Congratulations! {{ result }}</p>
+
+    {% elif result == 'You lost!' %}
+        <p class="loser">Sorry {{ result }}</p>
+
+    {% elif result == 'It is a tie!' %}
+        <p class="tie">{{ result }}</p>
+
+    {% else %}
+        <p class="invalid">Thats an invalid entry, please try again!</p>
+    {% endif %}
+</body>
+</html>

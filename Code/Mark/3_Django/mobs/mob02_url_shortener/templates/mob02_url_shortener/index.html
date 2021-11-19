@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body>
+    <h1>Test message 👀</h1>
+    <form action="{% url 'mob02_url_shortener:save_url' %}" method="POST" >
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Make it short!</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Short URL</th>
+                <th>Count</th>
+                <th>Long URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for url in urls %}
+                <tr>
+                    <td><a href="{% url 'mob02_url_shortener:redirect' url.code %}">{{ url.code }}</a></td>
+                    <td>{{ url.counter }}</td>
+                    <td>{{ url.url }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
