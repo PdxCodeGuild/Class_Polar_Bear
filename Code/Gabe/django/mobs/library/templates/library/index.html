@@ -7,26 +7,15 @@
   <title>Index | Library</title>
 </head>
 <body>
+  <nav>
+    <a href="">Home</a>
+    <a href="">Check In</a>
+    <a href="">Check out</a>
+  </nav>
 
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Year Published</th>
-      <th>Checkout</th>
-    </tr>
-    {% for book in books.all %}
-      <tr>
-        <td>{{ book.title }}</td>
-        <td>{{ book.author }}</td>
-        <td>{{ book.publish_date }}</td>
-        <td>{{ book.status.checkout }}</td>
-      </tr>
-    {% endfor %}
-
-    <!-- {{status.checkout}} -->
-
-  </table>
+  {% for book in books %}
+    {{ book }}
+  {% endfor %}
 
 </body>
 </html>

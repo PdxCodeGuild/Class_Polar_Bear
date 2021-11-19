@@ -6,14 +6,7 @@ from .models import Book, Status
 
 
 def index(request):
-    books = Book.objects.all()
-    return render(request, 'library/index.html', {
-        'books': books,
-    })
-
-# def checkin(request):
-#     if
-
+    return render(request, 'library/index.html')
 
 
 # Contributors: Ryan Gaston, Mark Wilson, Bowie Hall, Ken Mazur, Irron, Gabe Chacon
