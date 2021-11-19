@@ -13,14 +13,16 @@
         <a href="">Check Out</a>
     </nav>
     
-    <form action="">
+    <form action="{% url 'checkout' %}" method="POST">
         {% csrf_token %}
         {{ form }}
         <input type="submit" value="Check Out">
     </form>
 
     {% for book in books %}
-        {{ book }}
+        <div>
+            {{ book }}
+        </div>
     {% endfor %}
         
 </body>
