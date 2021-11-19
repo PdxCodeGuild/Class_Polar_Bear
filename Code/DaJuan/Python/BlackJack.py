@@ -14,6 +14,12 @@
         'Q' : 10,
         'K' : 10
     }
+
+    hands = {
+    'first hand': input('What is your first card'),
+    'second hand': input('What is your second card'),
+    'third hand': input('What is your third card?')
+}
         
         def point_count(hand):
             points = [hand[0] + hand[1] + hand[2]]
