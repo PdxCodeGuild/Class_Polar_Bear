@@ -15,6 +15,13 @@ body, html {
 	border-radius: 20px;
 }
 
+.wrap-around {
+	border: 2px solid rgba(255,255,255,0);
+	border-radius: 24px;
+    transition: 1s;
+    padding: 3px 0;
+}
+
 .wrapper:not(.main) {
 	width: 24%;
 }

@@ -8,6 +8,9 @@ header {
     display: flex;
 }
 
+body {
+    background-color: darkgreen;
+}
 
 h3 {
     justify-content: center;
@@ -15,12 +18,16 @@ h3 {
 
 div {
     display: flex;
+    margin-top: 0%;
 }
 .top-nav {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    background-color: dimgray;
+    align-content: space-between;
+    background-color: black;
     border: black;
+    margin-bottom: 0%;
 }
 
 .nav-link:hover {
@@ -30,20 +37,26 @@ div {
 .nav-link {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     color: white;
+    text-decoration: none;
 }
+
+
 .side-nav {
     display: flex;
     text-align: start;
     flex-direction: column;
     background-color: dimgray;
     border: black;
-    width: 15%;
+    height: 750px;
+    width: 20%;
+
+    position: relative;
     margin-top: 0;
 } 
 .side_nav-link {
     color: white;
+    text-decoration: none;
 }
 section {
     display: flex;
@@ -59,8 +72,20 @@ thead {
 }
 p{
     font-size: 24px;
-    padding: 5%;
+    padding: 10%;
     width: 52ch;
+    border-width: 5%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background-color: black;
+    color: white;
 }
 @media (max-width: 400px) {
     .root {
