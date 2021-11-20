@@ -4,32 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+    <title>Checkin</title>
 </head>
 <body>
     <nav>
         <a href="{% url 'index' %}">Home</a>
         <a href="{% url 'checkin' %}">Check In</a>
     </nav>
-    
-    <form action="{% url 'checkout' %}" method="POST">
+    <form action="{% url 'checkin' %}" method="POST">
         {% csrf_token %}
-        <input type="text" name='user'>
         <select name="book">
             {% for book in books %}
-            {% if book.state.checked_out == False %}
                 <option value="{{book.id}}">{{book.title}}</option>
-            {% endif %}
             {% endfor %}
         </select>
-        <input type="submit" value="Check Out">
+        <input type="submit" value="Checkin">
     </form>
-
-    {% for book in books %}
-        <div>
-            {{ book }}
-        </div>
-    {% endfor %}
-        
 </body>
 </html>
