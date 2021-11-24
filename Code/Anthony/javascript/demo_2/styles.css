@@ -1,0 +1,11 @@
+.full {
+    color: green;
+}
+
+.discharge {
+    color: yellow;
+}
+
+.empty {
+    color: red
+}

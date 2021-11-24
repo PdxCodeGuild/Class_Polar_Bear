@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'routing',
     'rps',
+    'library',
+    'grocery_list',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
