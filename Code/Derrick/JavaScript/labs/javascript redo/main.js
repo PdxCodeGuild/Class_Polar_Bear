@@ -15,6 +15,7 @@ const $input = document.querySelector('#user-input')
 // Functions
 
 function generatePassword() {
+    $result.textContent = null
     let num = parseInt($input.value)
     for (i = 0; i < num; i++){
         let indx = Math.floor(Math.random() * all.length)
@@ -24,4 +25,10 @@ function generatePassword() {
 }
 
 $btn.addEventListener('click', generatePassword)
+
+$input.addEventListener('keypress', function(event){
+    if (event.key === 'Enter'){
+        generatePassword()    
+    }
+})
 
