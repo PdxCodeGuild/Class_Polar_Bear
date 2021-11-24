@@ -21,22 +21,22 @@ const $resetBtn = document.querySelector('#reset-btn')
 
 // Functions
 
-const reset = () => {
+function reset() {
     $result.textContent = null
     $errorText.textContent = null    
 }
 
-const randomize = r => { 
+function randomize(r) { 
     for (let i = r.length - 1; i > 0; i--) {
-        let randI = Math.floor(Math.random() * (i + 1))
+        let randI = Math.floor(Math.random() * (i + 1));
 
         // swaps 2 letters, random letter from array (randI) and letter at current index (i) to shuffle password 
-        [r[i], r[randI]] = [r[randI], r[i]]
+        [r[i], r[randI]] = [r[randI], r[i]];
     }
     return r.join('')
 }
 
-const generatePassword = () => {
+function generatePassword() {
     // Clear h4 and error of previous password
     $result.textContent = null
     $errorText.textContent = null
@@ -94,7 +94,7 @@ const generatePassword = () => {
     $nums.value,
     $syms.value] = [null]
 
-    // display error if total pw length is less than total number of chosen chars
+    // display error to user if pw length is longer than total num of chars chosen
     const errorText = `Your password will be longer than ${pwLength} because you chose more characters than the specified length of your password!`
 
     // randomize pw
@@ -105,7 +105,6 @@ const generatePassword = () => {
         $errorText.textContent = errorText    
     }
 
-    // display result in h4 to user
     $result.textContent = result
        
 }
@@ -113,7 +112,7 @@ const generatePassword = () => {
 // Run password generator when btn is clicked
 $btn.addEventListener('click', generatePassword)
 
-// clear h4 result text and error text
+// Reset error text and result
 $resetBtn.addEventListener('click', reset)
 
 
