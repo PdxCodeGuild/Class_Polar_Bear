@@ -94,7 +94,7 @@ const generatePassword = () => {
     $nums.value,
     $syms.value] = [null]
 
-    // display result in h4 to user
+    // display error if total pw length is less than total number of chosen chars
     const errorText = `Your password will be longer than ${pwLength} because you chose more characters than the specified length of your password!`
 
     // randomize pw
@@ -105,6 +105,7 @@ const generatePassword = () => {
         $errorText.textContent = errorText    
     }
 
+    // display result in h4 to user
     $result.textContent = result
        
 }
