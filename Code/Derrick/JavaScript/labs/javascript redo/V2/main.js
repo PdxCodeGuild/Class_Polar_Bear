@@ -113,6 +113,7 @@ const generatePassword = () => {
 // Run password generator when btn is clicked
 $btn.addEventListener('click', generatePassword)
 
+// clear h4 result text and error text
 $resetBtn.addEventListener('click', reset)
 
 
