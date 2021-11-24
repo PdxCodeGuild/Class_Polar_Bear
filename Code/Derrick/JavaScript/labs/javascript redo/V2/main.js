@@ -21,12 +21,12 @@ const $resetBtn = document.querySelector('#reset-btn')
 
 // Functions
 
-let reset = () => {
+const reset = () => {
     $result.textContent = null
     $errorText.textContent = null    
 }
 
-let randomize = r => { 
+const randomize = r => { 
     for (let i = r.length - 1; i > 0; i--) {
         let randI = Math.floor(Math.random() * (i + 1));
 
@@ -36,7 +36,7 @@ let randomize = r => {
     return r.join('')
 }
 
-let generatePassword = () => {
+const generatePassword = () => {
     // Clear h4 and error of previous password
     $result.textContent = null
     $errorText.textContent = null
