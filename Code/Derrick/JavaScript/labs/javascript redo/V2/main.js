@@ -28,10 +28,10 @@ function reset() {
 
 function randomize(r) { 
     for (let i = r.length - 1; i > 0; i--) {
-        let randI = Math.floor(Math.random() * (i + 1));
+        let randI = Math.floor(Math.random() * (i + 1)); // Semicolon needed because next line starts with [
 
         // swaps 2 letters, random letter from array (randI) and letter at current index (i) to shuffle password 
-        [r[i], r[randI]] = [r[randI], r[i]];
+        [r[i], r[randI]] = [r[randI], r[i]]
     }
     return r.join('')
 }
