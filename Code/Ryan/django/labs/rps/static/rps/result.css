@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+/* animations */
+
+@keyframes zoom-image{
+    50% {
+    font-size: 30px;
+    }
+    100% {
+    font-size: 20px;
+    }
+  }
+
+@keyframes active-button {
+    to {
+      box-shadow: none;
+      transform: translate(4px, 4px);
+    }
+  }
+  
+  @keyframes focus-button {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes shake {
+	25% {
+		transform:translateX(3px);
+	}
+	50% {
+		transform:translateX(-5px);
+	}
+	100% {
+		transform:translateX(0px);
+	}
+}
+@keyframes stretch{
+    55% {
+        padding: 30px 10px;
+    }
+    75% {
+        padding:10px 30px;
+        transition:translateY(3px);
+    }
+    100% {
+        padding:20px;
+    }
+}
+
+@keyframes bg-color {
+    0% {
+        background: rgb(235, 176, 235);
+    }
+    50% {
+        background: rgb(252, 129, 252);
+    }
+    75% {
+        background: rgb(250, 41, 250);
+    }
+    100% {
+        background: purple;
+    }
+}
+
+@keyframes bordersmove {
+	0% {
+		border-top-left-radius:0;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+	55% {
+		border-top-left-radius:20px;
+		border-top-right-radius:0px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+	75% {
+		border-top-left-radius:20px;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:0px;
+		border-bottom-left-radius:20px;
+	}
+	100% {
+		border-top-left-radius:20px;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:0px;
+	}
+}
+* {
+    /* add these to every page you work on */
+    margin: 0;
+    padding: 0;
+    /* Any padding added will be contained to the border specified */
+    box-sizing: border-box;
+}
+
+body, html {
+	/* height: 100%; */
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+    text-decoration: none;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+    transition: 1s;
+}
+
+body {
+    background-color: lightslategray;
+    text-align: center;
+}
+
+@media (max-width: 670px){
+    body {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+/* .dance {
+    margin: 0;
+} */
+
+.btn-user {
+    padding: 20px;
+    background-color: rgb(59, 153, 59);
+    width: 100px;
+    /* margin-left: 400px; */
+    /* align-items: center; */
+    justify-items: center;
+    border: 2px solid red;
+}
+.btn-user > .btn {
+    color: lightblue;
+    transition:0.3s;
+	width: 60px;
+    background:linear-gradient(top, grey, white);
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), 
+        inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-user > .btn:focus {
+    animation: focus-button 2s ease-in;
+}
+.btn-user > .btn:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+}
+
+
+.btn-computer {
+    padding: 20px;
+    background-color: rgb(190, 63, 63);
+    width: 100px;
+    margin-left: 400px;
+
+}
+.btn-computer > .btn {
+    color: lightblue;
+    transition:0.3s;
+	width: 60px;
+    background:linear-gradient(top, grey, white);
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), 
+        inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-computer > .btn:focus {
+    animation: focus-button 2s ease-in;
+}
+.btn-computer > .btn:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+}
+
+.win_lose_draw {
+    padding: 20px;
+    margin-left: 300px;
+    margin-top: 20px;
+    width: 300px;
+    background-color: slateblue;
+    /* display: flex;
+    justify-self: center; */
+	/* margin: 50px; */
+    animation:bordersmove 1s infinite alternate;
+}
+.game_over {
+    /* display: flex; */
+    /* margin-left: 80px; */
+    /* justify-self: center; */
+    /* align-items: center; */
+    text-align: center;
+    /* border: 2px solid red; */
+}
+.btn-again {
+    width: 300px;
+    margin-left: 300px;
+    padding: 30px;    
+
+}
+
+.btn-again > .btn {
+    font-size:10px;
+        background-color:#fff;
+        /* margin-left:250px;
+        margin-right: 250px;
+        margin-top: 50px; */
+        /* padding-left: 200px;
+        padding-right: 200px; */
+        /* color:#333; */
+        border-radius: 20px;
+        transition: 1s;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        text-decoration: none;
+}
+
+.btn-again > .btn:hover {
+    animation: stretch 1.5s alternate;
+}

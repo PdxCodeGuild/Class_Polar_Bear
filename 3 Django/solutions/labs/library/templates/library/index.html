@@ -8,14 +8,20 @@
 </head>
 <body>
     <nav>
-        <a href="">Home</a>
-        <a href="">Check In</a>
-        <a href="">Check Out</a>
+        <a href="{% url 'index' %}">Home</a>
+        <a href="{% url 'checkin' %}">Check In</a>
     </nav>
     
     <form action="{% url 'checkout' %}" method="POST">
         {% csrf_token %}
-        {{ form }}
+        <input type="text" name='user'>
+        <select name="book">
+            {% for book in books %}
+            {% if book.state.checked_out == False %}
+                <option value="{{book.id}}">{{book.title}}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
         <input type="submit" value="Check Out">
     </form>
 

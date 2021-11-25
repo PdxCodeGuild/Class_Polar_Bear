@@ -29,9 +29,7 @@ def index(request):
     if request.method == "POST":
         word = request.POST["word"]
         encryption = encrypt(word)
-        context= {
-            "encryption": encryption,
-            "word": word
-        }
-        return render(request, "lab02_redo/index.html", context)
+        return render(request, "lab02_redo/index.html", {
+                               "encryption": encryption,
+                               "word": word})
 

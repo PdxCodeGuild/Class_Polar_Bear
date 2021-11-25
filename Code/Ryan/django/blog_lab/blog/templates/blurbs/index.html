@@ -1,0 +1,36 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+Let That 💩 Fly
+{% endblock title %}
+
+{% block content %}
+ 
+<h1>Welcome to Let That 💩 Fly</h1>
+
+<!-- protects on client side -->
+{% if not request.user.is_anonymous %}
+<form action="{% url 'new_blurb' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Blurb">
+</form>
+{% endif %}
+{% for blurb in blurbs %}
+<div> 
+    <p>{{blurb.text}}</p>
+    {% if request.user == blurb.user %}
+        <a href="{% url 'delete_blurb' blurb.id %}">❌</a>
+    {% endif %}
+    <h6>{{blurb.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' blurb.id %}">👍 {{blurb.likes}}</a> 
+        <a href="{% url 'dislike' blurb.id %}">👎 {{blurb.dislikes}}</a> 
+        <a href="{% url 'detail' blurb.id %}">💬 </a>
+    </p>
+    {% endif %}
+    <p>{{blurb.published_date}}</p>
+</div>
+{% endfor %}
+{% endblock %}

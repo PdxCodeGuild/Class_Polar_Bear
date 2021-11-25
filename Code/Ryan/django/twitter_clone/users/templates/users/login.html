@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+<title>Login | Twitter</title>
+{% endblock title %}
+
+{% block content %}
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Login">
+</form>
+{% endblock content %}
+
