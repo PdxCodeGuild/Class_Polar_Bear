@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    align-items: center;
+    width: 300px;
+}
+
+h1 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+input {
+    padding: 5px 5px;
+    width: 100%;
+}
+
+#error-text {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#result {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
