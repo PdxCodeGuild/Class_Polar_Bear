@@ -5,20 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Groceries</title>
+    <style>
+        .status {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <form action="{% url 'grocery_list:input' %}" method="post">
         {% csrf_token %}
-        <input type="text" name="item"/>
-        <input type="checkbox" name="status"/>
-        <button type="submit">submit</button>
+        <input type="text" name="item">
+        <button type="submit">Add item</button>
     </form>
+
     <ul>
-        {% for grocery in groceries %}
-        <li>{{ groceries.grocery }}</li>
+        {% for grocery in grocery_list %}
+        <li
+        {% if grocery.status %}
+        class="status"
+        {% endif %}
+        ><a href ="{% url 'grocery_list:buy' grocery.id %}">{{ grocery.item }}</a>
+        <a href ="{% url 'grocery_list:delete' grocery.id %}">&times;</a>
+        </li>
         {% endfor %}
       </ul>
-      <div>{{ message }} TEST</div>
 </body>
 </html>

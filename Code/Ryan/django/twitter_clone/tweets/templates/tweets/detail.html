@@ -1,0 +1,30 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+{{ tweet.txt }}
+{% endblock title %}
+
+{% block conent %}
+<div> 
+    <p>{{tweet.text}}</p>
+    {% if request.user == tweet.user %}
+        <a href="{% url 'delete_tweet' tweet.id %}">❌</a>
+    {% endif %}
+    <h6>{{tweet.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' tweet.id %}">👍 {{tweet.likes}}</a> 
+        <a href="{% url 'dislike' tweet.id %}">👎 {{tweet.dislikes}}</a> 
+    </p>
+    {% endif %}
+    <p>{{tweet.published_date}}</p>
+</div>
+
+<form action="" method="POST">
+
+</form>
+    {% for reply in tweet.replies.all %}
+    {{reply}}
+    {% endfor %}
+
+{% endblock content %}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'rps/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'rps/result.css' %}">
     <title>Results</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
         <h1 class = 'results'>YOU chose:</h1>
         <break>
         </break>
-        <div class = 'btn-rock'>
+        <div class = 'btn-user'>
         {% if choice == 'rock' %}
             <h1 class='btn'>&#x1F5FF;</h1>
         {% elif choice == 'paper' %}
@@ -26,7 +26,7 @@
         {% endif %}
         </div>
         <h1 class = 'results'>Computer chose:</h1>
-        <div class= 'btn-rock'>
+        <div class= 'btn-computer'>
         {% if computer == 'rock' %}
             <h1 class='btn'>&#x1F5FF;</h1>
         {% elif computer == 'paper' %}
@@ -35,7 +35,11 @@
             <h1 class='btn'>&#x2702;</h1>
         {% endif %}
         </div>
-        <h1 class= 'win_lose_draw'>{{ result }}</h1>
+        
+        <div class = 'win_lose_draw'> 
+            <h1 class= 'game_over'>{{ result }}</h1>
+        </div>
+        
 
 
     </section>

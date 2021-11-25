@@ -1,0 +1,53 @@
+{% extends 'users/base.html' %}
+
+{% block title %}
+{{ blurb.txt }}
+{% endblock title %}
+
+{% block content %}
+<div> 
+    <p>{{blurb.text}}</p>
+    {% if request.user == blurb.user %}
+        <a href="{% url 'delete_blurb' blurb.id %}">❌</a>
+    {% endif %}
+    <h6>{{blurb.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' blurb.id %}">👍 {{blurb.likes}}</a> 
+        <a href="{% url 'dislike' blurb.id %}">👎 {{blurb.dislikes}}</a> 
+    </p>
+    {% endif %}
+    <p>{{blurb.published_date}}</p>
+
+
+{% if not request.user.is_anonymous %}
+<form action="{% url 'reply' blurb.id %}" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Reply">
+</form>
+{% endif %}
+
+{{ reply }}
+
+{% for reply in blurb.replies.all %}
+ 
+    <p>{{reply.text}}</p>
+    {% if request.user == reply.user %}
+        <a href="{% url 'delete_reply' reply.id %}">❌</a>
+    {% endif %}
+    <h6>{{reply.user}}</h6>
+    {% if not request.user.is_anonymous %}
+    <p>
+        <a href="{% url 'like' reply.id %}">👍 {{reply.likes}}</a> 
+        <a href="{% url 'dislike' reply.id %}">👎 {{reply.dislikes}}</a> 
+        <a href="{% url 'detail' reply.id %}">💬 </a>
+    </p>
+    {% endif %}
+    <p>{{reply.published_date}}</p>
+</div>
+{% endfor %}
+
+
+
+{% endblock content %}

@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+/* animations */
+
+@keyframes zoom-image{
+    50% {
+    font-size: 30px;
+    }
+    100% {
+    font-size: 20px;
+    }
+  }
+
+@keyframes active-button {
+    to {
+      box-shadow: none;
+      transform: translate(4px, 4px);
+    }
+  }
+  
+  @keyframes focus-button {
+    from {
+      transform: rotate(0deg)
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes shake {
+	25% {
+		transform:translateX(3px);
+	}
+	50% {
+		transform:translateX(-5px);
+	}
+	100% {
+		transform:translateX(0px);
+	}
+}
+@keyframes stretch{
+    55% {
+        padding: 30px 10px;
+    }
+    75% {
+        padding:10px 30px;
+        transition:translateY(3px);
+    }
+    100% {
+        padding:20px;
+    }
+}
+
+@keyframes bg-color {
+    0% {
+        background: rgb(235, 176, 235);
+    }
+    50% {
+        background: rgb(252, 129, 252);
+    }
+    75% {
+        background: rgb(250, 41, 250);
+    }
+    100% {
+        background: purple;
+    }
+}
+
+@keyframes bordersmove {
+	0% {
+		border-top-left-radius:0;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+	55% {
+		border-top-left-radius:20px;
+		border-top-right-radius:0px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:20px;
+	}
+	75% {
+		border-top-left-radius:20px;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:0px;
+		border-bottom-left-radius:20px;
+	}
+	100% {
+		border-top-left-radius:20px;
+		border-top-right-radius:20px;
+		border-bottom-right-radius:20px;
+		border-bottom-left-radius:0px;
+	}
+}
+* {
+    /* add these to every page you work on */
+    margin: 0;
+    padding: 0;
+    /* Any padding added will be contained to the border specified */
+    box-sizing: border-box;
+}
+
+body, html {
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+    text-decoration: none;
+}
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+    transition: 1s;
+}
+
+.wrapper:not(.main) {
+	width: 50%;
+}
+
+.main {
+        display: block;
+        font-size:30px;
+	}
+
+.wrapper {
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+}
+body {
+    background-color: lightslategray;
+}
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+
+.main {
+	background-color: slateblue;
+	margin: 50px;
+    animation:bordersmove 1s infinite alternate;
+}
+.main:hover {
+    animation-play-state: paused;
+}
+.dance {
+    margin: 0;
+}
+
+.btn-selection {
+    padding: 20px;
+    /* background-color: lightblue; */
+}
+.btn-selection > .btn {
+
+    transition:0.3s;
+	background:linear-gradient(top, grey, white);
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), 
+        inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-selection > .btn:focus {
+    animation: focus-button 2s ease-in;
+}
+.btn-selection > .btn:active {
+    animation: active-button .5s;
+    animation-fill-mode: forwards;
+}
+
+.game_over {
+    /* padding-left: 200px; */
+    /* align-items:center; */
+    text-align: center;
+    margin: 50px;
+
+}
+
+.results {
+    text-align: center;
+    width: fit-content;
+    margin-left: 225px;
+    justify-content:center;
+    place-items: center;
+    white-space: pre-wrap;
+    font-size:40px bold;
+    color: black;
+    display: block;
+    animation: bg-color 3s infinite alternate;
+}
+
+.game_over > .results:hover{
+
+    animation: shake 1s infinite alternate;
+
+}

@@ -1,0 +1,71 @@
+from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+
+# how to ensure server does not post verbose error messages
+from django.shortcuts import get_object_or_404
+
+# how to ensure user is logged in before doing something
+from django.contrib.auth.decorators import login_required
+
+from .models import Tweet
+from .forms import NewTweetForm
+# Create your views here.
+
+# Home page for displaying most recent messages
+def index(request):
+    tweets = Tweet.objects.all().order_by('-published_date')[:20]
+    
+    return render(request, 'tweets/index.html', {
+        'tweets': tweets,
+        'form': NewTweetForm()
+    })
+
+# prevents anonymous users from doing this stuff protects on server side
+@login_required
+def new_tweet(request):
+    if request.method == "POST":
+        # takes data from POST and fills out the form
+        form = NewTweetForm(request.POST)
+        if form.is_valid():
+            tweet = Tweet()
+            tweet.user = request.user
+            tweet.text = form.cleaned_data['text']
+            tweet.save()
+    return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def delete_tweet(request, tweet_id):
+    # Option 1, will fail if tweet does not exist
+    # tweet = Tweet.objects.get(id=tweet_id, user=request.user)
+    # Option 2, display 404 page if option does not exist
+    # tweet = get_object_or_404(Tweet, id=tweet_id, user=request.user)
+    # Option 3, will check if exists first, then handle tweet
+    if Tweet.objects.filter(id=tweet_id, user=request.user).exists():
+        tweet = Tweet.objects.get(id=tweet_id, user=request.user)
+        tweet.delete()
+    
+    return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def like(request, tweet_id):
+    if Tweet.objects.filter(id=tweet_id).exists():
+        tweet = Tweet.objects.get(id=tweet_id)
+        tweet.likes += 1
+        tweet.save()
+    return HttpResponseRedirect(reverse('index'))
+
+@login_required
+def dislike(request, tweet_id):
+    if Tweet.objects.filter(id=tweet_id).exists():
+        tweet = Tweet.objects.get(id=tweet_id)
+        tweet.dislikes += 1
+        tweet.save()
+    return HttpResponseRedirect(reverse('index'))
+
+
+def detail(request, tweet_id):
+    tweet = Tweet.objects.get(id=tweet_id)
+    return render(request, 'tweets/detail.html', {
+        'tweet': tweet
+    })

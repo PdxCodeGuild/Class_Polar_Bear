@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <form action="{% url 'grocery_list:add' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name='item'>
+        <button type="submit">Add item</button>
+    </form>
+
+    <ul>
+        {% for grocery in grocery_list %}
+            <li
+            {% if grocery.completed %}
+            class='completed'
+            {% endif %}
+            ><a href="{% url 'grocery_list:buy' grocery.id %}"><input type="checkbox" ></a> 
+            {{ grocery.item }} <a href="{% url 'grocery_list:delete' grocery.id %}">❌</a> 
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
