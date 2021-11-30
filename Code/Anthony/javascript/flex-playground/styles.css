@@ -1,0 +1,68 @@
+:root {
+  --flex-direction: row;
+  --flex-wrap: nowrap;
+  --justify-content: flex-start;
+  --align-items: flex-start;
+  --square-color: #a338f5;
+  --square-size: 10vw;
+}
+
+.main {
+  display: flex;
+  width: 100%;
+}
+
+.controls {
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 8px;
+  flex: .5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 24px;
+}
+
+
+.flex-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.code {
+  flex: .5;
+  margin-left: 6px;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 24px;
+}
+
+.container {
+  flex: .5;
+  margin-top: 12px;
+  border: 1px solid black;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: var(--flex-direction);
+  flex-wrap: var(--flex-wrap);
+  justify-content: var(--justify-content);
+  align-items: var(--align-items);
+}
+
+.square {
+  width: var(--square-size);
+  height: var(--square-size);
+  background-color: var(--square-color);
+  margin: 8px;
+  color: white;
+  font-size: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 8px 2px rgba(173,173,173,.7);
+}
+
+
