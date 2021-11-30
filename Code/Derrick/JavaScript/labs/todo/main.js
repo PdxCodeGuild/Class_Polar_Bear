@@ -18,18 +18,22 @@ $btn.addEventListener('click', function() {
 
     // Add listeners to buttons
     $spanX.addEventListener('click', function() {
+        // Grab parent node and remove from DOM
         this.parentNode.remove()
     })
 
     $spanY.addEventListener('click', function() {
+        // Grab first child, the list item, and add complete class for line-through
         let $listTitle = this.parentElement.firstChild
         $listTitle.classList.add('complete')
     })
     
-    // Append elements to div and page
+    // Append list item and button elements to div 
     $itemDiv.appendChild($item)
     $itemDiv.appendChild($spanX)
     $itemDiv.appendChild($spanY)
+
+    // Add div to #list element
     $list.append($itemDiv)
     
     // Erase input field
