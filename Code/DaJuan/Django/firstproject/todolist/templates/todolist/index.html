@@ -11,8 +11,15 @@
     <h1>Todo:</h1>
     <ul>
     {%  for todo in todos %}
-        <li>{{  todo  }}</li>
+        <a href="{%  url 'todolist:remove_todo' forloop.counter0  %}">
+            <li>{{  todo  }}</li>
+        </a>
+    {%  empty  %}
+            <li>No To-do's yet...</li>
     {%  endfor  %}
     </ul>
-</body>
+    {%  if todos  %}
+        <a href="{%  url 'todolist:clear_items'  %}">Clear all to-do items...</a>
+    {%  endif  %}
+    </body>
 </html>
