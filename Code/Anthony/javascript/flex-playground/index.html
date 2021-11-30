@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Playground</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="main">
+    <div class="controls">
+      <div>
+        <label class="control-label" for="colorPicker">Color:</label>
+        <input type="color" id="colorPicker" value="#a338f5" oninput="changeColor()">
+      </div>
+      <div>
+        <label class="control-label" for="box-size">Box Size: </label>
+        <input type="range" min="1" max="10" value="1" id="box-size" oninput="changeSize()">
+      </div>
+      <div class="flex-direction">
+        <label class="control-label">Flex Direction:</label>
+        <div>
+          <input checked class="radio-dir" id="dir-row" name="flex-direction-radio" type="radio" value="row" onchange="changeDirection()">
+          <label for="dir-row">Row</label>
+        </div>
+        <div>
+          <input class="radio-dir" id="dir-row-reverse" name="flex-direction-radio" type="radio" value="row-reverse" onchange="changeDirection()">
+          <label for="dir-row-reverse">Reverse Row</label>
+        </div>
+        <div>
+          <input class="radio-dir" id="dir-col" name="flex-direction-radio" type="radio" value="column" onchange="changeDirection()">
+          <label for="dir-col">Column</label>
+        </div>
+        <div>
+          <input class="radio-dir" id="dir-col-reverse" name="flex-direction-radio" type="radio" value="column-reverse" onchange="changeDirection()">
+          <label for="dir-col-reverse">Reverse Column</label>
+        </div>
+      </div>
+      <div class="justify-content">
+        <label class="control-label">Justify Content:</label>
+        <div>
+          <input checked class="justify-content" onchange="changeJustify()" name="justify-content" id="flex-start" value="flex-start" type="radio">
+          <label for="flex-start">flex-start</label>
+        </div>
+        <div>
+          <input class="justify-content" onchange="changeJustify()" name="justify-content" id="flex-end" value="flex-end" type="radio">
+          <label for="flex-end">flex-end</label>
+        </div>
+        <div>
+          <input class="justify-content" onchange="changeJustify()" name="justify-content" id="center" value="center" type="radio">
+          <label for="center">center</label>
+        </div>
+        <div>
+          <input class="justify-content" onchange="changeJustify()" name="justify-content" id="space-between" value="space-between" type="radio">
+          <label for="space-between">space-between</label>
+        </div>
+        <div>
+          <input class="justify-content" onchange="changeJustify()" name="justify-content" id="space-around" value="space-around" type="radio">
+          <label for="space-around">space-around</label>
+        </div>
+        <div>
+          <input class="justify-content" onchange="changeJustify()" name="justify-content" id="space-evenly" value="space-evenly" type="radio">
+          <label for="space-evenly">space-evenly</label>
+        </div>
+      </div>
+      <div class="align-items">
+        <label class="control-label">Align Items:</label>
+        <div>
+          <input checked class="align-items" onchange="changeAlign()" name="align-items" id="flex-start" value="flex-start" type="radio">
+          <label for="flex-start">flex-start</label>
+        </div>
+        <div>
+          <input class="align-items" onchange="changeAlign()" name="align-items" id="flex-end" value="flex-end" type="radio">
+          <label for="flex-end">flex-end</label>
+        </div>
+        <div>
+          <input class="align-items" onchange="changeAlign()" name="align-items" id="center" value="center" type="radio">
+          <label for="center">center</label>
+        </div>
+      </div>
+      <div class="flex-wrap">
+        <label class="control-label">Wrap:</label>
+        <div>
+          <input checked class="flex-wrap" onchange="changeWrap()" name="flex-wrap" id="nowrap" value="nowrap" type="radio">
+          <label for="nowrap">nowrap</label>
+        </div>
+        <div>
+          <input class="flex-wrap" onchange="changeWrap()" name="flex-wrap" id="wrap" value="wrap" type="radio">
+          <label for="wrap">wrap</label>
+        </div>
+        <div>
+          <input class="flex-wrap" onchange="changeWrap()" name="flex-wrap" id="wrap-reverse" value="wrap-reverse" type="radio">
+          <label for="wrap-reverse">wrap-reverse</label>
+        </div>
+      </div>
+    </div>
+    <div class="code">
+    </div>
+  </div>
+  <div class="container">
+    <div class="square">1</div>
+    <div class="square">2</div>
+    <div class="square">3</div>
+    <div class="square">4</div>
+    <div class="square">5</div>
+    <div class="square">6</div>
+  </div>
+  
+</body>
+</html>
