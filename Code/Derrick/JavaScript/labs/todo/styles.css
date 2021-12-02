@@ -1,63 +1,63 @@
 body {
-    height: 100vh;
-    background: linear-gradient(to right,#0e2956,#0db9dc);
-    color: #FFF;
-    font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  background: linear-gradient(to right, #0e2956, #0db9dc);
+  color: #fff;
+  font-family: "Raleway", sans-serif;
 }
 
 .complete {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 500px;
-    margin: 50px auto 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 50px auto 0;
 }
 
 #list {
-    border: 2px solid white;
-    margin-top: 50px;
-    padding: 20px;
-    width: 100%;
+  border: 2px solid white;
+  margin-top: 50px;
+  padding: 20px;
+  width: 100%;
 }
 
 input {
-    border-radius: 5px;
-    border: 2px solid blue;
-    border: none;
-    padding: 5px 5px;
-    outline: none;   
+  border-radius: 5px;
+  border: 2px solid blue;
+  border: none;
+  padding: 5px 5px;
+  outline: none;
 }
 
 button {
-    padding: 5px 15px;
-    border-radius: 5px;
-    background: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: .2s;
+  padding: 5px 15px;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
-    background: #fff;
-    color: #333;
+  background: #fff;
+  color: #333;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 p {
-    display: inline;
-    padding-right: 10px;
+  display: inline;
+  padding-right: 10px;
 }
 
 span {
-    cursor: pointer;
-    padding-right: 10px;
+  cursor: pointer;
+  padding-right: 10px;
 }
