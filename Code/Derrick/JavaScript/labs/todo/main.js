@@ -2,7 +2,7 @@ const $list = document.querySelector('#list')
 const $itemInput = document.querySelector('#list-item')
 const $btn = document.querySelector('#add-item-btn')
 
-$btn.addEventListener('click', function() {
+$btn.addEventListener('click', () => {
     // Create div for new item and buttons
     let $itemDiv = document.createElement('div')
     let $item = document.createElement('p')
