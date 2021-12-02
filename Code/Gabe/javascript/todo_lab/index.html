@@ -4,23 +4,29 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="todos.css">
   <title>Todo List</title>
 </head>
 <body>
-  <h1>Todo List</h1>
-  <label for="todo-input">Add Todo</label>
-  <input id="todo-input" type="text">
-  <button id="todo-button">Add</button>
+  <div class="container">
+      <div class="header">
+        <h1>Todo List</h1>
+      </div>
+      <div>
+        <label for="todo-input">Add Todo</label>
+        <input id="todo-input" type="text">
+        <button id="todo-button">Add</button>
+      </div>
 
-  <br>
-  <br>
-  <h2>Todos</h2>
-  <ul id="todos-list">
-  </ul>
-  <br>
-  <h2 id="completed-todos-list">Completed Todos</h2>
-
+      <br>
+      <br>
+      <h2>Todos</h2>
+      <ul id="todos-list">
+      </ul>
+      <br>
+      <h2 id="completed-todos-list">Completed Todos</h2>
+      <ul id="completed-list"></ul>
+  </div>
   <script src="./main.js"></script>
 </body>
 </html>
