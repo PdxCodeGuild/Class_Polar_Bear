@@ -1,30 +1,18 @@
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+const rot_amount = 13
 
-// class RotCipher:
+function init(rot_amount=13):
+    rot_amount = rot_amount%26
 
-def __init__(self, rot_amount=13):
-    self.rot_amount = rot_amount%26
-
-def encrypt(self, text):
+function encrypt(text):
     s = ''
     for char in text:
-        s += alphabet[(alphabet.index(char) + self.rot_amount)%26]
+        s += alphabet[(alphabet.index(char) + rot_amount)%26]
     return s
 
-def decrypt(self, text):
+function decrypt(text):
     s = ''
     for char in text:
-        s += alphabet[alphabet.index(char) - self.rot_amount]
+        s += alphabet[alphabet.index(char) - rot_amount]
     return s
-
-def __str__(self):
-    return f'Rot Cipher amount is {self.rot_amount}'
-
-// rot_cipher = RotCipher(13)
-
-// text = 'hello'
-// encrypted_text = rot_cipher.encrypt(text)
-// print(encrypted_text) # uryyb
-// decrypted_text = rot_cipher.decrypt(encrypted_text)
-// print(decrypted_text) # hello
 
