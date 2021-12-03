@@ -1,30 +1,27 @@
-const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+const btn = document.querySelector("#add-btn")
+const item = document.querySelector("#list-item")
+const list = document.querySelector("#list")
 
-// class RotCipher:
+btn.addEventListener("click", () => {
+  let item_c = document.createElement("c")
+  let item_i = document.createElement("i")
+  let xs = document.createElement("s")
+  let ys = document.createElement("s")
 
-def __init__(self, rot_amount=13):
-    self.rot_amount = rot_amount%26
+  item_i.innerHTML = item.value
+  ys.innerHTML = 'accept'
+  xs.innerHTML = 'reject'
 
-def encrypt(self, text):
-    s = ''
-    for char in text:
-        s += alphabet[(alphabet.index(char) + self.rot_amount)%26]
-    return s
+  xs.addEventListener("click", function () {this.parentNode.remove()})
+  ys.addEventListener("click", function () {
+    let title = this.parentElement.firstChild
+    title.classList.add("complete")
+  })
 
-def decrypt(self, text):
-    s = ''
-    for char in text:
-        s += alphabet[alphabet.index(char) - self.rot_amount]
-    return s
-
-def __str__(self):
-    return f'Rot Cipher amount is {self.rot_amount}'
-
-// rot_cipher = RotCipher(13)
-
-// text = 'hello'
-// encrypted_text = rot_cipher.encrypt(text)
-// print(encrypted_text) # uryyb
-// decrypted_text = rot_cipher.decrypt(encrypted_text)
-// print(decrypted_text) # hello
+  item_c.appendChild(item)
+  item_c.appendChild(xs)
+  item_c.appendChild(ys)
+  list.append(item_c)
+  item.value = null
+}
 
