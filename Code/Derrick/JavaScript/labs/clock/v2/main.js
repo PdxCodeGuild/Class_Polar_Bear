@@ -42,7 +42,7 @@ function startWatch() {
     minutes = Math.floor((end - start) / 60000) % 60;
 
     // format hours to 10s place and below 60 using milliseconds
-    hours = Math.floor((end - start) / 600000) % 60;
+    hours = Math.floor((end - start) / 3.6e6) % 60;
 
     // Put a zero in front if not above 10 for visual
     if (seconds % 10 === seconds) {

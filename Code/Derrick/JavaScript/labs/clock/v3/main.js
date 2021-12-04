@@ -9,5 +9,6 @@ $startTime.addEventListener("click", (event) => {
 
   // convert to milliseconds
   let time = $addTime.value * 60000;
+  
   console.log(time);
 });
