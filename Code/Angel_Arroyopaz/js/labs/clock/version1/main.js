@@ -1,4 +1,4 @@
-const clock = document.querySelector('#clock')
+const clock = document.querySelector('#clock-1')
 
 setInterval(function () {
     let currentDate = new Date();
