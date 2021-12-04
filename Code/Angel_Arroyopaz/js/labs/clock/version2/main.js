@@ -3,7 +3,7 @@ const startButton =  document.querySelector('#start-button');
 const lapButton = document.querySelector('#lap-button');
 const stopButton = document.querySelector('#stop-button');
 const resetButton = document.querySelector('#reset-button');
-const clock = document.querySelector('#clock');
+const clockElement = document.querySelector('#p-element');
 const list = document.querySelector('#list');
 
 let hr = 0;
@@ -21,7 +21,7 @@ let intervalOn = false;
 // start
 function stopWatchStart() {
     if (stopTime === false) {
-        clock.innerHTML = hr + ':' + mnt + ':' + secs + ':' + miliSecs;
+        clockElement.innerHTML = hr + ':' + mnt + ':' + secs + ':' + miliSecs;
         secs++
 
         if (secs === 60) {
@@ -49,7 +49,7 @@ function stopWatchReset() {
     mnt = 0;
     secs = 0;
     miliSecs = 0;
-    clock.innerHTML = hr + ':' + mnt + ':' + secs + ':' + miliSecs;
+    clockElement.innerHTML = hr + ':' + mnt + ':' + secs + ':' + miliSecs;
     stopTime = false;
     counter = 1;
     while (list.firstChild) {

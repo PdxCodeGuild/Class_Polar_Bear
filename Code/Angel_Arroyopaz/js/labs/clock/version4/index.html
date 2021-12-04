@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Apps</title>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <nav>
+        <button id="clock-button">Clock</button>
+        <button id="stopwatch-button">StopWatch</button>
+        <button id="timer-button">Timer</button>
+    </nav>
+    <div id="clock-div" class="clockdiv">
+        <h1>Clock</h1>
+        <p id="clock-1"></p>
+        <script src="../version1/main.js"></script>
+        <link rel="stylesheet" href="../version1/styles.css">
+    </div>
+    <div id="stopwatch-div" class="stopwatchdiv">
+        <h1>Stopwatch</h1>
+        <button id="start-button">Start</button>
+        <button id="lap-button">Lap</button>
+        <button id="stop-button">Stop</button>
+        <button id="reset-button">Reset</button>
+        <p id="p-element"></p>
+        <ul id="list"></ul>
+        <script src="../version2/main.js"></script>
+        <link rel="stylesheet" href="../version2/styles.css">
+    </div>
+    <div id="timer-div" class="timerdiv">
+        <h1>Timer</h1>
+        <input type="number" id="timer-input">
+        <select id="dropdown-menu-select">
+            <option id="hours-option" value="1">Hours</option>
+            <option id="minutes-option" value="2">Minutes</option>
+            <option id="seconds-option" value="3">Seconds</option>
+        </select>
+        <button id="start-button">Start!</button>
+        <button id="stop-reset-button">Stop/Reset!</button>
+        <p id="clock-p"></p>
+        <script src="../version3/main.js"></script>
+        <link rel="stylesheet" href="../version3/styles.css">
+    </div>
+</body>
+</html>
