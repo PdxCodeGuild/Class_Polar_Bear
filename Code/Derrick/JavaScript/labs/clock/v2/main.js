@@ -17,7 +17,7 @@ let minutes = `00`;
 let hours = `00`;
 let start;
 
-// text //
+// set default text to 00:00:00:00 //
 $milliseconds.textContent = milliseconds;
 $seconds.textContent = seconds;
 $minutes.textContent = minutes;
