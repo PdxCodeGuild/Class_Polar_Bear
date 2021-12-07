@@ -33,7 +33,7 @@ function startWatch() {
 
     // Format milliseconds to 10s place
     milliseconds = Math.floor(Math.round(end - start)).toString();
-    milliseconds = parseInt(milliseconds.slice(-2));
+    milliseconds = parseInt(milliseconds.slice(-3, -1));
 
     // format seconds to 10s place and below 60 using milliseconds
     seconds = Math.floor((end - start) / 1000) % 60;
