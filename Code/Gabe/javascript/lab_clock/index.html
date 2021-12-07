@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+</head>
+<body>
+  <h1>Clock App</h1>
+  <span id="clock-nav">Clock</span>
+  <span id="stopwatch-nav">Stopwatch</span>
+  <span id="countdown-nav">Countdown</span>
+
+  <div id="clock-div">
+    <h2>Clock:</h2>
+    <div id="clock"></div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div id="stopwatch-div">
+    <h2>Stopwatch:</h2>
+    <div id="stop-watch-container">
+      <p id="stop-watch">
+        00:00:00:00
+      </p>
+    </div>
+    <button id="start-button">Start</button>
+    <button id="stop-button">Stop</button>
+    <button id="lap-button">Lap</button>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <div id="countdown-div">
+    <h2>Countdown:</h2>
+    <input type="numer" id="countdown-input">
+    <select name="units" id="unit-selection">
+      <option value="hour(s)">Hour(s)</option>
+      <option value="minute(s)">Minute(s)</option>
+      <option value="seconds">Seconds</option>
+    </select>
+    <button id="countdown-button">Go</button>
+    <p id="countdown-timer"></p>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
