@@ -1,79 +1,79 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .load * {
-    transition: none;
+  transition: none;
 }
 
 body {
-    background: #2d3047;
+  background: #2d3047;
 }
 
 h1 {
-    margin-top: 50px;
-    text-align: center;
-    color: #FFDBB5;
+  margin-top: 50px;
+  text-align: center;
+  color: #ffdbb5;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 20px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 20px auto 0;
 }
 
 #result {
-    color: #C04ABC;
-    margin-bottom: 20px;
-    font-size: 2rem;
-    margin-top: 50px;
-    text-align: center;
+  color: #c04abc;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-top: 50px;
+  text-align: center;
 }
 
 #error-text {
-    color: #FFDBB5;
-    padding-bottom: 20px;
-    text-align: center;
+  color: #ffdbb5;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .btn {
-    background: #2d3047;
-    padding: 10px 10px;
-    cursor: pointer;
-    color: #FFDBB5;
-    margin-top: 10px;
-    text-transform: uppercase;
-    border: 1px solid #FFDBB5;
-    transition: .2s ease-in-out;
-    width: 100%;
+  background: #2d3047;
+  padding: 10px 10px;
+  cursor: pointer;
+  color: #ffdbb5;
+  margin-top: 10px;
+  text-transform: uppercase;
+  border: 1px solid #ffdbb5;
+  transition: 0.2s ease-in-out;
+  width: 100%;
 }
 
 .btn:hover {
-    background: #C04ABC;
-    border: 1px solid transparent;
-    color: #2d3047;
+  background: #c04abc;
+  border: 1px solid transparent;
+  color: #2d3047;
 }
 
 input::placeholder {
-    color: #FFDBB5;
-    opacity: .3;
+  color: #ffdbb5;
+  opacity: 0.3;
 }
 
 input:focus {
-    outline: none;
-    border: 2px solid #FFDBB5;    
+  outline: none;
+  border: 2px solid #ffdbb5;
 }
 
 input {
-    margin: 10px 0;
-    border: 2px solid #C04ABC;
-    background: #2d3047;
-    padding: 10px 10px;
-    border-radius: 5px;
-    color: #FFDBB5;
-    width: 100%;
+  margin: 10px 0;
+  border: 2px solid #c04abc;
+  background: #2d3047;
+  padding: 10px 10px;
+  border-radius: 5px;
+  color: #ffdbb5;
+  width: 100%;
 }

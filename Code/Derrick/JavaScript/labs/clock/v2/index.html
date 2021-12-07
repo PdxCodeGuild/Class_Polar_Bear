@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Clock</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <nav>
+        <a href="../v1/index.html">Clock</a>
+        <a href="./index.html">Stopwatch</a>
+        <a href="../v3/index.html">Countdown</a>
+      </nav>
+    </div>
+    <div class="container">
+      <h1>Stopwatch</h1>
+      <hr />
+      <h4>HH:MM:SS:MS</h4>
+      <h1 id="clock">
+        <span id="hours"></span>:<span id="min"></span>:<span id="sec"></span
+        >:<span id="milli"></span>
+      </h1>
+      <button id="start-btn">Start</button>
+      <button id="lap-btn">Lap</button>
+      <button id="stop-btn">Stop</button>
+      <button id="reset-btn" class="">Reset</button>
+      <div class="laps"></div>
+    </div>
+  </body>
+</html>

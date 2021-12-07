@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Clock</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <nav>
+        <a href="../v1/index.html">Clock</a>
+        <a href="../v2/index.html">Stopwatch</a>
+        <a href="./index.html">Countdown</a>
+      </nav>
+    </div>
+    <div class="container">
+      <h1>Countdown</h1>
+      <hr />
+      <form action="">
+        <label for="time">Enter a time(in minutes):</label>
+        <input type="number" name="time" id="time" min="1" max="60" />
+        <button type="submit" id="start-time">Start</button>
+      </form>
+      <h1 id="clock">
+        <span id="min">00</span>:<span id="sec">00</span>:<span id="milli"
+          >00</span
+        >
+      </h1>
+      <div class="laps"></div>
+    </div>
+  </body>
+</html>
