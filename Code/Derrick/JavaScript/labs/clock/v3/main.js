@@ -14,7 +14,7 @@ $startTime.addEventListener("click", (event) => {
     let diff = end - start;
     let result = inputInMilliseconds - diff;
     let milliseconds = Math.floor(Math.round(diff)).toString();
-    milliseconds = parseInt(milliseconds.slice(-2));
+    milliseconds = parseInt(milliseconds.slice(-3, -1));
     let seconds = Math.floor(result / 1000) % 60;
     let minutes = Math.floor(result / 60000) % 60;
 
