@@ -32,15 +32,17 @@ $startTime.addEventListener("click", (event) => {
     $seconds.textContent = seconds;
     $minutes.textContent = minutes;
 
-    if ((milliseconds <= 0) & (seconds <= 0) & (minutes <= 0)) {
-      clearInterval(countdown);
+    if ((seconds <= 0) & (minutes <= 0) & (milliseconds <= 0)) {
       milliseconds = 0;
+      $milliseconds.textContent = `00`;
       seconds = 0;
       minutes = 0;
-      $milliseconds.textContent = `00`;
       $seconds.textContent = `00`;
       $minutes.textContent = `00`;
-      alert("You hit 0!");
+      clearInterval(countdown);
+      setTimeout(() => {
+        alert("You hit 0!");
+      }, 200);
     }
   }, 10);
 });
