@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #e5ecef;
+  width: 100%;
+  font-size: 14px;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.quote-box {
+  background: #18a0ff;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+  box-shadow: 0px 27px 30px -15px rgba(0, 0, 0, 0.9);
+  width: 600px;
+}
+
+.quote-box__image {
+  width: 25%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.quote-box__message {
+  padding-left: 28%;
+  padding-right: 9%;
+  letter-spacing: 0.5px;
+}
+
+.quote-box__message h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 2.5rem;
+  padding: 40px 0;
+  position: relative;
+}
+
+.quote-box__message p {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.accessory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0 25px 0;
+}
+
+#quote-body {
+  padding-bottom: 10px;
+}
+
+#quote-author {
+  padding: 0;
+  flex-grow: 3;
+}
+
+button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  padding: 8px 10px;
+  transition: 0.2s;
+  cursor: pointer;
+  flex-grow: 2;
+  text-transform: uppercase;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.ion-quote {
+  font-size: 50px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.icons {
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  font-size: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+}
+
+.icons > i {
+  display: inline-block;
+  line-height: 30px;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.icons > i:hover {
+  color: white;
+}
