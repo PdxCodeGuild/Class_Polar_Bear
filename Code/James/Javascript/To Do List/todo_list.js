@@ -1,4 +1,4 @@
-// Copied code and used tutorial from: https://www.makeuseof.com/how-to-build-todo-list-app-using-javascript/
+// used code and tutorial from: https://www.makeuseof.com/how-to-build-todo-list-app-using-javascript/
 
 // Add an item to the list
 

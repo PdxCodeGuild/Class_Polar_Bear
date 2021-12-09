@@ -47,20 +47,33 @@ axios({
 })
 */
 
+const quotation = document.getElementById('quotation');
 
 axios({
     method: 'get',
     url: 'https://favqs.com/api/qotd',
-    params: {
-        id: 3,
-    } 
     }).then((response) => {
-        //console.log(response.data)
-        /* let quotation = data.quote.body;
-        document.write(`${quote} by ${data.quote.author}`); */
         console.log(response.data.quote)
         let quote = response.data.quote.body
-        document.write(`"${quote}" <br><br> -${response.data.quote.author}`)
+        //document.write(`"${quote}" <br><br> -${response.data.quote.author}`)
+        let htmlCode= `<p>${quote}<br><br> -${response.data.quote.author}</p>`
+        quotation.innerHTML = htmlCode
 })
 
+/*
+let htmlCode= "`<p>${quote}</p>`"
+quotation.innerHTML = htmlCode
+*/
+
 /* ask how to pass quote into ID tag */
+
+/*
+htmlCode += `<div>
+<p>${list}</p>
+<button onclick='check(${ind})' >Check</button>
+<button onclick='edit(${ind})' >Edit</button>
+<button onclick='deleteTodo(${ind})' >Delete</button>
+</div>`;
+});
+listBox.innerHTML = htmlCode;
+*/
