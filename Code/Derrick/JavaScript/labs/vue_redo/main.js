@@ -14,7 +14,7 @@ var app = new Vue({
     choice: function (event) {
       const userChoice = event.target.textContent;
       const computerChoice = this.randomChoice();
-      console.log(computerChoice);
+      console.log(`Computer: ${computerChoice} | User: ${userChoice}`);
 
       // Tie
       if (userChoice == computerChoice) {
