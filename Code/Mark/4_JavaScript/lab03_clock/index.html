@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="working.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./main.js"></script>
-    <title>Clock</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="heading">
-      </div>
+    <title>Lab 03 - Clock</title>
+</head>
+
+<body>
+    <button id="switch-clock">Clock</button>
+    <button id="switch-stopwatch">Stopwatch</button>
+    <button id="switch-countdown">Countdown</button>
+    <div id="clock">
+        <p id="current-time">00:00:00</p>
     </div>
-  </body>
+    <div id="stopwatch-div">
+        <p id="stopwatch">00:00:00</p>
+        <button id="start">Start</button>
+        <button id="lap">Lap</button>
+        <button id="stop">Stop</button>
+        <ul id="lap-times">
+
+        </ul>
+    </div>
+    <div id="countdown">
+        <input id="cd-input" type="text">
+        <select id="units">
+            <option value="seconds">Seconds</option>
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+        </select>
+        <button id="cd-btn">Countdown</button>
+        <p id="cd-timer"></p>
+    </div>
+</body>
 </html>
 
