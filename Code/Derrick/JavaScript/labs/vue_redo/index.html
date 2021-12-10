@@ -9,6 +9,19 @@
     <script defer src="./main.js"></script>
   </head>
   <body>
+    <style>
+      #app {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .buttons {
+        display: flex;
+        width: 100%;
+      }
+    </style>
     <div id="app">
       <h1>{{name}}</h1>
       <p>{{outcome}}</p>
