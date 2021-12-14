@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="app">
+        <input  v-on:keyup.enter='addTodo' type="text" v-model='userInput'>
+        <button v-on:click='addTodo' class="main-button">Add!</button>
+        <ul id="ul">
+            <li v-for="(i, index) in myList" v-if="i" v-bind:id="'li' + index">
+                <span v-bind:id="'span' + index">
+                    {{i}}
+                </span>
+                <span>
+                    <button v-bind:id="'bc' + index" v-on:click="completeTodo(index)">✅</button> 
+                    <button v-bind:id="'br' + index" v-on:click="removeTodo(index)">❌</button>
+                </span>
+            </li>
+        </ul>
+        <ul>
+
+        </ul>
+    </div>
+</body>
+</html>
