@@ -3,7 +3,7 @@
 
 # Vue Todo
 
-Let's make a todo-list with the following features:
+Let's use [Vue](https://vuejs.org/v2/guide/) make a todo-list with the following features:
 
 - a text input and button to add an item to the list
 - a button on each item to remove the item from the list
@@ -13,4 +13,4 @@ Removed items should disappear entirely. Completed items should appear at the bo
 
 ## Version 2
 
-Use Bootstrap, Materialize, or custom CSS to make it look beautiful.
+Use [Bootstrap](https://getbootstrap.com), [Materialize](https://materializecss.com), or custom CSS to make it look beautiful.
