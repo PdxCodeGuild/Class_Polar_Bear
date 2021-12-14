@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Redo</title>
+  <script defer src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Unit Converter</h1>
+    <h2>Part 1 - Convert feet to meters</h2>
+    <label for="feet">Enter how many feet</label>
+    <input v-model="numberOfFeet" v-on:keyup.enter="converter" type="text">
+    <button v-on:click="converter">Convert</button>
+    <h4>{{ result }}</h4>
+  </div>
+  <div id="app2">
+    <h2>Part 2/3 - enter unit type</h2>
+    <label for="input">Enter amount</label>
+    <input v-model="amount" v-on:keyup.enter="convert" type="text">
+    <select v-model="units" v-on:keyup.enter="convert" name="units" id="unitInput">
+      <option value="in">in</option>
+      <option value="ft">ft</option>
+      <option value="yd">yd</option>
+      <option value="mi">mi</option>
+      <option value="m">m</option>
+      <option value="km">km</option>
+    </select>
+    <button v-on:click="convert">Convert</button>
+    <h4>{{ result }}</h4>
+  </div>
+  <div id="app3">
+    <h2>Part 4 - Choose starting and ending units</h2>
+    <label for="input">Enter amount</label>
+    <input v-model="amount" type="text">
+  </div>
+</body>
+</html>

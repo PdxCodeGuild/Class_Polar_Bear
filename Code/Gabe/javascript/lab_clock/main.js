@@ -35,8 +35,20 @@ countdownNav.addEventListener('click', function () {
 // Clock
 function clockTimer() {
   const d = new Date();
-  const clock = document.querySelector('#clock');
-  clock.innerHTML = d.toLocaleString();
+  const clock = document.querySelector('#current-time');
+  clock.innerHTML = d.toLocaleTimeString('en-US');
+//   clock.textContent =
+//   d.getHours()
+//   .toString()
+//   .padStart(2, 0) +
+//   ':' +
+//   d.getMinutes()
+//   .toString().
+//   padStart(2, 0) +
+//   ':' +
+//   d.getSeconds()
+//   .toString()
+//   .padStart(2, 0);
 }
 
 setInterval(() => {
@@ -119,19 +131,62 @@ stopBtn.addEventListener('click', function() {
 const countdownInput = document.querySelector('#countdown-input');
 const countdownSelection = document.querySelector('#unit-selection');
 const countdownBtn = document.querySelector('#countdown-button');
+const cdTimer = document.querySelector('#countdown-timer');
+let countdownInterval;
+
+function countdownTimer() {
+  const cdTime = new Date();
+  cdTime.setHours(0, 0, 0, 0);
+  if (countdownSelection.value === 'seconds') {
+    cdTime.setSeconds(countdownSelection.value - 1)
+  } else
+  if (countdownSelection.value === 'minutes') {
+    cdTime.setMinutes(countdownSelection.value - 1, 59);
+  } else {
+    cdTime.setHours(countdownSelection.value - 1, 59, 59);
+  }
+  cdTimer. = cdTime.toLocaleTimeString('en-GB');
+
+  countdownInterval = setInterval(() => {
+    cdTime.setSeconds(cdTime.getSeconds() - 1);
+    cdTimer.setContent = cdTime.toLocaleTimeString('en-GB');
+  }, 1000);
+}
 
 countdownBtn.addEventListener('click', function() {
-  let countdownInput = countdownInput.value;
-  let selectionValue = countdownSelection.value;
-  let hours = '00';
-  let minutes = '00';
-  let seconds = '00';
+  countdownTimer();
+})
 
-  hours = parseInt(hours);
-  minutes = parseInt(minutes);
-  seconds = parseInt(seconds);
 
-  seconds--;
-  66
+/**
+  Adding current date
+  const date = new Date();
+  console.log(date.getHours());
+  console.log(date.getMinutes());
+  console.log(date.getSeconds());
+ */
+
+// Demo by Anthony
+const startButton = document.querySelector('#start');
+const lapButton = document.querySelector('#lap');
+const stopButton = document.querySelector('#stop');
+const stopwatchTimerDemo = document.querySelector('#stopwatch-timer');
+const lapTimes = document.querySelector('#lap-times');
+
+let stopwatchInterval;
+
+startButton.addEventListener('click', function() {
+  const date = new Date();
+  date.setHours(0, 0, 0, 0);
+  if (stopwatchInterval) {
+    clearInterval(stopwatchInterval)
+  }
+  stopwatchInterval = setInterval(function() {
+    date.setSeconds(date.getSeconds() + 1);
+    stopwatchTimerDemo.textContent = date.toLocaleTimeString('it');
+  }, 1000);
+})
+
+lapButton.addEventListener('click', function() {
 
 })
