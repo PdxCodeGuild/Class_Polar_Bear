@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="input-table"  id="input">
+        <input v-on:keyup.enter='addAsset' v-model='asset' type="text">
+        <table class="table">
+            <tr>
+                <td>
+                <input v-on:click='addAssetType' v-model='assetType' id="user_image" type="image" src="./images/Res_Users_48_Light.png">
+                </td>
+                <td>
+                <input v-model='assetType' type="image" src="./images/Arch-Category_Database_64.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input v-model='assetType' type="image" src="./images/Arch-Category_End-User-Computing_64.png">
+                </td>
+                <td><input v-model='assetType' type="image" src="./images/Arch-Category_Front-End-Web-Mobile_64.png">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input v-model='assetType' type="image" src="./images/Arch_Amazon-S3-on-Outposts_Storage_64.png">
+                </td>
+                <td>
+                <input v-model='assetType' type="image" src="./images/Arch_AWS-Server-Migration-Service_64.png">
+                </td>
+            </tr>
+        </table>
+        <!-- <canvas> -->
+            <p>{{ asset }} should show here</p>
+            <p> {{assetType}} </p>
+        <!-- </canvas> -->
+    
+    </div>
+
+    <!-- <div class="diagram-table" id="diagram">
+
+    </div> -->
+</body>
+</html>

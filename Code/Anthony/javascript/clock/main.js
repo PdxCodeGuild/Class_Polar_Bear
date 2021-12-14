@@ -1,10 +1,16 @@
+
+// Clock
 const currentTime = document.querySelector('#current-time')
 
 setInterval(function(){
     const date = new Date()
+    // console.log(date.getHours())
+    // console.log(date.getMinutes())
+    // console.log(date.getSeconds())  
     currentTime.textContent = date.toLocaleTimeString('en-US')
 }, 1000)
 
+// Stopwatch
 const startBtn = document.querySelector('#start')
 const lapBtn = document.querySelector('#lap')
 const stopBtn = document.querySelector('#stop')
@@ -44,11 +50,12 @@ stopBtn.addEventListener('click', function(){
     }
 })
 
+
+// Countdown Timer
 const cdInput = document.querySelector('#cd-input')
 const units = document.querySelector('#units')
 const cdBtn = document.querySelector('#cd-btn')
 const cdTimer = document.querySelector('#cd-timer')
-
 let cdInterval
 
 function countdownTimer(){
@@ -80,6 +87,8 @@ function countdownTimer(){
 
 cdBtn.addEventListener('click', countdownTimer)
 
+
+// Toggle stuff
 const switchClock = document.querySelector('#switch-clock')
 const switchStopwatch = document.querySelector('#switch-stopwatch')
 const switchCountdown = document.querySelector('#switch-countdown')
@@ -108,4 +117,3 @@ switchCountdown.addEventListener('click', function(){
     stopwatchDiv.style.display = 'none'
     countdownDiv.style.display = 'block'
 })
-
