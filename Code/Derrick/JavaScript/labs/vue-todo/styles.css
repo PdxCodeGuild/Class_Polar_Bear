@@ -1,0 +1,61 @@
+:root {
+  --green: #48a49b;
+  font-size: 12px;
+}
+
+#todos {
+  border: 1px solid grey;
+  min-height: 50px;
+  padding: 15px 15px 0px 15px;
+}
+
+#todo-item {
+  color: var(--green);
+}
+
+#add-todo-btn {
+  background: none;
+  border: 2px solid var(--green);
+  color: var(--green);
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin: 10px 0;
+}
+
+#add-todo-btn:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.todo-item p {
+  color: var(--green);
+  font-size: 1.2rem;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  padding: 0;
+  cursor: pointer;
+}
+
+.complete-btn {
+  color: var(--green);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.complete-btn:focus,
+.remove-btn:focus {
+  background: transparent;
+}
+
+i {
+  font-size: 1.5rem !important;
+}
