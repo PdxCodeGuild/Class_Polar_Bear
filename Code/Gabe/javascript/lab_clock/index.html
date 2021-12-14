@@ -14,7 +14,7 @@
 
   <div id="clock-div">
     <h2>Clock:</h2>
-    <div id="clock"></div>
+    <div id="current-time"></div>
   </div>
 
   <br>
@@ -39,12 +39,21 @@
     <h2>Countdown:</h2>
     <input type="numer" id="countdown-input">
     <select name="units" id="unit-selection">
-      <option value="hour(s)">Hour(s)</option>
-      <option value="minute(s)">Minute(s)</option>
-      <option value="seconds">Seconds</option>
+      <option value="hours">hours</option>
+      <option value="minutes">minutes</option>
+      <option value="seconds">seconds</option>
     </select>
     <button id="countdown-button">Go</button>
     <p id="countdown-timer"></p>
+  </div>
+
+  <!-- Anthony's example -->
+  <div class="example-stopwatch">
+    <p id="stopwatch-timer">00:00:00</p>
+    <button id="start">Start</button>
+    <button id="lap">Lap</button>
+    <button id="stop">Stop</button>
+    <ul id="lap-times"></ul>
   </div>
 
   <script src="./main.js"></script>

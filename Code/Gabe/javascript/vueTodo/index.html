@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List | Vue</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script defer src="./main.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="header-container">
+      <h1 class="page-title">Todo List</h1>
+    </header>
+    <section class="input-container">
+      <div>
+        <p v-if="message" class="warning-message">
+          {{ message }}
+        </p>
+        <p v-else></p>
+        <input v-model="todoInput" v-on:keyup.enter="addTodos" class="input" type="text">
+        <button v-on:click="addTodos">Add</button>
+      </div>
+    </section>
+    <section class="todos-list">
+      <div class="list-box">
+        <div>
+          <p class="todos-header">Todos</p>
+        </div>
+        <div>
+          <ul class="list" v-if="todos.length">
+            <li v-for="todo in todos">
+              {{ todo }}
+              <button v-on:click="complete(todo)" class="list-button">✔</button>
+              <button v-on:click="deleteTodo(todo)" class="list-button">x</button>
+            </li>
+          </ul>
+          <p v-else>Nothing Todo</p>
+        </div>
+      </div>
+    </section>
+    <section class="completed-list">
+      <div class="list-box">
+        <p class="completed-header">Completed</p>
+        <div>
+          <ul class="list" v-if="completedTodos.length">
+            <li v-for="completedTodo in completedTodos">
+              <p class="completed-todo">
+                {{completedTodo}}
+              </p>
+              <button v-on:click="returnTodo(completedTodo)" class="list-button">return</button>
+              <button v-on:click="deleteTodo(completedTodo)" class="list-button">x</button>
+            </li>
+          </ul>
+          <p v-else>No completed todos</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
