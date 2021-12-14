@@ -26,7 +26,12 @@
       </div>
       <div class="row center-align">
         <div class="col s8 offset-s2">
-          <input type="text" id="todo-item" v-model="todoToAdd" />
+          <input
+            type="text"
+            id="todo-item"
+            v-on:keyup.enter="getTodo"
+            v-model="todoToAdd"
+          />
           <button id="add-todo-btn" v-on:click="getTodo">Add Todo</button>
         </div>
       </div>
