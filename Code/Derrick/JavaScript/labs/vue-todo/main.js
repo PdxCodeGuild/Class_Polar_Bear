@@ -29,8 +29,8 @@ const app = new Vue({
       todo.isDone = !todo.isDone;
       this.sortTodos();
     },
-    removeTodo: function (index) {
-      this.todos.splice(index, 1);
+    removeTodo: function (todo, i) {
+      this.todos.splice(i, 1);
     },
   },
 });

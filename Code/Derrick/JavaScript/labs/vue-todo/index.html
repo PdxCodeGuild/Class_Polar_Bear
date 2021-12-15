@@ -40,7 +40,7 @@
           <div class="row center-align">
             <h5>Your todos</h5>
           </div>
-          <div class="todo-item row" v-for="todo in todos">
+          <div class="todo-item row" v-for="(todo, i) in todos">
             <div class="col s10">
               <p class="todo-text" :class="{done:todo.isDone}">
                 {{ todo.task }}
@@ -48,16 +48,11 @@
             </div>
             <div class="col s2 right-align buttons">
               <button class="remove-btn">
-                <i
-                  class="small material-icons"
-                  v-on:click="removeTodo(todo.index)"
+                <i class="small material-icons" v-on:click="removeTodo(todo,i)"
                   >delete</i
                 >
               </button>
-              <button
-                class="complete-btn"
-                v-on:click="completeTodo(todo, todo.index)"
-              >
+              <button class="complete-btn" v-on:click="completeTodo(todo)">
                 <i class="small material-icons">check</i>
               </button>
             </div>
