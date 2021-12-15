@@ -55,11 +55,44 @@ const part4 = new Vue({
     amount: '',
     startingUnits: '',
     endingUnits: '',
-    result: ''
+    result: '',
+    conversions: {
+      in: 1/ 0.02540,
+      ft: 1/0.3048,
+      yd: 1/0.91440,
+      mi: 1/1609.34,
+      m: 1,
+      km: 1/1000
+    }
   },
   methods: {
     convert: function () {
-      if (this.startingUnits === '')
+      let tempNum = 0;
+      if (this.startingUnits === 'in') {
+        tempNum = (Math.round((parseInt(this.amount) * 0.0254) * 1000) / 1000) * this.conversions[this.endingUnits]
+        this.amount = '';
+      }
+      if (this.startingUnits === 'ft') {
+        tempNum = (Math.round((parseInt(this.amount) * 0.3048) * 1000) / 1000) * this.conversions[this.endingUnits]
+        this.amount = '';
+      }
+      if (this.startingUnits === 'yd') {
+        tempNum = (Math.round((parseInt(this.amount) * 0.9144) * 1000) / 1000) * this.conversions[this.endingUnits]
+        this.amount = '';
+      }
+      if (this.startingUnits === 'mi') {
+        tempNum = (Math.round((parseInt(this.amount) * 1609.34) * 1000) / 1000) * this.conversions[this.endingUnits]
+        this.amount = '';
+      }
+      if (this.startingUnits === 'm') {
+        tempNum = (Math.round((parseInt(this.amount) * 1) * 1000) / 1000) * this.conversions[this.endingUnits]
+        this.amount = '';
+      }
+      if (this.startingUnits === 'km') {
+        tempNum = (Math.round((parseInt(this.amount) * 1000) * 1000) / 1000) * this.conversions[this.endingUnits]
+        this.amount = '';
+      }
+      this.result = tempNum;
     }
   }
 })
