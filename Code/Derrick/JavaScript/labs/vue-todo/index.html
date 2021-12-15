@@ -41,12 +41,12 @@
             <h5>Your todos</h5>
           </div>
           <div class="todo-item row" v-for="todo in todos">
-            <div class="col s2">
+            <div class="col s10">
               <p class="todo-text" :class="{done:todo.isDone}">
                 {{ todo.task }}
               </p>
             </div>
-            <div class="col s10 right-align buttons">
+            <div class="col s2 right-align buttons">
               <button class="remove-btn">
                 <i
                   class="small material-icons"
