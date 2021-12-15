@@ -25,11 +25,11 @@ const app = new Vue({
         }
       });
     },
-    completeTodo: function (todo, index) {
+    completeTodo: function (todo) {
       todo.isDone = !todo.isDone;
       this.sortTodos();
     },
-    removeTodo: function (todo, i) {
+    removeTodo: function (i) {
       this.todos.splice(i, 1);
     },
   },
