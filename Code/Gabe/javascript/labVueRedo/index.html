@@ -35,7 +35,28 @@
   <div id="app3">
     <h2>Part 4 - Choose starting and ending units</h2>
     <label for="input">Enter amount</label>
-    <input v-model="amount" type="text">
+    <input v-model="amount" v-on:keyup.enter="convert" type="text">
+
+    <select v-model="startingUnits" v-on:keyup.enter="convert" name="startingUnits" id="unitInput">
+      <option value="in">in</option>
+      <option value="ft">ft</option>
+      <option value="yd">yd</option>
+      <option value="mi">mi</option>
+      <option value="m">m</option>
+      <option value="km">km</option>
+    </select>
+
+    <select v-model="endingUnits" v-on:keyup.enter="convert" name="endingUnits" id="unitInput">
+      <option value="in">in</option>
+      <option value="ft">ft</option>
+      <option value="yd">yd</option>
+      <option value="mi">mi</option>
+      <option value="m">m</option>
+      <option value="km">km</option>
+    </select>
+
+    <button v-on:click="convert">Convert</button>
+    <h4>{{ result }}</h4>
   </div>
 </body>
 </html>
