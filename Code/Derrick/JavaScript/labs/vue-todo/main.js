@@ -27,7 +27,6 @@ const app = new Vue({
     },
     completeTodo: function (todo, index) {
       todo.isDone = !todo.isDone;
-
       this.sortTodos();
     },
     removeTodo: function (index) {
