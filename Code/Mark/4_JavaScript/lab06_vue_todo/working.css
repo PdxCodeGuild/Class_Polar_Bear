@@ -1,0 +1,41 @@
+body {
+  color: #fff;
+  height: 85vh;
+}
+
+button {
+  background: transparent;
+  color: #fff;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+button:hover {
+  background: #fff;
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+.container {
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+}
+
+input {
+  border: none;
+  padding: 5px 5px;
+}
+
+p {
+  display: inline;
+  padding-right: 15px;
+}
+
+span {
+  cursor: pointer;
+  padding-right: 15px;
+}
+

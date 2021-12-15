@@ -1,0 +1,39 @@
+* {
+    font-size: 30px;
+    text-align: center;
+    list-style-position: inside;
+}
+
+body {
+    background-image: url('https://picsum.photos/id/1058/1920/1080/');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+input {
+    background-color: white;
+}
+
+button {
+    background-color: black;
+    font-size: 15px;
+    border-radius: 20%;
+}
+
+
+.main-button {
+    background-color: rgb(94, 37, 37);
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10%;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.restored {
+    text-decoration: none;
+}

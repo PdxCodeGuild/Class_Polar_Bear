@@ -4,6 +4,9 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.utils import timezone
 
+def basket(request):
+    return None
+
 def index(request):
     grocery_todo = models.Grocery.objects.filter(is_complete=False)
     grocery_done = models.Grocery.objects.filter(is_complete=True)
