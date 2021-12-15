@@ -29,10 +29,10 @@
           <input
             type="text"
             id="todo-item"
-            v-on:keyup.enter="getTodo"
-            v-model="todoToAdd"
+            v-on:keyup.enter="addTodo"
+            v-model="newTodo"
           />
-          <button id="add-todo-btn" v-on:click="getTodo">Add Todo</button>
+          <button id="add-todo-btn" v-on:click="addTodo">Add Todo</button>
         </div>
       </div>
       <div class="row">
@@ -41,14 +41,18 @@
             <h5>Your todos</h5>
           </div>
           <div class="todo-item row" v-for="(todo, i) in todos">
-            <div class="col s2">
-              <p class="todo-text">{{todo}}</p>
+            <div class="col s10">
+              <p class="todo-text" :class="{done:todo.isDone}">
+                {{ todo.task }}
+              </p>
             </div>
-            <div class="col s10 right-align">
-              <button class="remove-btn" v-on:click="removeTodo(i)">
-                <i class="small material-icons">delete</i>
+            <div class="col s2 right-align buttons">
+              <button class="remove-btn">
+                <i class="small material-icons" v-on:click="removeTodo(i)"
+                  >delete</i
+                >
               </button>
-              <button class="complete-btn" v-on:click="completeTodo(i, $event)">
+              <button class="complete-btn" v-on:click="completeTodo(todo)">
                 <i class="small material-icons">check</i>
               </button>
             </div>

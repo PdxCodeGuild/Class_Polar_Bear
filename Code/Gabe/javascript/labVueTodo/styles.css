@@ -16,6 +16,7 @@ body {
 .warning-message {
   color: red;
   font-size: .5rem;
+  margin: 0;
 }
 .input-container {
   display: flex;
