@@ -7,7 +7,6 @@ const app = new Vue({
   methods: {
     addTodo: function () {
       this.todos.push({
-        index: this.todos.length,
         task: this.newTodo,
         isDone: false,
       });
