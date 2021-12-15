@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="./main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>PASSWORD GENERATOR</h1>
+    <input v-model="uppercase" type="text" placeholder="Uppercase Characters">
+    <input v-model="lowercase" type="text" placeholder="Lowercase Characters">
+    <input v-model="digits" type="text" placeholder="Digits">
+    <input v-model="specialChars" type="text" placeholder="Special Characters">
+    <button v-on:click="generatePassword">Generate Password</button>
+    <div v-if="password">
+      <h3>{{ password }}</h3>
+      <button v-on:click="clearPassword">Clear</button>
+    </div>
+    <p v-else></p>
+  </div>
+</body>
+</html>
