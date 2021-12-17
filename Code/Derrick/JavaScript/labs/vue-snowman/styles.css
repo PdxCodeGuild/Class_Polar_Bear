@@ -73,6 +73,15 @@ header {
   color: #fff;
 }
 
-.lose p {
+.lose p,
+.win p {
   margin-bottom: 15px;
+}
+
+.lose span {
+  color: red;
+}
+
+.win span {
+  color: green;
 }

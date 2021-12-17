@@ -21,7 +21,6 @@ const app = new Vue({
             app.correct += this.guess;
           }
         });
-        console.log(app.correct);
       });
     },
     resetWord: function () {
@@ -38,7 +37,7 @@ const app = new Vue({
     getNewWord: function () {
       axios({
         method: "GET",
-        url: "https://random-word-api.herokuapp.com/word/?number=7&swear=0",
+        url: "https://random-word-api.herokuapp.com/word/?swear=0",
       }).then(function (response) {
         app.word = response.data[0];
       });
