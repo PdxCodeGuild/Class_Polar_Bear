@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Snowman</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+      integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+  <body>
+    <header><h5>Guess the word by pressing any letter key</h5></header>
+    <div id="app" class="container">
+      <div class="word-container">
+        <div v-for="letter in word" class="letter-box">
+          <p class="letter hide" v-text="letter"></p>
+        </div>
+      </div>
+      <div class="attempts">
+        <p v-if="correct.length !== word.length" class="attempts-left">
+          You have
+          <span :class="{low: counter <= 5}">{{counter}}</span>
+          attempts remaining.
+        </p>
+        <div class="lose" v-if="counter <= 0">
+          <p>Nice try. The word was <span>{{word}}</span></p>
+          <button class="play-again-btn" @click="resetWord">Play Again?</button>
+        </div>
+        <div class="lose" v-if="word.length === correct.length">
+          <p>Nice job! You guessed <span>{{word}}</span> correctly!</p>
+          <button class="play-again-btn" @click="resetWord">Play Again?</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
