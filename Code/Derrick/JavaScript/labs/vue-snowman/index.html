@@ -32,12 +32,18 @@
         </div>
       </div>
       <div class="attempts">
+        <div class="letters-guessed">
+          <p>
+            Letters guessed:
+            <span v-for="guess in guesses">{{guess + ','}}</span>
+          </p>
+        </div>
         <p v-if="correct.length !== word.length" class="attempts-left">
           You have
           <span :class="{low: counter <= 5}">{{counter}}</span>
           attempts remaining.
         </p>
-        <div class="lose" v-if="counter <= 0" >
+        <div class="lose" v-if="counter <= 0">
           <p>Nice try. The word was <span>{{word}}</span></p>
           <button class="play-again-btn" @click="resetWord">Play Again?</button>
         </div>

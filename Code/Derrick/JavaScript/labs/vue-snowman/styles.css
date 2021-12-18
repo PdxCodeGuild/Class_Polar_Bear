@@ -85,3 +85,7 @@ header {
 .win span {
   color: green;
 }
+
+.letters-guessed span {
+  color: red;
+}

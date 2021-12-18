@@ -5,6 +5,7 @@ const app = new Vue({
     counter: 10,
     guess: "",
     correct: "",
+    guesses: [],
   },
   methods: {
     listenForKey: function () {
@@ -21,12 +22,14 @@ const app = new Vue({
             app.correct += this.guess;
           }
         });
+        app.guesses.push(this.guess);
       });
     },
     resetWord: function () {
       this.counter = 10;
       this.guess = "";
       this.correct = "";
+      this.guesses = [];
       let letters = document.querySelectorAll(".letter");
       letters.forEach((letter) => {
         letter.classList.remove("show");
