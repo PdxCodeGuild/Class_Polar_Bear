@@ -10,19 +10,21 @@ const app = new Vue({
   methods: {
     listenForKey: function () {
       window.addEventListener("keyup", function (event) {
-        if (app.counter > 0) {
-          app.counter--;
-        }
-        this.guess = event.key;
-        let letters = document.querySelectorAll(".letter");
-        letters.forEach((letter) => {
-          if (letter.textContent === this.guess) {
-            letter.classList.remove("hide");
-            letter.classList.add("show");
-            app.correct += this.guess;
+        if (event.code.includes("Key")) {
+          if (app.counter > 0) {
+            app.counter--;
           }
-        });
-        app.guesses.push(this.guess);
+          this.guess = event.key;
+          let letters = document.querySelectorAll(".letter");
+          letters.forEach((letter) => {
+            if (letter.textContent === this.guess) {
+              letter.classList.remove("hide");
+              letter.classList.add("show");
+              app.correct += this.guess;
+            }
+          });
+          app.guesses.push(this.guess);
+        }
       });
     },
     resetWord: function () {
