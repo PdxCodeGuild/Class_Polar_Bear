@@ -12,36 +12,46 @@
 <body>
     <div class="input-table"  id="input">
         <input v-on:keyup.enter='addAsset' v-model='asset' type="text">
+        <button v-on:click='addContainer'>Add Container</button>
+
+        <section class="diagram"> 
+
         <table class="table">
             <tr>
                 <td>
-                <input v-on:click='addAssetType' v-model='assetType' id="user_image" type="image" src="./images/Res_Users_48_Light.png">
-                </td>
-                <td>
-                <input v-model='assetType' type="image" src="./images/Arch-Category_Database_64.png">
                 </td>
             </tr>
             <tr>
                 <td>
-                <input v-model='assetType' type="image" src="./images/Arch-Category_End-User-Computing_64.png">
+                <img v-on:click='addAssetType' id="user_image" src="./images/Res_Users_48_Light.png" alt="">
+                <!-- <input  type="image" src="./images/Res_Users_48_Light.png"> -->
                 </td>
-                <td><input v-model='assetType' type="image" src="./images/Arch-Category_Front-End-Web-Mobile_64.png">
+                <td>
+                <img v-on:click='addAssetType' id="2" src="./images/Arch-Category_Database_64.png" alt="">
                 </td>
             </tr>
             <tr>
                 <td>
-                <input v-model='assetType' type="image" src="./images/Arch_Amazon-S3-on-Outposts_Storage_64.png">
+                <img v-on:click='addAssetType' id="3"  src="./images/Arch-Category_End-User-Computing_64.png" alt="">
                 </td>
                 <td>
-                <input v-model='assetType' type="image" src="./images/Arch_AWS-Server-Migration-Service_64.png">
+                <img v-on:click='addAssetType' id="4" src="./images/Arch-Category_Front-End-Web-Mobile_64.png" alt="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <img v-on:click='addAssetType' id="5" src="./images/Arch_Amazon-S3-on-Outposts_Storage_64.png" alt="">
+                </td>
+                <td>
+                <img v-on:click='addAssetType' id="6" src="./images/Arch_AWS-Server-Migration-Service_64.png" alt="">
                 </td>
             </tr>
         </table>
-        <!-- <canvas> -->
+            <canvas id="myCanvas" width="500" height="400" >
+            </canvas> 
+        </section>
             <p>{{ asset }} should show here</p>
-            <p> {{assetType}} </p>
-        <!-- </canvas> -->
-    
+            <p v-for='asset in assets'> {{ asset }} </p>
     </div>
 
     <!-- <div class="diagram-table" id="diagram">
