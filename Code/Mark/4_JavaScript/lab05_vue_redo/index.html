@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Vue Redo Lab</title>
+</head>
+
+<body>
+    <div id="app">
+        <h1> Rock, Paper, Scissors Game </h1>
+        <p> {{result}} </p>
+        <div id="buttons">
+            <button class="rock" v-on:click="choice">ROCK</button>
+	    <button class="paper" v-on:click="choice">PAPER</button>
+            <button class="scissors" v-on:click="choice">SCISSORS</button>
+        </div>
+    </div>
+</body>
+</html>
+

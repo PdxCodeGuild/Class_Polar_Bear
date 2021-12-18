@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+@keyframes test {
+    50% {
+        font-size: 30px;
+    }
+    100% {
+        font-size: 20px;
+    }
+}
+@keyframes stretch {
+    55% {
+        padding: 30px 10px;
+    }
+    75% {
+        padding: 10px 30px;
+        transition: translateY(3px);
+    }
+    100% {
+        padding: 20px;
+    }
+}
+@keyframes wobble {
+    25% {
+        transform: translateX(3px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+@keyframes bordersmove {
+    0% {
+        border-top-left-radius: 0;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    55% {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    75% {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+    }
+    100% {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+    }
+}
+@keyframes bg-color {
+    0% {
+        background: #e980fc;
+    }
+    50% {
+        background: #b96ac9;
+    }
+    75% {
+        background: #aa4dbc;
+    }
+    100% {
+        background: #c200fb;
+    }
+}
+body, html {
+    height: 100%;
+    font-family: 'Dosis', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+.wrapper:not(.main) {
+    width: 50%;
+}
+.main {
+    background-color: #ba3b46;
+    padding-top: 20px;
+}
+.main h1 {
+    margin: 0;
+}
+.wrapper {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    flex-direction: column;
+}
+h1 {
+    font-size: 50px;
+}
+section {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media screen and (min-width: 700px) {
+    .wrapper:not(.main) {
+        width: 25%;
+    }
+}
+.btn {
+    font-size: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    transition: 1s;
+}
+.btn-1Wrapper {
+    background-color: #8fb339;
+    color: #8fb339;
+}
+.btn-1Wrapper .btn:hover {
+    box-shadow: inset 0 0 0 5px #8fb339;
+    border: solid 3px #fff;
+}
+.btn-2Wrapper {
+    background-color: #45a0b9;
+    color: #45a0b9;
+}
+.btn-2Wrapper .btn:hover {
+    border-radius: 0;
+}
+.btn-4Wrapper {
+    background-color: #ed9b40;
+    color: #ed9b40;
+}
+.btn-4Wrapper .btn {
+    transition: 0.3s;
+    box-shadow: 0px 5px 0px #888;
+}
+.btn-4Wrapper .btn:active {
+    transform: translateY(2px);
+    box-shadow: 0px 3px 0px #888;
+}
+.btn-3Wrapper {
+    background-color: #ee6352;
+    color: #ee6352;
+}
+.btn-3Wrapper .btn:hover {
+    -webkit-animation: test 1s;
+    /* Safari 4.0 - 8.0 */
+    animation: test 1s;
+}
+.btn-5Wrapper {
+    background-color: #7dcfb6;
+    color: #7dcfb6;
+}
+.btn-5Wrapper .btn:hover {
+    animation: wobble 0.5s ease-in-out;
+}
+.btn-6Wrapper {
+    background-color: #3f88c5;
+    color: #3f88c5;
+}
+.btn-6Wrapper .btn {
+    transition: 0.3s;
+    background: linear-gradient(top, #a6a4a6, #fff);
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-6Wrapper .btn:active {
+    color: #306ea1;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .4), inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-7Wrapper {
+    background-color: #673ab7;
+    color: #673ab7;
+}
+.btn-7Wrapper .btn {
+    transition: 0.5s;
+    border-radius: 0;
+}
+.btn-7Wrapper .btn:hover {
+    box-shadow: 1px -1px #333, 2px -2px #333, 3px -3px #333, 4px -4px #333, 5px -5px #333;
+    -webkit-transform: translateX(-5px) translateY(5px);
+    transform: translateX(-5px) translateY(5px);
+}
+.btn-8Wrapper {
+    background-color: #8bc34a;
+    color: #8bc34a;
+    perspective: 150px;
+}
+.btn-8Wrapper .btn {
+    transform: rotateX(25deg);
+    transition: 0.5s;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-8Wrapper .btn:hover {
+    transform: rotateX(0);
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, .3), inset 0px 4px 1px 1px white, inset 0px -3px 1px 1px rgba(204, 198, 197, .5);
+}
+.btn-9Wrapper {
+    background-color: #9c27b0;
+    color: #9c27b0;
+}
+.btn-9Wrapper .btn {
+    transition: 0.2s;
+}
+.btn-9Wrapper .btn:hover {
+    opacity: 0.5;
+}
+.btn-10Wrapper {
+    background-color: #ee4266;
+    color: #ee4266;
+}
+.btn-10Wrapper .btn:hover {
+    animation: stretch 1.5s alternate;
+}
+.btn-11Wrapper {
+    background-color: #fdb833;
+    color: #fdb833;
+}
+.btn-11Wrapper .btn:hover {
+    animation: bg-color 1s alternate infinite;
+}
+.btn-12Wrapper {
+    background-color: #59c9a5;
+    color: #59c9a5;
+}
+.btn-12Wrapper .btn {
+    animation: bordersmove 1s infinite alternate;
+}
+.btn-12Wrapper .btn:hover {
+    animation-play-state: paused;
+}

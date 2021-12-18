@@ -11,13 +11,12 @@
 
 // jokes/search
 async function searchJoke(search) {
-  const response = await axios({
-    method: 'get',
-    url: `https://api.chucknorris.io/jokes/search`,
-    params: {
-      query: search
-    },
-  })
+  const response = await axios.get(`https://api.chucknorris.io/jokes/search`,
+    {
+      params: {
+          query: search
+      }
+    })
   return response.data.result;
 }
 
