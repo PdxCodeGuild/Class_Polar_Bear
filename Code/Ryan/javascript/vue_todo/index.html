@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Todo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body>
+    <div id='app'>
+        <input v-on:keyup.enter='addItem' v-model='item' type="text">
+        <button v-on:click='addItem'>Add Item</button>
+        <table>
+            <thead>
+                <th colspan="3">
+                    To Do List
+                </th>
+                <th></th>
+                <th></th>
+
+    
+            </thead>
+            <tbody>
+                <tr v-for='(item, index) in items' id='display-item'>
+                    <td width='15px' > <input @click='lineThrough(index)'  type="checkbox"> </td>
+                    <td v-bind:class="'item_' + id" v-bind:STYLE="'text-decoration:' + item.status"> {{ item.text }} </td>
+                    <td><input width="20px" v-on:click='deleteItem(index)' type="image" src="./delete.png"></td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

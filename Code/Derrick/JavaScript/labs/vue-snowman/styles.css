@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+}
+
+.word-container {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  margin-top: 50px;
+}
+
+.letter-box {
+  border-bottom: 1px solid black;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 2rem;
+  margin: 0px 5px;
+}
+
+.letter {
+  transition: opacity 0.2s;
+}
+
+.attempts {
+  text-align: center;
+  min-height: 50px;
+  margin-top: 25px;
+}
+
+.attempts span {
+  color: green;
+  font-weight: bold;
+}
+
+.low {
+  color: red !important;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.play-again-btn {
+  background-color: #fff;
+  padding: 10px 25px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 2px solid black;
+}
+
+.play-again-btn:hover {
+  background-color: black;
+  color: #fff;
+}
+
+.lose p,
+.win p {
+  margin-bottom: 15px;
+}
+
+.lose span {
+  color: red;
+}
+
+.win span {
+  color: green;
+}
+
+.letters-guessed span {
+  color: red;
+}
