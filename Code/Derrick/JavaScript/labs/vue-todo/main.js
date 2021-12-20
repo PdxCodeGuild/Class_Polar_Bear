@@ -7,7 +7,6 @@ const app = new Vue({
   methods: {
     addTodo: function () {
       this.todos.push({
-        index: this.todos.length,
         task: this.newTodo,
         isDone: false,
       });
@@ -25,12 +24,12 @@ const app = new Vue({
         }
       });
     },
-    completeTodo: function (todo, index) {
+    completeTodo: function (todo) {
       todo.isDone = !todo.isDone;
       this.sortTodos();
     },
-    removeTodo: function (index) {
-      this.todos.splice(index, 1);
+    removeTodo: function (i) {
+      this.todos.splice(i, 1);
     },
   },
 });
