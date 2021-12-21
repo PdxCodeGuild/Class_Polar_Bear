@@ -15,11 +15,11 @@
 
 ### Page Sketch
 
-![Sketch](mockup.jpg)
+![Sketch](/mockup.jpg)
 
 ## Data Model
 
-![Data Model](datamodel.jpg)
+![Data Model](/datamodel.jpg)
 
 ## Schedule
 
