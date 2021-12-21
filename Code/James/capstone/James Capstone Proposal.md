@@ -5,7 +5,7 @@
 ### Project Endstate: I will create a supply chain risk simulator that uses an SQL database. 
 - This project will be a skeleton framework for data integrations to form a linear, digital thread across a system. This simple model will use a supply chain to connect data and track the movement of information across multiple nodes. The development will start small with three nodes (supplier, manufacturer, and customer) and then expand out to additionals events/nodes if time permits. 
 - This application will be useful to businesses with supply chains that need to be connected or modeled. This model will be easily transferable to projects that require information sharing between SQL databases.
-- Python will be the primary language for the model. I will use a minimal amount of Django, Javascript and HTML. Languages outside of Python and SQL are only needed for GUI functionality as they will not be easily supported in the target environment for this application. I will experiment with CSS in the final week to make the demo of the project look impressive.
+- Python will be the primary language for the model. I will use a minimal amount of Django, Javascript and HTML. Languages outside of Python and SQL are only needed for GUI functionality as they will not be easily supported in the target environment for this application. 
 
 ## Functionality
 
@@ -35,7 +35,7 @@
 - Expand from basic math connecting nodes in the supply chain
 - Start with node/event scores, metric averages, standard deviations, and a calculated expected values of perfect information. 
 #### 17-21 January
-- Add in CSS. 
+- Add in more CSS. 
 - Continue to add to the number of inputs and back end logic.
 #### February
 - Import Python code to work laptop.
