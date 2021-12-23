@@ -1,0 +1,45 @@
+body {
+  padding: 0;
+}
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guessList {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+  height: 100px;
+}
+.guesses {
+  font-size: 3rem;
+  margin: 5px;
+  list-style: none;
+}
+
+.alphabetList {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 1000px;
+}
+.letterItem {
+  list-style: none;
+}
+.letterButton {
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+  height: 35px;
+  width: 35px;
+  border-radius: 5px;
+}
+.letterButton:hover {
+  cursor: pointer;
+}
+.letterButton{
+  background-color: green;
+}

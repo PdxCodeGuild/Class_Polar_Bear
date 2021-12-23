@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./working.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>To Do List</title>
+</head>
+
+<body>
+    <div id="app">
+        <h3 class="">To Do List</h3>
+    </div>
+    <input type="text" id="titem" v-on:keyup.enter="getTodo" v-model="todoToAdd">
+    <button id="add-todo-btn" v-on:click="getTodo">Add Todo</button>
+    <h5>"To Do" Items</h5>
+    <div class="titem row" v-for="(todo, i) in todos">
+        <p class="ttext">{{todo}}</p>
+        <button class="remove-btn" v-on:click="removeTodo(i)">
+            <i class="small material-icons">delete</i>
+        </button>
+        <button class="complete-btn" v-on:click="completeTodo(i, $event)">
+            <i class="small material-icons">check</i>
+        </button>
+    </div>
+</body>
+

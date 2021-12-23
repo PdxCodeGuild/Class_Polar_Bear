@@ -1,0 +1,50 @@
+#app {
+  width: 50%;
+}
+body {
+  background-color: #ba3b46;
+  box-sizing: border-box;
+}
+#input-container {
+  margin-top: 5% !important;
+}
+
+/* #add-btn {
+  margin-left: 5px;
+  background: #393d3f;
+  color: #ffbd00; */
+/* } */
+
+.item-container {
+  background-color: item-container;
+  margin-top: 1px;
+}
+.new-item {
+  position: relative !important;
+  color: white;
+  background-color: #393d3f;
+  border-bottom: 0.2px solid #e0d8de;
+  width: 78%;
+  height: 40px;
+}
+
+/* .delete-item {
+  background-color: #ffbd00;
+  width: 20%;
+  margin-right: 5px;
+} */
+
+#deleteBtn {
+  background-color: #ffbd00;
+  position: absolute !important;
+  right: 20%;
+}
+#doneBtn {
+  background-color: red;
+  position: absolute !important;
+  right: 2%;
+}
+
+.taskCompleted {
+  text-decoration: line-through;
+}

@@ -4,31 +4,45 @@ const app = new Vue ({
         currentGuess: '',
         randomNumber: 0,
         message: '',
-        counter: 0
+        counter: 0,
+        displayNumber: '',
+        buttonNumber: 10
     },
     created: function () {
         let number = Math.floor(Math.random() * 10 ) + 1
         this.randomNumber = number
     },
     methods: {
-        newRandomNumber: function (){
-            let number = Math.floor(Math.random() * 10 ) + 1
+        newRandomNumber: function (buttonNumber){
+            parseInt(this.buttonNumber)
+            let number = Math.floor(Math.random() * this.buttonNumber ) + 1
             this.randomNumber = number
             this.counter = 0
+            for (let i =1; i <= this.buttonNumber; i++){
+                document.querySelector("#h" + i).disabled= false
+            }
+
+        },
+        createButtons: function (){
+            console.log(this.buttonNumber)
         },
         checkGuess: function (number) {
             this.counter +=1
             console.log(number)
             this.currentGuess = number
             if (this.currentGuess == this.randomNumber){
-                this.message = 'Correct! You got it!'              
+                this.message = 'Correct! You got it!'
+                this.displayNumber = this.counter
+                this.newRandomNumber()
             } else {
                 this.message = 'Incorrect, try again.'
+
+                document.querySelector("#h" + this.currentGuess).disabled = true
+                console.log("#h" + this.currentGuess)
+                this.displayNumber = this.counter
             }
             this.currentGuess = ''
-            if (this.message == 'Correct! You got it!'){
-                newRandomNumber()
-            }
+
         }
 
         

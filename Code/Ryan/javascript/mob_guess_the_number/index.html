@@ -10,13 +10,14 @@
 </head>
 <body>
     <div id='app'>
-        <p>{{currentGuess}}</p>
-        <div v-for="i in 10">
-            <button v-on:click='checkGuess(i)'>{{i}}</button>
+        <input v-on:change='newRandomNumber' v-model='buttonNumber' type="text" name="" id="">
+        <div v-for="i in parseInt(buttonNumber)">
+            <button v-bind:id="'h' + i" v-on:click='checkGuess(i)'>{{i}}</button>
+        
         </div>
         <p>{{message}}</p>
-        <p>Number of tries = {{counter}}</p>
-
+        <p>Number of tries = {{displayNumber}}</p>
+<p>Created by: Gabe Chacon, DaJuan Martin, James Thornton, Reece Adams, Ryan Gaston.</p>
     </div>
 </body>
 </html>
