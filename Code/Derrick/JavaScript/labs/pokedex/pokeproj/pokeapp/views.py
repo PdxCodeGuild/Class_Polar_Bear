@@ -27,8 +27,9 @@ def get_pokemon(request):
         poke.types = pokemon['types']
         poke.save()
         
-
+    print(request.body)
     return JsonResponse({'pokemon': pokedex})
+
 
     
 

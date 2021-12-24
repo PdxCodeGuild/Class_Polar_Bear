@@ -18,32 +18,91 @@
   </head>
   <body>
     <style>
-      .container {
+      .grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-gap: 10px;
+        margin-top: 10px;
       }
+
+      .container {
+        height: 100vh;
+        display: flex;
+        margin-top: 10px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid black;
+      }
+
+      .card.single {
+        width: 300px;
+      }
+
+      .card-info {
+        padding: 20px;
+      }
+
+      .image {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid black;
+      }
+
+      h4 {
+        text-align: center;
+      }
+
+      .card img {
+        width: 130px;  
+      }
+      
     </style>
-    <div id="app" class="container">
-        <form action="">
-            <input v-model="search" type="text">
-            <input v-on:click.prevent="getPokemon" type="submit" value="Search Pokedex">
-        </form>
-      <div v-for="pokemon in pokedex">
-        <h1></span>[[pokemon.name]]: <span>[[pokemon.number]]</h1>
-        <h2>Height: [[pokemon.height]] m</h2>
-        <h2>Weight: [[pokemon.weight]] kg</h2>
-        <img v-bind:src="pokemon.image_front" alt="" srcset="" />
-        <img v-bind:src="pokemon.image_back" alt="" srcset="" />
-        <h3>Types:</h3>
-        <p v-for="type in pokemon.types">[[type]]</p>
+    <div id="app">
+      <form>
+        <label for="pokedex">Search Pokedex</label>
+        <input id="pokedex" v-model="search" type="text">
+        <button v-on:click.prevent="findPokemon">Search</button>
+      </form>
+      <div v-if="!found" class="grid">
+          <div v-for="pokemon in pokedex" class="card">
+            <h4><strong>[[pokemon.name]]</strong> | #<span>[[pokemon.number]]</h4>
+            <div class="image">
+              <img v-bind:src="pokemon.image_front" alt="" srcset="" />
+            </div>
+            
+            <div class="card-info">
+              <p>Height: [[pokemon.height]] m</p>
+              <p>Weight: [[pokemon.weight]] kg</p>
+              <!-- <img v-bind:src="pokemon.image_back" alt="" srcset="" /> -->
+              <p><strong>Types:</strong></p>
+              <p v-for="type in pokemon.types">[[type]]</p>
+            </div>
+          </div>
+      </div>
+      
+      <div class="container">
+        <div class="content">
+          <div v-if="found" class="card single">
+            <h4><strong>[[found.name]]</strong> | #<span>[[found.number]]</h4>
+            <div class="image">
+              <img v-bind:src="found.image_front" alt="" srcset="" />
+            </div>
+            
+            <div class="card-info">
+              <p>Height: [[found.height]] m</p>
+              <p>Weight: [[found.weight]] kg</p>
+              <!-- <img v-bind:src="found.image_back" alt="" srcset="" /> -->
+              <p><strong>Types:</strong></p>
+              <p v-for="type in found.types">[[type]]</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
 </html>
-<!-- number = models.IntegerField()
-    name = models.CharField(max_length=25)
-    height = models.FloatField()
-    weight = models.FloatField()
-    image_front = models.CharField(max_length=25)
-    image_back = models.CharField(max_length=25)
-    types  -->
+
