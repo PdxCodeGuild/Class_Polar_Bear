@@ -9,7 +9,7 @@ Track job applications and display the data through tables and graphs.
 
 The problem this app is attempting to solve is the lack of simple and easy to use trustworthy job application trackers by providing users with a modern and user friendly experience to keep track of job applications along with important information about each job in a more centralized way. 
 
-Using Vue (fron-end), Django(back-end), Google Visualization API(charts).
+Using Vue (front-end), Django(back-end), Google Visualization API(charts).
 
 ## Functionality
 User will be able to:
@@ -21,7 +21,7 @@ User will be able to:
   - add links to the job posting
   - assign status (color coded with a gradient color-to-white top-to-bottom style) *drop down menu*
   - assign job industry/field *drop down menu*
-  - assign part-time/full-time/contract/internship employement *drop down menu*
+  - assign part-time/full-time/contract/internship employment *drop down menu*
   - assign day/night shift *drop down menu*
   - add date of application *drop down menu or calendar*
   - add a notes section
@@ -41,7 +41,7 @@ The graphs page will display color coded graphs/charts all job applications by:
 - earliest date to current date
 - status
 - field/industry
-- type of employement
+- type of employment
 - shift
 - salary
 
@@ -71,7 +71,7 @@ New application:
   - day
   - night
 - links
-- job field/industry (maybe have a drop down menu wiht all available options i.e IT, Construction, etc..)
+- job field/industry (maybe have a drop down menu with all available options i.e IT, Construction, etc..)
 - job status:
   - applied
   - not selected
@@ -88,3 +88,6 @@ Favorites:
 
 
 ## Schedule
+week 1 - back end
+week 2 - front end
+week 3 - ensure smooth data sharing between Vue and Django with post/get requests + debugging
