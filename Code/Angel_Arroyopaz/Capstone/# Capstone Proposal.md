@@ -88,12 +88,6 @@ Favorites:
 
 
 ## Schedule
-<<<<<<< HEAD
 - week 1 - back end
 - week 2 - front end
 - week 3 - ensure smooth data sharing between Vue and Django with post/get requests + debugging
-=======
-week 1 - back end
-week 2 - front end
-week 3 - ensure smooth data sharing between Vue and Django with post/get requests + debugging
->>>>>>> f8eaff358ff5d739a596a4ae7e68e60792a3a7f8
