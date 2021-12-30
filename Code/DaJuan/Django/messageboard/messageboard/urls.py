@@ -1,4 +1,4 @@
-"""labs URL Configuration
+"""messageboard URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -18,8 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('routing/', include('routing.urls')),
-    path('django_redo/', include('django_redo.urls')),
-    path('url_shortener/', include('url_shortener.urls')),
-    path('polls/', include('polls.urls')),
+    path('', include('board.urls'))
 ]
