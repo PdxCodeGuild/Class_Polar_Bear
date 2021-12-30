@@ -35,6 +35,7 @@ Like Medium.com, this site is for developers to express their opinions and all t
 - name
 - email
 - date_created
+- logged_in (default false)
 
 ### Profile
 - user_id (foreign key)
