@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Password Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./main.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h3>Enter the Password length for each type of character</h3>
+        <input placeholder="Upper Case characters" v-model='userInputUpper' type="text">
+        <input placeholder="Lower Case characters" v-model='userInputLower' type="text">
+        <input placeholder="Digits" v-model='userInputDigits' type="text">
+        <input placeholder="Special Characters" v-model='userInputSpecial' type="text">
+        <button v-on:click='passwordGenerator'>Create Password!</button>
+        <h3>Your password:</h3>
+        <p>{{ password }}</p>
+    </div>
+</body>
+</html>

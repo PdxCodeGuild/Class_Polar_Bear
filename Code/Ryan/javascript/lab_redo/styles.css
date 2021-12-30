@@ -106,6 +106,8 @@ body, html {
     text-decoration: none;
 }
 
+
+
 .btn {
 	font-size:20px;
 	background-color:#fff;
@@ -171,17 +173,17 @@ section {
 }
 
 .game_over {
+    display: flex;
     /* padding-left: 200px; */
-    /* align-items:center; */
+    justify-content: center;
     text-align: center;
     margin: 50px;
-
 }
 
 .results {
     text-align: center;
     width: fit-content;
-    margin-left: 225px;
+    /* margin-left: 225px; */
     justify-content:center;
     place-items: center;
     white-space: pre-wrap;
@@ -189,10 +191,23 @@ section {
     color: black;
     display: block;
     animation: bg-color 3s infinite alternate;
+
 }
 
 .game_over > .results:hover{
 
     animation: shake 1s infinite alternate;
 
+}
+
+@media (max-width: 700px){
+    .wrapper:not(.main){
+        width: 25%;
+    }
+    .main {
+        font-size: 15px;
+    }
+    .results {
+        font-size: 20px;
+    }
 }

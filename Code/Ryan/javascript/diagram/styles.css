@@ -1,0 +1,15 @@
+.table {
+    padding: 1pt;
+    margin: 2pt;
+    border: black 2pt solid;
+}
+
+.table > tr {
+    flex: content;
+    border: solid black 2pt;
+}
+
+.table > td {
+    border: black 2pt solid;
+    content: center;
+}

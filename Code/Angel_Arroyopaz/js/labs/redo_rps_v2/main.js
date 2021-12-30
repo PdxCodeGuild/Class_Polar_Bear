@@ -54,7 +54,9 @@ function rps(){
     // clear our input text field and assigned the results to our h3 tag
     rpsInput.value = ''
     let rpsResult = document.querySelector('#rps-result')
-    rpsResult.textContent = `${result} 
-                            Computer:${compChoice} - You:${userChoice}`
+    rpsResult.className = 'result'
+    rpsResult.textContent = `${result}`
+    let rpsX = document.querySelector('#rps-x')
+    rpsX.textContent = `Computer: ${compChoice} vs You: ${userChoice}`
 }
 

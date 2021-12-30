@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 20px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 10px;
+  background: #eee;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 0 10px 0px 5px;
+  border-right: 1px solid #333;
+  margin: 0;
+  color: #333;
+}
+
+nav a:last-of-type {
+  border-right: none;
+}

@@ -6,13 +6,13 @@ from django.shortcuts import render
 alphabet = string.ascii_lowercase
 rot_amount = 13
 
-def encrypt(text):
+def encryption(text):
     s = ''
     for char in text:
         s += alphabet[(alphabet.index(char) + rot_amount)%26]
     return s
 
-def decrypt(text):
+def decryption(text):
     s = ''
     for char in text:
         s += alphabet[alphabet.index(char) - rot_amount]
@@ -28,8 +28,8 @@ def index(request):
 
     if request.method == "POST":
         word = request.POST["word"]
-        encryption = encrypt(word)
+        e = encryption(word)
         return render(request, "lab02_redo/index.html", {
-                               "encryption": encryption,
+                               "encryption": e,
                                "word": word})
 

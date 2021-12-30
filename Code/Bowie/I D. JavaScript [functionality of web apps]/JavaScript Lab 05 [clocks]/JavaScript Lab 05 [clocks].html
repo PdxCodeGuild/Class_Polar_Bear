@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clocks (with some French vocabulary)</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-primary">
+    <main class="container bg-light p-4">
+        <h2>Clocks</h2>
+        <div class="current-time d-flex my-3">
+            <div class="mr-2">Current Time:</div>
+            <div class="current-time-info"></div>
+        </div>
+        <button class="btn btn-lg btn-primary start-btn mr-2">Start (commencer)</button>
+        <button class="btn btn-lg btn-success lap-btn hidden">Lap (tour)</button>
+        <div class="start-time d-flex my-3 hidden">
+            <div class="mr-2">Time from Start:</div>
+            <div class="start-time-info"></div>
+        </div>
+        <div class="laps hidden">
+            <ul class="list-group">
+
+            </ul>
+        </div>
+
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
