@@ -33,7 +33,7 @@ Create a project `pokeproj` and app `pokeapp`. In the app, create a model `Pokem
 
 ## Part 2: Load Data into DB
 
-Write a [custom management command](../../3%20Django/docs/01%20Django%20Overview.md#custom-management-commands) `load_pokemon.py` to load the data from [pokemon.json](./pokemon.json) into your database. You can do this by saving the file next to your `.py` file and using [open](../../1%20Python/docs/File%20IO.md). In the first line of your management command, you may want to delete all the records in the table so each time you run it you start with a clean slate. To verify that the data was loaded, log into your admin panel and check that the pokemon are there.
+Write a [custom management command](../../3%20Django/docs/01%20Django%20Overview.md#custom-management-commands) `load_pokemon.py` to load the data from [pokemon.json](./data/pokemon.json) into your database. You can do this by saving the file next to your `.py` file and using [open](../../2%20Python/docs/File%20IO.md). In the first line of your management command, you may want to delete all the records in the table so each time you run it you start with a clean slate. To verify that the data was loaded, log into your admin panel and check that the pokemon are there.
 
 The data was taken from the [PokeAPI](https://pokeapi.co/docs/v2#pokemon), `height` is in decimeters (divide by 10 to get meters) and `weight` is in hectograms (divide by 10 to get kilograms). You may want to convert these values before saving them.
 
@@ -50,7 +50,7 @@ Create a second view `index` that renders a template containing a Vue app (don't
 Add an input and button at the top to search for pokemon. When the user hits 'enter' or presses 'search', use Axios to send a GET request containing the search term as a param. Modify the `pokemon` view to take the search term to query the database, and only turn matching pokemon into JSON ([search](https://docs.djangoproject.com/en/3.0/topics/db/search/), [icontains](https://docs.djangoproject.com/en/3.0/ref/models/querysets/#std:fieldlookup-icontains), [stack overflow answer](https://stackoverflow.com/questions/38478635/search-using-multiple-fields-django-building-the-object-list)).
 
 
-## Part 7: Add Types (optional)
+## Part 6: Add Types (optional)
 
 Instead of storing our types as comma-separated strings we must parse every time we want to display it, it's much beter to store types as a [many-to-many](https://docs.djangoproject.com/en/3.2/topics/db/examples/many_to_many/) field.
 
@@ -61,11 +61,11 @@ Instead of storing our types as comma-separated strings we must parse every time
   - types (ManyToMany with PokemonType)
 
 
-## Part 8: Add Pagination (optional)
+## Part 7: Add Pagination (optional)
 
 Use pagination to only show 20 pokemon at a time, allow the user to switch between pages. This can be accomplished by allowing the `pokemon` view to take additional query parameters, `page` and `limit`. Use the [Django paginator](https://docs.djangoproject.com/en/3.2/topics/pagination/) to separate the query set into pages and return only the requested page in JSON.
 
-## Part 9: More Pokemon (optional)
+## Part 8: More Pokemon (optional)
 
-Check out the [script](./pokedex.py) that creates the json file, you can use it to load even more pokemon into your database!
+Check out the [script](./data/pokedex.py) that creates the json file, you can use it to load even more pokemon into your database!
 

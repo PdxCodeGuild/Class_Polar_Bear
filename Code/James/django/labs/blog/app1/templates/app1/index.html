@@ -11,7 +11,7 @@
 <!-- Register new User -->
 
 <h3>Register below:</h3>
-    <form action="{% url 'app1:mylogin' %}" method="post">
+    <form action="{% url 'app1:register' %}" method="post">
         {% csrf_token %}
         <input type="text" name="username" placeholder="Username"/>
         <input type="text" name="password" placeholder="Password"/>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-primary">
+<main class="container bg-light p-4">
+
+    <ul class="list-group">
+        <li class="list-group-item" aria-current="true">
+            <h2 class="mb-3">"To-Do" / "Pour Faire" List</h2>
+            <div class="col-auto">
+                <label class="sr-only" for="addTodo-input">Type a to-do item here / Typer quelquechose pour faire ici:...</label>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend" id="addTodo">
+                        <div class="input-group-text bg-success text-light cursor-pointer">Add / Adjouter</div>
+                    </div>
+                    <input type="text" class="form-control" id="addTodo-input" placeholder="Type a to-do item here / Typer quelquechose pour faire ici:...">
+                </div>
+                <div class="text-danger hidden err-empty">That's empty... / C'est vide...</div>
+            </div>
+        </li>
+    </ul>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

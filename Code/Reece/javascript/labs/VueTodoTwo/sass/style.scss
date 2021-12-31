@@ -1,0 +1,18 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rebeccapurple;
+}
+
+.cmpTodos {
+    div {
+        p {
+            text-decoration: line-through;
+            text-decoration-color: color:complement($color:rebeccapurple);
+        }
+    }    
+}

@@ -1,0 +1,10 @@
+
+body {
+    background-color: rgb(94, 74, 114);
+}
+
+/* uses sass to edit so strike-through appears in completed todo list div for text only */
+
+.completed-todo-list div .text-div {
+    text-decoration: line-through;
+}

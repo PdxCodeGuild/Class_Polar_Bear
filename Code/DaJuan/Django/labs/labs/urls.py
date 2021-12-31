@@ -19,5 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('routing/', include('routing.urls')),
-    path('django_redo/', include('django_redo.urls'))
+    path('django_redo/', include('django_redo.urls')),
+    path('url_shortener/', include('url_shortener.urls')),
+    path('polls/', include('polls.urls')),
 ]
