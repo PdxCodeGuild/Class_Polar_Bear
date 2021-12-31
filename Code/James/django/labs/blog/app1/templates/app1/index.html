@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+</head>
+<body>
+
+<!-- Register new User -->
+
+<h3>Register below:</h3>
+    <form action="{% url 'app1:mylogin' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="password" placeholder="Password"/>
+        <button type="submit">Submit</button>
+</form>
+
+<!-- Login -->
+
+<h3>Login below:</h3>
+    <form action="{% url 'app1:mylogin' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="password" placeholder="Password"/>
+        <button type="submit">Submit</button>
+</form>
+
+<!-- Post Submission 
+
+<h3>Submit your post below:</h3>
+    <form action="{% url 'app1:mycreate' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="Blog Title"/>
+        <input type="text" name="body" placeholder="Blog Body"/>
+        <button type="submit">Submit</button>
+    </form>
+
+-->
+
+</body>
+</html>
