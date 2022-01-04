@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+
+    <h3>Blog Entries:</h3>
+
+<!-- Blog Entries -->
+
+    <ul>
+        {% for blog in blogs %}
+        <li>{{ blog.title }} by {{ blog.user }} on {{ blog.date_created }}</li>
+        <li>{{ blog.body }}</li>
+        {% endfor %}
+      </ul>
+
+</body>
+</html>
