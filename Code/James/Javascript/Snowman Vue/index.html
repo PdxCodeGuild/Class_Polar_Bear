@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- Used https://www.hanginghyena.com/snowman, https://codepen.io/cathydutton/pen/ldazc and https://www.youtube.com/watch?v=8zXvmmn9qVo -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Snowman</title>
+
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Custom Script -->
+    <script defer src="./main.js"></script>
+
+</head>
+<body>
+    
+    <h1>Guess a Letter.</h1>
+
+    <div id="app" class="container-fluid">
+
+<!-- If they guess a letter which is in the word, show the blanks with the letters filled in. 
+If they guess a letter which is not in the word, 
+tell them and subtract 1 from their remaining guesses. 
+Allow the user 10 tries to guess the letters of the word. 
+We could either have an input field and button for making a guess, 
+or have a button for every letter and disable it after guessing.-->
+
+        <button v-on:click="compareLetters">{{ item }}</button> <!-- Need to fix logic bug -->
+        <br>
+        <br>
+        
+<!-- Show them a list of 'blanks' and ask them for a letter. -->
+
+        <div class="container">
+            <div v-for="thing">
+                _ <!--Underscore is here for letter placeholders-->
+            </div>
+        </div>
+        <br>
+        <br>
+
+<!-- If the user can't guess the word in the number of allotted guesses, 
+print the word and ask them if they'd like to play again.-->
+
+        <div v-if="tries">{{ message }}</div>
+        <div v-if="no more tries">Game over. The word is: <span>{{ word }}</span></div>
+        <!-- <div v-if="win">You win.</div> Need logic for no more empty spaces-->
+        <button v-on:click="reset" v-if="play again" class="btn play-again">Play Again</button>
+
+    </div>
+</body>
+</html>
+
