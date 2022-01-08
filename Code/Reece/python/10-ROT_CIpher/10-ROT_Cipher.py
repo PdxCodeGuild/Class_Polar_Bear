@@ -56,58 +56,49 @@ English 	a 	b 	c 	d 	e 	f 	g 	h 	i 	j 	k 	l 	m 	n 	o 	p 	q 	r 	s 	t 	u 	v 	w 	x 
 ROT+13 	    n 	o 	p 	q 	r 	s 	t 	u 	v 	w 	x 	y 	z 	a 	b 	c 	d 	e 	f 	g 	h 	i 	j 	k 	l 	m
 '''
 
+from typing import Text
+
+
 class RotCipher:
 
     def __init__(self, rot_amount):
+        self.alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        self.rot_amount = rot_amount
+        self.text = user_input
         ...
     
     def encrypt(self, text):
+        temp_str = ''
+        for i in text.lower():
+            posi_index = self.alphabet.index(i)
+            if posi_index >= 13:
+                posi_index -= 26
+            new_index = posi_index + self.rot_amount
+            temp_str += self.alphabet[new_index]
+        return temp_str
         ...
     
     def decrypt(self, text):
-        ...
+        # print(text + ' this is it')
+        temp_str = ''
+        for i in text:
+            posi_index = self.alphabet.index(i)
+            if posi_index <= 12:
+                posi_index +=26
+            new_index = posi_index - self.rot_amount
+            temp_str += self.alphabet[new_index]
+        return temp_str
     
     def __str__(self):
         ...
 
+
+user_input = input('Enter your text: ')
+
 rot_cipher = RotCipher(13)
 
-text = 'hello'
+text = user_input
 encrypted_text = rot_cipher.encrypt(text)
 print(encrypted_text) # uryyb
 decrypted_text = rot_cipher.decrypt(encrypted_text)
 print(decrypted_text) # hello
-
-# class RotCipher:
-
-#     def __init__(self, rot_amount):
-#         self.alphabet = 'abcdefghijklmnopqrstuvwxyz'
-#         self.rot_13 = 'nopqrstuvwxyzabcdefghijklm'
-#         self.text = input('Enter your text to encrypt: ')
-#         self.rot_amount = 13
-    
-#     def encrypt(self):
-#         encrypted_text = ''
-#         for char in self.text:
-#             index_value = self.alphabet.find(char)
-#             encrypted_text += self.rot_13[index_value]
-#         return encrypted_text
-    
-#     def decrypt(self):
-#         text = ''
-#         for char in encrypted_text:
-#             index_value = self.rot_13.find(char)
-#             text -= self.alphabet[index_value]
-#         return text
-    
-#     def __str__(self):
-#         return f'Encrypted text -- {self.encrypt()}\nDecrypted text -- {self.decrypt()}\n ----------------------------- '
-
-
-# rot_cipher = RotCipher(13)
-
-# # text = 'hello'
-# encrypted_text = rot_cipher.encrypt(RotCipher())
-# print(encrypted_text) # uryyb
-# decrypted_text = rot_cipher.decrypt(RotCipher())
-# print(decrypted_text) # hello
