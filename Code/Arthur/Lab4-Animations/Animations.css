@@ -87,10 +87,6 @@ section {
     animation-timing-function: 2 ease;
     animation-delay: 0s;
    
-   
-  
-   
-   
 }
 
 /* @keyframes focus-btn9 { 
@@ -119,6 +115,141 @@ background-color: gold;
     animation-iteration-count: infinite;
     
 }
+
+.btn-10Wrapper
+{
+    background-color: #EE4266
+}
+
+.btn-10Wrapper .btn {
+    color: #EE4266
+}
+
+/* .btn-10Wrapper:hover .btn 
+{
+  
+} */
+
+.btn-1Wrapper 
+{
+   background-color:   #8FB339;
+}
+
+.btn-1Wrapper .btn
+{
+    color:  #8FB339;
+}
+
+.btn-1Wrapper:hover .btn 
+{
+   
+  opacity: (0,1);
+  transform: scale(1,1);
+    
+}
+
+/* @keyframes greenish 
+{
+
+
+
+} */
+
+.btn-7Wrapper 
+{
+   background-color:#673AB7;
+   
+   
+}
+
+.btn-7Wrapper .btn
+{
+    color:#673AB7;
+  
+    border-radius: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+}
+.btn-7Wrapper:hover .btn 
+{
+    transition: 0.5s;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+   
+    
+}
+
+.btn-6Wrapper 
+{
+  background-color: #3F88C5;
+}
+
+.btn-6Wrapper .btn
+{
+    color: #3F88C5;
+    transition: 0.3s;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    box-shadow: 0px 8px 10px 0px rgb(0 0 0 / 30%), 
+    inset 0px 4px 1px 1px white, 
+    inset 0px -3px 1px 1px rgb(204 198 197 / 50%);
+}
+
+.btn-8Wrapper 
+{
+  background-color: #8bc34a;
+}
+
+.btn-8Wrapper .btn
+{
+
+    color: #8bc34a;
+ 
+}
+
+.btn-8Wrapper:hover .btn
+{
+    transform: rotateX(25deg);
+    transition: 0.5s;
+    box-shadow: 0px 8px 10px 0px rgb(0 0 0 / 30%), 
+    inset 0px 4px 1px 1px white, 
+    inset 0px -3px 1px 1px rgb(204 198 197 / 50%);
+}
+
+.btn-5Wrapper 
+{
+    background-color:  #7DCFB6;
+}
+.btn-5Wrapper .btn 
+{
+    color:  #7DCFB6;
+}
+
+.btn-2Wrapper 
+{
+    background-color:   #45a0b9;
+}
+.btn-2Wrapper .btn 
+{
+    color:   #45a0b9;
+}
+
+.btn-3Wrapper 
+{
+    background-color:    #EE6352;
+}
+.btn-3Wrapper .btn 
+{
+    color:  #EE6352;
+}
+
 
 
 @keyframes or-ange {

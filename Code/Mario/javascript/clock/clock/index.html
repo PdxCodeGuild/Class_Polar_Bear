@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="./main.js"></script>
+    <title>Clock</title>
+  </head>
+  <body>
+    <button id="switch-clock">clock</button>
+    <button id="switch-stopwatch">stopwatch</button>
+    <button id="switch-countdown">countdown</button>
+    <div id="clock">
+      <p id="current-time"></p>
+    </div>
+    <div id="stopwatch-div">
+      <p id="stopwatch">00:00:00</p>
+      <button id="start">Start</button>
+      <button id="lap">Lap</button>
+      <button id="stop">Stop</button>
+      <ul id="lap-times"></ul>
+    </div>
+
+    <div id="countdown">
+      <input id="cd-input" type="text" />
+      <select id="units">
+        <option value="seconds">seconds</option>
+        <option value="minutes">minutes</option>
+        <option value="hours">hours</option>
+      </select>
+      <p id="cd-timer">retert</p>
+      <button id="cd-btn">Countdown</button>
+    </div>
+  </body>
+</html>

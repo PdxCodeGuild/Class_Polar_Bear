@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{% static 'rockpaperscissors/index.css' %}">
+</head>
+<body>
+    <h1>Play Rock Paper Scissors!</h1>
+    <p>Welcome to Rock Paper Scissors! To play choose one of the options below!</p>
+    <div class='choices'>
+        <a href='{% url "rockpaperscissors:result" %}?choice=rock'><img src="{% static 'rockpaperscissors/rock.jpeg' %}" alt="Rock!"></a>
+        <a href='{% url "rockpaperscissors:result" %}?choice=paper'><img src="{% static 'rockpaperscissors/paper.jpeg' %}" alt="Paper!"></a>
+        <a href='{% url "rockpaperscissors:result" %}?choice=scissors'><img src="{% static 'rockpaperscissors/scissors.jpeg' %}" alt="Scissors!"></a>
+        
+    </div>
+</body>
+</html>

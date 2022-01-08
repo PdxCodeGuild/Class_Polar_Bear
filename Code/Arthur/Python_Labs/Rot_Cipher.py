@@ -31,3 +31,63 @@ encrypted_text = rot_cipher.encrypt(text)
 print(encrypted_text) # uryyb
 decrypted_text = rot_cipher.decrypt(encrypted_text)
 print(decrypted_text) # hello'''
+
+
+#function that is going to pass the text and the shift or ROI
+def rot_cipher(RotCipher):
+   
+    Text ='hello'
+    RotCipher
+    result =[]
+    encrpytText =[]
+
+    #we write down the uppercase and lowercase letters
+    # uppercase = ['A','B','C','D','E','F','G'
+    # ,'H','I','J','K','L','M','N','O','P','Q',
+    # 'R','S','T','U','V','W','X','Y','Z']
+    # lowercase =['a','b','c','d','e','f','g','h','i',
+    # 'j','k','l','m','n','o','p','q','r','s','t','u',
+    # 'v','w','x','y','z']
+
+    uppercase ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    lowercase ="abcdefghijklmnopqrstuvwxyz"
+    
+
+
+    #for loop to iterate through them
+    for letter in Text:
+        if letter in uppercase:
+            index = uppercase.index(letter)
+            encrypting =(index + RotCipher)%26
+            encrpytText.append(encrypting)
+            shifted_letter = uppercase[encrypting]
+            result.append(shifted_letter)
+        elif letter in lowercase:
+            index = lowercase.index(letter)
+            encrypting =(index + RotCipher)%26
+            encrpytText.append(encrypting)
+            shifted_letter = lowercase[encrypting]
+            result.append(shifted_letter)
+    return result
+
+
+# text = 'hello'
+# encrypted_text = rot_cipher(text)
+# print(encrypted_text) # uryyb
+
+#prompt user to enter the amount of rotation
+user_Rotation =int(input("Enter the amount of Rotation: "))
+encrypted_text = rot_cipher(user_Rotation)
+#print text
+print(encrypted_text) # uryyb
+
+
+
+
+
+
+
+
+
+
+
