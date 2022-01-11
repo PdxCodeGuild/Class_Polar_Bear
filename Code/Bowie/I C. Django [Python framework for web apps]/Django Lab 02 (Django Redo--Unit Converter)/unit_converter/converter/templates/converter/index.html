@@ -1,0 +1,28 @@
+<div style="text-align: center; background-color: bisque; width: 50%; margin: auto; border: 1px solid darkolivegreen; border-radius: 16px;">
+    <h1>Unit Converter</h1>
+    <form method="post">
+    {% csrf_token %}
+    <span>Please, enter number and select from/to units: </span>
+        <div style="background-color: cadetblue; padding: 5px; border-radius: 3px; width: 300px; margin: auto;">
+            <input type="number" required name="input_number">
+            <select name="from">
+                {% for unit in units %}
+                    <option>{{ unit }}</option>
+                {% endfor %}
+            </select>
+            <span> to </span>
+            <select name="to">
+                {% for unit in units %}
+                    <option>{{ unit }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Convert">
+        </div>
+        {% if result %}
+            <div style="background-color: lightpink; border-radius: 3px; width: 250px; margin: auto;">
+                <span>Results: {{ result }}</span>
+            </div>
+            
+        {% endif %}
+    </form>
+</div>
