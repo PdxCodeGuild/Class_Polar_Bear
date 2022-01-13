@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'hello1',
+    'hello',
     'rps',
     'routing',
     'django.contrib.admin',

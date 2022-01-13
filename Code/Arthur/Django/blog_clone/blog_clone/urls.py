@@ -1,4 +1,4 @@
-"""firstproject URL Configuration
+"""blog_clone URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,11 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/',include('hello.urls')),
-    path('newyears/',include('newyears.urls')),
-    path('todolist/',include('todolist.urls'))
-    
+    path('user_system/', include('user_system.urls')),
+    path('blog/', include('blog.urls')),
+
+
 ]
