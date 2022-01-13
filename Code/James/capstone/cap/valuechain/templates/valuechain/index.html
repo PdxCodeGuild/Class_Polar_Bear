@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Model</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'valuechain/style.css' %}">
+    <!-- Vue -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Google Maps API-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- Custom Javascript -->
+    <script defer src="{% static 'valuechain/main.js' %}"></script> 
+
+</head>
+<body>
+
+    <h1 style="text-align: center;">Manufacturing Supply Chain</h1>
+    <div class="container">
+        <div class="first">
+            <!-- <h1>{{ message }}</h1> -->
+            <h2>Supplier</h2>
+            <form action="{% url 'valuechain:save_supplier' %}" method="post">
+                {% csrf_token %}
+                Supplier Name: <br><input type="text" name="supplierid"/><br>
+                Capacity: <br><input type="text" name="capacity"/><br>
+                Quality: <br><input type="text" name="quality"/><br>
+                Timeliness: <br><input type="text" name="timeliness"/><br>
+                Average Capacity: <br><input type="text" name="capacity_ave"/><br>
+                Average Quality: <br><input type="text" name="quality_ave"/><br>
+                Average Timeliness: <br><input type="text" name="timeliness_ave"/><br>
+                Capacity STDEV: <br><input type="text" name="capacity_stdev"/><br>
+                Quality STDEV: <br><input type="text" name="quality_stdev"/><br>
+                Timeliness STDEV: <br><input type="text" name="timeliness_stdev"/><br>
+                Part Number: <br><input type="text" name="item_id"/><br>
+                Part Value: <br><input type="text" name="item_value"/><br>
+                <button type="submit">Submit</button>
+            </form>
+            <ul>
+                {% for supplier_data in supplier_datas %}
+                <ol><h4>Supplier: {{ supplier_data.supplierid }}</h4></ol>
+                <li>Capacity Score: {{ supplier_data.capacity }}</li>
+                <li>Quality Score: {{ supplier_data.quality }}</li>
+                <li>Timeliness Score: {{ supplier_data.timeliness }}</li>
+                <li>Average Capacity: {{ supplier_data.capacity_ave }}</li>
+                <li>Average Quality: {{ supplier_data.quality_ave }}</li>
+                <li>Average Timeliness: {{ supplier_data.timeliness_ave }}</li>
+                <li>Capacity STDEV: {{ supplier_data.capacity_stdev }}</li>
+                <li>Quality STDEV: {{ supplier_data.quality_stdev }}</li>
+                <li>Timeliness STDEV: {{ supplier_data.timeliness_stdev }}</li>
+                <li>Part Name: {{ supplier_data.item_id }}</li>
+                <li>Part Value: {{ supplier_data.item_value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="second">
+            <h2>Manufacturer</h2>
+            <form action="{% url 'valuechain:save_manufacturer' %}" method="post">
+                {% csrf_token %}
+                Manufacturer Name: <br><input type="text" name="manufacturer_id"/><br>
+                Capacity: <br><input type="text" name="m_capacity"/><br>
+                Quality: <br><input type="text" name="m_quality"/><br>
+                Timeliness: <br><input type="text" name="m_timeliness"/><br>
+                Average Capacity: <br><input type="text" name="m_capacity_ave"/><br>
+                Average Quality: <br><input type="text" name="m_quality_ave"/><br>
+                Average Timeliness: <br><input type="text" name="m_timeliness_ave"/><br>
+                Capacity STDEV: <br><input type="text" name="m_capacity_stdev"/><br>
+                Quality STDEV: <br><input type="text" name="m_quality_stdev"/><br>
+                Timeliness STDEV: <br><input type="text" name="m_timeliness_stdev"/><br>
+                System Name: <br><input type="text" name="agg_sys_id"/><br>
+                System Value: <br><input type="text" name="agg_sys_value"/><br>
+                <button type="submit">Submit</button>
+            </form>
+            <ul>
+                {% for manufacturer_data in manufacturer_datas %}
+                <ol><h4>Manufacturer: {{ manufacturer_data.manufacturer_id }}</h4></ol>
+                <li>Capacity Score: {{ manufacturer_data.m_capacity }}</li>
+                <li>Quality Score: {{ manufacturer_data.m_quality }}</li>
+                <li>Timeliness Score: {{ manufacturer_data.m_timeliness }}</li>
+                <li>Average Capacity: {{ manufacturer_data.m_capacity_ave }}</li>
+                <li>Average Quality: {{ manufacturer_data.m_quality_ave }}</li>
+                <li>Average Timeliness: {{ manufacturer_data.m_timeliness_ave }}</li>
+                <li>Capacity STDEV: {{ manufacturer_data.m_capacity_stdev }}</li>
+                <li>Quality STDEV: {{ manufacturer_data.m_quality_stdev }}</li>
+                <li>Timeliness STDEV: {{ manufacturer_data.m_timeliness_stdev }}</li>
+                <li>System Name: {{ manufacturer_data.agg_sys_id }}</li>
+                <li>System Value: {{ manufacturer_data.agg_sys_value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="third">
+            <h2>Customer</h2>
+            <form action="{% url 'valuechain:save_customer' %}" method="post">
+                {% csrf_token %}
+                Customer Name: <br><input type="text" name="customer_id"/><br>
+                Capacity: <br><input type="text" name="c_capacity"/><br>
+                Quality: <br><input type="text" name="c_quality"/><br>
+                Timeliness: <br><input type="text" name="c_timeliness"/><br>
+                Average Capacity: <br><input type="text" name="c_capacity_ave"/><br>
+                Average Quality: <br><input type="text" name="c_quality_ave"/><br>
+                Average Timeliness: <br><input type="text" name="c_timeliness_ave"/><br>
+                Capacity STDEV: <br><input type="text" name="c_capacity_stdev"/><br>
+                Quality STDEV: <br><input type="text" name="c_quality_stdev"/><br>
+                Timeliness STDEV: <br><input type="text" name="c_timeliness_stdev"/><br>
+                System Name: <br><input type="text" name="c_sys_id"/><br>
+                System Value: <br><input type="text" name="c_sys_value"/><br>
+                Split Shipments (True/False): <br><input type="text" name="split_shipments"/><br> <!--Need a toggle button-->
+                <button type="submit">Submit</button>
+            </form>
+            <ul>
+                {% for customer_data in customer_datas %}
+                <ol><h4>Customer: {{ customer_data.customer_id }}</h4></ol>
+                <li>Capacity Score: {{ customer_data.c_capacity }}</li>
+                <li>Quality Score: {{ customer_data.c_quality }}</li>
+                <li>Timeliness Score: {{ customer_data.c_timeliness }}</li>
+                <li>Average Capacity: {{ customer_data.c_capacity_ave }}</li>
+                <li>Average Quality: {{ customer_data.c_quality_ave }}</li>
+                <li>Average Timeliness: {{ customer_data.c_timeliness_ave }}</li>
+                <li>Capacity STDEV: {{ customer_data.c_capacity_stdev }}</li>
+                <li>Quality STDEV: {{ customer_data.c_quality_stdev }}</li>
+                <li>Timeliness STDEV: {{ customer_data.c_timeliness_stdev }}</li>
+                <li>System Name: {{ customer_data.c_sys_id }}</li>
+                <li>System Value: {{ customer_data.c_sys_value }}</li>
+                <li>Split Shipments (Y/N): {{ customer_data.split_shipments }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="fourth">
+            <h2>Supply Chain Status</h2>
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvmSVmDgVOemcnAPOQiFU2_gOKzjApog&callback=initMap&v=weekly" async>
+            </script>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
