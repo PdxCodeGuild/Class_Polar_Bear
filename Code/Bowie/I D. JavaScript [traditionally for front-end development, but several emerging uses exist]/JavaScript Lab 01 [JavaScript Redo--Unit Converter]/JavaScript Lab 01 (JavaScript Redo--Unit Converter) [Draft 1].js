@@ -1,5 +1,5 @@
 // ---------------- //
 // JavaScript Lab 01
-// (JavaScript Redo: Unit Converter)
+// (JavaScript Redo--Unit Converter)
 // ---------------- //
 
