@@ -1,0 +1,36 @@
+<div style="background-color: bisque; border: 3px solid sandybrown; border-radius: 7px; padding-left: 10px;">
+    <h1>Grocery List</h1>
+    <form method="post">
+        {% csrf_token %}
+        {% if grocery_list %}
+            <table>
+                <th>Description</th>
+                <th>Completed</th>
+                <th>Operations</th>
+                {% for item in grocery_list %}
+                    <tr style="padding: 3px 5px">
+                        <td style="background-color: rgb(209, 174, 100); width: 250px; word-wrap: break-word;">{{ item.description }}</td>
+                        <td style="background-color: rgb(164, 201, 129);">{{ item.completed }}</td>
+                        <td style="background-color: rgb(128, 136, 204); width: 300px; padding: 3px 2px;">
+                            <button type="submit" name="complete" value="{{ item.id }}">Mark as completed / Marquer terminé</button>
+                            <button type="submit" name="incomplete" value="{{ item.id }}">Mark as incomplete / Marquer incomplet</button>
+                            <button type="submit" name="delete" value="{{ item.id }}">Delete / Effacer</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>There are currently no grocery items in the list / Il n'y a actuellement aucun article d'epicerie dans la liste</p>
+        {% endif %}
+    </form>
+    <hr/>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <h3>Please add a new item / Veuillez ajouter un nouvel element:</h3>
+            <p><textarea type="textarea" name="description" rows="6" cols="45" required></textarea></p>
+            <p><input type="submit" name="create_item" value="Create Item"></p>
+        </p>
+    </form>
+
+</div>
