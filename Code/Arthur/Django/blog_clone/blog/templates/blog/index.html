@@ -1,0 +1,30 @@
+{% extends 'user_system/base.html' %}
+
+{% block title%}
+blog
+{% endblock title%}
+
+{% block content %}
+<h1>Welcome to my blog</h1>
+<form action="{% url 'new_blog' %}" method="POST">
+
+    {% csrf_token%}
+    {{ form }}
+    <input type="submit" value="blog">
+
+
+</form>
+
+{% for blogpost in blog %}
+
+<div>
+    <!-- {{blogpost}} -->
+    <p>{{blogpost.title}}</p>
+    <h6>{{blogpost.body}}</h6>
+    <p>{{blogpost.user}}</p>
+    <p>Likes:{{blogpost.likes}} Dislikes {{blogpost.dislikes}}</p>
+
+</div>
+{% endfor %}
+
+{% endblock content%}

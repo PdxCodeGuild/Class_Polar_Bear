@@ -1,4 +1,4 @@
-"""firstproject URL Configuration
+"""djangolabs URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/',include('hello.urls')),
-    path('newyears/',include('newyears.urls')),
-    path('todolist/',include('todolist.urls'))
-    
+    path('admin/', admin.site.urls),
+    path('routing/', include('routing.urls')),
+    path('rps/', include('rps.urls')),
+    path('hello',include('hello.urls')),
+    path('polls',include('polls.urls')),
+    path('grocerylist',include('grocerylist.urls'))
 ]
