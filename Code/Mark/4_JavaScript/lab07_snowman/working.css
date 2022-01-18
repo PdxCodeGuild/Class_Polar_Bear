@@ -1,0 +1,15 @@
+#app {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    padding: 5;
+}
+
+.container {
+    margin: 2rem;
+    padding: 12px;
+}
+
