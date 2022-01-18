@@ -5,17 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grocery List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <h1>Here is your shopping list:</h1>
-    <form action="{% url 'add_item' %}" method="POST">
+    <form action="{% url 'grocery_list:add' %}" method="POST">
         {% csrf_token %}
-        <input type="text" name="input_field"/>
+        <input type="text" name="item"/>
         <button type="submit">submit</button>
     </form>
     <ul>
-        {% for grocery_item in grocery_items %}
-        <li>{{ grocery_item.item }}</li>
+        {% for grocery_item in grocery_list %}
+        <li {% if grocery_item.completed%} class='completed'{% endif %}>
+            <a href="{% url 'grocery_list:completed' grocery_item.id%}">{{grocery_item.item}}</a>
+            <a href="{% url 'grocery_list:delete' grocery_item.id %}">&times;</a>
+        </li>
         {% endfor %}
     </ul>
 </body>

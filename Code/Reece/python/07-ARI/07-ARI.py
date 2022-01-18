@@ -23,10 +23,12 @@ ari_scale = {
 
 characters = (string.ascii_letters + string.digits)
 
+punct = '.!?'
+
 def sentence_check(text):
     sentence_count = 0
     for char in text:
-        if char == '.':
+        if char in punct:
             sentence_count += 1
     return sentence_count
 

@@ -1,25 +1,28 @@
-from django.http.response import HttpResponseRedirect
-from django.shortcuts import render, reverse
-from .models import Item
-# Create your views here.
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from .models import GroceryItem
 
-def GroceryItems(request):
-    grocery_items = Item.objects.all()
-    context = {
-        'grocery_items':grocery_items
-    }
-    return render(request, 'grocery_list/index.html', context)
+def index(request):
+    grocery_list = GroceryItem.objects.all()
+    return render(request, 'grocery_list/index.html', {
+        'grocery_list':grocery_list
+    })
 
 def add_item(request):
-    if request.method == 'GET':
-        return render(request, 'grocery_list/index.html', {
-            'form'
-        })
+    item_text = request.POST['item']
+    new_item = GroceryItem()
+    new_item.item = item_text
+    new_item.save()
+    return HttpResponseRedirect(reverse('grocery_list:index'))
 
-# def add_item(request):
-#     input_field1 = request.POST('input_field')
-#     # additem = AddItem(item=input_field1)
-#     additem = Item()
-#     additem.save()
-#     return HttpResponseRedirect(reverse('add_item'))
-#     # return render(request, 'grocery_list/index.html')
+def completed(request, item_id):
+    grocery_item = get_object_or_404(GroceryItem, id=item_id)
+    grocery_item.completed = not grocery_item.completed
+    grocery_item.save()
+    return HttpResponseRedirect(reverse('grocery_list:index'))
+
+def delete_item(request, item_id):
+    grocery_item = get_object_or_404(GroceryItem, id=item_id)
+    grocery_item.delete()
+    return HttpResponseRedirect(reverse('grocery_list:index'))
