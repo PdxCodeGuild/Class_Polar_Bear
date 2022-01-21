@@ -10,7 +10,7 @@ document.querySelector('#add').onclick = function()
         document.querySelector('#todos').innerHTML += `
             <div class="todo">
                 <span id="todoname">
-                    ${document.querySelector('#newtodos input').value}
+                    ${document.querySelector('#newtodos input').va}
                 </span>
                 <button class="delete">
                     <i class="trash"></i>
