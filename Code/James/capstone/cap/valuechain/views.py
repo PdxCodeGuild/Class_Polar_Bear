@@ -1,6 +1,8 @@
 from django.shortcuts import render, reverse
 from .models import Supplier, Manufacturer, Customer
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 
 def manufacturing(request):
     '''context = {
@@ -29,15 +31,29 @@ def save_supplier(request):
     capacity_ave = request.POST['capacity_ave']
     quality_ave = request.POST['quality_ave']
     timeliness_ave = request.POST['timeliness_ave']
-    capacity_stdev = request.POST['capacity_stdev']
-    quality_stdev = request.POST['quality_stdev']
-    timeliness_stdev = request.POST['timeliness_stdev']
     item_id = request.POST['item_id']
     item_value = request.POST['item_value']
 
-    supplier = Supplier(supplierid=supplierid, capacity=capacity, quality=quality, timeliness=timeliness, capacity_ave=capacity_ave, quality_ave=quality_ave, timeliness_ave=timeliness_ave, capacity_stdev=capacity_stdev, quality_stdev=quality_stdev, timeliness_stdev=timeliness_stdev, item_id=item_id, item_value=item_value)
+    supplier = Supplier(supplierid=supplierid, capacity=capacity, quality=quality, timeliness=timeliness, capacity_ave=capacity_ave, quality_ave=quality_ave, timeliness_ave=timeliness_ave, item_id=item_id, item_value=item_value)
     supplier.save()
     return HttpResponseRedirect(reverse('valuechain:manufacturing'))
+
+# JSON Save Supplier
+
+def jsave_supplier(request):
+    data = json.loads(request.body)
+    supplier = Supplier()
+    supplier.supplierid = data['supplierid']
+    supplier.capacity = data['capacity']
+    supplier.quality = data['quality']
+    supplier.timeliness = data['timeliness']
+    supplier.capacity_ave = data['capacity_ave']
+    supplier.quality_ave = data['quality_ave']
+    supplier.timeliness_ave = data['timeliness_ave']
+    supplier.item_id = data['item_id']
+    supplier.item_value = data['item_value']
+    supplier.save()
+    return JsonResponse({'status': 'ok'})
 
 def save_manufacturer(request):
     # print(request.POST)
@@ -49,13 +65,10 @@ def save_manufacturer(request):
     m_capacity_ave = request.POST['m_capacity_ave']
     m_quality_ave = request.POST['m_quality_ave']
     m_timeliness_ave = request.POST['m_timeliness_ave']
-    m_capacity_stdev = request.POST['m_capacity_stdev']
-    m_quality_stdev = request.POST['m_quality_stdev']
-    m_timeliness_stdev = request.POST['m_timeliness_stdev']
     agg_sys_id = request.POST['agg_sys_id']
     agg_sys_value = request.POST['agg_sys_value']
 
-    manufacturer = Manufacturer(manufacturer_id=manufacturer_id, m_capacity=m_capacity, m_quality=m_quality, m_timeliness=m_timeliness, m_capacity_ave=m_capacity_ave, m_quality_ave=m_quality_ave, m_timeliness_ave=m_timeliness_ave, m_capacity_stdev=m_capacity_stdev, m_quality_stdev=m_quality_stdev, m_timeliness_stdev=m_timeliness_stdev, agg_sys_id=agg_sys_id, agg_sys_value=agg_sys_value)
+    manufacturer = Manufacturer(manufacturer_id=manufacturer_id, m_capacity=m_capacity, m_quality=m_quality, m_timeliness=m_timeliness, m_capacity_ave=m_capacity_ave, m_quality_ave=m_quality_ave, m_timeliness_ave=m_timeliness_ave, agg_sys_id=agg_sys_id, agg_sys_value=agg_sys_value)
     manufacturer.save()
     return HttpResponseRedirect(reverse('valuechain:manufacturing'))
 
@@ -69,17 +82,32 @@ def save_customer(request):
     c_capacity_ave = request.POST['c_capacity_ave']
     c_quality_ave = request.POST['c_quality_ave']
     c_timeliness_ave = request.POST['c_timeliness_ave']
-    c_capacity_stdev = request.POST['c_capacity_stdev']
-    c_quality_stdev = request.POST['c_quality_stdev']
-    c_timeliness_stdev = request.POST['c_timeliness_stdev']
     c_sys_id = request.POST['c_sys_id']
     c_sys_value = request.POST['c_sys_value']
     split_shipments = request.POST['split_shipments']
 
-    customer = Customer(customer_id=customer_id, c_capacity=c_capacity, c_quality=c_quality, c_timeliness=c_timeliness, c_capacity_ave=c_capacity_ave, c_quality_ave=c_quality_ave, c_timeliness_ave=c_timeliness_ave, c_capacity_stdev=c_capacity_stdev, c_quality_stdev=c_quality_stdev, c_timeliness_stdev=c_timeliness_stdev, c_sys_id=c_sys_id, c_sys_value=c_sys_value, split_shipments=split_shipments)
+    customer = Customer(customer_id=customer_id, c_capacity=c_capacity, c_quality=c_quality, c_timeliness=c_timeliness, c_capacity_ave=c_capacity_ave, c_quality_ave=c_quality_ave, c_timeliness_ave=c_timeliness_ave, c_sys_id=c_sys_id, c_sys_value=c_sys_value, split_shipments=split_shipments)
     customer.save()
     return HttpResponseRedirect(reverse('valuechain:manufacturing'))
     
-    '''c_sys_id = models.CharField(max_length=200, default=0)
-    c_sys_value = models.FloatField(default=0)
-    split_shipments = models.BooleanField(default=False)'''
+
+# JSON for Supplier
+
+def get_supplier(request):
+    suppliers = Supplier.objects.all()
+    data = []
+    for supplier in suppliers:
+        data.append({
+            'supplierid': supplier.supplierid,
+            'capacity': supplier.capacity,
+            'quality': supplier.quality,
+            'timeliness': supplier.timeliness,
+            'capacity_ave': supplier.capacity_ave,
+            'quality_ave': supplier.quality_ave,
+            'timeliness_ave': supplier.timeliness_ave,
+            'item_id': supplier.item_id,
+            'item_value': supplier.item_value,
+        })
+
+    return JsonResponse({'suppliers': data})
+

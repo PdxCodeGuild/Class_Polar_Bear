@@ -1,14 +1,6 @@
 body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
  }
- h5 {
-   text-align: left;
-   /* Check left alignment */
-}
-h2 {
-   text-align: left;
-   /* Check left alignment */
-}
  * {
     box-sizing: border-box;
  }

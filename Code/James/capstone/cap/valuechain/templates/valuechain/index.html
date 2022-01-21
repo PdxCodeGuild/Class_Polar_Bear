@@ -10,13 +10,18 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'valuechain/style.css' %}">
     <!-- Vue -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
     <!-- Axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Google Maps API-->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!-- Google Maps API -->            
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-VymBcuBDCDGrhT9IeS9EJXIFwunSDSM&callback=initMap&v=weekly"> 
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> 
+    <!-- Cookie  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" referrerpolicy="no-referrer"></script>
     <!-- Custom Javascript -->
     <script defer src="{% static 'valuechain/main.js' %}"></script> 
+
 
 </head>
 <body>
@@ -26,7 +31,7 @@
         <div class="first">
             <!-- <h1>{{ message }}</h1> -->
             <h2>Supplier</h2>
-            <form action="{% url 'valuechain:save_supplier' %}" method="post">
+            <!-- <form action="{% url 'valuechain:save_supplier' %}" method="post">
                 {% csrf_token %}
                 Supplier Name: <br><input type="text" name="supplierid"/><br>
                 Capacity: <br><input type="text" name="capacity"/><br>
@@ -35,13 +40,11 @@
                 Average Capacity: <br><input type="text" name="capacity_ave"/><br>
                 Average Quality: <br><input type="text" name="quality_ave"/><br>
                 Average Timeliness: <br><input type="text" name="timeliness_ave"/><br>
-                Capacity STDEV: <br><input type="text" name="capacity_stdev"/><br>
-                Quality STDEV: <br><input type="text" name="quality_stdev"/><br>
-                Timeliness STDEV: <br><input type="text" name="timeliness_stdev"/><br>
                 Part Number: <br><input type="text" name="item_id"/><br>
                 Part Value: <br><input type="text" name="item_value"/><br>
                 <button type="submit">Submit</button>
-            </form>
+            </form> -->
+            <!-- Old Django Response
             <ul>
                 {% for supplier_data in supplier_datas %}
                 <ol><h4>Supplier: {{ supplier_data.supplierid }}</h4></ol>
@@ -51,13 +54,41 @@
                 <li>Average Capacity: {{ supplier_data.capacity_ave }}</li>
                 <li>Average Quality: {{ supplier_data.quality_ave }}</li>
                 <li>Average Timeliness: {{ supplier_data.timeliness_ave }}</li>
-                <li>Capacity STDEV: {{ supplier_data.capacity_stdev }}</li>
-                <li>Quality STDEV: {{ supplier_data.quality_stdev }}</li>
-                <li>Timeliness STDEV: {{ supplier_data.timeliness_stdev }}</li>
                 <li>Part Name: {{ supplier_data.item_id }}</li>
                 <li>Part Value: {{ supplier_data.item_value }}</li>
                 {% endfor %}
             </ul>
+                -->
+
+            <div id="app">
+                <form>
+                    Supplier Name: <br><input v-model="newsupplierid" name="supplierid" type="text">
+                    <br>Capacity: <br><input v-model="newcapacity" name="capacity" type="text">
+                    <br>Quality: <br><input v-model="newquality" name="quality" type="text">
+                    <br>Timeliness: <br><input v-model="newtimeliness" name="timeliness" type="text">
+                    <br>Average Capacity: <br><input v-model="newcapacity_ave" name="capacity_ave" type="text">
+                    <br>Average Quality: <br><input v-model="newquality_ave" name="quality_ave" type="text">
+                    <br>Average Timeliness: <br><input v-model="newtimeliness_ave" name="timeliness_ave" type="text">
+                    <br>Part Number: <br><input v-model="newitem_id" name="item_id" type="text">
+                    <br>Part Value: <br><input v-model="newitem_value" name="item_value" type="text">       
+                    <br><button v-on:click.prevent="submitSupplier">Submit</button>
+                </form>
+                <ul>
+                <div v-for="supplier in suppliers">
+                    <ol><h4>Supplier: [[ supplier.supplierid ]]</h4></ol>
+                    <li>Capacity Score: [[ supplier.capacity ]]</li>
+                    <li>Quality Score: [[ supplier.quality ]]</li>
+                    <li>Timeliness Score: [[ supplier.timeliness ]]</li>
+                    <li>Average Capacity: [[ supplier.capacity_ave ]]</li>
+                    <li>Average Quality: [[ supplier.quality_ave ]]</li>
+                    <li>Average Timeliness: [[ supplier.timeliness_ave ]]</li>
+                    <li>Part Name: [[ supplier.item_id ]]</li>
+                    <li>Part Value: [[ supplier.item_value ]]</li>
+                </ul>     
+                </div>
+            </div>
+
+
         </div>
         <div class="second">
             <h2>Manufacturer</h2>
@@ -70,9 +101,6 @@
                 Average Capacity: <br><input type="text" name="m_capacity_ave"/><br>
                 Average Quality: <br><input type="text" name="m_quality_ave"/><br>
                 Average Timeliness: <br><input type="text" name="m_timeliness_ave"/><br>
-                Capacity STDEV: <br><input type="text" name="m_capacity_stdev"/><br>
-                Quality STDEV: <br><input type="text" name="m_quality_stdev"/><br>
-                Timeliness STDEV: <br><input type="text" name="m_timeliness_stdev"/><br>
                 System Name: <br><input type="text" name="agg_sys_id"/><br>
                 System Value: <br><input type="text" name="agg_sys_value"/><br>
                 <button type="submit">Submit</button>
@@ -86,9 +114,6 @@
                 <li>Average Capacity: {{ manufacturer_data.m_capacity_ave }}</li>
                 <li>Average Quality: {{ manufacturer_data.m_quality_ave }}</li>
                 <li>Average Timeliness: {{ manufacturer_data.m_timeliness_ave }}</li>
-                <li>Capacity STDEV: {{ manufacturer_data.m_capacity_stdev }}</li>
-                <li>Quality STDEV: {{ manufacturer_data.m_quality_stdev }}</li>
-                <li>Timeliness STDEV: {{ manufacturer_data.m_timeliness_stdev }}</li>
                 <li>System Name: {{ manufacturer_data.agg_sys_id }}</li>
                 <li>System Value: {{ manufacturer_data.agg_sys_value }}</li>
                 {% endfor %}
@@ -105,9 +130,6 @@
                 Average Capacity: <br><input type="text" name="c_capacity_ave"/><br>
                 Average Quality: <br><input type="text" name="c_quality_ave"/><br>
                 Average Timeliness: <br><input type="text" name="c_timeliness_ave"/><br>
-                Capacity STDEV: <br><input type="text" name="c_capacity_stdev"/><br>
-                Quality STDEV: <br><input type="text" name="c_quality_stdev"/><br>
-                Timeliness STDEV: <br><input type="text" name="c_timeliness_stdev"/><br>
                 System Name: <br><input type="text" name="c_sys_id"/><br>
                 System Value: <br><input type="text" name="c_sys_value"/><br>
                 Split Shipments (True/False): <br><input type="text" name="split_shipments"/><br> <!--Need a toggle button-->
@@ -122,9 +144,6 @@
                 <li>Average Capacity: {{ customer_data.c_capacity_ave }}</li>
                 <li>Average Quality: {{ customer_data.c_quality_ave }}</li>
                 <li>Average Timeliness: {{ customer_data.c_timeliness_ave }}</li>
-                <li>Capacity STDEV: {{ customer_data.c_capacity_stdev }}</li>
-                <li>Quality STDEV: {{ customer_data.c_quality_stdev }}</li>
-                <li>Timeliness STDEV: {{ customer_data.c_timeliness_stdev }}</li>
                 <li>System Name: {{ customer_data.c_sys_id }}</li>
                 <li>System Value: {{ customer_data.c_sys_value }}</li>
                 <li>Split Shipments (Y/N): {{ customer_data.split_shipments }}</li>
@@ -134,12 +153,16 @@
         <div class="fourth">
             <h2>Supply Chain Status</h2>
             <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSvmSVmDgVOemcnAPOQiFU2_gOKzjApog&callback=initMap&v=weekly" async>
-            </script>
+ 
+           
+<!-- Test from Django Blog JS -->
+<br><br><br>
+
+
+
         </div>
-
     </div>
-
 
 </body>
 </html>
+
