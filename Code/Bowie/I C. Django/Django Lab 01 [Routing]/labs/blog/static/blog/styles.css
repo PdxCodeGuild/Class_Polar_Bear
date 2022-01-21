@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+body {
+    display: flex;
+    flex-wrap: nowrap;
+    background: white;
+    background-image: url("https://img.freepik.com/free-vector/medical-healthcare-background-with-electrocardiogram_1017-13732.jpg?size=626&ext=jpg");
+}
+p {
+    font-family: 'Gemunu Libre', sans-serif;
+    padding: 10px;
+}
+
+h1 {
+    font-family:  'Gemunu Libre', sans-serif;
+}
+
+h2 {
+    font-family:  'Gemunu Libre', sans-serif;
+}
+
+a {
+    font-family:  'Gemunu Libre', sans-serif;
+}
+
+ul {
+    font-family:  'Gemunu Libre', sans-serif;
+}
+    
+img {
+    border-radius: 10px;
+}
+a:link {
+    color:rgb(0, 0, 0);
+}
+
+a:visited {
+    color: gray;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: rgb(0, 0, 73);
+}
+header {
+    background-color: #CD5C5C;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.topnav a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    padding: .5rem 1rem;
+    margin: 0 .5rem;
+    background-color: white;
+}
+.topnav a:hover, .topnav a:focus, .topnav a:active, .sidenav > nav a:hover, .sidenav > nav a:focus, .sidenav > nav a:active {
+    background-color: whitesmoke;
+}
+
+.sidenav {
+    background-color: #111;
+    padding-top: 3rem;
+    background-color: white;
+    width: 20%;
+    min-width: 200px;
+    border-right: 1px solid #c6c6c6;
+}
+.sidenav > nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav > nav a {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid #c6c6c6;
+    text-decoration: none;
+    padding: .5rem 1rem;
+}
+
+.sidenav > nav a:hover:after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: blue;
+}
+
+main {
+    padding: 1rem 1rem 3rem;
+}
+#blog-title, #blog-container article {
+    padding-top: 3rem;
+}
+
+.img-container {
+    text-align: center;
+    display: block;
+}
+.img-container img {
+    max-width: 100%;
+}
+footer {
+    height: 3rem;
+    background-color: #CD5C5C;
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+.goto-top {
+    display: block;
+    position: fixed;
+    right: -1px;
+    top: 70%;
+    background-color: white;
+    border: 1px solid #c6c6c6;
+    padding: 1rem;
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    text-decoration: none;
+}
