@@ -19,6 +19,9 @@ const app = new Vue({
         suppliers: []
     },
     methods: {
+        deleteTodo: function (index) {
+            this.suppliers.splice(index, 1)
+        },
         submitSupplier: function () {
             const csrftoken = Cookies.get('csrftoken');
             console.log(csrftoken)
@@ -71,16 +74,6 @@ const app = new Vue({
 
 function initMap(supplierdata) {
     // Create variable to pass in supplier data
-
-    /*
-    supplierdata 
-    let obj = JSON.stringify(supplierdata)
-    console.log(supplierdata)
-    // First layer is JSON, second layer is an object
-    console.log(supplierdata[0].capacity)
-    let content1 = '<h2>Manufacturer</h2>'
-    */
-
     // Map options (used https://youtu.be/Zxf1mnP5zcw Tutorial)
     var options = {
         zoom:8, 
@@ -90,25 +83,7 @@ function initMap(supplierdata) {
     // New map
     var map = new google.maps.Map(document.getElementById('map'), options);
 
-    // Listen for click on map
-    
-    /*
-    //Add marker
-    var marker = new google.maps.Marker({
-        position:{lat:30.2672,lng:-97.7431},
-        map:map,
-        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-    });
-
-    var infoWindow = new google.maps.InfoWindow({
-        content:'<h1>Manufacturing Plant</h1>'
-    });
-    
-    marker.addListener('click', function(){
-        infoWindow.open(map,marker);
-    });
-    */
-
+    // Location Markers
 
     let imageRed = 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     let imageGreen = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png'
@@ -149,7 +124,6 @@ function initMap(supplierdata) {
     } else {
         var colorS2 = imageGreen
     }
-    
 
     // Array of markers (taken out: content: content1,)
     var markers = [
@@ -179,20 +153,6 @@ function initMap(supplierdata) {
     for(var i = 0;i < markers.length;i++){
         addMarker(markers[i]);
     }
-
-    /* Old
-    addMarker({
-        coords:{lat:30.2672,lng:-97.7431},
-        iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-        content:'<h2>Manufacturer</h2>'
-    }); //Austin {lat:30.2672,lng:-97.7431}
-    addMarker({
-        coords:{lat:29.4241,lng:-98.4936},
-        content:'<h2>Supplier 1</h2>'
-    }); //San Antonio {lat:29.4241,lng:-98.4936}
-    addMarker({coords:{lat:29.7066,lng:-96.5397}}); //Killeen {lat:29.7066,lng:-96.5397}
-    addMarker({coords:{lat:31.0982,lng:-97.3428}}); //*Temple {lat:31.0982,lng:-97.3428}
-    */
 
     // Add Marker Function
     function addMarker(props){
@@ -264,9 +224,7 @@ function initMap(supplierdata) {
         var colorTemAusPath = colorBlack
     }
     
-    
-
-    // Add Paths         strokeColor: colorSanAusPath,
+    // Add Paths         
     const sanAusPath = new google.maps.Polyline({
         path: sanAusCoordinates,
         geodesic: true,
@@ -294,12 +252,7 @@ function initMap(supplierdata) {
     ausColPath.setMap(map);
 }
 
-/*
-{lat:30.2672,lng:-97.7491}
-{lat:29.4241,lng:-98.4936}
-{lat:29.7066,lng:-96.5397}
-{lat:31.0982,lng:-97.3428}
-*/
+
 
 
 

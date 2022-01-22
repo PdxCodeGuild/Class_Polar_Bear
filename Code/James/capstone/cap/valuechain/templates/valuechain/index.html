@@ -14,8 +14,7 @@
     <!-- Axios -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Google Maps API -->            
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-VymBcuBDCDGrhT9IeS9EJXIFwunSDSM&callback=initMap&v=weekly"> 
-    </script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=KEYHERE&callback=initMap&v=weekly"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> 
     <!-- Cookie  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js" referrerpolicy="no-referrer"></script>
@@ -87,6 +86,7 @@
                     <li>Part Name: [[ supplier.item_id ]]</li>
                     <li>Part Value: [[ supplier.item_value ]]</li>
                 </ul>     
+                <button @click="deleteTodo(index)" class="btn btn-danger">Delete</button> <!-- CHECK-->
                 </div>
             </div>
 
