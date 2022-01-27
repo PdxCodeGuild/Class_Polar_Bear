@@ -179,3 +179,26 @@ class Target(models.Model):
     2 days - Test features all together
 
 
+    The Python language uses CGI to execute on a Web page. You must import the "cgitb" library for the Python language to execute and display the results in a Web browser. The Python language uses small statements that make it suitable for large or small Web projects. You can display any content and work with dynamic or static pages using Python.
+
+
+1
+Launch your Python editor and open the source code file you want to use to print information to a Web page.
+
+2
+Add the "cgitb" library to the top of the file. Import the cgitb libraries to allow your Python code to work with HTML processes. Add the following code to the top of your page:
+
+import cgitb cgitb.enable()
+
+3
+Set the "Content Type" headers. The headers tell the browser that the output is HTML. Add the following code to set the content type:
+
+start_response('200 OK', [('Content-Type', 'text/html')])
+
+
+4
+Display a piece of HTML code. For instance, the following code displays "Hello, World" in bold text using HTML:
+
+print " Hello, World"
+
+
