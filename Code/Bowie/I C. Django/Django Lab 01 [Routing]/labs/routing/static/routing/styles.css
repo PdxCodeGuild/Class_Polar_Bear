@@ -1,0 +1,46 @@
+
+body {
+    background-color:rgb(100, 100, 100);
+    background-image: url("https://polarjournal.ch/wp-content/uploads/2021/08/Paraperlucidibaca_CDSMZ.jpg");
+}
+
+
+p {
+    padding: 10px;
+    font-family: "Arial";
+}
+
+h1 {
+    font-family: "Arial";
+}
+
+a {
+    font-family: "Arial";
+}
+
+
+ul {
+    font-family: "Arial";
+}
+
+
+
+a:link {
+    color:rgb(163, 27, 95);
+}
+
+a:visited {
+    color: gray;
+}
+
+a:visited {
+    color: black;
+}
+
+a:active {
+    color: rgb(0, 0, 73);
+}
+
+img {
+    border-radius: 10px;
+}

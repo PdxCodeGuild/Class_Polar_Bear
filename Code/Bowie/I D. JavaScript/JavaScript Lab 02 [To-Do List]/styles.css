@@ -1,0 +1,9 @@
+.hidden {
+    display: none !important;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.todo-completed {
+    text-decoration: line-through;
+}

@@ -179,7 +179,4 @@ for i in range(min(19,len(words))):
 version3
 do as home work
 
-
-
-
 '''

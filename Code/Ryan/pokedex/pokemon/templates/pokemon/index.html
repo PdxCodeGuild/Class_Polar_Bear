@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <!-- Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- Axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Custom script -->
+    <script defer src="{% static 'pokeapp/main.js' %}"></script>
+</head>
+<body>
+    <div id="app">
+
+        <div class="container-fluid">
+          <a class="navbar-brand">Pokedex</a>
+          <form class="d-flex">
+            <input class="form-control me-2" type="text" v-model="search" placeholder="Search by name" aria-label="Search">
+          </form>
+        </div>
+      </nav>
+      <div class="row" id="mainDiv">
+        <div v-for='pokemon in filteredPokemons' class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img v-bind:src="[[ pokemon.image_front ]]" alt="[[ pokemon.name ]]">
+              <h5>{{ creature.name }}</h5>
+              <p>H: {{ creature.height }} </p>
+              <p>W: [[ creature.weight ]]lbs</p>
+            </div>
+            <div class="flip-card-back">
+              <img v-bind:src="[[ pokemon.image_back ]]" alt="[[ pokemon.name ]]">
+              <small>Pokemon Number: [[ creature.number ]]</small>
+              <h4>Type: [[ creature.types ]]</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+</body>
+</html>

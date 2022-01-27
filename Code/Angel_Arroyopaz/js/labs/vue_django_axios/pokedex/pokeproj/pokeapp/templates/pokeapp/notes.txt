@@ -1,0 +1,19 @@
+// Alternative code for cards using bootstrap
+    
+    
+    <div class="row">
+            <div v-for='pokemon in pokemons' class="col-2">
+              <div class="card ">
+                <img class="card-img-top" v-bind:src="[[ pokemon.image_front ]]" alt="[[ pokemon.name ]]">
+                <!-- <img src="[[ pokemon.image_back ]]" alt="[[ pokemon.name ]]"> -->
+                <div class="card-body">
+                  <h5 class="card-title">[[ pokemon.name ]]</h5>
+                  <p class="card-text">H: [[ pokemon.height.toFixed(2) ]]m</p>
+                  <p class="card-text">W: [[ pokemon.weight.toFixed(2) ]]lbs</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Pokemon Number: [[ pokemon.number ]]</small>
+                </div>
+              </div>
+            </div>
+        </div>

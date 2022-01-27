@@ -11,9 +11,15 @@ def GroceryItems(request):
     return render(request, 'grocery_list/index.html', context)
 
 def add_item(request):
-    input_field1 = request.POST('input_field')
-    # additem = AddItem(item=input_field1)
-    additem = Item()
-    additem.save()
-    return HttpResponseRedirect(reverse('add_item'))
-    # return render(request, 'grocery_list/index.html')
+    if request.method == 'GET':
+        return render(request, 'todolist/index.html', {
+            'form'
+        })
+
+# def add_item(request):
+#     input_field1 = request.POST('input_field')
+#     # additem = AddItem(item=input_field1)
+#     additem = Item()
+#     additem.save()
+#     return HttpResponseRedirect(reverse('add_item'))
+#     # return render(request, 'grocery_list/index.html')

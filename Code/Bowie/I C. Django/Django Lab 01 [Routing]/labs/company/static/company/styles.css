@@ -1,0 +1,52 @@
+@import url(//db.onlinewebfonts.com/c/1c6b6cddab6609324d9016562358e0cd?family=Biome);
+@font-face {
+    font-family: "Biome";
+    font-display: swap;
+    src: url("//db.onlinewebfonts.com/t/1c6b6cddab6609324d9016562358e0cd.eot");
+    src: url("//db.onlinewebfonts.com/t/1c6b6cddab6609324d9016562358e0cd.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1c6b6cddab6609324d9016562358e0cd.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1c6b6cddab6609324d9016562358e0cd.woff") format("woff"), url("//db.onlinewebfonts.com/t/1c6b6cddab6609324d9016562358e0cd.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1c6b6cddab6609324d9016562358e0cd.svg#Biome") format("svg");
+}
+
+html, body {
+    margin: 0;
+    background-color: antiquewhite;
+    font-family: "Biome";
+}
+aside {
+    display: flex;
+}
+aside #tabs {
+    width: 100%;
+    border-right: 1px solid #c6c6c6;
+}
+#tabs .nav-link {
+    color: var(--dark);
+}
+#tabs .nav-link:hover
+{
+    background-color: var(--danger);
+    color: white;
+}
+.wrapper {
+    padding: 0;
+    border: 1px solid #c6c6c6;
+    background-color: white;
+}
+img.img-thumbnail {
+    border: none;
+    max-width: 100%;
+}
+
+.nav.menu .nav-link {
+    position: relative;
+}
+
+.nav.menu .nav-link:hover:after, .nav.menu .nav-link.active:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--danger);
+}

@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 3</title>
+    <link rel="stylesheet" href="{% static 'company/libs/bootstrap.min.css' %}">
+    <link href="http://db.onlinewebfonts.com/c/1c6b6cddab6609324d9016562358e0cd?family=Biome" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'company/styles.css' %}">
+</head>
+<body>
+    <div class="wrapper container">
+        <header>
+            <div class="row">
+                <div class="col-md-4 d-flex flex-column justify-content-center">
+                    <img src="{% static 'company/images/logo.png' %}" class="px-5 px-md-0 img-thumbnail">
+                </div>
+                <div class="col-md-6 text-danger d-flex flex-column justify-content-center p-5 px-md-3">
+                    <h1>AEROMED READY</h1>
+                    <h3>Data Science for Aeromedical Evacuation,
+                        Mountain Rescue,
+                        & Emergency Preparedness
+                    </h3>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <ul class="nav menu navbar-nav">
+                <li class="nav-item px-2 active">
+                    <a class="nav-link" href="#home" id="home-tab" data-toggle="pill"
+                       role="tab" aria-controls="home" aria-selected="true">Home</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#g-models" id="g-models-tab" data-toggle="pill"
+                       role="tab" aria-controls="g-models" aria-selected="false">Geographic Models</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#analytics" id="analytics-tab" data-toggle="pill"
+                       role="tab" aria-controls="analytics" aria-selected="false">Medical & Emergency Analytics</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#equipment" id="equipment-tab" data-toggle="pill"
+                       role="tab" aria-controls="equipment" aria-selected="false">Equipment & Reviews</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" href="#about" id="about-tab" data-toggle="pill"
+                       role="tab" aria-controls="about" aria-selected="false">About</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="row">
+            <aside class="col-md-4">
+                <div class="nav flex-column" id="tabs" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link" id="menu-python-tab" href="https://www.python.org/" target="_blank" role="tab" aria-controls="menu-python-tab" aria-selected="false">Python</a>
+                    <a class="nav-link" id="menu-arcpy-tab" href="https://www.esri.com/en-us/arcgis/products/arcgis-python-libraries/libraries/arcpy" target="_blank" aria-controls="menu-arcpy-tab" aria-selected="false">ArcPy</a>
+                    <a class="nav-link" id="menu-numpy-tab" href="https://numpy.org/" role="tab" target="_blank" aria-controls="menu-numpy-tab" aria-selected="false">NumPy</a>
+                    <a class="nav-link" id="menu-sci-tab" href="https://scipy.org/" role="tab" target="_blank" aria-controls="menu-sci-tab" aria-selected="false">SciPy</a>
+                    <a class="nav-link" id="menu-moz-tab" href="https://developer.mozilla.org/en-US/" target="_blank" role="tab" aria-controls="menu-moz-tab" aria-selected="false">Developer.Mozilla</a>
+                    <a class="nav-link" id="menu-vscode-tab" href="https://vscode.dev/" role="tab" target="_blank" aria-controls="menu-vscode-tab" aria-selected="false">VSCode.dev</a>
+                    <a class="nav-link" id="menu-git-tab" href="https://github.com/" role="tab" target="_blank" aria-controls="menu-git-tab" aria-selected="false">GitHub</a>
+                    <a class="nav-link" id="menu-slack-tab" href="https://slack.com/" role="tab" target="_blank" aria-controls="menu-slack-tab" aria-selected="false">Slack</a>
+                </div>
+            </aside>
+            <section class="col-md-8 content-section">
+                <div class="tab-content p-3">
+                    <div class="tab-pane fade show active pt-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h1 class="text-danger mb-3">Welcome</h1>
+                        <img src="{% static 'company/images/welcome.jpg' %}" class="rounded mx-auto d-block img-thumbnail">
+                        <p class="mt-3">Radiological diagnostics ipsum incorporates great words! Thorax roentgenography (chest X-ray).
+                            Echocardiography. Ultrasound dopplerography. Angiography of the pulmonary vessels.
+                            CT of the lumbosacral part of the vertebral column. Gland scanning. Computer tomography of the pelvis.
+                            Magnetic resonance scan. USI. X-ray. Ventriculography. Computed tomography of the chest and mediastinum.
+                            Radiography of the spinal column. US of the gallbladder and bile duct. US of the abdomen.
+                            Ultrasound of the lesser pelvis. Doppler echocardiography. Ultrasound. Brain CT. Selective angiopneumography.
+                            Head CT. Computed tomography.</p>
+                    </div>
+                    <div class="tab-pane fade pt-4" id="g-models" role="tabpanel" aria-labelledby="g-models-tab">
+                        <h1 class="text-danger mb-3">US Atlas and Database of Air Medical Services</h1>
+                        <div class="row">
+                            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                                <a class="btn btn-primary btn-lg" href="https://www.esri.com/en-us/arcgis/products/arcgis-python-libraries/libraries/arcpy">
+                                    <img src="{% static 'company/images/py.png' %}" class="img-thumbnail" width="40px">
+                                    ArcPy
+                                </a>
+                            </div>
+                            <div class="col-md-8">
+                                <img src="{% static 'company/images/atlas.jpg' %}" class="rounded mx-auto d-block img-thumbnail">
+                            </div>
+                        </div>
+                        <p class="mt-3">
+                            Radiological diagnostics ipsum incorporates great words! Thorax roentgenography (chest X-ray). Echocardiography.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade pt-4" id="analytics" role="tabpanel" aria-labelledby="analytics-tab">
+                        <h1 class="text-danger mb-3">Descriptive, Predictive, & Prescriptive Analytics</h1>
+                        <div class="row">
+                            <div class="col-sm-8 offset-sm-2">
+                                <img src="{% static 'company/images/NumPy.png' %}" class="rounded mx-auto d-block img-thumbnail">
+                            </div>
+                        </div>
+                        <p class="mt-3">
+                            Radiological diagnostics ipsum incorporates great words! Thorax roentgenography (chest X-ray). Echocardiography.
+                        </p>
+                    </div>
+                    <div class="tab-pane fade pt-4" id="equipment" role="tabpanel" aria-labelledby="equipment-tab">
+                        <h1 class="text-danger mb-3">Gear to be “AeroMed Ready” in the Outdoors</h1>
+                    </div>
+                    <div class="tab-pane fade pt-4" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <h1 class="text-danger mb-3">About</h1>
+                        <p>
+                            Radiological diagnostics ipsum incorporates great words! Thorax roentgenography (chest X-ray).
+                            Echocardiography. Ultrasound dopplerography. Angiography of the pulmonary vessels.
+                            CT of the lumbosacral part of the vertebral column. Gland scanning. Computer tomography of the pelvis.
+                            Magnetic resonance scan. USI. X-ray. Ventriculography. Computed tomography of the chest and mediastinum.
+                            Radiography of the spinal column. US of the gallbladder and bile duct. US of the abdomen.
+                            Ultrasound of the lesser pelvis. Doppler echocardiography. Ultrasound. Brain CT. Selective angiopneumography.
+                            Head CT. Computed tomography.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="p-4 bg-dark"></footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>
