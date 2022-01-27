@@ -1,26 +1,31 @@
-import requests
+
 import string
 
-symbols = string.punctuation
+with open('book.txt', encoding="utf-8") as file:
+    text = file.read()
 
-response = requests.get('https://www.gutenberg.org/files/62897/62897-0.txt')
-response.encoding = 'utf-8'
-#print(response.text)
-words = response.json()
+text = text.lower()
 
-word_dict = {}
 
-plain_text = words.read().lower().strip()
-plain_text = plain_text.replace('\n',' ')
+for char in string.punctuation + string.digits + '\n”“':
+    if char in text:
+        text = text.replace(char, "")
 
-for char in plain_text:
-    if char in symbols:
-        if char == "'":
-            plain_text = plain_text.replace(char,'')
-        else:
-            plain_text = plain_text.replace(char,' ')
+text = text.replace("  ", "")
 
-word_list = plain_text.split(' ')
 
-while '' in word_list:
-    word_list.remove('')
+text = text.split(' ')
+
+word_count = {}
+for i in range(len(text)):
+    current_word = text[i]
+    if current_word in word_count:
+        word_count[current_word] += 1
+    else:
+        word_count[current_word] = 1
+
+
+words = list(word_count.items()) 
+words.sort(key=lambda tup: tup[1], reverse=True) 
+for i in range(min(10, len(words))):  
+    print(words[i])

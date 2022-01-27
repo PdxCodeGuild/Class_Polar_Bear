@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jS todo list</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body>
+    <div id="entry">
+            <input v-on:keyup.enter="addTask" v-model="task" type="text">
+            <button v-on:click="addTask">Add</button>
+            <ul>
+                <li v-on:click="removeTask" v-for="task in tasks">
+                    {{ task }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

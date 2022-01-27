@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="./main.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <em><h3>{{ name }}</h3></em>
+        <h5>You're now {{ age }}</h5>
+        <input v-model="name" type="text">
+        <br>
+        <input v-model="age" type="number">
+        <button v-on:click="birthday">It's ya b-day</button>
+   
+        <ul>
+            <li v-for="color in colors">
+                {{ color }}
+            </li>
+        </ul>
+    </div>
+    <div  id="app-2">
+        <input v-on:keyup.enter="addColor" v-model="color" type="text">
+        <button v-on:click="addColor">Add</button>
+        <ul>
+            <li v-on:click="removeColor(color)" v-for="color in colors">
+                {{ color }}
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

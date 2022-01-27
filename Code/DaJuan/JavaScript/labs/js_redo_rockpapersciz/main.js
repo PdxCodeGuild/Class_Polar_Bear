@@ -1,15 +1,16 @@
 const choiceSelect = document.querySelector('#choice-select')
 const result = document.querySelector('#result')
-import random
+const submitButton = document.querySelector('#submit-button')
 
-choiceSelect.addEventListener('click')
+
+submitButton.addEventListener('click', getRandomInt)
 
 function getRandomInt(min, max){
+    let compChoices = ['rock', 'paper', 'scissors'];
+    
     min = Math.ceil(min);
     max = Math.floor(max);
-}
-function getResult (){
-    let choiceList = ['rock', 'paper', 'scissors']
-
-    if (choiceSelect.value == '')
+    for (i in compChoices){
+        console.log(compChoices[i])
+    }
 }
