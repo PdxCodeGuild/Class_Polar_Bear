@@ -16,13 +16,13 @@
     <h1>Let's Play Snowman!</h1>
     <h3>You pick a letter and if it's right it stays cold. If you get it wrong it gets warm and he melts.</h3>
     <div id='app'>
-        <img width=700 height=505 src='https://www.hanginghyena.com/static/branding/art/Snowman-9.jpg'>
+        <img width=700 height=505 :src=snowman>
         <br>
         <button type="button" @click='checkLetter(l, index)' v-for="(l, index) in letters" :id="l">{{ l }}</button>
         <div id='wordGroup' style="display: flex;">
-            <p v-for="(l, index) in word" :id="'letter' + index"class="wordBlock">&nbsp;&nbsp;&nbsp;&nbsp;__</p>
+            <p v-for="(l, index) in word" :id="'letter' + index"class="wordBlock">-___-</p>
         </div>
-        <p>{{word}}</p>
+        <!-- <p>{{word}}</p> -->
     </div>
 </body>
 </html>

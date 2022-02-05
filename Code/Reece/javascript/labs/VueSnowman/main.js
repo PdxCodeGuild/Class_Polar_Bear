@@ -26,26 +26,41 @@ const app = new Vue ({
     data: {
         letters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
         word: '',
-        message: '',
-        userWord: '',
-        correctLetter: 0,
-        attempts: 0,
+        attempts: 1,
         snowman: 'https://www.hanginghyena.com/static/branding/art/Snowman-1.jpg',
     },
     methods: {
         checkLetter: function (letter, index) {
-            console.log(letter)
-            if (this.attempts < 8) {
-                this
-                for (let i = 0; i < app.word.length; i++){
-                    if (letter === app.word[i]){
-                        this.userWord += letter
-                        this.correctLetter += 1
+            // console.log(letter)
+            // console.log(index)
+            document.getElementById(`${letter}`).style.visibility='hidden'
+            if (this.attempts < 7) {
+                this.attempts +=1
+                    // console.log(this.attempts, 'before subtraction')
+                for (let i= 0; i <this.word.length; i ++){
+                    if (letter === this.word[i]){
+                        // console.log(i)
+                        document.getElementById(`letter${i}`).textContent = `-_${letter}_-`
+                        this.attempts -= 1
+                        // console.log(this.attempts, 'after subtracting')
                     }
                 }
+                this.snowman = `https://www.hanginghyena.com/static/branding/art/Snowman-${this.attempts}.jpg`
             }
             else {
-                console.log('game over')
+                alert('GAME OVER! Click okay to play again or exit the webpage.')
+                this.snowman ='https://www.hanginghyena.com/static/branding/art/Snowman-1.jpg'
+                this.attempts = 1;
+                this.wordGeneration();
+                    for (let i = 0; i < this.letters.length; i ++){
+                        letterValue = this.letters[i]
+                        // console.log(letterValue)
+                        document.getElementById(`${letterValue}`).style.visibility='visible'
+                    }
+                    for (let i = 0; i < this.word.length; i++){
+                        newContent = ' _'
+                        document.getElementById(`letter${i}`).textContent = '-___-'
+                    }
             }
         },
         wordGeneration: function () {
@@ -54,6 +69,7 @@ const app = new Vue ({
                 url: 'https://random-word-api.herokuapp.com/word/?swear=0',
             }).then(function (response) {
                 app.word = response.data[0]
+                console.log(app.word)
             })
         }
     },
